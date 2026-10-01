@@ -1,0 +1,902 @@
+{
+ "en": [
+  {
+   "id": "st-stephen",
+   "name": "St. Stephen",
+   "canada": "St. Stephen, NB",
+   "us": "Calais, ME",
+   "province": "NB",
+   "updated": "2026-09-30 07:47 ADT",
+   "commercial": {
+    "minutes": null,
+    "label": "na"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "st-stephen-3rd-bridge",
+   "name": "St. Stephen 3rd Bridge",
+   "canada": "St. Stephen, NB",
+   "us": "Calais, ME",
+   "province": "NB",
+   "updated": "2026-09-30 07:15 ADT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "edmundston",
+   "name": "Edmundston",
+   "canada": "Edmundston, NB",
+   "us": "Madawaska, ME",
+   "province": "NB",
+   "updated": "2026-09-30 07:53 ADT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "woodstock-road",
+   "name": "Woodstock Road",
+   "canada": "Belleville, NB",
+   "us": "Houlton, ME",
+   "province": "NB",
+   "updated": "2026-09-30 07:15 ADT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "stanstead",
+   "name": "Stanstead",
+   "canada": "Stanstead, QC",
+   "us": "Derby Line, VT",
+   "province": "QC",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "st-armand-philipsburg",
+   "name": "St-Armand/Philipsburg",
+   "canada": "Saint-Armand, QC",
+   "us": "Highgate, VT",
+   "province": "QC",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "lacolle-route-221",
+   "name": "Lacolle: Route 221",
+   "canada": "Lacolle, QC",
+   "us": "Overton Corners, NY",
+   "province": "QC",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "st-bernard-de-lacolle",
+   "name": "St-Bernard-de-Lacolle",
+   "canada": "Saint-Bernard-de-Lacolle, QC",
+   "us": "Champlain, NY",
+   "province": "QC",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "hemmingford",
+   "name": "Hemmingford",
+   "canada": "Hemmingford, QC",
+   "us": "Mooers, NY",
+   "province": "QC",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "cornwall-traffic-office",
+   "name": "Cornwall Traffic Office",
+   "canada": "Cornwall, ON",
+   "us": "Massena, NY",
+   "province": "ON",
+   "updated": "2026-09-30 06:49 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "prescott",
+   "name": "Prescott",
+   "canada": "Prescott, ON",
+   "us": "Ogdensburg, NY",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "thousand-islands-bridge",
+   "name": "Thousand Islands Bridge",
+   "canada": "Lansdowne, ON",
+   "us": "Alexandria Bay, NY",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "sault-ste-marie",
+   "name": "Sault Ste. Marie",
+   "canada": "Sault Ste. Marie, ON",
+   "us": "Sault Ste. Marie, MI",
+   "province": "ON",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "fort-frances-bridge",
+   "name": "Fort Frances Bridge",
+   "canada": "Fort Frances, ON",
+   "us": "International Falls, MN",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 CDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "queenston-lewiston-bridge",
+   "name": "Queenston-Lewiston Bridge",
+   "canada": "Niagara-on-the-Lake, ON",
+   "us": "Lewiston, NY",
+   "province": "ON",
+   "updated": "2026-09-30 06:40 EDT",
+   "commercial": {
+    "minutes": 1,
+    "label": "minutes"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "rainbow-bridge",
+   "name": "Rainbow Bridge",
+   "canada": "Niagara Falls, ON",
+   "us": "Niagara Falls, NY",
+   "province": "ON",
+   "updated": "2026-09-30 06:40 EDT",
+   "commercial": {
+    "minutes": null,
+    "label": "na"
+   },
+   "travellers": {
+    "minutes": 4,
+    "label": "minutes"
+   }
+  },
+  {
+   "id": "peace-bridge",
+   "name": "Peace Bridge",
+   "canada": "Fort Erie, ON",
+   "us": "Buffalo, NY",
+   "province": "ON",
+   "updated": "2026-09-30 06:40 EDT",
+   "commercial": {
+    "minutes": 1,
+    "label": "minutes"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "blue-water-bridge",
+   "name": "Blue Water Bridge",
+   "canada": "Point Edward, ON",
+   "us": "Port Huron, MI",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "windsor-and-detroit-tunnel",
+   "name": "Windsor and Detroit Tunnel",
+   "canada": "Windsor, ON",
+   "us": "Detroit, MI",
+   "province": "ON",
+   "updated": "2026-09-30 06:32 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "ambassador-bridge",
+   "name": "Ambassador Bridge",
+   "canada": "Windsor, ON",
+   "us": "Detroit, MI",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "gordie-howe-international-bridge",
+   "name": "Gordie Howe International Bridge",
+   "canada": "Windsor, ON",
+   "us": "Detroit, MI",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "emerson",
+   "name": "Emerson",
+   "canada": "Emerson, MB",
+   "us": "Pembina, ND",
+   "province": "MB",
+   "updated": "2026-09-30 04:15 CDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "north-portal",
+   "name": "North Portal",
+   "canada": "North Portal, SK",
+   "us": "Portal, ND",
+   "province": "SK",
+   "updated": "2026-09-30 04:15 CST",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "coutts",
+   "name": "Coutts",
+   "canada": "Coutts, AB",
+   "us": "Sweetgrass, MT",
+   "province": "AB",
+   "updated": "2026-09-30 04:15 MDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "abbotsford-huntingdon",
+   "name": "Abbotsford-Huntingdon",
+   "canada": "Huntingdon, BC",
+   "us": "Sumas, WA",
+   "province": "BC",
+   "updated": "2026-09-30 03:40 PDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 5,
+    "label": "minutes"
+   }
+  },
+  {
+   "id": "pacific-highway",
+   "name": "Pacific Highway",
+   "canada": "Surrey, BC",
+   "us": "Blaine, WA",
+   "province": "BC",
+   "updated": "2026-09-30 03:40 PDT",
+   "commercial": {
+    "minutes": 5,
+    "label": "minutes"
+   },
+   "travellers": {
+    "minutes": 5,
+    "label": "minutes"
+   }
+  },
+  {
+   "id": "douglas",
+   "name": "Douglas",
+   "canada": "Surrey, BC",
+   "us": "Blaine, WA",
+   "province": "BC",
+   "updated": "2026-09-30 03:40 PDT",
+   "commercial": {
+    "minutes": null,
+    "label": "na"
+   },
+   "travellers": {
+    "minutes": 5,
+    "label": "minutes"
+   }
+  },
+  {
+   "id": "boundary-bay",
+   "name": "Boundary Bay",
+   "canada": "Delta, BC",
+   "us": "Point Roberts, WA",
+   "province": "BC",
+   "updated": "2026-09-30 03:15 PDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  }
+ ],
+ "fr": [
+  {
+   "id": "st-stephen",
+   "name": "St. Stephen",
+   "canada": "St. Stephen, NB",
+   "us": "Calais, ME",
+   "province": "NB",
+   "updated": "2026-09-30 07:47 ADT",
+   "commercial": {
+    "minutes": null,
+    "label": "na"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "st-stephen-3rd-bridge",
+   "name": "St. Stephen 3e Pont",
+   "canada": "St. Stephen, NB",
+   "us": "Calais, ME",
+   "province": "NB",
+   "updated": "2026-09-30 07:15 ADT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "edmundston",
+   "name": "Edmundston",
+   "canada": "Edmundston, NB",
+   "us": "Madawaska, ME",
+   "province": "NB",
+   "updated": "2026-09-30 07:53 ADT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "woodstock-road",
+   "name": "Woodstock Road",
+   "canada": "Belleville, NB",
+   "us": "Houlton, ME",
+   "province": "NB",
+   "updated": "2026-09-30 07:15 ADT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "stanstead",
+   "name": "Stanstead",
+   "canada": "Stanstead, QC",
+   "us": "Derby Line, VT",
+   "province": "QC",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "st-armand-philipsburg",
+   "name": "St-Armand/Philipsburg",
+   "canada": "Saint-Armand, QC",
+   "us": "Highgate, VT",
+   "province": "QC",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "lacolle-route-221",
+   "name": "Lacolle: Route 221",
+   "canada": "Lacolle, QC",
+   "us": "Overton Corners, NY",
+   "province": "QC",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "st-bernard-de-lacolle",
+   "name": "St-Bernard-de-Lacolle",
+   "canada": "Saint-Bernard-de-Lacolle, QC",
+   "us": "Champlain, NY",
+   "province": "QC",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "hemmingford",
+   "name": "Hemmingford",
+   "canada": "Hemmingford, QC",
+   "us": "Mooers, NY",
+   "province": "QC",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "cornwall-traffic-office",
+   "name": "Bureau de la Circulation routière de Cornwall",
+   "canada": "Cornwall, ON",
+   "us": "Massena, NY",
+   "province": "ON",
+   "updated": "2026-09-30 06:49 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "prescott",
+   "name": "Prescott",
+   "canada": "Prescott, ON",
+   "us": "Ogdensburg, NY",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "thousand-islands-bridge",
+   "name": "Pont des Mille-Îles",
+   "canada": "Lansdowne, ON",
+   "us": "Alexandria Bay, NY",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "sault-ste-marie",
+   "name": "Sault Ste. Marie",
+   "canada": "Sault Ste. Marie, ON",
+   "us": "Sault Ste. Marie, MI",
+   "province": "ON",
+   "updated": "2026-09-30 06:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "fort-frances-bridge",
+   "name": "Pont de Fort Frances",
+   "canada": "Fort Frances, ON",
+   "us": "International Falls, MN",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 CDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "queenston-lewiston-bridge",
+   "name": "Pont Queenston-Lewiston",
+   "canada": "Niagara-on-the-Lake, ON",
+   "us": "Lewiston, NY",
+   "province": "ON",
+   "updated": "2026-09-30 06:40 EDT",
+   "commercial": {
+    "minutes": 1,
+    "label": "minutes"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "rainbow-bridge",
+   "name": "Pont Rainbow",
+   "canada": "Niagara Falls, ON",
+   "us": "Niagara Falls, NY",
+   "province": "ON",
+   "updated": "2026-09-30 06:40 EDT",
+   "commercial": {
+    "minutes": null,
+    "label": "na"
+   },
+   "travellers": {
+    "minutes": 4,
+    "label": "minutes"
+   }
+  },
+  {
+   "id": "peace-bridge",
+   "name": "Pont Peace",
+   "canada": "Fort Erie, ON",
+   "us": "Buffalo, NY",
+   "province": "ON",
+   "updated": "2026-09-30 06:40 EDT",
+   "commercial": {
+    "minutes": 1,
+    "label": "minutes"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "blue-water-bridge",
+   "name": "Pont Blue Water",
+   "canada": "Point Edward, ON",
+   "us": "Port Huron, MI",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "windsor-and-detroit-tunnel",
+   "name": "Tunnel de Windsor/Detroit",
+   "canada": "Windsor, ON",
+   "us": "Detroit, MI",
+   "province": "ON",
+   "updated": "2026-09-30 06:32 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "ambassador-bridge",
+   "name": "Pont Ambassador",
+   "canada": "Windsor, ON",
+   "us": "Detroit, MI",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "gordie-howe-international-bridge",
+   "name": "Pont International Gordie Howe",
+   "canada": "Windsor, ON",
+   "us": "Detroit, MI",
+   "province": "ON",
+   "updated": "2026-09-30 05:15 EDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "emerson",
+   "name": "Emerson",
+   "canada": "Emerson, MB",
+   "us": "Pembina, ND",
+   "province": "MB",
+   "updated": "2026-09-30 04:15 CDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "north-portal",
+   "name": "North Portal",
+   "canada": "North Portal, SK",
+   "us": "Portal, ND",
+   "province": "SK",
+   "updated": "2026-09-30 04:15 CST",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "coutts",
+   "name": "Coutts",
+   "canada": "Coutts, AB",
+   "us": "Sweetgrass, MT",
+   "province": "AB",
+   "updated": "2026-09-30 04:15 MDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  },
+  {
+   "id": "abbotsford-huntingdon",
+   "name": "Abbotsford-Huntingdon",
+   "canada": "Huntingdon, BC",
+   "us": "Sumas, WA",
+   "province": "BC",
+   "updated": "2026-09-30 03:40 PDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 5,
+    "label": "minutes"
+   }
+  },
+  {
+   "id": "pacific-highway",
+   "name": "Pacific Highway",
+   "canada": "Surrey, BC",
+   "us": "Blaine, WA",
+   "province": "BC",
+   "updated": "2026-09-30 03:40 PDT",
+   "commercial": {
+    "minutes": 5,
+    "label": "minutes"
+   },
+   "travellers": {
+    "minutes": 5,
+    "label": "minutes"
+   }
+  },
+  {
+   "id": "douglas",
+   "name": "Douglas",
+   "canada": "Surrey, BC",
+   "us": "Blaine, WA",
+   "province": "BC",
+   "updated": "2026-09-30 03:40 PDT",
+   "commercial": {
+    "minutes": null,
+    "label": "na"
+   },
+   "travellers": {
+    "minutes": 5,
+    "label": "minutes"
+   }
+  },
+  {
+   "id": "boundary-bay",
+   "name": "Boundary Bay",
+   "canada": "Delta, BC",
+   "us": "Point Roberts, WA",
+   "province": "BC",
+   "updated": "2026-09-30 03:15 PDT",
+   "commercial": {
+    "minutes": 0,
+    "label": "none"
+   },
+   "travellers": {
+    "minutes": 0,
+    "label": "none"
+   }
+  }
+ ]
+}

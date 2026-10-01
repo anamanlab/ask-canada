@@ -1,0 +1,2202 @@
+{
+ "MX_en": {
+  "country": {
+   "iso": "MX",
+   "name": "Mexico",
+   "level": 2,
+   "levelText": "Exercise a high degree of caution",
+   "summary": "Exercise a high degree of caution in Mexico due to high levels of criminal activity and kidnapping.",
+   "points": [],
+   "regions": [
+    {
+     "title": "Baja California Sur and northwestern coast of mainland Mexico",
+     "level": 3,
+     "levelText": "Avoid non-essential travel",
+     "reason": "Avoid non-essential travel to the following areas due to Hurricane Polo",
+     "areas": [
+      {
+       "text": "Baja California Sur, from the border with Baja California state south to the area between San Evaristo and El Conejo"
+      },
+      {
+       "text": "the northwestern coast of mainland Mexico, from Bahía de Kino to Topolobampo"
+      }
+     ]
+    },
+    {
+     "title": "",
+     "level": 3,
+     "levelText": "Avoid non-essential travel",
+     "reason": "Avoid non-essential travel to the following states due to high levels of violence and organized crime",
+     "areas": [
+      {
+       "text": "Chiapas, excluding",
+       "except": [
+        "the city and ruins of Palenque (and highway 186 leading there)",
+        "the city of Tuxtla Gutiérrez (and its airport and the main road leading there)",
+        "the city of San Cristobal de las Casas (and toll highway 190D between this city and Tuxtla Gutiérrez)"
+       ]
+      },
+      {
+       "text": "Chihuahua, excluding Chihuahua City"
+      },
+      {
+       "text": "Colima, excluding the city of Manzanillo only if accessed by air"
+      },
+      {
+       "text": "Guanajuato, in all areas south of and including highways 43D and 45D"
+      },
+      {
+       "text": "Guerrero, excluding the cities of Ixtapa/Zihuatanejo only if accessed by air"
+      },
+      {
+       "text": "Jalisco, within 50 km of the border with Michoacán state, excluding",
+       "except": [
+        "Mazamitla (and highway 405 leading there)",
+        "the area around Lake Chapala between highway 15 and 15D"
+       ]
+      },
+      {
+       "text": "Lagunas de Zempoala National Park in Morelos"
+      },
+      {
+       "text": "Michoacán, excluding the cities of Morelia and Patzcuaro"
+      },
+      {
+       "text": "Nayarit, within 20 km of the border with the states of Sinaloa and Durango"
+      },
+      {
+       "text": "Nuevo León, excluding the city of Monterrey"
+      },
+      {
+       "text": "Sinaloa, excluding the following areas, and only if accessed by air or sea",
+       "except": [
+        "specific areas in and around the city of Mazatlán",
+        "Centro Histórico south of Avenida Gutiérrez Najera",
+        "the road connecting Centro Histórico to the airport",
+        "the main coastal roads from Centro Histórico to Playa Delfines, including Zona Cerritos and Zona Dorada (the Golden Zone)",
+        "the resorts on Playa Estrella del Mar and the road leading there from the airport"
+       ]
+      },
+      {
+       "text": "Sonora, excluding the cities of Hermosillo and Puerto Peñasco"
+      },
+      {
+       "text": "Tamaulipas, excluding the city of Tampico only if accessed by air or sea"
+      },
+      {
+       "text": "Zacatecas, excluding the city of Zacatecas"
+      }
+     ]
+    }
+   ],
+   "change": "Natural disasters and climate section – updated information on Hurricane Polo",
+   "entry": {
+    "passport": "Your passport must be valid for the expected duration of your stay in Mexico.",
+    "visas": [
+     {
+      "label": "Tourist visa",
+      "value": "not required for stays of up to 180 days"
+     },
+     {
+      "label": "Business visa",
+      "value": "not required for stays of up to 180 days"
+     },
+     {
+      "label": "Work visa",
+      "value": "required"
+     },
+     {
+      "label": "Student visa",
+      "value": "not required for stays of up to 180 days"
+     }
+    ]
+   },
+   "help": {
+    "emergency": {
+     "primary": "911",
+     "lead": "Dial 911 for emergency assistance.",
+     "numbers": []
+    },
+    "tollFree": "001-800-514-0129",
+    "offices": [
+     {
+      "city": "Mexico City",
+      "type": "Embassy of Canada",
+      "phone": "+52 55-5724-7900",
+      "email": "mxicocs@international.gc.ca",
+      "address": "Calle Schiller No. 529, Colonia Polanco, 11560, CDMX, Mexico.",
+      "lat": 19.428978,
+      "lng": -99.18593,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/mexico_city-mexico.aspx?lang=eng",
+      "passportServices": false
+     },
+     {
+      "city": "Guadalajara",
+      "type": "Consulate of Canada",
+      "phone": "+52 33-1818-4200",
+      "email": "gjara@international.gc.ca",
+      "address": "World Trade Center, Av. Mariano Otero 1249, Torre Pacifico Piso 8, Col. Rinconada del Bosque, 44530 Guadalajara, Jalisco, México",
+      "lat": 20.655751,
+      "lng": -103.389528,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/guadalajara.aspx?lang=eng",
+      "passportServices": true
+     },
+     {
+      "city": "Monterrey",
+      "type": "Consulate General of Canada",
+      "phone": "+52 81-2088-3200/3201",
+      "email": "monterreyconsular@international.gc.ca",
+      "address": "Torre Gomez Morin 955, Ave. Gomez Morin No. 955, Suite 404, Col. Montebello, 66279 San Pedro Garza Garcia, Nuevo Léon, México",
+      "lat": 25.644956,
+      "lng": -100.3603,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/monterrey.aspx?lang=eng",
+      "passportServices": true
+     },
+     {
+      "city": "Acapulco",
+      "type": "Consular Agency of Canada",
+      "phone": "+52 55-5724-9794",
+      "email": "aplco@international.gc.ca",
+      "address": "Pasaje Diana, Avenida Costera Miguel Alemán 121, L-16, Fracc. Magallanes, 39670 Acapulco, Guerrero, México",
+      "lat": 16.859705,
+      "lng": -99.873603,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/acapulco.aspx?lang=eng",
+      "passportServices": false
+     },
+     {
+      "city": "Cabo San Lucas",
+      "type": "Consular Agency of Canada",
+      "phone": "+52 55-5724-9797",
+      "email": "lcabo@international.gc.ca",
+      "address": "Carretera Transpeninsular Km. 0.5, Local 82, Col. El Tezal, 23454 Cabo San Lucas, Baja California Sur, México",
+      "lat": 22.901506,
+      "lng": -109.899599,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/cabo_san_lucas.aspx?lang=eng",
+      "passportServices": false
+     },
+     {
+      "city": "Cancún",
+      "type": "Consular Agency of Canada",
+      "phone": "+52 55-5724-9795",
+      "email": "cncun@international.gc.ca",
+      "address": "Centro Empresarial, Oficina E7, Blvd. Kukulcan Km. 12, Zona Hotelera, 77500 Cancún, Quintana Roo, México",
+      "lat": 21.106841,
+      "lng": -86.764022,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/cancun.aspx?lang=eng",
+      "passportServices": false
+     },
+     {
+      "city": "Mazatlán",
+      "type": "Consular Agency of Canada",
+      "phone": "+52 55-5724-9798",
+      "email": "mztln@international.gc.ca",
+      "address": "Centro Comercial La Marina Business and Life, Blvd. Marina Mazatlán 2302, Office 41, Col. Marina Mazatlán, 82103 Mazatlán, Sinaloa, Mexico",
+      "lat": 23.274546,
+      "lng": -106.454229,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/mazatlan.aspx?lang=eng",
+      "passportServices": false
+     },
+     {
+      "city": "Playa Del Carmen",
+      "type": "Consular Agency of Canada",
+      "phone": "+52 55-5724-9796",
+      "email": "crmen@international.gc.ca",
+      "address": "Plaza Paraíso Caribe, Modulo C, Planta 2, Oficina C21 - 24, Av. 10 Sur entre Calle 3 y 5 Sur, M-35, Lote 1, Colonia Centro, 77710 Playa del Carmen, Quintana Roo, México",
+      "lat": 20.620746,
+      "lng": -87.078264,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/playa_del_carmen.aspx?lang=eng",
+      "passportServices": true
+     },
+     {
+      "city": "Puerto Vallarta",
+      "type": "Consular Agency of Canada",
+      "phone": "+52 55-5724-9799",
+      "email": "pvrta@international.gc.ca",
+      "address": "Plaza Peninsula, Local Sub F, Boulevard Francisco Medina Ascencio 2485, Zona Hotelera Norte, 48300 Puerto Vallarta, Jalisco, México",
+      "lat": 20.646788,
+      "lng": -105.239151,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/puerto_vallarta.aspx?lang=eng",
+      "passportServices": false
+     },
+     {
+      "city": "Tijuana",
+      "type": "Honorary consul of Canada",
+      "phone": "664-684-0461",
+      "email": "tjuna@international.gc.ca",
+      "address": "Germán Gedovius No.10411-101, Condominio del Parque, Zona Río, 22010 Tijuana, Baja California Norte, México",
+      "lat": 32.520393,
+      "lng": -117.012578,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/tijuana.aspx?lang=eng",
+      "passportServices": false
+     }
+    ]
+   },
+   "updated": "2026-09-29T14:42:00-04:00",
+   "url": "https://travel.gc.ca/destinations/mexico",
+   "prose": {
+    "fr": {
+     "summary": "Faites preuve d’une grande prudence au Mexique en raison du niveau élevé de criminalité et d’enlèvements.",
+     "points": [],
+     "regions": [
+      {
+       "title": "Basse-Californie du Sud et la côte nord-ouest du Mexique continental",
+       "level": 3,
+       "levelText": "Évitez tout voyage non essentiel",
+       "reason": "Évitez tout voyage non essentiel vers les zones suivantes en raison de l'ouragan Polo",
+       "areas": [
+        {
+         "text": "la Basse-Californie du Sud, depuis la frontière avec l'État de la Basse-Californie vers le sud jusqu'à la zone située entre San Evaristo et El Conejo;"
+        },
+        {
+         "text": "la côte nord-ouest du Mexique continental, de Bahía de Kino à Topolobampo."
+        }
+       ]
+      },
+      {
+       "title": "",
+       "level": 3,
+       "levelText": "Évitez tout voyage non essentiel",
+       "reason": "Évitez tout voyage non essentiel dans les États suivants en raison du niveau élevé de violence et de crime organisé",
+       "areas": [
+        {
+         "text": "Chiapas, à l'exclusion de",
+         "except": [
+          "la ville et des ruines de Palenque (et l’autoroute 186 qui y mène);",
+          "la ville de Tuxtla Gutiérrez (ainsi que son aéroport et la route principale qui y mène);",
+          "la ville de San Cristobal de las Casas (et l'autoroute à péage 190D entre celle-ci et Tuxtla Gutiérrez)."
+         ]
+        },
+        {
+         "text": "Chihuahua, à l'exclusion de la ville de Chihuahua;"
+        },
+        {
+         "text": "Colima, à l’exclusion de la ville de Manzanillo seulement si l’on y accède par voie aérienne;"
+        },
+        {
+         "text": "Guanajuato, dans toutes les zones situées au sud des autoroutes 43D et 45D, celles-ci comprises;"
+        },
+        {
+         "text": "Guerrero, à l’exclusion des villes de Ixtapa/Zihuatanejo seulement si l’on y accède par voie aérienne;"
+        },
+        {
+         "text": "Jalisco, à moins de 50 km de la frontière avec l'État de Michoacán, à l'exclusion de",
+         "except": [
+          "la ville de Mazamitla (et l'autoroute qui y mène);",
+          "la zone autour du Lac Chapala entre l'autoroute 15 et l'autoroute 15D."
+         ]
+        },
+        {
+         "text": "le parc national Lagunas de Zempoala à Morelos;"
+        },
+        {
+         "text": "Michoacán, à l’exclusion des villes de Morelia et de Patzcuaro;"
+        },
+        {
+         "text": "Nayarit, à moins de 20 km de la frontière avec les États de Sinaloa et de Durango;"
+        },
+        {
+         "text": "Nuevo León, à l’exclusion de la ville de Monterrey;"
+        },
+        {
+         "text": "Sinaloa, à l’exclusion des zones suivantes et seulement si l'on y accède par voie aérienne ou maritime",
+         "except": [
+          "des zones spécifiques dans la ville de Mazatlán et autour de celle-ci",
+          "Centro Histórico au sud de l'avenue Gutiérrez Najera;",
+          "la route reliant Centro Histórico à l'aéroport;",
+          "les routes côtières principales reliant Centro Histórico à Playa Delfines, y compris Zona Cerritos et Zona Dorada;",
+          "les stations balnéaires sur Playa Estrella del Mar et la route qui y mène depuis l’aéroport."
+         ]
+        },
+        {
+         "text": "Sonora, à l’exclusion des villes de Hermosillo et de Puerto Peñasco;"
+        },
+        {
+         "text": "Tamaulipas, à l’exclusion de la ville de Tampico seulement si l’on y accède par voie aérienne ou maritime;"
+        },
+        {
+         "text": "Zacatecas, à l’exclusion de la ville de Zacatecas."
+        }
+       ]
+      }
+     ],
+     "change": "Section Catastrophes naturelles et climat – mise à jour de l’information sur l’ouragan Polo",
+     "entry": {
+      "passport": "Votre passeport doit être valide pendant la durée prévue de votre séjour au Mexique.",
+      "visas": [
+       {
+        "label": "Visa de touriste",
+        "value": "non exigé pour les séjours d’une durée maximale de 180 jours"
+       },
+       {
+        "label": "Visa d’affaires",
+        "value": "non exigé pour les séjours d’une durée maximale de 180 jours"
+       },
+       {
+        "label": "Visa de travail",
+        "value": "exigé"
+       },
+       {
+        "label": "Visa étudiant",
+        "value": "non exigé pour les séjours d’une durée maximale de 180 jours"
+       }
+      ]
+     },
+     "help": {
+      "emergency": {
+       "primary": "911",
+       "lead": "Composez le 911 pour toute aide d’urgence.",
+       "numbers": []
+      },
+      "tollFree": "001-800-514-0129",
+      "offices": [
+       {
+        "city": "Mexico",
+        "type": "Ambassade du Canada",
+        "phone": "+52 55-5724-7900",
+        "email": "mxicocs@international.gc.ca",
+        "address": "Calle Schiller no 529, Colonia Polanco, 11560 Mexico, CDMX, Mexique",
+        "lat": 19.428978,
+        "lng": -99.18593,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/mexico_city-mexico.aspx?lang=fra",
+        "passportServices": false
+       },
+       {
+        "city": "Guadalajara",
+        "type": "Consulat du Canada",
+        "phone": "+52 33-1818-4200",
+        "email": "gjara@international.gc.ca",
+        "address": "World Trade Center, Av. Mariano Otero 1249, Torre Pacifico Piso 8, Col. Rinconada del Bosque, 44530 Guadalajara, Jalisco, Mexique",
+        "lat": 20.655751,
+        "lng": -103.389528,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/guadalajara.aspx?lang=fra",
+        "passportServices": true
+       },
+       {
+        "city": "Monterrey",
+        "type": "Consulat général du Canada",
+        "phone": "+52 81-2088-3200/3201",
+        "email": "monterreyconsular@international.gc.ca",
+        "address": "Torre Gomez Morin 955, Ave. Gomez Morin No. 955, Suite 404, Col. Montebello, 66279 San Pedro Garza Garcia, Nuevo Léon, Mexique",
+        "lat": 25.644956,
+        "lng": -100.3603,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/monterrey.aspx?lang=fra",
+        "passportServices": true
+       },
+       {
+        "city": "Acapulco",
+        "type": "Agence consulaire du Canada",
+        "phone": "+52 55-5724-9794",
+        "email": "aplco@international.gc.ca",
+        "address": "Pasaje Diana, Avenida Costera Miguel Alemán 121, L-16, Fracc. Magallanes, 39670 Acapulco, Guerrero, Mexique",
+        "lat": 16.859705,
+        "lng": -99.873603,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/acapulco.aspx?lang=fra",
+        "passportServices": false
+       },
+       {
+        "city": "Cabo San Lucas",
+        "type": "Agence consulaire du Canada",
+        "phone": "+52 55-5724-9797",
+        "email": "lcabo@international.gc.ca",
+        "address": "Carretera Transpeninsular Km. 0.5, Local 82, Col. El Tezal, 23454 Cabo San Lucas, Baja California Sur, Mexique",
+        "lat": 22.901506,
+        "lng": -109.899599,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/cabo_san_lucas.aspx?lang=fra",
+        "passportServices": false
+       },
+       {
+        "city": "Cancún",
+        "type": "Agence consulaire du Canada",
+        "phone": "+52 55-5724-9795",
+        "email": "cncun@international.gc.ca",
+        "address": "Centro Empresarial, Oficina E7, Blvd. Kukulcan Km. 12, Zona Hotelera, 77500 Cancún, Quintana Roo, Mexique",
+        "lat": 21.106841,
+        "lng": -86.764022,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/cancun.aspx?lang=fra",
+        "passportServices": false
+       },
+       {
+        "city": "Mazatlán",
+        "type": "Agence consulaire du Canada",
+        "phone": "+52 55-5724-9798",
+        "email": "mztln@international.gc.ca",
+        "address": "Centro Comercial La Marina Business and Life, Blvd. Marina Mazatlán 2302, Office 41, Col. Marina Mazatlán, 82103 Mazatlán, Sinaloa, Mexique",
+        "lat": 23.274546,
+        "lng": -106.454229,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/mazatlan.aspx?lang=fra",
+        "passportServices": false
+       },
+       {
+        "city": "Playa Del Carmen",
+        "type": "Agence consulaire du Canada",
+        "phone": "+52 55-5724-9796",
+        "email": "crmen@international.gc.ca",
+        "address": "Plaza Paraíso Caribe, Modulo C, Planta 2, Oficina C21 - 24, Av. 10 Sur entre Calle 3 y 5 Sur, M-35, Lote 1, Colonia Centro, 77710 Playa del Carmen, Quintana Roo, Mexique",
+        "lat": 20.620746,
+        "lng": -87.078264,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/playa_del_carmen.aspx?lang=fra",
+        "passportServices": true
+       },
+       {
+        "city": "Puerto Vallarta",
+        "type": "Agence consulaire du Canada",
+        "phone": "+52 55-5724-9799",
+        "email": "pvrta@international.gc.ca",
+        "address": "Plaza Peninsula, Local Sub F, Boulevard Francisco Medina Ascencio 2485, Zona Hotelera Norte, 48300 Puerto Vallarta, Jalisco, Mexique",
+        "lat": 20.646788,
+        "lng": -105.239151,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/puerto_vallarta.aspx?lang=fra",
+        "passportServices": false
+       },
+       {
+        "city": "Tijuana",
+        "type": "Consul honoraire du Canada",
+        "phone": "664-684-0461",
+        "email": "tjuna@international.gc.ca",
+        "address": "Germán Gedovius no 10411-101, Condominio del Parque, Zona Río, 22010 Tijuana, Baja California Norte, Mexique",
+        "lat": 32.520393,
+        "lng": -117.012578,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/tijuana.aspx?lang=fra",
+        "passportServices": false
+       }
+      ]
+     }
+    }
+   }
+  },
+  "fetchedAt": "2026-09-29T15:00:18"
+ },
+ "MX_fr": {
+  "country": {
+   "iso": "MX",
+   "name": "Mexique",
+   "level": 2,
+   "levelText": "Faites preuve d’une grande prudence",
+   "summary": "Faites preuve d’une grande prudence au Mexique en raison du niveau élevé de criminalité et d’enlèvements.",
+   "points": [],
+   "regions": [
+    {
+     "title": "Basse-Californie du Sud et la côte nord-ouest du Mexique continental",
+     "level": 3,
+     "levelText": "Évitez tout voyage non essentiel",
+     "reason": "Évitez tout voyage non essentiel vers les zones suivantes en raison de l'ouragan Polo",
+     "areas": [
+      {
+       "text": "la Basse-Californie du Sud, depuis la frontière avec l'État de la Basse-Californie vers le sud jusqu'à la zone située entre San Evaristo et El Conejo;"
+      },
+      {
+       "text": "la côte nord-ouest du Mexique continental, de Bahía de Kino à Topolobampo."
+      }
+     ]
+    },
+    {
+     "title": "",
+     "level": 3,
+     "levelText": "Évitez tout voyage non essentiel",
+     "reason": "Évitez tout voyage non essentiel dans les États suivants en raison du niveau élevé de violence et de crime organisé",
+     "areas": [
+      {
+       "text": "Chiapas, à l'exclusion de",
+       "except": [
+        "la ville et des ruines de Palenque (et l’autoroute 186 qui y mène);",
+        "la ville de Tuxtla Gutiérrez (ainsi que son aéroport et la route principale qui y mène);",
+        "la ville de San Cristobal de las Casas (et l'autoroute à péage 190D entre celle-ci et Tuxtla Gutiérrez)."
+       ]
+      },
+      {
+       "text": "Chihuahua, à l'exclusion de la ville de Chihuahua;"
+      },
+      {
+       "text": "Colima, à l’exclusion de la ville de Manzanillo seulement si l’on y accède par voie aérienne;"
+      },
+      {
+       "text": "Guanajuato, dans toutes les zones situées au sud des autoroutes 43D et 45D, celles-ci comprises;"
+      },
+      {
+       "text": "Guerrero, à l’exclusion des villes de Ixtapa/Zihuatanejo seulement si l’on y accède par voie aérienne;"
+      },
+      {
+       "text": "Jalisco, à moins de 50 km de la frontière avec l'État de Michoacán, à l'exclusion de",
+       "except": [
+        "la ville de Mazamitla (et l'autoroute qui y mène);",
+        "la zone autour du Lac Chapala entre l'autoroute 15 et l'autoroute 15D."
+       ]
+      },
+      {
+       "text": "le parc national Lagunas de Zempoala à Morelos;"
+      },
+      {
+       "text": "Michoacán, à l’exclusion des villes de Morelia et de Patzcuaro;"
+      },
+      {
+       "text": "Nayarit, à moins de 20 km de la frontière avec les États de Sinaloa et de Durango;"
+      },
+      {
+       "text": "Nuevo León, à l’exclusion de la ville de Monterrey;"
+      },
+      {
+       "text": "Sinaloa, à l’exclusion des zones suivantes et seulement si l'on y accède par voie aérienne ou maritime",
+       "except": [
+        "des zones spécifiques dans la ville de Mazatlán et autour de celle-ci",
+        "Centro Histórico au sud de l'avenue Gutiérrez Najera;",
+        "la route reliant Centro Histórico à l'aéroport;",
+        "les routes côtières principales reliant Centro Histórico à Playa Delfines, y compris Zona Cerritos et Zona Dorada;",
+        "les stations balnéaires sur Playa Estrella del Mar et la route qui y mène depuis l’aéroport."
+       ]
+      },
+      {
+       "text": "Sonora, à l’exclusion des villes de Hermosillo et de Puerto Peñasco;"
+      },
+      {
+       "text": "Tamaulipas, à l’exclusion de la ville de Tampico seulement si l’on y accède par voie aérienne ou maritime;"
+      },
+      {
+       "text": "Zacatecas, à l’exclusion de la ville de Zacatecas."
+      }
+     ]
+    }
+   ],
+   "change": "Section Catastrophes naturelles et climat – mise à jour de l’information sur l’ouragan Polo",
+   "entry": {
+    "passport": "Votre passeport doit être valide pendant la durée prévue de votre séjour au Mexique.",
+    "visas": [
+     {
+      "label": "Visa de touriste",
+      "value": "non exigé pour les séjours d’une durée maximale de 180 jours"
+     },
+     {
+      "label": "Visa d’affaires",
+      "value": "non exigé pour les séjours d’une durée maximale de 180 jours"
+     },
+     {
+      "label": "Visa de travail",
+      "value": "exigé"
+     },
+     {
+      "label": "Visa étudiant",
+      "value": "non exigé pour les séjours d’une durée maximale de 180 jours"
+     }
+    ]
+   },
+   "help": {
+    "emergency": {
+     "primary": "911",
+     "lead": "Composez le 911 pour toute aide d’urgence.",
+     "numbers": []
+    },
+    "tollFree": "001-800-514-0129",
+    "offices": [
+     {
+      "city": "Mexico",
+      "type": "Ambassade du Canada",
+      "phone": "+52 55-5724-7900",
+      "email": "mxicocs@international.gc.ca",
+      "address": "Calle Schiller no 529, Colonia Polanco, 11560 Mexico, CDMX, Mexique",
+      "lat": 19.428978,
+      "lng": -99.18593,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/mexico_city-mexico.aspx?lang=fra",
+      "passportServices": false
+     },
+     {
+      "city": "Guadalajara",
+      "type": "Consulat du Canada",
+      "phone": "+52 33-1818-4200",
+      "email": "gjara@international.gc.ca",
+      "address": "World Trade Center, Av. Mariano Otero 1249, Torre Pacifico Piso 8, Col. Rinconada del Bosque, 44530 Guadalajara, Jalisco, Mexique",
+      "lat": 20.655751,
+      "lng": -103.389528,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/guadalajara.aspx?lang=fra",
+      "passportServices": true
+     },
+     {
+      "city": "Monterrey",
+      "type": "Consulat général du Canada",
+      "phone": "+52 81-2088-3200/3201",
+      "email": "monterreyconsular@international.gc.ca",
+      "address": "Torre Gomez Morin 955, Ave. Gomez Morin No. 955, Suite 404, Col. Montebello, 66279 San Pedro Garza Garcia, Nuevo Léon, Mexique",
+      "lat": 25.644956,
+      "lng": -100.3603,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/monterrey.aspx?lang=fra",
+      "passportServices": true
+     },
+     {
+      "city": "Acapulco",
+      "type": "Agence consulaire du Canada",
+      "phone": "+52 55-5724-9794",
+      "email": "aplco@international.gc.ca",
+      "address": "Pasaje Diana, Avenida Costera Miguel Alemán 121, L-16, Fracc. Magallanes, 39670 Acapulco, Guerrero, Mexique",
+      "lat": 16.859705,
+      "lng": -99.873603,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/acapulco.aspx?lang=fra",
+      "passportServices": false
+     },
+     {
+      "city": "Cabo San Lucas",
+      "type": "Agence consulaire du Canada",
+      "phone": "+52 55-5724-9797",
+      "email": "lcabo@international.gc.ca",
+      "address": "Carretera Transpeninsular Km. 0.5, Local 82, Col. El Tezal, 23454 Cabo San Lucas, Baja California Sur, Mexique",
+      "lat": 22.901506,
+      "lng": -109.899599,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/cabo_san_lucas.aspx?lang=fra",
+      "passportServices": false
+     },
+     {
+      "city": "Cancún",
+      "type": "Agence consulaire du Canada",
+      "phone": "+52 55-5724-9795",
+      "email": "cncun@international.gc.ca",
+      "address": "Centro Empresarial, Oficina E7, Blvd. Kukulcan Km. 12, Zona Hotelera, 77500 Cancún, Quintana Roo, Mexique",
+      "lat": 21.106841,
+      "lng": -86.764022,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/cancun.aspx?lang=fra",
+      "passportServices": false
+     },
+     {
+      "city": "Mazatlán",
+      "type": "Agence consulaire du Canada",
+      "phone": "+52 55-5724-9798",
+      "email": "mztln@international.gc.ca",
+      "address": "Centro Comercial La Marina Business and Life, Blvd. Marina Mazatlán 2302, Office 41, Col. Marina Mazatlán, 82103 Mazatlán, Sinaloa, Mexique",
+      "lat": 23.274546,
+      "lng": -106.454229,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/mazatlan.aspx?lang=fra",
+      "passportServices": false
+     },
+     {
+      "city": "Playa Del Carmen",
+      "type": "Agence consulaire du Canada",
+      "phone": "+52 55-5724-9796",
+      "email": "crmen@international.gc.ca",
+      "address": "Plaza Paraíso Caribe, Modulo C, Planta 2, Oficina C21 - 24, Av. 10 Sur entre Calle 3 y 5 Sur, M-35, Lote 1, Colonia Centro, 77710 Playa del Carmen, Quintana Roo, Mexique",
+      "lat": 20.620746,
+      "lng": -87.078264,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/playa_del_carmen.aspx?lang=fra",
+      "passportServices": true
+     },
+     {
+      "city": "Puerto Vallarta",
+      "type": "Agence consulaire du Canada",
+      "phone": "+52 55-5724-9799",
+      "email": "pvrta@international.gc.ca",
+      "address": "Plaza Peninsula, Local Sub F, Boulevard Francisco Medina Ascencio 2485, Zona Hotelera Norte, 48300 Puerto Vallarta, Jalisco, Mexique",
+      "lat": 20.646788,
+      "lng": -105.239151,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/puerto_vallarta.aspx?lang=fra",
+      "passportServices": false
+     },
+     {
+      "city": "Tijuana",
+      "type": "Consul honoraire du Canada",
+      "phone": "664-684-0461",
+      "email": "tjuna@international.gc.ca",
+      "address": "Germán Gedovius no 10411-101, Condominio del Parque, Zona Río, 22010 Tijuana, Baja California Norte, Mexique",
+      "lat": 32.520393,
+      "lng": -117.012578,
+      "url": "https://www.international.gc.ca/country-pays/mexico-mexique/tijuana.aspx?lang=fra",
+      "passportServices": false
+     }
+    ]
+   },
+   "updated": "2026-09-29T14:42:00-04:00",
+   "url": "https://voyage.gc.ca/destinations/mexique",
+   "prose": {
+    "en": {
+     "summary": "Exercise a high degree of caution in Mexico due to high levels of criminal activity and kidnapping.",
+     "points": [],
+     "regions": [
+      {
+       "title": "Baja California Sur and northwestern coast of mainland Mexico",
+       "level": 3,
+       "levelText": "Avoid non-essential travel",
+       "reason": "Avoid non-essential travel to the following areas due to Hurricane Polo",
+       "areas": [
+        {
+         "text": "Baja California Sur, from the border with Baja California state south to the area between San Evaristo and El Conejo"
+        },
+        {
+         "text": "the northwestern coast of mainland Mexico, from Bahía de Kino to Topolobampo"
+        }
+       ]
+      },
+      {
+       "title": "",
+       "level": 3,
+       "levelText": "Avoid non-essential travel",
+       "reason": "Avoid non-essential travel to the following states due to high levels of violence and organized crime",
+       "areas": [
+        {
+         "text": "Chiapas, excluding",
+         "except": [
+          "the city and ruins of Palenque (and highway 186 leading there)",
+          "the city of Tuxtla Gutiérrez (and its airport and the main road leading there)",
+          "the city of San Cristobal de las Casas (and toll highway 190D between this city and Tuxtla Gutiérrez)"
+         ]
+        },
+        {
+         "text": "Chihuahua, excluding Chihuahua City"
+        },
+        {
+         "text": "Colima, excluding the city of Manzanillo only if accessed by air"
+        },
+        {
+         "text": "Guanajuato, in all areas south of and including highways 43D and 45D"
+        },
+        {
+         "text": "Guerrero, excluding the cities of Ixtapa/Zihuatanejo only if accessed by air"
+        },
+        {
+         "text": "Jalisco, within 50 km of the border with Michoacán state, excluding",
+         "except": [
+          "Mazamitla (and highway 405 leading there)",
+          "the area around Lake Chapala between highway 15 and 15D"
+         ]
+        },
+        {
+         "text": "Lagunas de Zempoala National Park in Morelos"
+        },
+        {
+         "text": "Michoacán, excluding the cities of Morelia and Patzcuaro"
+        },
+        {
+         "text": "Nayarit, within 20 km of the border with the states of Sinaloa and Durango"
+        },
+        {
+         "text": "Nuevo León, excluding the city of Monterrey"
+        },
+        {
+         "text": "Sinaloa, excluding the following areas, and only if accessed by air or sea",
+         "except": [
+          "specific areas in and around the city of Mazatlán",
+          "Centro Histórico south of Avenida Gutiérrez Najera",
+          "the road connecting Centro Histórico to the airport",
+          "the main coastal roads from Centro Histórico to Playa Delfines, including Zona Cerritos and Zona Dorada (the Golden Zone)",
+          "the resorts on Playa Estrella del Mar and the road leading there from the airport"
+         ]
+        },
+        {
+         "text": "Sonora, excluding the cities of Hermosillo and Puerto Peñasco"
+        },
+        {
+         "text": "Tamaulipas, excluding the city of Tampico only if accessed by air or sea"
+        },
+        {
+         "text": "Zacatecas, excluding the city of Zacatecas"
+        }
+       ]
+      }
+     ],
+     "change": "Natural disasters and climate section – updated information on Hurricane Polo",
+     "entry": {
+      "passport": "Your passport must be valid for the expected duration of your stay in Mexico.",
+      "visas": [
+       {
+        "label": "Tourist visa",
+        "value": "not required for stays of up to 180 days"
+       },
+       {
+        "label": "Business visa",
+        "value": "not required for stays of up to 180 days"
+       },
+       {
+        "label": "Work visa",
+        "value": "required"
+       },
+       {
+        "label": "Student visa",
+        "value": "not required for stays of up to 180 days"
+       }
+      ]
+     },
+     "help": {
+      "emergency": {
+       "primary": "911",
+       "lead": "Dial 911 for emergency assistance.",
+       "numbers": []
+      },
+      "tollFree": "001-800-514-0129",
+      "offices": [
+       {
+        "city": "Mexico City",
+        "type": "Embassy of Canada",
+        "phone": "+52 55-5724-7900",
+        "email": "mxicocs@international.gc.ca",
+        "address": "Calle Schiller No. 529, Colonia Polanco, 11560, CDMX, Mexico.",
+        "lat": 19.428978,
+        "lng": -99.18593,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/mexico_city-mexico.aspx?lang=eng",
+        "passportServices": false
+       },
+       {
+        "city": "Guadalajara",
+        "type": "Consulate of Canada",
+        "phone": "+52 33-1818-4200",
+        "email": "gjara@international.gc.ca",
+        "address": "World Trade Center, Av. Mariano Otero 1249, Torre Pacifico Piso 8, Col. Rinconada del Bosque, 44530 Guadalajara, Jalisco, México",
+        "lat": 20.655751,
+        "lng": -103.389528,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/guadalajara.aspx?lang=eng",
+        "passportServices": true
+       },
+       {
+        "city": "Monterrey",
+        "type": "Consulate General of Canada",
+        "phone": "+52 81-2088-3200/3201",
+        "email": "monterreyconsular@international.gc.ca",
+        "address": "Torre Gomez Morin 955, Ave. Gomez Morin No. 955, Suite 404, Col. Montebello, 66279 San Pedro Garza Garcia, Nuevo Léon, México",
+        "lat": 25.644956,
+        "lng": -100.3603,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/monterrey.aspx?lang=eng",
+        "passportServices": true
+       },
+       {
+        "city": "Acapulco",
+        "type": "Consular Agency of Canada",
+        "phone": "+52 55-5724-9794",
+        "email": "aplco@international.gc.ca",
+        "address": "Pasaje Diana, Avenida Costera Miguel Alemán 121, L-16, Fracc. Magallanes, 39670 Acapulco, Guerrero, México",
+        "lat": 16.859705,
+        "lng": -99.873603,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/acapulco.aspx?lang=eng",
+        "passportServices": false
+       },
+       {
+        "city": "Cabo San Lucas",
+        "type": "Consular Agency of Canada",
+        "phone": "+52 55-5724-9797",
+        "email": "lcabo@international.gc.ca",
+        "address": "Carretera Transpeninsular Km. 0.5, Local 82, Col. El Tezal, 23454 Cabo San Lucas, Baja California Sur, México",
+        "lat": 22.901506,
+        "lng": -109.899599,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/cabo_san_lucas.aspx?lang=eng",
+        "passportServices": false
+       },
+       {
+        "city": "Cancún",
+        "type": "Consular Agency of Canada",
+        "phone": "+52 55-5724-9795",
+        "email": "cncun@international.gc.ca",
+        "address": "Centro Empresarial, Oficina E7, Blvd. Kukulcan Km. 12, Zona Hotelera, 77500 Cancún, Quintana Roo, México",
+        "lat": 21.106841,
+        "lng": -86.764022,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/cancun.aspx?lang=eng",
+        "passportServices": false
+       },
+       {
+        "city": "Mazatlán",
+        "type": "Consular Agency of Canada",
+        "phone": "+52 55-5724-9798",
+        "email": "mztln@international.gc.ca",
+        "address": "Centro Comercial La Marina Business and Life, Blvd. Marina Mazatlán 2302, Office 41, Col. Marina Mazatlán, 82103 Mazatlán, Sinaloa, Mexico",
+        "lat": 23.274546,
+        "lng": -106.454229,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/mazatlan.aspx?lang=eng",
+        "passportServices": false
+       },
+       {
+        "city": "Playa Del Carmen",
+        "type": "Consular Agency of Canada",
+        "phone": "+52 55-5724-9796",
+        "email": "crmen@international.gc.ca",
+        "address": "Plaza Paraíso Caribe, Modulo C, Planta 2, Oficina C21 - 24, Av. 10 Sur entre Calle 3 y 5 Sur, M-35, Lote 1, Colonia Centro, 77710 Playa del Carmen, Quintana Roo, México",
+        "lat": 20.620746,
+        "lng": -87.078264,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/playa_del_carmen.aspx?lang=eng",
+        "passportServices": true
+       },
+       {
+        "city": "Puerto Vallarta",
+        "type": "Consular Agency of Canada",
+        "phone": "+52 55-5724-9799",
+        "email": "pvrta@international.gc.ca",
+        "address": "Plaza Peninsula, Local Sub F, Boulevard Francisco Medina Ascencio 2485, Zona Hotelera Norte, 48300 Puerto Vallarta, Jalisco, México",
+        "lat": 20.646788,
+        "lng": -105.239151,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/puerto_vallarta.aspx?lang=eng",
+        "passportServices": false
+       },
+       {
+        "city": "Tijuana",
+        "type": "Honorary consul of Canada",
+        "phone": "664-684-0461",
+        "email": "tjuna@international.gc.ca",
+        "address": "Germán Gedovius No.10411-101, Condominio del Parque, Zona Río, 22010 Tijuana, Baja California Norte, México",
+        "lat": 32.520393,
+        "lng": -117.012578,
+        "url": "https://www.international.gc.ca/country-pays/mexico-mexique/tijuana.aspx?lang=eng",
+        "passportServices": false
+       }
+      ]
+     }
+    }
+   }
+  },
+  "fetchedAt": "2026-09-29T15:00:18"
+ },
+ "JP_en": {
+  "country": {
+   "iso": "JP",
+   "name": "Japan",
+   "level": 1,
+   "levelText": "Take normal security precautions",
+   "summary": "Take normal security precautions in Japan.",
+   "points": [],
+   "regions": [],
+   "change": "Natural disasters and climate section – removed information on Tropical Storm Surigae",
+   "entry": {
+    "passport": "Your passport must be valid for the expected duration of your stay in Japan. If you plan to travel to other countries in the region, check passport validity requirements for the countries you plan to visit.",
+    "visas": [
+     {
+      "label": "Tourist visa",
+      "value": "not required for stays up to a maximum of 90 days"
+     },
+     {
+      "label": "Business visa",
+      "value": "required"
+     },
+     {
+      "label": "Work visa",
+      "value": "required"
+     },
+     {
+      "label": "Student visa",
+      "value": "required"
+     }
+    ]
+   },
+   "help": {
+    "emergency": {
+     "lead": "In case of emergency, dial:",
+     "numbers": [
+      {
+       "label": "police",
+       "number": "110"
+      },
+      {
+       "label": "medical assistance",
+       "number": "119"
+      },
+      {
+       "label": "firefighters",
+       "number": "119"
+      }
+     ]
+    },
+    "offices": [
+     {
+      "city": "Tokyo",
+      "type": "Embassy of Canada",
+      "phone": "81 (3) 5412-6200",
+      "email": "tokyo-consul@international.gc.ca",
+      "address": "3-38 Akasaka 7-chome, Minato-ku, Tokyo, Japan, 107-8503",
+      "lat": 35.673609,
+      "lng": 139.728174,
+      "url": "https://www.international.gc.ca/country-pays/japan-japon/tokyo.aspx?lang=eng",
+      "passportServices": true
+     },
+     {
+      "city": "Fukuoka",
+      "type": "Honorary consul of Canada",
+      "email": "info@canadian-consulate-fukuoka.jp",
+      "address": "c/o Kyushu Electric Power Co, Inc. 1-82 Watanabe-dori 2-chome, Chuo-ku, Fukuoka, Japan, 810-8720",
+      "lat": 33.583544,
+      "lng": 130.404485,
+      "url": "https://www.international.gc.ca/country-pays/japan-japon/fukuoka.aspx?lang=eng",
+      "passportServices": false
+     },
+     {
+      "city": "Hiroshima",
+      "type": "Honorary consul of Canada",
+      "phone": "81(82) 875-7530",
+      "email": "hiroshima-honcon@hue.ac.jp",
+      "address": "c/o Hiroshima University of Economics, 5-37-1, Gion, Asaminami-ku, Hiroshima, Japan 731-0192",
+      "lat": 34.446864115987076,
+      "lng": 132.45647494548484,
+      "url": "https://www.international.gc.ca/country-pays/japan-japon/hiroshima.aspx?lang=eng",
+      "passportServices": false
+     },
+     {
+      "city": "Osaka",
+      "type": "Honorary consul of Canada",
+      "phone": "06-6949-1605",
+      "email": "osaka@international.gc.ca",
+      "address": "Fourth floor of the Osaka Castle Hotel, 1-1 Tenmabashikyomachi, Chuo-ku, Osaka 540-0032",
+      "lat": 34.69034,
+      "lng": 135.515557,
+      "url": "https://www.Canada.ca/Canada-And-Japan",
+      "passportServices": false
+     }
+    ]
+   },
+   "updated": "2026-09-29T04:14:00-04:00",
+   "url": "https://travel.gc.ca/destinations/japan",
+   "prose": {
+    "fr": {
+     "summary": "Prenez des mesures de sécurité normales au Japon.",
+     "points": [],
+     "regions": [],
+     "change": "Section Catastrophes naturelles et climat – retrait de l’information sur la tempête tropicale Surigae",
+     "entry": {
+      "passport": "Votre passeport doit être valide pendant la durée prévue de votre séjour au Japon. Si vous comptez vous rendre dans d’autres pays de la région, vérifiez leurs exigences en matière de validité des passeports.",
+      "visas": [
+       {
+        "label": "Visa de touriste",
+        "value": "non exigé pour les séjours de 90 jours ou moins"
+       },
+       {
+        "label": "Visa d’affaires",
+        "value": "exigé"
+       },
+       {
+        "label": "Visa de travail",
+        "value": "exigé"
+       },
+       {
+        "label": "Visa d’étudiant",
+        "value": "exigé"
+       }
+      ]
+     },
+     "help": {
+      "emergency": {
+       "lead": "En cas d’urgence, composez le :",
+       "numbers": [
+        {
+         "label": "Police",
+         "number": "110"
+        },
+        {
+         "label": "Assistance médicale",
+         "number": "119"
+        },
+        {
+         "label": "Pompiers",
+         "number": "119"
+        }
+       ]
+      },
+      "offices": [
+       {
+        "city": "Tokyo",
+        "type": "Ambassade du Canada",
+        "phone": "81 (3) 5412-6200",
+        "email": "tokyo-consul@international.gc.ca",
+        "address": "3-38 Akasaka 7-chome, Minato-ku, Tokyo, Japon, 107-8503",
+        "lat": 35.673609,
+        "lng": 139.728174,
+        "url": "https://www.international.gc.ca/country-pays/japan-japon/tokyo.aspx?lang=fra",
+        "passportServices": true
+       },
+       {
+        "city": "Fukuoka",
+        "type": "Consul honoraire du Canada",
+        "email": "info@canadian-consulate-fukuoka.jp",
+        "address": "a/s de Kyushu Electric Power Co, Inc. 1-82 Watanabe-dori 2-chome, Chuo-ku, Fukuoka, Japon, 810-8720",
+        "lat": 33.583544,
+        "lng": 130.404485,
+        "url": "https://www.international.gc.ca/country-pays/japan-japon/fukuoka.aspx?lang=fra",
+        "passportServices": false
+       },
+       {
+        "city": "Hiroshima",
+        "type": "Consul honoraire du Canada",
+        "phone": "81(82) 875-7530",
+        "email": "hiroshima-honcon@hue.ac.jp",
+        "address": "a/s de Hiroshima University of Economics, 5-37-1, Gion, Asaminami-ku, Hiroshima, Japon 731-0192",
+        "lat": 34.446864115987076,
+        "lng": 132.45647494548484,
+        "url": "https://www.international.gc.ca/country-pays/japan-japon/hiroshima.aspx?lang=fra",
+        "passportServices": false
+       },
+       {
+        "city": "Osaka",
+        "type": "Consul honoraire du Canada",
+        "phone": "06-6949-1605",
+        "email": "osaka@international.gc.ca",
+        "address": "Quatrième étage de l'hôtel Osaka Castle, 1-1 Tenmabashikyomachi, Chuo-ku, Osaka 540-0032",
+        "lat": 34.69034,
+        "lng": 135.515557,
+        "url": "https://www.Canada.ca/Canada-Et-Japon",
+        "passportServices": false
+       }
+      ]
+     }
+    }
+   }
+  },
+  "fetchedAt": "2026-09-29T04:20:29"
+ },
+ "JP_fr": {
+  "country": {
+   "iso": "JP",
+   "name": "Japon",
+   "level": 1,
+   "levelText": "Prenez des mesures de sécurité normales",
+   "summary": "Prenez des mesures de sécurité normales au Japon.",
+   "points": [],
+   "regions": [],
+   "change": "Section Catastrophes naturelles et climat – retrait de l’information sur la tempête tropicale Surigae",
+   "entry": {
+    "passport": "Votre passeport doit être valide pendant la durée prévue de votre séjour au Japon. Si vous comptez vous rendre dans d’autres pays de la région, vérifiez leurs exigences en matière de validité des passeports.",
+    "visas": [
+     {
+      "label": "Visa de touriste",
+      "value": "non exigé pour les séjours de 90 jours ou moins"
+     },
+     {
+      "label": "Visa d’affaires",
+      "value": "exigé"
+     },
+     {
+      "label": "Visa de travail",
+      "value": "exigé"
+     },
+     {
+      "label": "Visa d’étudiant",
+      "value": "exigé"
+     }
+    ]
+   },
+   "help": {
+    "emergency": {
+     "lead": "En cas d’urgence, composez le :",
+     "numbers": [
+      {
+       "label": "Police",
+       "number": "110"
+      },
+      {
+       "label": "Assistance médicale",
+       "number": "119"
+      },
+      {
+       "label": "Pompiers",
+       "number": "119"
+      }
+     ]
+    },
+    "offices": [
+     {
+      "city": "Tokyo",
+      "type": "Ambassade du Canada",
+      "phone": "81 (3) 5412-6200",
+      "email": "tokyo-consul@international.gc.ca",
+      "address": "3-38 Akasaka 7-chome, Minato-ku, Tokyo, Japon, 107-8503",
+      "lat": 35.673609,
+      "lng": 139.728174,
+      "url": "https://www.international.gc.ca/country-pays/japan-japon/tokyo.aspx?lang=fra",
+      "passportServices": true
+     },
+     {
+      "city": "Fukuoka",
+      "type": "Consul honoraire du Canada",
+      "email": "info@canadian-consulate-fukuoka.jp",
+      "address": "a/s de Kyushu Electric Power Co, Inc. 1-82 Watanabe-dori 2-chome, Chuo-ku, Fukuoka, Japon, 810-8720",
+      "lat": 33.583544,
+      "lng": 130.404485,
+      "url": "https://www.international.gc.ca/country-pays/japan-japon/fukuoka.aspx?lang=fra",
+      "passportServices": false
+     },
+     {
+      "city": "Hiroshima",
+      "type": "Consul honoraire du Canada",
+      "phone": "81(82) 875-7530",
+      "email": "hiroshima-honcon@hue.ac.jp",
+      "address": "a/s de Hiroshima University of Economics, 5-37-1, Gion, Asaminami-ku, Hiroshima, Japon 731-0192",
+      "lat": 34.446864115987076,
+      "lng": 132.45647494548484,
+      "url": "https://www.international.gc.ca/country-pays/japan-japon/hiroshima.aspx?lang=fra",
+      "passportServices": false
+     },
+     {
+      "city": "Osaka",
+      "type": "Consul honoraire du Canada",
+      "phone": "06-6949-1605",
+      "email": "osaka@international.gc.ca",
+      "address": "Quatrième étage de l'hôtel Osaka Castle, 1-1 Tenmabashikyomachi, Chuo-ku, Osaka 540-0032",
+      "lat": 34.69034,
+      "lng": 135.515557,
+      "url": "https://www.Canada.ca/Canada-Et-Japon",
+      "passportServices": false
+     }
+    ]
+   },
+   "updated": "2026-09-29T04:14:00-04:00",
+   "url": "https://voyage.gc.ca/destinations/japon",
+   "prose": {
+    "en": {
+     "summary": "Take normal security precautions in Japan.",
+     "points": [],
+     "regions": [],
+     "change": "Natural disasters and climate section – removed information on Tropical Storm Surigae",
+     "entry": {
+      "passport": "Your passport must be valid for the expected duration of your stay in Japan. If you plan to travel to other countries in the region, check passport validity requirements for the countries you plan to visit.",
+      "visas": [
+       {
+        "label": "Tourist visa",
+        "value": "not required for stays up to a maximum of 90 days"
+       },
+       {
+        "label": "Business visa",
+        "value": "required"
+       },
+       {
+        "label": "Work visa",
+        "value": "required"
+       },
+       {
+        "label": "Student visa",
+        "value": "required"
+       }
+      ]
+     },
+     "help": {
+      "emergency": {
+       "lead": "In case of emergency, dial:",
+       "numbers": [
+        {
+         "label": "police",
+         "number": "110"
+        },
+        {
+         "label": "medical assistance",
+         "number": "119"
+        },
+        {
+         "label": "firefighters",
+         "number": "119"
+        }
+       ]
+      },
+      "offices": [
+       {
+        "city": "Tokyo",
+        "type": "Embassy of Canada",
+        "phone": "81 (3) 5412-6200",
+        "email": "tokyo-consul@international.gc.ca",
+        "address": "3-38 Akasaka 7-chome, Minato-ku, Tokyo, Japan, 107-8503",
+        "lat": 35.673609,
+        "lng": 139.728174,
+        "url": "https://www.international.gc.ca/country-pays/japan-japon/tokyo.aspx?lang=eng",
+        "passportServices": true
+       },
+       {
+        "city": "Fukuoka",
+        "type": "Honorary consul of Canada",
+        "email": "info@canadian-consulate-fukuoka.jp",
+        "address": "c/o Kyushu Electric Power Co, Inc. 1-82 Watanabe-dori 2-chome, Chuo-ku, Fukuoka, Japan, 810-8720",
+        "lat": 33.583544,
+        "lng": 130.404485,
+        "url": "https://www.international.gc.ca/country-pays/japan-japon/fukuoka.aspx?lang=eng",
+        "passportServices": false
+       },
+       {
+        "city": "Hiroshima",
+        "type": "Honorary consul of Canada",
+        "phone": "81(82) 875-7530",
+        "email": "hiroshima-honcon@hue.ac.jp",
+        "address": "c/o Hiroshima University of Economics, 5-37-1, Gion, Asaminami-ku, Hiroshima, Japan 731-0192",
+        "lat": 34.446864115987076,
+        "lng": 132.45647494548484,
+        "url": "https://www.international.gc.ca/country-pays/japan-japon/hiroshima.aspx?lang=eng",
+        "passportServices": false
+       },
+       {
+        "city": "Osaka",
+        "type": "Honorary consul of Canada",
+        "phone": "06-6949-1605",
+        "email": "osaka@international.gc.ca",
+        "address": "Fourth floor of the Osaka Castle Hotel, 1-1 Tenmabashikyomachi, Chuo-ku, Osaka 540-0032",
+        "lat": 34.69034,
+        "lng": 135.515557,
+        "url": "https://www.Canada.ca/Canada-And-Japan",
+        "passportServices": false
+       }
+      ]
+     }
+    }
+   }
+  },
+  "fetchedAt": "2026-09-29T04:20:29"
+ },
+ "CU_en": {
+  "country": {
+   "iso": "CU",
+   "name": "Cuba",
+   "level": 3,
+   "levelText": "Avoid non-essential travel",
+   "summary": "Avoid non-essential travel to Cuba due to worsening shortages of fuel, electricity, and basic necessities including food, water, and medicine. These shortages can also affect services at resorts and disrupt ground transportation. Fuel availability has decreased and is difficult to predict. These conditions are likely to persist in the immediate term and could worsen further during the upcoming hurricane season.",
+   "points": [
+    "The situation is affecting the operations of the Embassy of Canada in Havana. Our ability to provide consular services may become limited, particularly if the situation deteriorates further.",
+    "All Canadian airlines have suspended service to Cuba until further notice. Commercial flights remain available through international airlines; however, they may become limited on short notice. You should consider leaving while options remain available.",
+    "Sign up for the Registration of Canadians Abroad service to receive important updates.",
+    "Make sure your travel documents are up to date and secure at all times.",
+    "If you require emergency consular assistance, contact the Emergency Watch and Response Centre."
+   ],
+   "regions": [],
+   "change": "Entry and exit requirements section – updated information on payment for medical bills; Health section – added information on payment for medical bills",
+   "entry": {
+    "passport": "Your passport must be valid for the expected duration of your stay in Cuba.",
+    "visas": [
+     {
+      "label": "Tourist visa",
+      "value": "required"
+     },
+     {
+      "label": "Family visa",
+      "value": "required"
+     },
+     {
+      "label": "Business visa",
+      "value": "required"
+     }
+    ]
+   },
+   "help": {
+    "emergency": {
+     "lead": "In case of emergency, dial:",
+     "numbers": [
+      {
+       "label": "police",
+       "number": "106"
+      },
+      {
+       "label": "medical assistance",
+       "number": "104"
+      },
+      {
+       "label": "firefighters",
+       "number": "105"
+      }
+     ]
+    },
+    "offices": [
+     {
+      "city": "Havana",
+      "type": "Embassy of Canada",
+      "phone": "+53 7 204-2516",
+      "email": "HAVAN.Consular-Consulaire@international.gc.ca",
+      "address": "Calle 30, No. 518 esquina a 7ma, Miramar, Havana, 11300, Cuba",
+      "lat": 23.11783,
+      "lng": -82.423445,
+      "url": "https://www.international.gc.ca/country-pays/cuba/havana-la_havane.aspx?lang=eng",
+      "passportServices": false
+     },
+     {
+      "city": "Guardalavaca",
+      "type": "Consulate of Canada",
+      "phone": "(53-24) 430-320",
+      "email": "guardalavaca@international.gc.ca",
+      "address": "Hotel Atlantico, Suite 1, Guardalavaca, Holguín, Cuba",
+      "lat": 21.122302,
+      "lng": -75.835629,
+      "passportServices": false
+     },
+     {
+      "city": "Varadero",
+      "type": "Consulate of Canada",
+      "phone": "+53 7 2042516",
+      "email": "HAVAN.Consular-Consulaire@international.gc.ca",
+      "lat": 23.137734,
+      "lng": -81.281937,
+      "passportServices": false
+     }
+    ]
+   },
+   "updated": "2026-09-28T14:58:00-04:00",
+   "url": "https://travel.gc.ca/destinations/cuba",
+   "prose": {
+    "fr": {
+     "summary": "Évitez tout voyage non essentiel à Cuba en raison de l'aggravation des pénuries de carburant, d'électricité, de produits de première nécessité, notamment de nourriture, d'eau et de médicaments. Ces pénuries peuvent également affecter les services dans les stations balnéaires et perturber le transport routier. La disponibilité du carburant est réduite et difficile à prévoir. Ces conditions devraient perdurer dans l'immédiat et pourraient encore s'aggraver au cours de la saison des ouragans à venir.",
+     "points": [
+      "La situation affecte le fonctionnement de l'ambassade du Canada à La Havane. Notre capacité à fournir des services consulaires pourrait être réduite, surtout si la situation venait à s'aggraver davantage.",
+      "Toutes les compagnies aériennes canadiennes ont suspendu leur service vers Cuba jusqu'à nouvel ordre. Des vols commerciaux restent disponibles auprès de compagnies aériennes internationales, mais leur disponibilité pourrait être réduite à court préavis. Vous devriez envisager de quitter le pays tant que des options sont encore disponibles.",
+      "Inscrivez-vous auprès du service d'Inscription des Canadiens à l'étranger afin de recevoir des mises à jour importantes.",
+      "Assurez-vous que vos documents de voyage sont à jour et dans un lieu sûr en tout temps.",
+      "Si vous avez besoin de l'aide consulaire d'urgence, contactez le Centre de surveillance d’intervention d’urgence."
+     ],
+     "regions": [],
+     "change": "Section Exigences d'entrée et de sortie – mise à jour de l’information sur le paiement des factures médicales; Section Santé – ajout d’information sur le paiement des factures médicales",
+     "entry": {
+      "passport": "Votre passeport doit être valide pendant la durée de votre séjour à Cuba.",
+      "visas": [
+       {
+        "label": "Visa de touriste",
+        "value": "exigé"
+       },
+       {
+        "label": "Visa familial",
+        "value": "exigé"
+       },
+       {
+        "label": "Visa d’affaires",
+        "value": "exigé"
+       }
+      ]
+     },
+     "help": {
+      "emergency": {
+       "lead": "En cas d’urgence, composez le:",
+       "numbers": [
+        {
+         "label": "Police",
+         "number": "106"
+        },
+        {
+         "label": "Assistance médicale",
+         "number": "104"
+        },
+        {
+         "label": "Pompiers",
+         "number": "105"
+        }
+       ]
+      },
+      "offices": [
+       {
+        "city": "La Havane",
+        "type": "Ambassade du Canada",
+        "phone": "+53 7 204-2516",
+        "email": "HAVAN.Consular-Consulaire@international.gc.ca",
+        "address": "Calle 30, No. 518 esquina a 7ma, Miramar, La Havane, 11300, Cuba",
+        "lat": 23.11783,
+        "lng": -82.423445,
+        "url": "https://www.international.gc.ca/country-pays/cuba/havana-la_havane.aspx?lang=fra",
+        "passportServices": false
+       },
+       {
+        "city": "Guardalavaca",
+        "type": "Consulat du Canada",
+        "phone": "(53-24) 430-320",
+        "email": "guardalavaca@international.gc.ca",
+        "address": "Hôtel Atlantico, Suite 1, Guardalavaca, Holguín, Cuba",
+        "lat": 21.122302,
+        "lng": -75.835629,
+        "passportServices": false
+       },
+       {
+        "city": "Varadero",
+        "type": "Consulat du Canada",
+        "phone": "+53 7 2042516",
+        "email": "HAVAN.Consular-Consulaire@international.gc.ca",
+        "lat": 23.137734,
+        "lng": -81.281937,
+        "passportServices": false
+       }
+      ]
+     }
+    }
+   }
+  },
+  "fetchedAt": "2026-09-28T15:00:16"
+ },
+ "IL_en": {
+  "country": {
+   "iso": "IL",
+   "name": "Israel and Palestine",
+   "level": 3,
+   "levelText": "Avoid non-essential travel",
+   "summary": "Avoid non-essential travel to Israel due to the volatile security situation in the region.",
+   "points": [],
+   "regions": [
+    {
+     "title": "Palestine",
+     "level": 4,
+     "levelText": "Avoid all travel",
+     "reason": "Avoid all travel to Palestine due to the ongoing military activities, the dire humanitarian conditions, the volatile and unpredictable security situation, and extensive damage to infrastructure in the Gaza Strip, and the volatile security situation in the West Bank",
+     "areas": [
+      {
+       "text": "Highway 1"
+      },
+      {
+       "text": "Route 90, from the intersection with Highway 1 to King Hussein Bridge (Allenby), near Jericho"
+      }
+     ]
+    },
+    {
+     "title": "Border with Syria",
+     "level": 4,
+     "levelText": "Avoid all travel",
+     "reason": "Avoid all travel to the parts of the Golan Heights that border Syria, east of Highway 98, due to military activity",
+     "areas": []
+    },
+    {
+     "title": "Border with Lebanon",
+     "level": 4,
+     "levelText": "Avoid all travel",
+     "reason": "Avoid all travel to the area within 5 kilometres of the border with Lebanon due to ongoing military operations",
+     "areas": []
+    },
+    {
+     "title": "Border with the Gaza Strip",
+     "level": 4,
+     "levelText": "Avoid all travel",
+     "reason": "Avoid all travel to the area within 10km of the border with the Gaza Strip due to the risk of rocket and mortar fire, gunfire and military activity",
+     "areas": []
+    },
+    {
+     "title": "Jerusalem",
+     "level": 3,
+     "levelText": "Avoid non-essential travel",
+     "reason": "Avoid non-essential travel to Jerusalem due to the volatile security situation in the region",
+     "areas": []
+    }
+   ],
+   "change": "Health – editorial change",
+   "entry": {
+    "passport": "Your passport must be valid for at least 90 days beyond the date of entry into Israel, the West Bank or the Gaza Strip.",
+    "visas": []
+   },
+   "help": {
+    "emergency": {
+     "lead": "In case of emergency, dial:",
+     "numbers": [
+      {
+       "label": "police",
+       "number": "100"
+      },
+      {
+       "label": "medical assistance",
+       "number": "101"
+      },
+      {
+       "label": "firefighters",
+       "number": "102"
+      }
+     ]
+    },
+    "tollFree": "014-800-2326-6831",
+    "offices": [
+     {
+      "city": "Tel Aviv",
+      "type": "Embassy of Canada",
+      "phone": "(0)3-636-3300",
+      "email": "taviv.consular@international.gc.ca",
+      "address": "Canada House, 3/5 Nirim Street, 4th Floor, Tel Aviv 6706038, Israel",
+      "lat": 32.06242,
+      "lng": 34.79066,
+      "url": "https://www.international.gc.ca/country-pays/israel/tel_aviv.aspx?lang=eng",
+      "passportServices": false
+     },
+     {
+      "city": "Ramallah",
+      "type": "Representative Office of Canada",
+      "phone": "+972(0)2-297-8430",
+      "email": "RMLAH-Consul@international.gc.ca",
+      "address": "12 Elias Odeh Street, Ramallah, Palestine",
+      "lat": 31.905945,
+      "lng": 35.201783,
+      "url": "https://www.international.gc.ca/country-pays/palestine/ramallah.aspx?lang=eng",
+      "passportServices": false
+     }
+    ]
+   },
+   "updated": "2026-09-24T08:53:00-04:00",
+   "url": "https://travel.gc.ca/destinations/israel-and-palestine",
+   "prose": {
+    "fr": {
+     "summary": "Évitez tout voyage non essentiel en Israël en raison de l’instabilité de la situation sécuritaire dans la région.",
+     "points": [],
+     "regions": [
+      {
+       "title": "Palestine",
+       "level": 4,
+       "levelText": "Évitez tout voyage",
+       "reason": "Évitez tout voyage en Palestine en raison des activités militaires en cours, des conditions humanitaires difficiles, de l’instabilité et l’imprévisibilité de la situation en matière de sécurité et des dommages importants dans la bande de Gaza, et l'instabilité de la situation en matière de sécurité en Cisjordanie",
+       "areas": [
+        {
+         "text": "l'autoroute 1;"
+        },
+        {
+         "text": "la route 90, de l'intersection avec l'autoroute 1 jusqu'au pont Roi Hussein (Allenby), près de Jéricho."
+        }
+       ]
+      },
+      {
+       "title": "Frontière avec la Syrie",
+       "level": 4,
+       "levelText": "Évitez tout voyage",
+       "reason": "Évitez tout voyage dans les régions du plateau du Golan qui bordent la Syrie, à l'est de l'autoroute 98, en raison de l'activité militaire",
+       "areas": []
+      },
+      {
+       "title": "Frontière avec le Liban",
+       "level": 4,
+       "levelText": "Évitez tout voyage",
+       "reason": "Évitez tout voyage dans la zone située à moins de 5 kilomètres de la frontière avec le Liban en raison d'opérations militaires en cours",
+       "areas": []
+      },
+      {
+       "title": "Frontière avec la bande de Gaza",
+       "level": 4,
+       "levelText": "Évitez tout voyage",
+       "reason": "Évitez tout voyage à moins de 10 km de la frontière avec la bande de Gaza en raison du risque de tirs de roquettes et de mortiers, de coups de feu et de l'activité militaire",
+       "areas": []
+      },
+      {
+       "title": "Jérusalem",
+       "level": 3,
+       "levelText": "Évitez tout voyage non essentiel",
+       "reason": "Évitez tout voyage non essentiel à Jérusalem en raison de l'imprévisibilité de la situation en matière de sécurité dans la région",
+       "areas": []
+      }
+     ],
+     "change": "Santé – changement mineur",
+     "entry": {
+      "passport": "Votre passeport doit être valide pendant au moins 90 jours après la date d'entrée en Israël, en Cisjordanie ou dans la bande de Gaza.",
+      "visas": []
+     },
+     "help": {
+      "emergency": {
+       "lead": "En cas d’urgence, composez le :",
+       "numbers": [
+        {
+         "label": "police",
+         "number": "100"
+        },
+        {
+         "label": "assistance médicale",
+         "number": "101"
+        },
+        {
+         "label": "pompiers",
+         "number": "102"
+        }
+       ]
+      },
+      "tollFree": "014-800-2326-6831",
+      "offices": [
+       {
+        "city": "Tel Aviv",
+        "type": "Ambassade du Canada",
+        "phone": "(0)3-636-3300",
+        "email": "taviv.consular@international.gc.ca",
+        "address": "Canada House, 3/5 rue Nirim, 4e étage, Tel Aviv 6706038, Israël",
+        "lat": 32.06242,
+        "lng": 34.79066,
+        "url": "https://www.international.gc.ca/country-pays/israel/tel_aviv.aspx?lang=fra",
+        "passportServices": false
+       },
+       {
+        "city": "Ramallah",
+        "type": "Bureau de représentation du Canada",
+        "phone": "+972(0)2-297-8430",
+        "email": "RMLAH-Consul@international.gc.ca",
+        "address": "12, rue Elias Odeh, Ramallah, Palestine",
+        "lat": 31.905945,
+        "lng": 35.201783,
+        "url": "https://www.international.gc.ca/country-pays/palestine/ramallah.aspx?lang=fra",
+        "passportServices": false
+       }
+      ]
+     }
+    }
+   }
+  },
+  "fetchedAt": "2026-09-24T09:15:38"
+ },
+ "UA_fr": {
+  "country": {
+   "iso": "UA",
+   "name": "Ukraine",
+   "level": 4,
+   "levelText": "Évitez tout voyage",
+   "summary": "Évitez tout voyage en Ukraine en raison de l'invasion militaire russe.",
+   "points": [
+    "Votre sécurité est grandement compromise, particulièrement si vous prenez part activement au combat.",
+    "La Russie mène des attaques de drones et de missiles contre les infrastructures civiles et gouvernementales ukrainiennes. Ces attaques visent notamment les centres-villes et les zones peuplées, y compris Kiev. L’invasion russe en cours représente un risque important pour la sécurité, même si vous n’êtes pas près des lignes de front.",
+    "Si vous êtes en Ukraine, vous devriez envisager de quitter le pays si vous pouvez le faire de façon sécuritaire.",
+    "Notre capacité à fournir des services consulaires en Ukraine est très limitée."
+   ],
+   "regions": [],
+   "change": "Santé – changement mineur",
+   "entry": {
+    "passport": "Votre passeport doit être valide pendant au moins 6 mois après la date prévue de votre départ de l’Ukraine.",
+    "visas": [
+     {
+      "label": "Visa de touriste",
+      "value": "non exigé pour les séjours de 90 jours ou moins par période de 180 jours"
+     },
+     {
+      "label": "Visa d’affaires",
+      "value": "non exigé pour les séjours de 90 jours ou moins par période de 180 jours"
+     },
+     {
+      "label": "Visa d’étudiant",
+      "value": "non exigé pour les séjours de 90 jours ou moins par période de 180 jours"
+     },
+     {
+      "label": "Permis de travail",
+      "value": "exigé"
+     }
+    ]
+   },
+   "help": {
+    "emergency": {
+     "lead": "En cas d’urgence, composez :",
+     "numbers": [
+      {
+       "label": "Police",
+       "number": "102"
+      },
+      {
+       "label": "Aide médicale",
+       "number": "103"
+      },
+      {
+       "label": "Pompiers",
+       "number": "101"
+      },
+      {
+       "label": "Urgences générales",
+       "number": "112 (pour les téléphones cellulaires seulement)"
+      }
+     ]
+    },
+    "offices": [
+     {
+      "city": "Kiev",
+      "type": "Ambassade du Canada",
+      "phone": "613-996-8885 (Centre de surveillance et d’intervention d’urgence / Emergency Watch Response Centre)",
+      "email": "kyiv-consular@international.gc.ca",
+      "address": "13A, rue Kostelna, Kyiv 01901, Ukraine",
+      "lat": 50.452808,
+      "lng": 30.524553,
+      "url": "https://www.international.gc.ca/country-pays/ukraine/kyiv.aspx?lang=fra",
+      "passportServices": true
+     }
+    ]
+   },
+   "updated": "2026-09-24T08:53:00-04:00",
+   "url": "https://voyage.gc.ca/destinations/ukraine",
+   "prose": {
+    "en": {
+     "summary": "Avoid all travel to Ukraine due to the Russian military invasion. Your safety is at high risk, particularly if you engage in active combat.",
+     "points": [
+      "Russia launches missile and drone strikes against Ukrainian civilian and government infrastructure. These include attacks on city centres and populated areas, including Kyiv. The ongoing Russian invasion poses a significant security risk, even if you are not near the front lines.",
+      "If you are in Ukraine, you should consider leaving the country if you can do so safely.",
+      "Our ability to provide consular services in Ukraine is severely limited."
+     ],
+     "regions": [],
+     "change": "Health – editorial change",
+     "entry": {
+      "passport": "Your passport must be valid for at least 6 months beyond the date you expect to leave from Ukraine.",
+      "visas": [
+       {
+        "label": "Tourist visa",
+        "value": "not required for stays up to 90 days within a 180-day period"
+       },
+       {
+        "label": "Business visa",
+        "value": "not required for stays up to 90 days within a 180-day period"
+       },
+       {
+        "label": "Student visa",
+        "value": "not required for stays up to 90 days within a 180-day period"
+       },
+       {
+        "label": "Work permit",
+        "value": "required"
+       }
+      ]
+     },
+     "help": {
+      "emergency": {
+       "lead": "In case of emergency, dial:",
+       "numbers": [
+        {
+         "label": "police",
+         "number": "102"
+        },
+        {
+         "label": "medical assistance",
+         "number": "103"
+        },
+        {
+         "label": "firefighters",
+         "number": "101"
+        },
+        {
+         "label": "general emergencies",
+         "number": "112 (from cell phones only)"
+        }
+       ]
+      },
+      "offices": [
+       {
+        "city": "Kyiv",
+        "type": "Embassy of Canada",
+        "phone": "613-996-8885 (Centre de surveillance et d’intervention d’urgence / Emergency Watch Response Centre)",
+        "email": "kyiv-consular@international.gc.ca",
+        "address": "13A Kostelna Street, Kyiv 01901, Ukraine",
+        "lat": 50.452808,
+        "lng": 30.524553,
+        "url": "https://www.international.gc.ca/country-pays/ukraine/kyiv.aspx?lang=eng",
+        "passportServices": true
+       }
+      ]
+     }
+    }
+   }
+  },
+  "fetchedAt": "2026-09-24T09:32:46"
+ },
+ "HT_en": {
+  "country": {
+   "iso": "HT",
+   "name": "Haiti",
+   "level": 4,
+   "levelText": "Avoid all travel",
+   "summary": "Avoid all travel to Haiti due to the threat posed by kidnappings, gang violence and the potential for civil unrest throughout the country.",
+   "points": [
+    "If you are in Haiti, register or update your personal information through the Registration of Canadians Abroad service and encourage other Canadian citizens in Haiti to do so.",
+    "Make sure your travel documents and those of your eligible family members are up to date and secure at all times."
+   ],
+   "regions": [],
+   "change": "Health – editorial change",
+   "entry": {
+    "passport": "Your passport must be valid for the expected duration of your stay in Haiti.",
+    "visas": [
+     {
+      "label": "Tourist visa",
+      "value": "not required for stays up to 90 days"
+     },
+     {
+      "label": "Business visa",
+      "value": "not required"
+     },
+     {
+      "label": "Student visa",
+      "value": "required"
+     },
+     {
+      "label": "Work permit",
+      "value": "required"
+     }
+    ]
+   },
+   "help": {
+    "emergency": {
+     "primary": "114",
+     "lead": "In case of emergency, dial 114.",
+     "numbers": []
+    },
+    "offices": [
+     {
+      "city": "Port-au-Prince",
+      "type": "Embassy of Canada",
+      "phone": "011 (509) 2812-9000",
+      "email": "prncecs@international.gc.ca",
+      "address": "Delmas Road, between Delmas 75 and 71, Port-au-Prince",
+      "lat": 18.535301,
+      "lng": -72.292375,
+      "url": "https://www.international.gc.ca/country-pays/haiti/port_au_prince.aspx?lang=eng",
+      "passportServices": true
+     }
+    ]
+   },
+   "updated": "2026-09-24T08:53:00-04:00",
+   "url": "https://travel.gc.ca/destinations/haiti",
+   "prose": {
+    "fr": {
+     "summary": "Évitez tout voyage en Haïti en raison de la menace que représentent les enlèvements, la violence reliée aux gangs et les possibles troubles civils dans l'ensemble du pays.",
+     "points": [
+      "Si vous êtes en Haïti, enregistrez ou mettez à jour vos renseignements personnels au moyen du service d'Inscription des Canadiens à l'étranger et encouragez les autres citoyens canadiens en Haïti à le faire.",
+      "Assurez-vous que vos documents de voyage, ainsi que ceux des membres éligibles de votre famille, sont à jour et rangés en lieu sûr en tout temps."
+     ],
+     "regions": [],
+     "change": "Santé – changement mineur",
+     "entry": {
+      "passport": "Votre passeport doit être valide pendant toute la durée prévue de votre séjour en Haïti.",
+      "visas": [
+       {
+        "label": "Visa de touriste",
+        "value": "non exigé pour les séjours de moins de 90 jours"
+       },
+       {
+        "label": "Visa d’affaires",
+        "value": "non exigé"
+       },
+       {
+        "label": "Visa d’étudiant",
+        "value": "exigé"
+       },
+       {
+        "label": "Permis de travail",
+        "value": "exigé"
+       }
+      ]
+     },
+     "help": {
+      "emergency": {
+       "primary": "114",
+       "lead": "En cas d’urgence, composez le 114.",
+       "numbers": []
+      },
+      "offices": [
+       {
+        "city": "Port-au-Prince",
+        "type": "Ambassade du Canada",
+        "phone": "011 (509) 2812-9000",
+        "email": "prncecs@international.gc.ca",
+        "address": "Route de Delmas, entre Delmas 75 et 71, Port-au-Prince",
+        "lat": 18.535301,
+        "lng": -72.292375,
+        "url": "https://www.international.gc.ca/country-pays/haiti/port_au_prince.aspx?lang=fra",
+        "passportServices": true
+       }
+      ]
+     }
+    }
+   }
+  },
+  "fetchedAt": "2026-09-24T09:14:13"
+ },
+ "TH_en": {
+  "country": {
+   "iso": "TH",
+   "name": "Thailand",
+   "level": 2,
+   "levelText": "Exercise a high degree of caution",
+   "summary": "Exercise a high degree of caution in Thailand due to ongoing political tensions and sporadic demonstrations in Bangkok and elsewhere in the country.",
+   "points": [],
+   "regions": [
+    {
+     "title": "Thailand-Cambodia border",
+     "level": 4,
+     "levelText": "Avoid all travel",
+     "reason": "Avoid all travel to the area within 50 kilometres of the Thailand-Cambodia border due to ongoing tensions in the region",
+     "areas": []
+    },
+    {
+     "title": "Southern provinces of Narathiwat, Pattani, Yala and southern Songkhla province",
+     "level": 4,
+     "levelText": "Avoid all travel",
+     "reason": "Avoid all travel to the following southern provinces and region due to violent attacks from separatist insurgents and the unpredictable security situation",
+     "areas": [
+      {
+       "text": "Narathiwat"
+      },
+      {
+       "text": "Pattani"
+      },
+      {
+       "text": "Yala"
+      },
+      {
+       "text": "southern Songkhla province",
+       "except": [
+        "Hat Yai city",
+        "east of Highways 408 and 4113, including Sakom"
+       ]
+      }
+     ]
+    }
+   ],
+   "change": "Health – editorial change",
+   "entry": {
+    "passport": "Your passport must be valid at least 6 months upon entry into Thailand.",
+    "visas": [
+     {
+      "label": "Tourist visa",
+      "value": "not required for stays of up to 30 days"
+     },
+     {
+      "label": "Business visa",
+      "value": "required"
+     },
+     {
+      "label": "Student visa",
+      "value": "required"
+     },
+     {
+      "label": "Work visa",
+      "value": "required"
+     }
+    ]
+   },
+   "help": {
+    "emergency": {
+     "lead": "In case of emergency, dial:",
+     "numbers": [
+      {
+       "label": "police",
+       "number": "191"
+      },
+      {
+       "label": "tourist police",
+       "number": "1155"
+      },
+      {
+       "label": "medical assistance",
+       "number": "1669"
+      },
+      {
+       "label": "firefighters",
+       "number": "199"
+      }
+     ]
+    },
+    "tollFree": "001-800-156-220-0142",
+    "offices": [
+     {
+      "city": "Bangkok",
+      "type": "Embassy of Canada",
+      "phone": "+66 (0) 2646 4300",
+      "email": "bangkok-consul@international.gc.ca",
+      "address": "15th Floor, Abdulrahim Place, 990 Rama IV, Bangrak, Bangkok, 10500, Thailand",
+      "lat": 13.727427,
+      "lng": 100.539319,
+      "url": "https://www.international.gc.ca/country-pays/thailand-thailande/bangkok.aspx?lang=eng",
+      "passportServices": true
+     },
+     {
+      "city": "Phuket",
+      "type": "Consulate General of Australia",
+      "phone": "+66 76 317 700",
+      "email": "consular.phuket@dfat.gov.au",
+      "address": "6th Floor CCM Complex, 77/77 Chalermprakiat Rama 9 Road (Bypass Road), Muang Phuket, Thailand",
+      "lat": 7.91045,
+      "lng": 98.367121,
+      "url": "https://www.international.gc.ca/country-pays/thailand-thailande/phuket.aspx?lang=eng",
+      "passportServices": false
+     },
+     {
+      "city": "Chiang Mai",
+      "type": "Honorary consul of Canada",
+      "phone": "+66 0 5385 0147 / +66 0 5324 2292",
+      "email": "chiang-mai@international.gc.ca",
+      "address": "151 Super Highway, Tambon Tahsala, Amphur Muang, Chiang Mai, 50000, Thailand",
+      "lat": 18.762564,
+      "lng": 99.030227,
+      "url": "https://www.international.gc.ca/country-pays/thailand-thailande/chiang_mai.aspx?lang=eng",
+      "passportServices": false
+     }
+    ]
+   },
+   "updated": "2026-09-24T08:53:00-04:00",
+   "url": "https://travel.gc.ca/destinations/thailand",
+   "prose": {
+    "fr": {
+     "summary": "Faites preuve d’une grande prudence en Thaïlande en raison des tensions politiques et des manifestations sporadiques à Bangkok et ailleurs dans le pays.",
+     "points": [],
+     "regions": [
+      {
+       "title": "Frontière entre la Thaïlande et le Cambodge",
+       "level": 4,
+       "levelText": "Évitez tout voyage",
+       "reason": "Évitez tout voyage dans la zone à moins de 50 km de la frontière entre la Thaïlande et le Cambodge en raison des tensions en cours dans la région",
+       "areas": []
+      },
+      {
+       "title": "Provinces méridionales de Narathiwat, Pattani, Yala et le sud de la province de Songkhla",
+       "level": 4,
+       "levelText": "Évitez tout voyage",
+       "reason": "Évitez tout voyage dans les provinces et régions du sud suivantes en raison des attaques violentes perpétrées par des insurgés séparatistes et de l’imprévisibilité des conditions de sécurité",
+       "areas": [
+        {
+         "text": "Narathiwat;"
+        },
+        {
+         "text": "Pattani;"
+        },
+        {
+         "text": "Yala;"
+        },
+        {
+         "text": "sud de la province de Songkhla",
+         "except": [
+          "ville de Hat Yai;",
+          "à l'est des autoroutes 408 et 4113, y compris Sakom."
+         ]
+        }
+       ]
+      }
+     ],
+     "change": "Santé – changement mineur",
+     "entry": {
+      "passport": "Votre passeport doit être valide pendant au moins 6 mois lors de votre entrée en Thaïlande.",
+      "visas": [
+       {
+        "label": "Visa de tourist",
+        "value": "non exigé pour les séjours de 30 jours ou moins"
+       },
+       {
+        "label": "Visa d'affaires",
+        "value": "exigé"
+       },
+       {
+        "label": "Visa d'étudiant",
+        "value": "exigé"
+       },
+       {
+        "label": "Visa de travail",
+        "value": "exigé"
+       }
+      ]
+     },
+     "help": {
+      "emergency": {
+       "lead": "En cas d’urgence, composez le:",
+       "numbers": [
+        {
+         "label": "Police",
+         "number": "191"
+        },
+        {
+         "label": "Police touristique",
+         "number": "1155"
+        },
+        {
+         "label": "Assistance médicale",
+         "number": "1669"
+        },
+        {
+         "label": "Pompiers",
+         "number": "199"
+        }
+       ]
+      },
+      "tollFree": "001-800-156-220-0142",
+      "offices": [
+       {
+        "city": "Bangkok",
+        "type": "Ambassade du Canada",
+        "phone": "+66 (0) 2646 4300",
+        "email": "bangkok-consul@international.gc.ca",
+        "address": "15ième étage, Place Abdulrahim, 990 Rama IV, Bangrak, Bangkok, 10500, Thaïlande",
+        "lat": 13.727427,
+        "lng": 100.539319,
+        "url": "https://www.international.gc.ca/country-pays/thailand-thailande/bangkok.aspx?lang=fra",
+        "passportServices": true
+       },
+       {
+        "city": "Phuket",
+        "type": "Consulat général d'Australie",
+        "phone": "+66 76 317 700",
+        "email": "consular.phuket@dfat.gov.au",
+        "address": "6e étage, Complexe CCM, 77/77 rue Chalermprakiat Rama 9 (voie de contournement), Muang Phuket, Thaïlande",
+        "lat": 7.91045,
+        "lng": 98.367121,
+        "url": "https://www.international.gc.ca/country-pays/thailand-thailande/phuket.aspx?lang=fra",
+        "passportServices": false
+       },
+       {
+        "city": "Chiang Mai",
+        "type": "Consul honoraire du Canada",
+        "phone": "+66 0 5385 0147 / +66 0 5324 2292",
+        "email": "chiang-mai@international.gc.ca",
+        "address": "151 Super Highway, Tambon Tahsala, Amphur Muang, Chiang Mai, 50000, Thaïlande",
+        "lat": 18.762564,
+        "lng": 99.030227,
+        "url": "https://www.international.gc.ca/country-pays/thailand-thailande/chiang_mai.aspx?lang=fra",
+        "passportServices": false
+       }
+      ]
+     }
+    }
+   }
+  },
+  "fetchedAt": "2026-09-24T09:30:55"
+ }
+}

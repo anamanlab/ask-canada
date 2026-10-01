@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ask Canada</title>
+<meta name="description" content="Renewing an adult Canadian passport — plain-language answer with a renewal planner.">
+<meta name="theme-color" content="#FCFBF8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080B11" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FCFBF8; --paper-2:#F4F2EE; --card:#FFFFFF; --sunk:#F7F6F2;
+  --ink:#0C1420; --ink-2:#343D4B; --muted:#646C7A; --faint:#8A919D;
+  --line:rgba(12,20,32,.09); --line-2:rgba(12,20,32,.14);
+  --maple:#D52B1E; --maple-hi:#E8382A; --maple-deep:#A3170D; --maple-tint:#FBECEA; --maple-ink:#B51F14;
+  --ok:#137A4B; --ok-tint:#E6F4EC; --warn-ink:#8A4B00; --warn-tint:#FFF4E0;
+  --shadow-1:0 1px 1px rgba(12,20,32,.04),0 2px 6px rgba(12,20,32,.04);
+  --shadow-2:0 1px 2px rgba(12,20,32,.05),0 8px 24px -6px rgba(12,20,32,.10),0 24px 60px -24px rgba(12,20,32,.18);
+  --shadow-3:0 2px 4px rgba(12,20,32,.04),0 20px 50px -12px rgba(12,20,32,.22),0 60px 120px -40px rgba(12,20,32,.28);
+  --serif:"Newsreader",ui-serif,Georgia,serif;
+  --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --spring:cubic-bezier(.34,1.36,.64,1);
+  --gutter:clamp(16px,4vw,40px);
+  --col:760px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#080B11; --paper-2:#121821; --card:#10161F; --sunk:#0C1118;
+    --ink:#F2F0EB; --ink-2:#C9CDD4; --muted:#979EAA; --faint:#6F7784;
+    --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+    --maple:#E0342A; --maple-hi:#F04A3F; --maple-deep:#B8231A; --maple-tint:rgba(224,52,42,.14); --maple-ink:#FF6A5E; --maple-text:#FF5B4F;
+    --ok:#4BC98A; --ok-tint:rgba(75,201,138,.12); --warn-ink:#F5B454; --warn-tint:rgba(245,180,84,.1);
+    --shadow-1:0 1px 0 rgba(255,255,255,.03) inset,0 2px 6px rgba(0,0,0,.3);
+    --shadow-2:0 1px 0 rgba(255,255,255,.04) inset,0 12px 30px -8px rgba(0,0,0,.6);
+    --shadow-3:0 1px 0 rgba(255,255,255,.05) inset,0 30px 80px -20px rgba(0,0,0,.8);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#080B11; --paper-2:#121821; --card:#10161F; --sunk:#0C1118;
+  --ink:#F2F0EB; --ink-2:#C9CDD4; --muted:#979EAA; --faint:#6F7784;
+  --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --maple:#E0342A; --maple-hi:#F04A3F; --maple-deep:#B8231A; --maple-tint:rgba(224,52,42,.14); --maple-ink:#FF6A5E; --maple-text:#FF5B4F;
+  --ok:#4BC98A; --ok-tint:rgba(75,201,138,.12); --warn-ink:#F5B454; --warn-tint:rgba(245,180,84,.1);
+  --shadow-1:0 1px 0 rgba(255,255,255,.03) inset,0 2px 6px rgba(0,0,0,.3);
+  --shadow-2:0 1px 0 rgba(255,255,255,.04) inset,0 12px 30px -8px rgba(0,0,0,.6);
+  --shadow-3:0 1px 0 rgba(255,255,255,.05) inset,0 30px 80px -20px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+svg{display:block}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:3px solid var(--maple);outline-offset:3px;border-radius:12px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:40;background:color-mix(in oklab,var(--paper) 80%,transparent);backdrop-filter:saturate(1.6) blur(18px);-webkit-backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid var(--line)}
+.hdr-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px;padding-inline:var(--gutter);max-width:1440px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:600;font-size:17px;letter-spacing:-.015em;justify-self:start}
+.mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(160deg,var(--maple-hi),var(--maple) 55%,var(--maple-deep));display:grid;place-items:center;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 2px 6px -1px rgba(181,31,20,.45);flex:none}
+.mark svg{width:20px;height:20px;fill:#fff}
+.title{font-size:14.5px;font-weight:500;color:var(--muted);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.title .ico{width:16px;height:16px;color:var(--maple)}
+.hdr-actions{display:flex;align-items:center;gap:4px;justify-self:end}
+.ibtn{width:40px;height:40px;border-radius:999px;display:grid;place-items:center;color:var(--ink-2);transition:background .2s}
+.ibtn:hover{background:var(--paper-2)}
+.ibtn .ico{width:19px;height:19px}
+.lang{height:40px;padding:0 14px;border-radius:999px;font-size:15px;font-weight:500;color:var(--ink-2);text-decoration:none;display:inline-flex;align-items:center}
+.lang:hover{background:var(--paper-2)}
+.menu-btn{height:40px;padding:0 18px 0 16px;margin-left:4px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:8px}
+.menu-btn .ico{width:18px;height:18px}
+
+/* Thread */
+main{padding:48px var(--gutter) 24px;min-height:calc(100vh - 64px - 150px)}
+.thread{max-width:var(--col);margin:0 auto}
+.u-row{display:flex;justify-content:flex-end;animation:in .6s var(--ease) both}
+.u-bub{max-width:80%;padding:14px 20px;border-radius:26px 26px 8px 26px;background:var(--ink);color:var(--paper);font-size:17.5px;line-height:1.45;letter-spacing:-.01em}
+.u-meta{display:flex;justify-content:flex-end;gap:6px;margin-top:8px;font:500 12px/1 var(--mono);color:var(--faint)}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.a{margin-top:40px;animation:in .7s var(--ease) .15s both}
+.a-who{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;letter-spacing:-.01em}
+.a-who .mark{width:28px;height:28px;border-radius:8px}
+.a-who .mark svg{width:17px;height:17px}
+.a-who span{font:500 12px/1 var(--mono);color:var(--muted);font-weight:500;margin-left:4px}
+.lead{font-family:var(--serif);font-weight:500;font-size:clamp(27px,3.1vw,34px);line-height:1.14;letter-spacing:-.022em;margin:20px 0 0;font-variation-settings:"opsz" 48;text-wrap:balance}
+.lead em{font-style:italic;font-weight:400;color:var(--maple-text,var(--maple))}
+.prose{margin-top:16px;color:var(--ink-2);font-size:17.5px;line-height:1.62;letter-spacing:-.005em}
+.prose p{margin:0 0 14px}
+.prose b{color:var(--ink);font-weight:600}
+.prose ul{margin:0 0 14px;padding:0;list-style:none}
+.prose li{position:relative;padding-left:26px;margin:0 0 10px}
+.prose li::before{content:"";position:absolute;left:4px;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--maple);transform:rotate(45deg)}
+.cite{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;margin:0 1px 0 3px;border-radius:6px;background:var(--paper-2);box-shadow:0 0 0 1px var(--line);font:600 11px/1 var(--mono);color:var(--ink-2);text-decoration:none;vertical-align:2px;transition:background .2s,color .2s}
+.cite:hover{background:var(--maple);color:#fff}
+
+/* ═══ Widget ═══ */
+.w{margin:28px -28px 0;border-radius:30px;background:var(--card);box-shadow:0 0 0 1px var(--line),var(--shadow-3);overflow:hidden;animation:reveal .9s var(--spring) .35s both}
+@keyframes reveal{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+.w-hd{position:relative;display:flex;align-items:center;gap:14px;padding:22px 24px 20px;overflow:hidden}
+.w-hd::after{content:"";position:absolute;right:24px;top:-38px;width:210px;height:210px;opacity:.05;background:var(--maple);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='2860 330 3880 4180'%3E%3Cpath d='M4890 4430l-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='2860 330 3880 4180'%3E%3Cpath d='M4890 4430l-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z'/%3E%3C/svg%3E") center/contain no-repeat;transform:rotate(12deg)}
+.w-ic{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;color:#fff;background:linear-gradient(160deg,var(--maple-hi),var(--maple) 55%,var(--maple-deep));box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 8px 18px -8px color-mix(in oklab,var(--maple) 80%,transparent);flex:none}
+.w-ic .ico{width:24px;height:24px}
+.w-hd h3{margin:0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.w-hd p{margin:3px 0 0;font-size:14px;color:var(--muted);line-height:1.3}
+.w-hd .dev{margin-left:auto;display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;border-radius:999px;background:var(--paper-2);font:500 11.5px/1 var(--mono);color:var(--muted);white-space:nowrap;position:relative;z-index:1}
+.w-hd .dev .ico{width:14px;height:14px}
+
+/* timeline */
+.tl{padding:6px 24px 26px}
+.tl-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tl-big{font-family:var(--serif);font-size:44px;line-height:1;letter-spacing:-.03em;font-weight:500}
+.tl-big small{font-family:var(--sans);font-size:15px;color:var(--muted);letter-spacing:-.005em;font-weight:500;margin-left:8px}
+.tl-note{font-size:14px;color:var(--muted)}
+.tl-note b{color:var(--ok);font-weight:600}
+.track{position:relative;margin-top:22px;height:66px}
+.months{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(7,1fr);font:500 11.5px/1 var(--mono);color:var(--faint);letter-spacing:.04em;text-transform:uppercase}
+.months span{padding-top:10px;border-left:1px solid var(--line-2)}
+.months span:first-child{border-left-color:transparent}
+.bar{position:absolute;left:0;right:0;top:18px;height:12px;border-radius:999px;background:var(--paper-2);overflow:hidden}
+.bar .win{position:absolute;top:0;bottom:0;left:6.9%;right:7.1%;border-radius:999px;background:repeating-linear-gradient(-45deg,color-mix(in oklab,var(--ok) 26%,transparent) 0 4px,color-mix(in oklab,var(--ok) 14%,transparent) 4px 8px)}
+.bar .proc{position:absolute;top:0;bottom:0;left:13.8%;width:13.4%;transition:width .6s var(--ease);border-radius:999px;background:linear-gradient(90deg,var(--maple),var(--maple-hi));transform-origin:left;animation:grow 1.4s var(--ease) .9s both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.pin{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;font:600 11px/1 var(--mono);white-space:nowrap}
+.pin i{display:block;width:2px;height:40px;border-radius:2px;background:currentColor}
+.pin.today{left:13.8%;color:var(--ink);top:-4px}
+.pin.today::before{content:"Today";position:absolute;top:-16px;left:50%;transform:translateX(-50%)}
+.pin.exp{left:92.9%;color:var(--maple-ink);top:-4px}
+.pin.exp::before{content:"Expires";position:absolute;top:-16px;left:50%;transform:translateX(-50%)}
+.pin.arr{left:27.2%;color:var(--maple-ink);top:-4px;transition:left .6s var(--ease)}
+.pin.arr::before{content:"Ready ≈ " var(--r,"Oct 29");position:absolute;top:-16px;left:0;transform:translateX(-6px)}
+.pin.today::before{transform:translateX(-85%)!important}
+.pin i{height:44px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:18px;height:8px;border-radius:99px;display:inline-block}
+.legend .l1{background:linear-gradient(90deg,var(--maple),var(--maple-hi))}
+.legend .l2{background:repeating-linear-gradient(-45deg,color-mix(in oklab,var(--ok) 36%,transparent) 0 3px,color-mix(in oklab,var(--ok) 16%,transparent) 3px 6px)}
+
+.sec{border-top:1px solid var(--line);padding:22px 24px}
+.sec-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.sec-h h4{margin:0;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.state{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 11px;border-radius:999px;background:var(--ok-tint);color:var(--ok);font-size:13px;font-weight:600;white-space:nowrap;transition:background .3s,color .3s}
+.state .ico{width:14px;height:14px;stroke-width:2.4}
+.state.no{background:var(--warn-tint);color:var(--warn-ink)}
+
+/* eligibility */
+.elig{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0;padding:0;list-style:none}
+.chk{display:flex;align-items:flex-start;gap:12px;width:100%;min-height:52px;padding:13px 14px;border-radius:16px;background:var(--sunk);box-shadow:0 0 0 1px var(--line);text-align:left;font-size:15px;line-height:1.35;color:var(--ink);transition:background .2s,box-shadow .2s}
+.chk:hover{box-shadow:0 0 0 1px var(--line-2)}
+.box{width:22px;height:22px;border-radius:7px;flex:none;display:grid;place-items:center;background:var(--card);box-shadow:0 0 0 1.5px var(--line-2);transition:background .25s var(--spring),box-shadow .25s}
+.box .ico{width:14px;height:14px;stroke-width:3;color:#fff;opacity:0;transform:scale(.5);transition:opacity .2s,transform .3s var(--spring)}
+.chk[aria-checked="true"] .box{background:var(--ok);box-shadow:none}
+.chk[aria-checked="true"] .box .ico{opacity:1;transform:none}
+.elig-msg{margin:12px 0 0;font-size:14.5px;color:var(--muted)}
+.elig-msg a{color:var(--maple-ink);font-weight:500}
+
+/* segmented */
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border-radius:18px;background:var(--paper-2);position:relative}
+.seg button{position:relative;z-index:1;min-height:56px;padding:8px 10px;border-radius:14px;font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--ink-2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:color .2s}
+.seg button small{font:500 11.5px/1.2 var(--mono);color:var(--muted);letter-spacing:0}
+.seg button[aria-checked="true"]{color:var(--ink)}
+.seg .thumb{position:absolute;z-index:0;top:4px;bottom:4px;left:4px;width:calc((100% - 16px)/3);border-radius:14px;background:var(--card);box-shadow:0 0 0 1px var(--line),0 2px 8px -2px rgba(12,20,32,.12);transition:transform .45s var(--spring)}
+.seg.small{grid-template-columns:repeat(2,1fr);display:inline-grid;border-radius:999px;padding:3px}
+.seg.small button{min-height:32px;padding:0 12px;font-size:13px;border-radius:999px;white-space:nowrap}
+.seg.small .thumb{top:3px;bottom:3px;left:3px;width:calc((100% - 10px)/2);border-radius:999px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.stat{padding:16px 16px 14px;border-radius:18px;background:var(--sunk);box-shadow:0 0 0 1px var(--line)}
+.stat small{display:flex;align-items:center;justify-content:space-between;gap:6px;font:500 11.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);min-height:32px}
+.stat b{display:block;margin-top:10px;font-family:var(--serif);font-weight:500;font-size:34px;line-height:1;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+.stat b span{font-family:var(--sans);font-size:14px;color:var(--muted);font-weight:500;letter-spacing:0;margin-left:4px}
+.stat p{margin:8px 0 0;font-size:13px;color:var(--muted);line-height:1.35}
+
+/* need list */
+.need{margin:0;padding:0;list-style:none;display:grid;gap:2px}
+.need li{display:flex;gap:14px;align-items:flex-start;padding:12px 4px;border-bottom:1px dashed var(--line-2);font-size:15.5px;line-height:1.45}
+.need li:last-child{border-bottom:0}
+.need .n{flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--maple-tint);color:var(--maple-ink);font:600 12px/1 var(--mono)}
+.need small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+
+.warn{display:flex;gap:12px;align-items:flex-start;margin-top:16px;padding:14px 16px;border-radius:16px;background:var(--warn-tint);color:var(--ink);font-size:14.5px;line-height:1.45}
+.warn .ico{color:var(--warn-ink);width:20px;height:20px;margin-top:1px}
+.warn b{font-weight:600}
+
+.w-cta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:18px 24px;border-top:1px solid var(--line);background:var(--sunk)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border-radius:999px;font-size:15.5px;font-weight:600;letter-spacing:-.01em;text-decoration:none;white-space:nowrap;transition:transform .25s var(--spring),background .2s}
+.btn .ico{width:17px;height:17px;stroke-width:2.1}
+.btn:hover{transform:translateY(-1px)}
+.btn.p{background:var(--maple);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 8px 20px -8px color-mix(in oklab,var(--maple) 80%,transparent)}
+.btn.s{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line-2)}
+.btn.s[aria-pressed="true"]{background:var(--ok-tint);color:var(--ok);box-shadow:0 0 0 1px color-mix(in oklab,var(--ok) 30%,transparent)}
+.w-cta .hand{margin-left:auto;font-size:13px;color:var(--muted);max-width:30ch;line-height:1.35;text-align:right}
+.w-src{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 24px 14px;border-top:1px solid var(--line);background:var(--sunk);font:500 12px/1.4 var(--mono);color:var(--muted)}
+.w-src .fav{width:18px;height:18px;border-radius:5px;background:var(--maple);display:grid;place-items:center}
+.w-src .fav svg{width:11px;height:11px;fill:#fff}
+.w-src a{color:var(--ink-2);text-decoration:none}
+.w-src a:hover{text-decoration:underline}
+.w-src .ok{margin-left:auto;display:inline-flex;align-items:center;gap:6px;color:var(--ok)}
+.w-src .ok .ico{width:13px;height:13px;stroke-width:2.4}
+
+/* sources + actions */
+.after{margin-top:28px}
+.srcs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0;padding:0;list-style:none}
+.src{display:flex;flex-direction:column;gap:8px;height:100%;padding:14px 16px;border-radius:18px;background:var(--card);box-shadow:0 0 0 1px var(--line),var(--shadow-1);text-decoration:none;transition:transform .25s var(--spring),box-shadow .25s}
+.src:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--line-2),var(--shadow-2)}
+.src .top{display:flex;align-items:center;gap:8px;font:500 12px/1 var(--mono);color:var(--muted)}
+.src .top .num{width:20px;height:20px;border-radius:6px;display:grid;place-items:center;background:var(--paper-2);color:var(--ink-2);font-weight:600;font-size:11px}
+.src .top .ico{width:14px;height:14px;margin-left:auto}
+.src strong{font-size:14.5px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.acts{display:flex;align-items:center;gap:2px;margin-top:16px}
+.acts .ibtn{width:40px;height:40px;color:var(--muted)}
+.acts .ibtn:hover{color:var(--ink)}
+.acts .sep{width:1px;height:18px;background:var(--line-2);margin:0 8px}
+.acts .fr{white-space:nowrap;height:36px;padding:0 12px;border-radius:999px;font-size:14px;font-weight:500;color:var(--ink-2);display:inline-flex;align-items:center;gap:6px}
+.acts .fr:hover{background:var(--paper-2)}
+.acts .fr .ico{width:16px;height:16px}
+.fu{margin-top:32px}
+.fu h4{margin:0 0 12px;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.fu ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.fu button{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:10px 16px 10px 14px;border-radius:999px;background:var(--card);box-shadow:0 0 0 1px var(--line-2);font-size:15px;font-weight:500;color:var(--ink);text-align:left;line-height:1.3;transition:transform .25s var(--spring),box-shadow .25s,background .2s}
+.fu button:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--maple),var(--shadow-1)}
+.fu button .ico{width:16px;height:16px;color:var(--maple)}
+
+/* Dock */
+.dock{position:sticky;left:0;right:0;bottom:0;z-index:30;padding:40px var(--gutter) max(16px,env(safe-area-inset-bottom));background:linear-gradient(to top,var(--paper) 55%,color-mix(in oklab,var(--paper) 0%,transparent))}
+.dock-in{max-width:var(--col);margin:0 auto}
+.composer{display:flex;align-items:center;gap:4px;min-height:64px;padding:8px 8px 8px 10px;border-radius:32px;background:var(--card);box-shadow:0 0 0 1px var(--line-2),var(--shadow-3);transition:box-shadow .25s}
+.composer:focus-within{box-shadow:0 0 0 1.5px var(--maple),0 0 0 6px color-mix(in oklab,var(--maple) 14%,transparent),var(--shadow-3)}
+.cbtn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--ink-2);flex:none;transition:background .2s}
+.cbtn:hover{background:var(--paper-2)}
+.composer input{flex:1;min-width:0;height:44px;border:0;background:transparent;font:400 17px/44px var(--sans);color:var(--ink);padding:0 6px;outline:none;letter-spacing:-.01em}
+.composer input::placeholder{color:var(--faint)}
+.send{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;flex:none;color:#fff;background:linear-gradient(160deg,var(--maple-hi),var(--maple) 60%,var(--maple-deep));box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 6px 16px -4px color-mix(in oklab,var(--maple) 65%,transparent);transition:transform .25s var(--spring)}
+.send:hover{transform:scale(1.06)}
+.send .ico{width:20px;height:20px;stroke-width:2.2}
+.dock-note{margin:10px 0 0;text-align:center;font-size:12.5px;color:var(--muted)}
+.dock-note a{color:var(--ink-2)}
+
+@media (max-width:900px){
+  .w{margin-inline:0}
+  .title{display:none}
+  .hdr-in{grid-template-columns:1fr auto}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  main{padding-top:28px;padding-bottom:12px}
+  .hdr-in{height:58px}
+  .lang .lbl{display:none}
+  .lang::after{content:"FR";font:600 13px/1 var(--mono);letter-spacing:.04em}
+  .lang{width:44px;justify-content:center}
+  .hide-m{display:none}
+  .w-hd::after{right:-50px}
+  .stat.fee{grid-column:1/-1}
+  .stat.wide{grid-column:auto}
+  .fu button{width:100%}
+  .acts{gap:0}
+  .ibtn.new{display:none}
+  .menu-btn{height:44px}
+  .lang{height:44px;padding:0 10px}
+  .u-bub{font-size:16.5px;padding:12px 17px;max-width:88%}
+  .a{margin-top:30px}
+  .lead{font-size:26px}
+  .prose{font-size:16.5px}
+  .w{margin-inline:-8px;border-radius:26px}
+  .w-hd{padding:18px 18px 16px;gap:12px;flex-wrap:wrap}
+  .w-ic{width:44px;height:44px;border-radius:14px}
+  .w-hd h3{font-size:17.5px}
+  .w-hd .dev{display:none}
+  .tl{padding:4px 18px 22px}
+  .tl-big{font-size:38px}
+  .pin.arr::before{content:"≈ " var(--r,"Oct 29")}
+  .sec{padding:20px 18px}
+  .elig{grid-template-columns:1fr}
+  .seg button{min-height:58px;font-size:14.5px;padding:8px 4px}
+  .seg button small{font-size:10.5px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat b{font-size:30px}
+  .w-cta{padding:16px 18px}
+  .w-cta .btn{flex:1 1 100%}
+  .w-cta .hand{margin:0;text-align:left;max-width:none}
+  .w-src{padding:12px 18px}
+  .w-src .ok{margin-left:0}
+  .srcs{grid-template-columns:1fr;gap:8px}
+  .src{flex-direction:row;align-items:center;padding:12px 14px}
+  .src .top{order:0}
+  .src .top .dom,.src .top .ico{display:none}
+  .fu ul{flex-direction:column;align-items:stretch}
+  .fu button{border-radius:18px;justify-content:flex-start}
+  .dock{padding-top:28px}
+  .composer{min-height:58px;border-radius:29px;padding:6px 6px 6px 4px}
+  .cbtn.mic{display:none}
+  .composer input{font-size:16px}
+  .send{width:46px;height:46px}
+  .dock-note{font-size:11px;letter-spacing:-.01em}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="leaf" viewBox="2860 330 3880 4180"><path d="M4890 4430l-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z"/></symbol>
+  <symbol id="ext" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+</defs></svg>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="landing.html" aria-label="Ask Canada, home"><span class="mark"><svg><use href="#leaf"/></svg></span><span class="word">Ask Canada</span></a>
+    <div class="title"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/></svg>Renewing your passport</div>
+    <div class="hdr-actions">
+      <a class="ibtn new" href="landing.html" aria-label="New conversation"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></a>
+      <a class="lang" href="#" lang="fr" hreflang="fr" aria-label="Français"><span class="lbl">Français</span></a>
+      <button class="menu-btn" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="thread" role="log" aria-label="Conversation">
+    <div class="u-row"><div class="u-bub">How do I renew my passport? It expires in March.</div></div>
+
+    <article class="a" aria-label="Answer from Ask Canada">
+      <div class="a-who"><span class="mark"><svg><use href="#leaf"/></svg></span>Ask Canada <span>3 official sources</span></div>
+
+      <p class="lead">Good news: you can renew — and with a March expiry, you can <em>do it online</em>.</p>
+
+      <div class="prose">
+        <p>Renewing is simpler than applying for a new passport. You <b>don’t need a guarantor or proof of citizenship</b>.<a class="cite" href="#s1" aria-label="Source 1">1</a></p>
+        <p>Online renewal opens once your passport is <b>within 6 months of expiring</b> — for a March expiry, that’s now, as long as it expires by March 29. Two things to know first:</p>
+        <ul>
+          <li>Applying online <b>cancels your current passport right away</b>. Don’t apply online if you’re travelling in the next 20 business days.<a class="cite" href="#s1" aria-label="Source 1">1</a></li>
+          <li>Standard processing is <b>20 business days plus mailing</b> — or 10 business days if you apply in person at a passport office.<a class="cite" href="#s2" aria-label="Source 2">2</a></li>
+        </ul>
+        <p>Here’s your plan. Uncheck anything that doesn’t match your passport.</p>
+      </div>
+
+      <!-- ═══ Passport renewal planner ═══ -->
+      <section class="w" aria-labelledby="w-title">
+        <div class="w-hd">
+          <span class="w-ic"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/></svg></span>
+          <div><h3 id="w-title">Passport renewal planner</h3><p>Adult passport · living in Canada</p></div>
+          <span class="dev"><svg class="ico" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>Saved on this device only</span>
+        </div>
+
+        <div class="tl">
+          <div class="tl-top">
+            <div class="tl-big" id="left" title="Estimates exclude weekends, Sep 30 and Thanksgiving">5–6 <small>months until it expires</small></div>
+            <div class="tl-note"><b>Online renewal is open to you</b><span class="hide-m"> · it expires within 6 months</span></div>
+          </div>
+          <div class="track" aria-hidden="true">
+            <div class="bar"><span class="win"></span><span class="proc" id="proc"></span></div>
+            <span class="pin today"><i></i></span>
+            <span class="pin arr" id="arrPin"><i></i></span>
+            <span class="pin exp"><i></i></span>
+            <div class="months"><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span></div>
+          </div>
+          <div class="legend"><span><i class="l1"></i>Processing, if you apply today</span><span><i class="l2"></i>Window to renew online</span></div>
+          <p class="sr-only">Today is September 29, 2026. Your passport expires in March 2027. If you apply online today, your new passport should be ready around October 29, plus mailing time.</p>
+        </div>
+
+        <div class="sec">
+          <div class="sec-h"><h4 id="elig-h">Can you renew?</h4><span class="state" id="eligState" role="status"><svg class="ico"><use href="#check"/></svg><span>Yes, you can renew</span></span></div>
+          <ul class="elig" aria-labelledby="elig-h">
+            <li><button class="chk" role="checkbox" aria-checked="true"><span class="box"><svg class="ico"><use href="#check"/></svg></span>I was 16 or older when it was issued</button></li>
+            <li><button class="chk" role="checkbox" aria-checked="true"><span class="box"><svg class="ico"><use href="#check"/></svg></span>It was issued in the last 15 years</button></li>
+            <li><button class="chk" role="checkbox" aria-checked="true"><span class="box"><svg class="ico"><use href="#check"/></svg></span>It was valid for 5 or 10 years</button></li>
+            <li><button class="chk" role="checkbox" aria-checked="true"><span class="box"><svg class="ico"><use href="#check"/></svg></span>Same name, birth date, birthplace and gender identifier</button></li>
+          </ul>
+          <p class="elig-msg" id="eligMsg">You’ll skip the guarantor and proof of citizenship.</p>
+        </div>
+
+        <div class="sec">
+          <div class="sec-h"><h4 id="how-h">How to apply</h4></div>
+          <div class="seg" role="radiogroup" aria-labelledby="how-h" id="method">
+            <span class="thumb" aria-hidden="true"></span>
+            <button role="radio" aria-checked="true" data-m="online">Online<small>Recommended</small></button>
+            <button role="radio" aria-checked="false" data-m="person">In person<small>Fastest</small></button>
+            <button role="radio" aria-checked="false" data-m="mail">By mail<small>Form PPTC 054</small></button>
+          </div>
+          <div class="stats">
+            <div class="stat fee">
+              <small>Fee
+                <span class="seg small" role="radiogroup" aria-label="Passport validity" id="validity">
+                  <span class="thumb" aria-hidden="true"></span>
+                  <button role="radio" aria-checked="true" data-v="10">10 yr</button>
+                  <button role="radio" aria-checked="false" data-v="5">5 yr</button>
+                </span>
+              </small>
+              <b id="fee" aria-live="polite">$163.50</b>
+              <p id="feeNote">10-year adult passport</p>
+            </div>
+            <div class="stat">
+              <small>Processing</small>
+              <b id="time">20<span>business days</span></b>
+              <p id="timeNote">Plus mailing time</p>
+            </div>
+            <div class="stat wide">
+              <small>Ready by</small>
+              <b id="ready">Oct 29</b>
+              <p id="readyNote">If you apply today, then mailed</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <div class="sec-h"><h4>What you’ll need</h4><span class="state" style="background:var(--paper-2);color:var(--ink-2)" id="needCount">4 items</span></div>
+          <ol class="need" id="need"></ol>
+          <div class="warn" id="warn">
+            <svg class="ico" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            <span id="warnTxt"><b>Your current passport stops working when you apply online.</b> Travelling before your new one arrives? Apply in person instead.</span>
+          </div>
+        </div>
+
+        <div class="w-cta">
+          <a class="btn p" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport/submit-form-fees/renew-online.html" target="_blank" rel="noopener" id="go">Continue on canada.ca<svg class="ico"><use href="#ext"/></svg><span class="sr-only">(opens in a new tab)</span></a>
+          <button class="btn s" aria-pressed="false" id="save"><svg class="ico" viewBox="0 0 24 24"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg><span>Save checklist</span></button>
+          <span class="hand" id="hand">You’ll sign in to the IRCC Portal to apply and pay.</span>
+        </div>
+        <div class="w-src">
+          <span class="fav"><svg><use href="#leaf"/></svg></span>
+          <span>Source: <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport.html">canada.ca › renew an adult passport</a></span>
+          <span class="ok"><svg class="ico"><use href="#check"/></svg>Checked Sep 29, 2026</span>
+        </div>
+      </section>
+
+      <div class="after">
+        <ol class="srcs" aria-label="Sources">
+          <li id="s1"><a class="src" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport.html"><span class="top"><span class="num">1</span><span class="dom">canada.ca</span><svg class="ico"><use href="#ext"/></svg></span><strong>Renew an adult passport in Canada</strong></a></li>
+          <li id="s2"><a class="src" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"><span class="top"><span class="num">2</span><span class="dom">canada.ca</span><svg class="ico"><use href="#ext"/></svg></span><strong>Passport processing times</strong></a></li>
+          <li id="s3"><a class="src" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/fees/fee-changes-passport.html"><span class="top"><span class="num">3</span><span class="dom">canada.ca</span><svg class="ico"><use href="#ext"/></svg></span><strong>Passport fee changes (March 31, 2026)</strong></a></li>
+        </ol>
+        <div class="acts">
+          <button class="ibtn" aria-label="Copy answer"><svg class="ico" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></button>
+          <button class="ibtn" aria-label="Read answer aloud"><svg class="ico" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>
+          <button class="ibtn" aria-label="Helpful"><svg class="ico" viewBox="0 0 24 24"><path d="M7 10v12M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg></button>
+          <button class="ibtn" aria-label="Not helpful"><svg class="ico" viewBox="0 0 24 24"><path d="M17 14V2M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/></svg></button>
+          <span class="sep" aria-hidden="true"></span>
+          <button class="fr" lang="fr"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>Réponse en français</button>
+        </div>
+
+        <div class="fu">
+          <h4 id="fu-h">Ask next</h4>
+          <ul aria-labelledby="fu-h">
+            <li><button><svg class="ico" viewBox="0 0 24 24"><path d="m15 10 5 5-5 5"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>Where can I get a digital passport photo?</button></li>
+            <li><button><svg class="ico" viewBox="0 0 24 24"><path d="m15 10 5 5-5 5"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>Who can be my reference?</button></li>
+            <li><button><svg class="ico" viewBox="0 0 24 24"><path d="m15 10 5 5-5 5"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>I’m travelling in November — what should I do?</button></li>
+            <li><button><svg class="ico" viewBox="0 0 24 24"><path d="m15 10 5 5-5 5"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>Find a passport office near me</button></li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<div class="dock">
+  <form class="dock-in" action="#" onsubmit="return false">
+    <div class="composer">
+      <button type="button" class="cbtn" aria-label="Attach a document or photo"><svg class="ico" viewBox="0 0 24 24"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></button>
+      <label for="q" class="sr-only">Ask a follow-up question</label>
+      <input id="q" type="text" placeholder="Ask a follow-up…" autocomplete="off" maxlength="2000">
+      <button type="button" class="cbtn mic" aria-label="Ask by voice"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg></button>
+      <button type="submit" class="send" aria-label="Send"><svg class="ico" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
+    </div>
+    <p class="dock-note">Independent service. Always confirm on the linked official page.</p>
+  </form>
+</div>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fmt = n => n.toLocaleString('en-CA', { style: 'currency', currency: 'CAD' });
+
+  const NEED = {
+    online: [
+      ['Digital passport photo', 'Taken in person by a commercial photographer in the last 6 months — not a scan.'],
+      ['Your current passport', 'It’s cancelled as soon as you submit.'],
+      ['2 references', '18 or older, known you 2+ years, not family.'],
+      ['Payment for the fee', 'Paid online when you submit.']
+    ],
+    person: [
+      ['Form PPTC 054', 'Adult simplified renewal application.'],
+      ['2 passport photos', 'Photographer’s name, address and date on the back of one.'],
+      ['Your current passport', 'You’ll hand it in with your application.'],
+      ['2 references', '18 or older, known you 2+ years, not family.'],
+      ['Payment for the fee', 'Paid when you submit.']
+    ],
+    mail: [
+      ['Form PPTC 054', 'Adult simplified renewal application.'],
+      ['2 passport photos', 'Photographer’s name, address and date on the back of one.'],
+      ['Your current passport', 'Mail it with your application.'],
+      ['2 references', '18 or older, known you 2+ years, not family.'],
+      ['Payment for the fee', 'Fee is based on the date we receive it.']
+    ]
+  };
+  const METHOD = {
+    online: { days: 20, note: 'Plus mailing time', ready: 'Oct 29', readyNote: 'If you apply today, then mailed', proc: 13.4, arr: 27.2,
+      warn: '<b>Your current passport stops working when you apply online.</b> Travelling before your new one arrives? Apply in person instead.',
+      hand: 'You’ll sign in to the IRCC Portal to apply and pay.',
+      href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport/submit-form-fees/renew-online.html' },
+    person: { days: 10, note: 'At a passport office', ready: 'Oct 15', readyNote: 'At a passport office, if you apply today', proc: 6.9, arr: 20.7,
+      warn: '<b>Need it sooner?</b> Some passport offices offer express (2–9 business days) or urgent pickup by the end of the next business day, for an extra fee.',
+      hand: 'Book or find a passport office on canada.ca.',
+      href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport/submit-form-fees/apply-in-person.html' },
+    mail: { days: 20, note: 'Plus mailing both ways', ready: 'Oct 29', readyNote: 'Counted from the day it’s received', proc: 13.4, arr: 27.2,
+      warn: '<b>Use tracked mail or a courier.</b> Your application includes your current passport.',
+      hand: 'Download the form and mailing address on canada.ca.',
+      href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport/submit-form-fees/apply-by-mail.html' }
+  };
+  const FEES = { 10: 163.50, 5: 122.50 };
+  let m = 'online', v = 10, feeNow = 163.5;
+
+  function tween(el, from, to) {
+    if (reduce || from === to) { el.textContent = fmt(to); return; }
+    const t0 = performance.now(), d = 520;
+    const step = t => { const p = Math.min(1, (t - t0) / d), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(from + (to - from) * e); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }
+  function setThumb(group) {
+    const btns = $$('button', group), i = btns.findIndex(b => b.getAttribute('aria-checked') === 'true');
+    $('.thumb', group).style.transform = `translateX(calc(${i * 100}% + ${i * 4}px))`;
+  }
+  function render() {
+    const M = METHOD[m];
+    $('#time').innerHTML = `${M.days}<span>business days</span>`;
+    $('#timeNote').textContent = M.note;
+    $('#ready').textContent = M.ready;
+    $('#readyNote').textContent = M.readyNote;
+    $('#proc').style.width = M.proc + '%';
+    $('#arrPin').style.left = M.arr + '%';
+    $('#arrPin').style.setProperty('--r', `"${M.ready}"`);
+    $('#warnTxt').innerHTML = M.warn;
+    $('#hand').textContent = M.hand;
+    $('#go').href = M.href;
+    const list = NEED[m];
+    $('#need').innerHTML = list.map((x, i) => `<li><span class="n">${i + 1}</span><span>${x[0]}<small>${x[1]}</small></span></li>`).join('');
+    $('#needCount').textContent = list.length + ' items';
+    const to = FEES[v]; tween($('#fee'), feeNow, to); feeNow = to;
+    $('#feeNote').textContent = v === 10 ? '10-year adult passport' : '5-year adult passport';
+  }
+  function radio(group, cb) {
+    $$('button', group).forEach(b => b.addEventListener('click', () => {
+      $$('button', group).forEach(x => x.setAttribute('aria-checked', x === b));
+      setThumb(group); cb(b);
+    }));
+    setThumb(group);
+  }
+  radio($('#method'), b => { m = b.dataset.m; render(); });
+  radio($('#validity'), b => { v = +b.dataset.v; render(); });
+
+  $$('.chk').forEach(b => b.addEventListener('click', () => {
+    b.setAttribute('aria-checked', b.getAttribute('aria-checked') !== 'true');
+    const ok = $$('.chk').every(x => x.getAttribute('aria-checked') === 'true');
+    const s = $('#eligState');
+    s.classList.toggle('no', !ok);
+    s.querySelector('span').textContent = ok ? 'Yes, you can renew' : 'Apply for a new passport';
+    $('#eligMsg').innerHTML = ok ? 'You’ll skip the guarantor and proof of citizenship.'
+      : 'If any of these don’t match, you’ll need to <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/new-adult-passport.html">apply for a new adult passport</a> instead.';
+  }));
+
+  const save = $('#save');
+  try { if (localStorage.getItem('ac.passport.plan')) { save.setAttribute('aria-pressed', 'true'); save.querySelector('span').textContent = 'Saved'; } } catch (e) {}
+  save.addEventListener('click', () => {
+    const on = save.getAttribute('aria-pressed') !== 'true';
+    save.setAttribute('aria-pressed', on); save.querySelector('span').textContent = on ? 'Saved' : 'Save checklist';
+    try { on ? localStorage.setItem('ac.passport.plan', JSON.stringify({ m, v, t: Date.now() })) : localStorage.removeItem('ac.passport.plan'); } catch (e) {}
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

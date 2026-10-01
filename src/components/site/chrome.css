@@ -1,0 +1,374 @@
+/* Shared site chrome: header, brand, header buttons, menu sheet and the answer-only language note.
+ * Used on every page with a SiteHeader, so it is loaded globally (app/layout.tsx), not with the chat.
+ * Ported from design direction A ("Northern Light"). */
+
+/* ---------- Header ---------- */
+.ac-head {
+  position: relative;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 22px clamp(20px, 3.2vw, 44px);
+}
+.ac-head--chat {
+  position: sticky;
+  top: 0;
+  padding: 12px clamp(16px, 3vw, 36px);
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s, border-color 0.3s;
+}
+/* Frosted once content scrolls under it: dense enough that blurred text behind reads as depth, not a
+   smudge, with a hairline to end the glass cleanly. */
+.ac-head--chat.is-scrolled {
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom-color: var(--hair);
+}
+/* No backdrop blur (or reduced transparency): an opaque bar, never ghosted text. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .ac-head--chat.is-scrolled {
+    background: var(--paper);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .ac-head--chat.is-scrolled {
+    background: var(--paper);
+  }
+}
+.ac-head__title {
+  margin: 0;
+  min-width: 0;
+  max-width: 44vw;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s var(--ease);
+  pointer-events: none;
+}
+.ac-head__title.is-shown {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+/* Below 1024px the title would crowd the wordmark and actions: the bubble below says it already. */
+@media (max-width: 1023px) {
+  .ac-head--chat .ac-head__title {
+    visibility: hidden;
+  }
+}
+.ac-head__title span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ac-head__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+/* Room for the focus ring of the control before the Menu pill (it must not touch the pill). */
+.ac-head__actions > .ac-btn-pill {
+  margin-inline-start: 8px;
+}
+.ac-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: start;
+  text-decoration: none;
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 4px 2px;
+  min-height: 44px;
+}
+.ac-brand__leaf {
+  width: 26px;
+  height: 26px;
+  color: var(--maple);
+  flex: none;
+}
+.ac-brand__name {
+  font-family: var(--font-serif-stack);
+  font-size: 25px;
+  font-weight: 450;
+  letter-spacing: -0.02em;
+  font-variation-settings: 'opsz' 36;
+  line-height: 1;
+  white-space: nowrap;
+}
+.ac-head--chat .ac-brand__name {
+  font-size: 23px;
+}
+.ac-btn-quiet {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+/* Touch feedback: a brief press instead of a hover fill that sticks after the tap. */
+.ac-btn-quiet,
+.ac-btn-pill,
+.ac-icon-btn,
+.ac-fu,
+.ac-actions__lang,
+.ac-sources__more,
+.ac-textbtn {
+  -webkit-tap-highlight-color: transparent;
+}
+.ac-btn-quiet:active,
+.ac-btn-pill:active,
+.ac-icon-btn:active,
+.ac-send:active,
+.ac-fu:active,
+.ac-actions__lang:active,
+.ac-sources__more:active,
+.ac-textbtn:active {
+  scale: 0.97;
+  transition: scale 0.12s var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-btn-quiet:hover {
+    background: var(--hair);
+  }
+}
+.ac-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--hair);
+  background: var(--card-glass);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  backdrop-filter: blur(16px) saturate(1.4);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: var(--sh-sm);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-btn-pill:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--sh-md);
+  }
+}
+@media (max-width: 760px) {
+  .ac-head {
+    grid-template-columns: 1fr auto;
+    padding: 14px 12px 14px 18px;
+  }
+  .ac-head > span:empty,
+  .ac-head__title {
+    display: none;
+  }
+  .ac-brand__name {
+    font-size: 22px;
+  }
+  .ac-head--chat .ac-brand__name {
+    font-size: 21px;
+  }
+  .ac-brand__leaf {
+    width: 22px;
+    height: 22px;
+  }
+  .ac-btn-quiet {
+    padding: 0 10px;
+  }
+  .ac-btn-pill {
+    width: 44px;
+    padding: 0;
+    justify-content: center;
+  }
+  .ac-btn-pill__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+}
+@media (max-width: 440px) {
+  .ac-head--chat .ac-brand__name {
+    display: none;
+  }
+  .ac-head--chat .ac-head__actions {
+    gap: 0;
+  }
+}
+
+.ac-mobile-only {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .ac-desktop-only {
+    display: none !important;
+  }
+  .ac-mobile-only {
+    display: inline-grid !important;
+  }
+}
+
+/* Services sheet: essentials pinned at the bottom */
+.ac-menu-foot {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 8px;
+  margin-inline: -12px;
+}
+.ac-menu-foot a,
+.ac-menu-foot button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 14.5px;
+  font-weight: 500;
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-menu-foot a:hover,
+  .ac-menu-foot button:hover {
+    background: var(--paper-2);
+  }
+}
+.ac-menu-foot svg {
+  flex: none;
+  color: var(--ink-2);
+}
+/* Narrow sheets: a strict 2 x 2 grid. The language row shows the globe and the language's own name
+   ("Language ·" stays for screen readers), so every cell fits without truncating. */
+@media (max-width: 480px) {
+  .ac-menu-foot__k {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Answer-only language note (site/LanguageNote.tsx) ---------- */
+.ac-langnote {
+  position: relative;
+  z-index: 19;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin: 0 auto 6px;
+  padding: 5px 5px 5px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--hair);
+  background: var(--card-glass);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  backdrop-filter: blur(14px) saturate(1.3);
+  box-shadow: var(--sh-sm);
+  font-size: 13.5px;
+  line-height: 1.35;
+  color: var(--ink-2);
+  animation: rise 0.4s var(--ease) both;
+}
+.ac-langnote__icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: var(--pine);
+}
+.ac-langnote__text {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1px 10px;
+  min-width: 0;
+}
+.ac-langnote__text b {
+  font-weight: 600;
+  color: var(--ink);
+}
+.ac-langnote__en {
+  color: var(--ink-3);
+}
+.ac-langnote__close {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-3);
+  cursor: pointer;
+}
+/* 44px touch target around the 32px visual. */
+.ac-langnote__close::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-langnote__close:hover {
+    background: var(--hair);
+    color: var(--ink);
+  }
+}
+.ac-langnote__close:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+@media (max-width: 640px) {
+  .ac-langnote {
+    align-items: flex-start;
+    border-radius: 18px;
+    padding: 9px 6px 9px 12px;
+  }
+  .ac-langnote__icon {
+    margin-top: 1px;
+  }
+  .ac-langnote__close {
+    margin-top: -5px;
+  }
+}
+/* Small phones: one line in the chosen language is enough (the English line stays when there's no note). */
+@media (max-width: 480px) {
+  .ac-langnote__text:has(.ac-langnote__note) .ac-langnote__en {
+    display: none;
+  }
+}

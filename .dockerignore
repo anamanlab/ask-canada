@@ -1,0 +1,9 @@
+node_modules
+.next
+.shots
+.git
+.vercel
+.env*
+!.env.example
+design
+reference

@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ask Canada</title>
+<meta name="description" content="Ask about any Government of Canada service in plain language, in English or French.">
+<meta name="theme-color" content="#FCFBF8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080B11" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<style>
+/* ───────────────────────── Tokens ───────────────────────── */
+:root{
+  --paper:#FCFBF8; --paper-2:#F4F2EE; --card:#FFFFFF;
+  --ink:#0C1420; --ink-2:#343D4B; --muted:#646C7A; --faint:#8A919D;
+  --line:rgba(12,20,32,.09); --line-2:rgba(12,20,32,.14);
+  --maple:#D52B1E; --maple-hi:#E8382A; --maple-deep:#A3170D; --maple-tint:#FBECEA; --maple-ink:#B51F14;
+  --on-maple:#FFFFFF;
+  --night:#07101C; --night-2:#0E1B2C;
+  --ok:#137A4B; --ok-tint:#E6F4EC;
+  --shadow-1:0 1px 1px rgba(12,20,32,.04),0 2px 6px rgba(12,20,32,.04);
+  --shadow-2:0 1px 2px rgba(12,20,32,.05),0 8px 24px -6px rgba(12,20,32,.10),0 24px 60px -24px rgba(12,20,32,.18);
+  --shadow-3:0 2px 4px rgba(12,20,32,.04),0 20px 50px -12px rgba(12,20,32,.22),0 60px 120px -40px rgba(12,20,32,.28);
+  --r-sm:12px; --r:20px; --r-lg:28px; --r-xl:40px;
+  --serif:"Newsreader",ui-serif,Georgia,serif;
+  --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --spring:cubic-bezier(.34,1.36,.64,1);
+  --gutter:clamp(16px,4vw,48px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#080B11; --paper-2:#0F141C; --card:#121822;
+    --ink:#F2F0EB; --ink-2:#C9CDD4; --muted:#979EAA; --faint:#6F7784;
+    --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+    --maple:#E0342A; --maple-hi:#F04A3F; --maple-deep:#B8231A; --maple-tint:rgba(224,52,42,.14); --maple-ink:#FF6A5E; --maple-text:#FF5B4F;
+    --night:#040810; --night-2:#0B1522;
+    --ok:#4BC98A; --ok-tint:rgba(75,201,138,.12);
+    --shadow-1:0 1px 0 rgba(255,255,255,.03) inset,0 2px 6px rgba(0,0,0,.3);
+    --shadow-2:0 1px 0 rgba(255,255,255,.04) inset,0 12px 30px -8px rgba(0,0,0,.6);
+    --shadow-3:0 1px 0 rgba(255,255,255,.05) inset,0 30px 80px -20px rgba(0,0,0,.8);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#080B11; --paper-2:#0F141C; --card:#121822;
+  --ink:#F2F0EB; --ink-2:#C9CDD4; --muted:#979EAA; --faint:#6F7784;
+  --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --maple:#E0342A; --maple-hi:#F04A3F; --maple-deep:#B8231A; --maple-tint:rgba(224,52,42,.14); --maple-ink:#FF6A5E; --maple-text:#FF5B4F;
+  --night:#040810; --night-2:#0B1522;
+  --ok:#4BC98A; --ok-tint:rgba(75,201,138,.12);
+  --shadow-1:0 1px 0 rgba(255,255,255,.03) inset,0 2px 6px rgba(0,0,0,.3);
+  --shadow-2:0 1px 0 rgba(255,255,255,.04) inset,0 12px 30px -8px rgba(0,0,0,.6);
+  --shadow-3:0 1px 0 rgba(255,255,255,.05) inset,0 30px 80px -20px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+
+/* ───────────────────────── Base ───────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;font-feature-settings:"ss01","cv11"}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+svg{display:block}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:3px solid var(--maple);outline-offset:3px;border-radius:12px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:16px;top:-60px;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:12px;z-index:100;text-decoration:none;font-weight:500}
+.skip:focus{top:12px}
+.wrap{width:100%;max-width:1240px;margin-inline:auto;padding-inline:var(--gutter)}
+
+/* ───────────────────────── Header ───────────────────────── */
+.hdr{position:sticky;top:0;z-index:50;background:color-mix(in oklab,var(--paper) 78%,transparent);backdrop-filter:saturate(1.6) blur(18px);-webkit-backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid transparent;transition:border-color .3s}
+.hdr.scrolled{border-bottom-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1440px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:600;font-size:17px;letter-spacing:-.015em}
+.mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(160deg,var(--maple-hi),var(--maple) 55%,var(--maple-deep));display:grid;place-items:center;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 2px 6px -1px rgba(181,31,20,.45)}
+.mark svg{width:20px;height:20px;fill:#fff}
+.hdr-actions{display:flex;align-items:center;gap:6px}
+.lang{height:40px;padding:0 14px;border-radius:999px;font-size:15px;font-weight:500;color:var(--ink-2);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s}
+.lang:hover{background:var(--paper-2)}
+.lang .ico{width:18px;height:18px}
+.menu-btn{height:40px;padding:0 18px 0 16px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:transform .2s var(--ease)}
+.menu-btn:hover{transform:translateY(-1px)}
+.menu-btn .ico{width:18px;height:18px}
+
+/* ───────────────────────── Hero ───────────────────────── */
+.hero{position:relative;padding:clamp(40px,7vw,96px) 0 clamp(56px,7vw,96px);text-align:center;isolation:isolate;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:120%;z-index:-2;
+  background:
+    radial-gradient(50% 40% at 50% 38%,color-mix(in oklab,var(--maple) 9%,transparent),transparent 70%),
+    radial-gradient(30% 30% at 18% 20%,color-mix(in oklab,#5B8CFF 6%,transparent),transparent 70%),
+    radial-gradient(30% 30% at 84% 16%,color-mix(in oklab,#3FD6A6 6%,transparent),transparent 70%)}
+.construct{position:absolute;left:50%;top:clamp(-40px,-2vw,0px);width:min(1080px,150vw);transform:translateX(-50%);z-index:-1;pointer-events:none;opacity:.75;-webkit-mask:radial-gradient(closest-side,rgba(0,0,0,.35) 30%,#000 75%);mask:radial-gradient(closest-side,rgba(0,0,0,.35) 30%,#000 75%)}
+.construct *{fill:none;stroke:var(--maple);vector-effect:non-scaling-stroke}
+.construct .c1{stroke-opacity:.16;stroke-width:1}
+.construct .c2{stroke-opacity:.10;stroke-width:1;stroke-dasharray:3 6}
+.construct .leafline{stroke-opacity:.26;stroke-width:1.1}
+.construct .tip{fill:var(--maple);fill-opacity:.35;stroke:none}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s var(--ease) forwards}
+.draw.d2{animation-delay:.25s;animation-duration:2.8s}
+.draw.d3{animation-delay:.5s;animation-duration:3.2s}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+.hero-leaf{width:76px;height:76px;margin:0 auto 28px;border-radius:22px;background:linear-gradient(160deg,var(--maple-hi),var(--maple) 55%,var(--maple-deep));display:grid;place-items:center;box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 -2px 6px rgba(0,0,0,.08) inset,0 12px 30px -8px color-mix(in oklab,var(--maple) 70%,transparent),0 30px 60px -20px color-mix(in oklab,var(--maple) 50%,transparent);animation:pop .9s var(--spring) .1s both}
+.hero-leaf svg{width:46px;height:46px;fill:#fff;animation:sway 7s ease-in-out 1.2s infinite;transform-origin:50% 90%}
+@keyframes pop{from{opacity:0;transform:scale(.6) translateY(10px)}to{opacity:1;transform:none}}
+@keyframes sway{0%,100%{transform:rotate(0)}50%{transform:rotate(-4deg)}}
+
+.greet{font-family:var(--serif);font-weight:500;font-size:clamp(54px,9.2vw,138px);line-height:.94;letter-spacing:-.035em;margin:0;font-variation-settings:"opsz" 72}
+.greet span{display:block}
+.greet .en{animation:rise 1s var(--ease) .2s both}
+.greet .fr{font-style:italic;font-weight:400;color:var(--maple-text,var(--maple));letter-spacing:-.03em;animation:rise 1s var(--ease) .34s both}
+.greet .fr i{font-style:normal}
+@keyframes rise{from{opacity:0;transform:translateY(22px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.sub{max-width:34ch;margin:28px auto 0;font-size:clamp(18px,1.6vw,21px);line-height:1.45;color:var(--muted);letter-spacing:-.01em;animation:rise 1s var(--ease) .48s both}
+.sub b{color:var(--ink);font-weight:500}
+
+/* Composer */
+.composer-wrap{max-width:760px;margin:44px auto 0;animation:rise 1s var(--ease) .6s both}
+.composer{position:relative;display:flex;align-items:center;gap:6px;min-height:76px;padding:10px 10px 10px 12px;border-radius:38px;background:var(--card);box-shadow:0 0 0 1px var(--line-2),var(--shadow-3);transition:box-shadow .25s var(--ease)}
+.composer:focus-within{box-shadow:0 0 0 1.5px var(--maple),0 0 0 6px color-mix(in oklab,var(--maple) 14%,transparent),var(--shadow-3)}
+.cbtn{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:var(--ink-2);transition:background .2s,color .2s;flex:none}
+.cbtn:hover{background:var(--paper-2);color:var(--ink)}
+.field{position:relative;flex:1;min-width:0;height:48px}
+.field input{position:absolute;inset:0;width:100%;border:0;background:transparent;font:400 19px/48px var(--sans);color:var(--ink);letter-spacing:-.01em;padding:0 6px;outline:none}
+.ph{position:absolute;inset:0;pointer-events:none;overflow:hidden;padding:0 6px;text-align:left;color:var(--faint);font-size:19px;letter-spacing:-.01em;line-height:48px;white-space:nowrap}
+.ph .rot{display:inline-block;max-width:calc(100% - 2.2em);overflow:hidden;text-overflow:ellipsis;vertical-align:top;color:var(--muted);transition:transform .5s var(--ease),opacity .5s var(--ease)}
+.ph .rot.out{transform:translateY(-70%);opacity:0}
+.ph .rot.in{transform:translateY(70%);opacity:0;transition:none}
+.field input:not(:placeholder-shown)+.ph{display:none}
+.send{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;flex:none;color:#fff;background:linear-gradient(160deg,var(--maple-hi),var(--maple) 60%,var(--maple-deep));box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 6px 16px -4px color-mix(in oklab,var(--maple) 65%,transparent);transition:transform .25s var(--spring)}
+.send:hover{transform:scale(1.06)}
+.send:active{transform:scale(.96)}
+.send .ico{width:22px;height:22px;stroke-width:2.2}
+.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;margin-top:18px;font-size:13.5px;color:var(--muted)}
+.trust span{display:inline-flex;align-items:center;gap:7px}
+.trust .ico{width:15px;height:15px;color:var(--ink-2)}
+
+/* Chips */
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:980px;margin:40px auto 0;padding:0;list-style:none;animation:rise 1s var(--ease) .72s both}
+.chip{display:inline-flex;align-items:center;gap:9px;height:46px;padding:0 18px 0 14px;border-radius:999px;background:var(--card);box-shadow:0 0 0 1px var(--line),var(--shadow-1);font-size:15.5px;font-weight:500;color:var(--ink);text-decoration:none;letter-spacing:-.01em;white-space:nowrap;transition:transform .25s var(--spring),box-shadow .25s}
+.chip .ico{width:18px;height:18px;color:var(--maple)}
+.chip:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--line-2),var(--shadow-2)}
+
+/* ───────────────────────── Section common ───────────────────────── */
+section{position:relative}
+.eyebrow{font:500 13px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--maple-ink);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:18px;height:1.5px;background:currentColor}
+.h2{font-family:var(--serif);font-weight:500;font-size:clamp(40px,5.6vw,80px);line-height:1;letter-spacing:-.032em;margin:18px 0 0;font-variation-settings:"opsz" 72;text-wrap:balance}
+.h2 em{font-style:italic;font-weight:400;color:var(--maple-text,var(--maple))}
+.lede{font-size:clamp(17px,1.5vw,20px);line-height:1.5;color:var(--muted);max-width:52ch;margin:22px 0 0;letter-spacing:-.01em;text-wrap:pretty}
+.center{text-align:center}
+.center .lede{margin-inline:auto}
+
+/* ───────────────────────── Flag (signature) ───────────────────────── */
+.flag-sec{padding:clamp(72px,9vw,140px) 0 0}
+.flag{--pale:25%;position:relative;margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:1fr 2fr 1fr;min-height:800px;background:var(--paper)}
+.pale{position:relative;background:linear-gradient(180deg,var(--maple-hi),var(--maple) 30%,var(--maple) 70%,var(--maple-deep));overflow:hidden;color:#fff}
+.pale::after{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 64px),
+  radial-gradient(80% 50% at 50% 0%,rgba(255,255,255,.12),transparent 70%)}
+.pale .word{position:absolute;font-family:var(--serif);font-weight:500;font-size:clamp(88px,9vw,136px);letter-spacing:-.035em;line-height:.8;white-space:nowrap;z-index:1;writing-mode:vertical-rl}
+.pale.l .word{left:clamp(20px,2.6vw,40px);bottom:clamp(28px,3.4vw,52px);transform:rotate(180deg)}
+.pale.r .word{right:clamp(20px,2.6vw,40px);top:clamp(28px,3.4vw,52px);font-style:italic;font-weight:400}
+.pale .tag{position:absolute;font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.82;z-index:1}
+.pale.l .tag{left:clamp(24px,3vw,48px);top:clamp(28px,3.4vw,52px)}
+.pale.r .tag{right:clamp(24px,3vw,48px);bottom:clamp(28px,3.4vw,52px)}
+.field-w{position:relative;display:grid;place-items:center;padding:72px clamp(20px,3vw,48px);background:
+  radial-gradient(60% 50% at 50% 50%,color-mix(in oklab,var(--maple) 6%,transparent),transparent 70%),var(--paper)}
+
+/* Device: chat preview */
+.device{position:relative;width:100%;max-width:560px;border-radius:32px;background:var(--card);box-shadow:0 0 0 1px var(--line),var(--shadow-3);overflow:hidden;z-index:2}
+.dev-top{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line)}
+.dev-top .brand{font-size:15px}
+.dev-top .mark{width:26px;height:26px;border-radius:8px}
+.dev-top .mark svg{width:16px;height:16px}
+.dev-top .pill{font:500 12px/1 var(--mono);color:var(--muted);padding:7px 10px;border-radius:999px;background:var(--paper-2)}
+.dev-body{padding:22px 22px 8px}
+.u-bub{margin-left:auto;width:fit-content;max-width:82%;padding:12px 16px;border-radius:20px 20px 6px 20px;background:var(--ink);color:var(--paper);font-size:15.5px;line-height:1.4}
+.a-txt{margin:18px 0 0;font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+.a-txt b{color:var(--ink);font-weight:600}
+.mini{margin:16px 0 0;border-radius:22px;box-shadow:0 0 0 1px var(--line-2);overflow:hidden;background:var(--card)}
+.mini-h{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.mini-ic{width:36px;height:36px;border-radius:11px;background:var(--maple-tint);color:var(--maple-ink);display:grid;place-items:center}
+.mini-ic .ico{width:19px;height:19px}
+.mini-h strong{display:block;font-size:15px;letter-spacing:-.01em}
+.mini-h small{display:block;font-size:12.5px;color:var(--muted)}
+.ok{margin-left:auto;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;background:var(--ok-tint);color:var(--ok);font-size:12.5px;font-weight:600;white-space:nowrap}
+.ok .ico{width:14px;height:14px;stroke-width:2.4}
+.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.mini-stats div{padding:14px 16px}
+.mini-stats div+div{border-left:1px solid var(--line)}
+.mini-stats small{display:block;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.mini-stats b{display:block;margin-top:8px;font-family:var(--serif);font-size:26px;font-weight:500;letter-spacing:-.02em;line-height:1}
+.mini-stats b span{font-family:var(--sans);font-size:12.5px;color:var(--muted);font-weight:500;letter-spacing:0;margin-left:3px}
+.mini-cta{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 12px 12px 16px;border-top:1px solid var(--line);background:var(--paper-2)}
+.mini-cta small{font:500 11.5px/1.3 var(--mono);color:var(--muted)}
+.btn-maple{display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 16px;border-radius:999px;background:var(--maple);color:#fff;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;box-shadow:0 1px 0 rgba(255,255,255,.3) inset}
+.btn-maple .ico{width:16px;height:16px;stroke-width:2.2}
+.dev-comp{margin:14px 14px 16px;display:flex;align-items:center;gap:6px;height:56px;padding:0 8px 0 18px;border-radius:28px;box-shadow:0 0 0 1px var(--line-2);color:var(--faint);font-size:15.5px}
+.dev-comp>span:first-child{flex:1}
+.dev-comp .cbtn{width:40px;height:40px}
+.dev-comp .send{width:40px;height:40px}
+.dev-comp .send .ico{width:18px;height:18px}
+
+/* floating cards on the pales */
+.float{position:absolute;z-index:3;width:272px;padding:18px;border-radius:22px;background:var(--card);box-shadow:0 0 0 1px var(--line),var(--shadow-3);color:var(--ink)}
+.float small{display:flex;align-items:center;gap:8px;font:500 11.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.float small .ico{width:15px;height:15px;color:var(--maple)}
+.float strong{display:block;margin-top:12px;font-family:var(--serif);font-weight:500;font-size:28px;letter-spacing:-.025em;line-height:1.05}
+.float p{margin:8px 0 0;font-size:14px;line-height:1.45;color:var(--muted)}
+.float.f1{left:calc(25% - 200px);top:150px;animation:bob 8s ease-in-out infinite}
+.float.f2{right:calc(25% - 200px);bottom:140px;animation:bob 8s ease-in-out -4s infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.flag-cap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:22px;padding-bottom:0;font:500 12.5px/1.4 var(--mono);color:var(--muted);letter-spacing:.02em}
+
+/* ───────────────────────── How it works ───────────────────────── */
+.how{padding:clamp(96px,11vw,168px) 0 0}
+.how-head{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:end}
+.how-head .lede{margin:0 0 6px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px;counter-reset:s}
+.step{position:relative;border-radius:var(--r-lg);background:var(--card);box-shadow:0 0 0 1px var(--line),var(--shadow-1);padding:28px;display:flex;flex-direction:column;min-height:440px;overflow:hidden}
+.step .n{font:500 13px/1 var(--mono);color:var(--maple-ink);letter-spacing:.06em}
+.step h3{font-family:var(--serif);font-weight:500;font-size:32px;line-height:1.05;letter-spacing:-.025em;margin:14px 0 0;font-variation-settings:"opsz" 48}
+.step p{margin:12px 0 0;color:var(--muted);font-size:16px;line-height:1.5}
+.vig{margin-top:auto;padding-top:28px}
+/* vignette 1 */
+.v-ask{display:flex;flex-direction:column;gap:10px}
+.v-row{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:16px;background:var(--paper-2);font-size:14.5px;color:var(--ink-2)}
+.v-row .ico{width:18px;height:18px;color:var(--maple)}
+.v-row em{font-style:normal;margin-left:auto;font:500 11px/1 var(--mono);color:var(--muted);letter-spacing:.06em}
+/* vignette 2 */
+.v-src{border-radius:18px;background:var(--paper-2);padding:16px}
+.v-src p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.v-src p mark{background:linear-gradient(transparent 60%,color-mix(in oklab,var(--maple) 22%,transparent) 60%);color:var(--ink)}
+.srcpill{display:inline-flex;align-items:center;gap:8px;margin-top:12px;height:32px;padding:0 12px 0 8px;border-radius:999px;background:var(--card);box-shadow:0 0 0 1px var(--line);font:500 12px/1 var(--mono);color:var(--ink-2)}
+.srcpill .dot{width:18px;height:18px;border-radius:5px;background:var(--maple);display:grid;place-items:center}
+.srcpill .dot svg{width:11px;height:11px;fill:#fff}
+/* vignette 3 */
+.v-hand{display:flex;flex-direction:column;gap:10px}
+.hand{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 12px 12px 16px;border-radius:16px;background:var(--paper-2);font-size:14.5px;font-weight:500}
+.hand span small{display:block;font:500 11.5px/1.3 var(--mono);color:var(--muted);font-weight:500;margin-top:3px}
+.hand .go{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--paper)}
+.hand .go .ico{width:16px;height:16px;stroke-width:2.2}
+.hand.first .go{background:var(--maple);color:#fff}
+
+/* ───────────────────────── Privacy ───────────────────────── */
+.priv-sec{padding:clamp(96px,11vw,168px) 0 0}
+.priv{position:relative;border-radius:var(--r-xl);background:var(--night);color:#EEF1F5;padding:clamp(40px,6vw,88px);overflow:hidden;isolation:isolate}
+.priv::before{content:"";position:absolute;inset:-30% -10% auto -10%;height:90%;z-index:-1;filter:blur(40px);opacity:.85;
+  background:
+    radial-gradient(40% 50% at 20% 60%,rgba(63,214,166,.35),transparent 70%),
+    radial-gradient(35% 45% at 55% 40%,rgba(91,140,255,.28),transparent 70%),
+    radial-gradient(30% 40% at 85% 55%,rgba(170,110,255,.22),transparent 70%);
+  animation:aur 18s ease-in-out infinite alternate}
+@keyframes aur{from{transform:translateX(-4%) skewX(-4deg)}to{transform:translateX(4%) skewX(4deg)}}
+.priv::after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;z-index:-1;opacity:.5;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 120V78l60-18 50 22 70-44 40 26 60-34 80 40 40-18 70 28 60-50 50 30 70-22 60 34 80-46 50 26 60-10 70 34 60-40 50 22 80-30 60 26 70-16 60 30 50-20 50 14v74z' fill='%23000' fill-opacity='.55'/%3E%3C/svg%3E") bottom/100% 100% no-repeat}
+.priv .eyebrow{color:#FF8A80}
+.priv .h2{color:#fff;max-width:14ch}
+.priv .h2 em{color:#FF8A80}
+.priv .lede{color:#AEB7C4}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;border-radius:24px;overflow:hidden;background:rgba(255,255,255,.08);box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.pitem{padding:28px;background:rgba(7,16,28,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.pitem .ico{width:24px;height:24px;color:#fff;stroke-width:1.6}
+.pitem h3{margin:18px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;color:#fff}
+.pitem p{margin:8px 0 0;font-size:15px;line-height:1.5;color:#9FA9B7}
+
+/* ───────────────────────── Sources ───────────────────────── */
+.src-sec{padding:clamp(96px,11vw,168px) 0 0}
+.src-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,6vw,96px);align-items:center}
+.cite-stack{position:relative;height:440px}
+.cite{position:absolute;left:0;right:0;border-radius:24px;background:var(--card);box-shadow:0 0 0 1px var(--line),var(--shadow-2);padding:22px 24px}
+.cite.back2{top:0;transform:scale(.9);opacity:.5;transform-origin:top center}
+.cite.back1{top:46px;transform:scale(.95);opacity:.78;transform-origin:top center}
+.cite.back1 .d,.cite.back2 .d{visibility:hidden}
+.cite.front{top:92px;box-shadow:0 0 0 1px var(--line),var(--shadow-3)}
+.cite .row{display:flex;align-items:center;gap:12px}
+.fav{width:34px;height:34px;border-radius:10px;background:var(--maple);display:grid;place-items:center;flex:none}
+.fav svg{width:19px;height:19px;fill:#fff}
+.cite .t{font-weight:600;font-size:16px;letter-spacing:-.01em;line-height:1.3}
+.cite .d{font:500 12.5px/1.3 var(--mono);color:var(--muted);margin-top:3px}
+.cite blockquote{margin:18px 0 0;padding:0 0 0 16px;border-left:2px solid var(--maple);font-family:var(--serif);font-size:21px;line-height:1.4;letter-spacing:-.01em;color:var(--ink)}
+.cite .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tagm{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;border-radius:999px;background:var(--paper-2);font:500 12px/1 var(--mono);color:var(--ink-2)}
+.tagm .ico{width:14px;height:14px}
+.tagm.ok2{background:var(--ok-tint);color:var(--ok)}
+.domains{margin-top:clamp(56px,7vw,96px);border-block:1px solid var(--line);overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee{display:flex;gap:56px;width:max-content;padding:26px 0;animation:mq 40s linear infinite;font:500 clamp(18px,1.8vw,24px)/1 var(--mono);color:var(--ink-2);letter-spacing:-.01em}
+.marquee span{display:inline-flex;align-items:center;gap:14px;white-space:nowrap}
+.marquee span::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--maple);transform:rotate(45deg)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ───────────────────────── Every service ───────────────────────── */
+.svc-sec{padding:clamp(96px,11vw,168px) 0 0}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px;list-style:none;padding:0}
+.svc a{display:flex;flex-direction:column;gap:10px;height:100%;min-height:196px;padding:22px;border-radius:24px;background:var(--card);box-shadow:0 0 0 1px var(--line),var(--shadow-1);text-decoration:none;transition:transform .3s var(--spring),box-shadow .3s}
+.svc a:hover{transform:translateY(-4px);box-shadow:0 0 0 1.5px var(--maple),var(--shadow-2)}
+.svc .si{width:44px;height:44px;border-radius:14px;background:var(--paper-2);display:grid;place-items:center;color:var(--ink);transition:background .3s,color .3s}
+.svc a:hover .si{background:var(--maple);color:#fff}
+.svc .si .ico{width:22px;height:22px}
+.svc strong{font-size:18px;font-weight:600;letter-spacing:-.015em;margin-top:auto}
+.svc .q{font-size:14.5px;line-height:1.45;color:var(--muted)}
+
+/* ───────────────────────── Closing ───────────────────────── */
+.close{padding:clamp(120px,13vw,200px) 0 clamp(80px,9vw,140px);text-align:center;position:relative;overflow:hidden}
+.close .big-leaf{position:absolute;left:50%;top:50%;width:min(760px,120vw);transform:translate(-50%,-48%);z-index:-1;opacity:.07}
+.close .big-leaf path{fill:var(--maple)}
+.close .greet{font-size:clamp(56px,8vw,120px)}
+.close-cta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:40px}
+.btn-lg{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 26px;border-radius:999px;font-size:17px;font-weight:600;text-decoration:none;letter-spacing:-.01em;transition:transform .25s var(--spring)}
+.btn-lg:hover{transform:translateY(-2px)}
+.btn-lg .ico{width:18px;height:18px;stroke-width:2.2}
+.btn-lg.p{background:var(--maple);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 10px 24px -8px color-mix(in oklab,var(--maple) 70%,transparent)}
+.btn-lg.s{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line-2),var(--shadow-1)}
+
+/* ───────────────────────── Footer ───────────────────────── */
+footer{border-top:1px solid var(--line);padding:40px 0 48px}
+.foot{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:start}
+.foot p{margin:14px 0 0;font-size:14px;color:var(--muted);max-width:52ch;line-height:1.55}
+.foot nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 22px;justify-content:flex-end}
+.foot nav a{font-size:14.5px;color:var(--ink-2);text-decoration:none;display:inline-block;padding:10px 0}
+.foot nav a:hover{color:var(--maple-ink)}
+.foot .fine{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-top:20px;border-top:1px solid var(--line);font:500 12px/1.4 var(--mono);color:var(--faint)}
+
+/* ───────────────────────── Responsive ───────────────────────── */
+@media (max-width:1100px){
+  .float{display:none}
+  .svc{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:900px){
+  .how-head,.src-grid,.foot{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .step{min-height:0}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .svc{grid-template-columns:repeat(2,1fr)}
+  .foot nav ul{justify-content:flex-start}
+  /* the flag turns on its side */
+  .flag{grid-template-columns:1fr;grid-template-rows:auto auto auto;min-height:0}
+  .pale{height:132px}
+  .pale .word{writing-mode:horizontal-tb;font-size:64px;line-height:1}
+  .pale.l .word{left:var(--gutter);bottom:22px;transform:none}
+  .pale.l .tag{left:auto;right:var(--gutter);top:auto;bottom:26px}
+  .pale.r .word{right:auto;left:var(--gutter);top:22px}
+  .pale.r .tag{right:var(--gutter);bottom:auto;top:26px}
+  .field-w{padding:28px var(--gutter)}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .hdr .wrap{height:60px}
+  .lang .lbl{display:none}
+  .lang{width:44px;height:44px;padding:0;justify-content:center}
+  .lang::after{content:"FR";font:600 13px/1 var(--mono);letter-spacing:.04em}
+  .lang .ico{display:none}
+  .menu-btn{height:44px}
+  .hero{padding-top:28px}
+  .hero-leaf{width:64px;height:64px;border-radius:19px;margin-bottom:22px}
+  .hero-leaf svg{width:38px;height:38px}
+  .greet{font-size:clamp(46px,13.4vw,64px);line-height:.98}
+  .sub{margin-top:20px;font-size:17px}
+  .composer-wrap{margin-top:32px}
+  .composer{min-height:64px;border-radius:32px;padding:7px 7px 7px 6px;gap:2px}
+  .cbtn{width:44px;height:44px}
+  .cbtn.mic{display:none}
+  .field{height:44px}
+  .field input,.ph{font-size:16.5px;line-height:44px}
+  .ph .pre{display:none}
+  .send{width:50px;height:50px}
+  .trust{font-size:12.5px;gap:4px 14px}
+  .chips{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;margin-inline:calc(var(--gutter) * -1);padding:4px var(--gutter) 10px;scrollbar-width:none;-webkit-mask:linear-gradient(90deg,#000 88%,transparent);mask:linear-gradient(90deg,#000 88%,transparent)}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{height:44px;font-size:15px}
+  .pale{height:112px}
+  .pale .word{font-size:52px}
+  .dev-body{padding:18px 16px 6px}
+  .u-bub,.a-txt{font-size:15px}
+  .mini-stats b{font-size:22px}
+  .mini-stats div{padding:12px}
+  .mini-cta small{display:none}
+  .mini-cta{justify-content:flex-end}
+  .step{padding:24px}
+  .step h3{font-size:28px}
+  .pgrid{grid-template-columns:1fr}
+  .pitem{padding:22px}
+  .priv{border-radius:28px;padding:36px 22px 72px}
+  .cite-stack{height:460px}
+  .hero{padding-bottom:24px}
+  .flag-sec{padding-top:64px}
+  .close .big-leaf{top:40%}
+  .cite{padding:20px}
+  .cite blockquote{font-size:18px}
+  .svc{grid-template-columns:1fr 1fr;gap:10px}
+  .svc a{min-height:168px;padding:16px;border-radius:20px}
+  .svc strong{font-size:16px}
+  .svc span{font-size:13.5px}
+  .flag-cap{flex-direction:column;gap:6px}
+  .flag-cap span:first-child{display:none}
+  .pgrid{border-radius:20px}
+  .pitem{display:grid;grid-template-columns:28px 1fr;column-gap:14px;padding:18px 18px}
+  .pitem .ico{grid-row:span 2;margin-top:2px}
+  .pitem h3{margin:0;font-size:16.5px}
+  .pitem p{margin:4px 0 0;font-size:14.5px}
+  .chips{margin-top:28px}
+  .sub{max-width:30ch}
+  .close .btn-lg{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .draw{stroke-dashoffset:0}
+  .marquee{animation:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="leaf" viewBox="2860 330 3880 4180"><path d="M4890 4430l-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z"/></symbol>
+  </defs>
+</svg>
+<a class="skip" href="#ask">Skip to the question box</a>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Ask Canada, home">
+      <span class="mark"><svg><use href="#leaf"/></svg></span>
+      Ask Canada
+    </a>
+    <div class="hdr-actions">
+      <a class="lang" href="#" lang="fr" hreflang="fr" aria-label="Français — afficher en français">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <span class="lbl">Français</span>
+      </a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg>
+        Menu
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ═════════════ HERO ═════════════ -->
+<section class="hero" aria-labelledby="greet">
+  <svg class="construct" viewBox="1800 -200 6000 4200" aria-hidden="true">
+    <circle class="c1 draw" pathLength="1" cx="4800" cy="2380" r="2020"/>
+    <circle class="c2" cx="4800" cy="2380" r="1480"/>
+    <circle class="c1 draw d2" pathLength="1" cx="4800" cy="2380" r="2640"/>
+    <path class="c2" d="M4800 -200V4000M1800 2380H7800"/>
+    <path class="c2" d="M4800 2380 5550 890M4800 2380 4050 890M4800 2380 6600 1715M4800 2380 3000 1715M4800 2380 6660 2465M4800 2380 2940 2465M4800 2380 5815 3620M4800 2380 3785 3620"/>
+    <path class="leafline draw d3" pathLength="1" d="M4890 4430l-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z"/>
+    <g class="tips"><circle class="tip" cx="4800" cy="400" r="22"/><circle class="tip" cx="5550" cy="890" r="22"/><circle class="tip" cx="4050" cy="890" r="22"/><circle class="tip" cx="6600" cy="1715" r="22"/><circle class="tip" cx="3000" cy="1715" r="22"/><circle class="tip" cx="6660" cy="2465" r="22"/><circle class="tip" cx="2940" cy="2465" r="22"/><circle class="tip" cx="5815" cy="3620" r="22"/><circle class="tip" cx="3785" cy="3620" r="22"/></g>
+  </svg>
+
+  <div class="wrap">
+    <div class="hero-leaf" aria-hidden="true"><svg><use href="#leaf"/></svg></div>
+    <h1 class="greet" id="greet">
+      <span class="en">Hello, Canada.</span>
+      <span class="fr" lang="fr">Bonjour, Canada.</span>
+    </h1>
+    <p class="sub">Ask about <b>any Government of Canada service</b> in plain language — in English or French.</p>
+
+    <form class="composer-wrap" id="ask" action="chat.html" role="search" aria-label="Ask Canada">
+      <div class="composer">
+        <button type="button" class="cbtn" aria-label="Attach a document or photo">
+          <svg class="ico" viewBox="0 0 24 24"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+        </button>
+        <div class="field">
+          <label for="q" class="sr-only">Ask a question about government services</label>
+          <input id="q" name="q" type="text" autocomplete="off" placeholder=" " maxlength="2000">
+          <div class="ph" aria-hidden="true"><span class="pre">Try </span><span class="rot" id="rot">“How do I renew my passport?”</span></div>
+        </div>
+        <button type="button" class="cbtn mic" aria-label="Ask by voice">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
+        </button>
+        <button type="submit" class="send" aria-label="Send question">
+          <svg class="ico" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+        </button>
+      </div>
+      <div class="trust">
+        <span><svg class="ico" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Every answer links its official source</span>
+        <span><svg class="ico" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>No account. Nothing stored.</span>
+      </div>
+    </form>
+
+    <ul class="chips" aria-label="Popular questions">
+      <li><a class="chip" href="chat.html"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/></svg>Renew a passport</a></li>
+      <li><a class="chip" href="#"><svg class="ico" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Canada Child Benefit</a></li>
+      <li><a class="chip" href="#"><svg class="ico" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>File my taxes</a></li>
+      <li><a class="chip" href="#"><svg class="ico" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Employment Insurance</a></li>
+      <li><a class="chip" href="#"><svg class="ico" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>Travel advisories</a></li>
+      <li><a class="chip" href="#"><svg class="ico" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>Weather alerts</a></li>
+      <li><a class="chip" href="#"><svg class="ico" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>Product recalls</a></li>
+      <li><a class="chip" href="#"><svg class="ico" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>Old Age Security</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═════════════ FLAG: SIGNATURE ═════════════ -->
+<section class="flag-sec" aria-labelledby="flag-h">
+  <div class="wrap center">
+    <span class="eyebrow">Answers you can act on</span>
+    <h2 class="h2" id="flag-h">The whole government,<br><em>in one conversation.</em></h2>
+    <p class="lede">Ask once. Get a clear answer, then a planner, calculator or checklist right in the chat — and a direct path to finish on the official site.</p>
+  </div>
+
+  <div class="flag" role="img" aria-label="An Ask Canada conversation set in the white centre of a Canadian flag, where the maple leaf would be.">
+    <div class="pale l" aria-hidden="true"><span class="tag">English</span><span class="word">Ask.</span></div>
+    <div class="field-w">
+      <div class="device" aria-hidden="true">
+        <div class="dev-top">
+          <span class="brand"><span class="mark"><svg><use href="#leaf"/></svg></span>Ask Canada</span>
+          <span class="pill">EN · FR</span>
+        </div>
+        <div class="dev-body">
+          <div class="u-bub">How do I renew my passport? It expires in March.</div>
+          <p class="a-txt">You can <b>renew</b> — no guarantor or proof of citizenship needed. Since March is within 6 months, you can even <b>renew online</b>.</p>
+          <div class="mini">
+            <div class="mini-h">
+              <span class="mini-ic"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/></svg></span>
+              <span><strong>Passport renewal planner</strong><small>Adult · living in Canada</small></span>
+              <span class="ok"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Eligible</span>
+            </div>
+            <div class="mini-stats">
+              <div><small>Fee · 10 yr</small><b>$163.50</b></div>
+              <div><small>Processing</small><b>20<span>bus. days</span></b></div>
+              <div><small>Apply</small><b>Online</b></div>
+            </div>
+            <div class="mini-cta"><small>canada.ca · checked Sep 29, 2026</small><span class="btn-maple">Continue on canada.ca <svg class="ico" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></div>
+          </div>
+        </div>
+        <div class="dev-comp"><span>Ask a follow-up…</span><span class="cbtn"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg></span><span class="send"><svg class="ico" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></span></div>
+      </div>
+    </div>
+    <div class="pale r" aria-hidden="true"><span class="word" lang="fr">Demandez.</span><span class="tag" lang="fr">Français</span></div>
+
+    <div class="float f1" aria-hidden="true">
+      <small><svg class="ico" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Next holiday</small>
+      <strong>Thanksgiving</strong>
+      <p>Monday, October 12. A federal statutory holiday — ask what’s open.</p>
+    </div>
+    <div class="float f2" aria-hidden="true">
+      <small><svg class="ico" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Employment Insurance</small>
+      <strong>Apply within 4&nbsp;weeks</strong>
+      <p>of your last day of work — even if you haven’t received your record of employment.</p>
+    </div>
+  </div>
+  <div class="wrap flag-cap">
+    <span>Flag proportions 1 : 2 : 1 — the leaf, replaced by your question.</span>
+    <span>Figures shown come from canada.ca, checked September 29, 2026.</span>
+  </div>
+</section>
+
+<!-- ═════════════ HOW IT WORKS ═════════════ -->
+<section class="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="how-head">
+      <div>
+        <span class="eyebrow">How it works</span>
+        <h2 class="h2" id="how-h">From question<br>to <em>done.</em></h2>
+      </div>
+      <p class="lede">No department names to learn, no forms to hunt for. Say what’s going on in your life, and Ask Canada finds the service, explains it, and shows you the next step.</p>
+    </div>
+
+    <ol class="steps" style="list-style:none;padding:0">
+      <li class="step">
+        <span class="n">STEP 1</span>
+        <h3>Ask the way you’d ask a person.</h3>
+        <p>Type it, say it, or attach the letter you got from the CRA. English or French — switch any time.</p>
+        <div class="vig v-ask" aria-hidden="true">
+          <div class="v-row"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>“I just lost my job. What now?”<em>VOICE</em></div>
+          <div class="v-row" lang="fr"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>Quand dois-je produire ma déclaration?<em>FR</em></div>
+          <div class="v-row"><svg class="ico" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>notice-of-assessment.pdf<em>FILE</em></div>
+        </div>
+      </li>
+      <li class="step">
+        <span class="n">STEP 2</span>
+        <h3>Get a clear answer, with its source.</h3>
+        <p>Short sentences, real numbers, no jargon. Every fact links to the canada.ca page it came from.</p>
+        <div class="vig" aria-hidden="true">
+          <div class="v-src">
+            <p>Service standard for a passport submitted at a passport office: <mark>10 business days</mark>. By mail or online: <mark>20 business days</mark>, plus mailing time.</p>
+            <span class="srcpill"><span class="dot"><svg><use href="#leaf"/></svg></span>canada.ca › passport processing times</span>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <span class="n">STEP 3</span>
+        <h3>Finish on the official site.</h3>
+        <p>When it’s time to sign in, apply or pay, you go straight to the right government page — we never ask for your SIN or banking.</p>
+        <div class="vig v-hand" aria-hidden="true">
+          <div class="hand first"><span>Renew your passport online<small>canada.ca · IRCC Portal</small></span><span class="go"><svg class="ico" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></div>
+          <div class="hand"><span>Check your benefit payments<small>CRA My Account</small></span><span class="go"><svg class="ico" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═════════════ PRIVACY ═════════════ -->
+<section class="priv-sec" aria-labelledby="priv-h">
+  <div class="wrap">
+    <div class="priv">
+      <span class="eyebrow">Privacy</span>
+      <h2 class="h2" id="priv-h">Private by design. <em>Not by policy.</em></h2>
+      <p class="lede">Ask about your health, your money or your status without leaving a trail. The safest data is the data we never keep.</p>
+      <div class="pgrid">
+        <div class="pitem">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m17 8 5 5M22 8l-5 5"/></svg>
+          <h3>No account needed</h3>
+          <p>Open it and ask. There is nothing to sign up for.</p>
+        </div>
+        <div class="pitem">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.53 13.53 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><path d="m2 2 20 20"/></svg>
+          <h3>No tracking cookies</h3>
+          <p>No ad pixels, no profiles, no following you around the web.</p>
+        </div>
+        <div class="pitem">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+          <h3>Conversations aren’t stored</h3>
+          <p>Your questions are answered, then gone from our servers.</p>
+        </div>
+        <div class="pitem">
+          <svg class="ico" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
+          <h3>Your plans stay on your device</h3>
+          <p>Checklists and reminders you save live in your browser only.</p>
+        </div>
+        <div class="pitem">
+          <svg class="ico" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <h3>Never asks for your numbers</h3>
+          <p>No SIN, banking, or passport numbers. Ever.</p>
+        </div>
+        <div class="pitem">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          <h3>Built to accessibility standards</h3>
+          <p>WCAG 2.1 AA, keyboard and screen reader ready, English and French.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ SOURCES ═════════════ -->
+<section class="src-sec" aria-labelledby="src-h">
+  <div class="wrap src-grid">
+    <div>
+      <span class="eyebrow">Official sources</span>
+      <h2 class="h2" id="src-h">Every answer <em>shows its work.</em></h2>
+      <p class="lede">Ask Canada only answers from official Government of Canada pages and live government data — weather, recalls, travel advisories and more. Each fact comes with the page it’s from and the date it was checked.</p>
+    </div>
+    <div class="cite-stack" aria-hidden="true">
+      <div class="cite back2"><div class="row"><span class="fav"><svg><use href="#leaf"/></svg></span><div><div class="t">Travel advice and advisories</div><div class="d">travel.gc.ca</div></div></div></div>
+      <div class="cite back1"><div class="row"><span class="fav"><svg><use href="#leaf"/></svg></span><div><div class="t">Recalls and safety alerts</div><div class="d">recalls-rappels.canada.ca</div></div></div></div>
+      <div class="cite front">
+        <div class="row"><span class="fav"><svg><use href="#leaf"/></svg></span><div><div class="t">Passport and travel document fee changes</div><div class="d">canada.ca › passports › fees</div></div></div>
+        <blockquote>A 10-year adult passport for Canadians living in Canada costs $163.50, as of March 31, 2026.</blockquote>
+        <div class="meta">
+          <span class="tagm ok2"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Checked Sep 29, 2026</span>
+          <span class="tagm">Page updated Jul 20, 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="domains" aria-label="Sources include canada.ca, travel.gc.ca, weather.gc.ca, recalls-rappels.canada.ca, statcan.gc.ca, jobbank.gc.ca, parks.canada.ca and elections.ca">
+    <div class="marquee" aria-hidden="true">
+      <span>canada.ca</span><span>travel.gc.ca</span><span>weather.gc.ca</span><span>recalls-rappels.canada.ca</span><span>statcan.gc.ca</span><span>jobbank.gc.ca</span><span>parks.canada.ca</span><span>elections.ca</span><span>bankofcanada.ca</span>
+      <span>canada.ca</span><span>travel.gc.ca</span><span>weather.gc.ca</span><span>recalls-rappels.canada.ca</span><span>statcan.gc.ca</span><span>jobbank.gc.ca</span><span>parks.canada.ca</span><span>elections.ca</span><span>bankofcanada.ca</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ EVERY SERVICE ═════════════ -->
+<section class="svc-sec" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="how-head">
+      <div>
+        <span class="eyebrow">Every service</span>
+        <h2 class="h2" id="svc-h">Life happens.<br><em>Ask about it.</em></h2>
+      </div>
+      <p class="lede">From your first job to your pension, from a new baby to a new country. Start anywhere — or just type what’s on your mind.</p>
+    </div>
+    <ul class="svc">
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><strong>Benefits</strong><span class="q">“What benefits can I get as a new parent?”</span></a></li>
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg></span><strong>Taxes</strong><span class="q">“Can I claim my home office?”</span></a></li>
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><strong>Jobs &amp; EI</strong><span class="q">“I was laid off. Am I eligible for EI?”</span></a></li>
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/></svg></span><strong>Passports &amp; travel</strong><span class="q">“Is it safe to travel to Mexico right now?”</span></a></li>
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span><strong>Immigration &amp; citizenship</strong><span class="q">“How do I apply for citizenship?”</span></a></li>
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><strong>Health</strong><span class="q">“Am I covered by the dental care plan?”</span></a></li>
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><strong>Seniors &amp; pensions</strong><span class="q">“When should I start my CPP?”</span></a></li>
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><strong>Housing</strong><span class="q">“Is there help for first-time home buyers?”</span></a></li>
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><strong>Students</strong><span class="q">“How do student grants work?”</span></a></li>
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg></span><strong>Business</strong><span class="q">“Do I need to register for GST/HST?”</span></a></li>
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="15" r="6"/><path d="M8.2 9.8 5 2h4l3 6 3-6h4l-3.2 7.8"/></svg></span><strong>Veterans</strong><span class="q">“What support is there after I leave the Forces?”</span></a></li>
+      <li><a href="#"><span class="si"><svg class="ico" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span><strong>Weather &amp; safety</strong><span class="q">“Are there weather warnings near me?”</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═════════════ CLOSING ═════════════ -->
+<section class="close" aria-labelledby="close-h">
+  <svg class="big-leaf" viewBox="2860 330 3880 4180" aria-hidden="true"><path d="M4890 4430l-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z"/></svg>
+  <div class="wrap">
+    <h2 class="greet" id="close-h"><span class="en">What do you need?</span><span class="fr" lang="fr">On vous écoute.</span></h2>
+    <p class="sub">One question is all it takes.</p>
+    <div class="close-cta">
+      <a class="btn-lg p" href="#ask">Ask a question <svg class="ico" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
+      <a class="btn-lg s" href="#" lang="fr">Commencer en français</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="#"><span class="mark"><svg><use href="#leaf"/></svg></span>Ask Canada</a>
+      <p>Independent service. Answers come from official Government of Canada sources — always confirm on the linked official page.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">How answers work</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" lang="fr">Français</a></li>
+      </ul>
+    </nav>
+    <div class="fine"><span>In an emergency, call 911. In crisis? Call or text 9-8-8.</span><span>canada.ryancampbell.com</span></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const hdr = document.getElementById('hdr');
+  const onScroll = () => hdr.classList.toggle('scrolled', scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  const prompts = [
+    '“How do I renew my passport?”',
+    '“Can I get EI after a layoff?”',
+    '“When is my tax return due?”',
+    '“Is my baby’s car seat recalled?”',
+    '“Prestations pour les aînés?”',
+    '“Is it safe to travel to Japan?”'
+  ];
+  const rot = document.getElementById('rot');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let i = 0;
+  setInterval(() => {
+    rot.classList.add('out');
+    setTimeout(() => {
+      i = (i + 1) % prompts.length;
+      rot.textContent = prompts[i];
+      rot.classList.remove('out'); rot.classList.add('in');
+      requestAnimationFrame(() => requestAnimationFrame(() => rot.classList.remove('in')));
+    }, 420);
+  }, 3200);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+/* Composer: the question box on the landing hero, the closing section and the chat dock (imported by Composer.tsx). */
+.ac-composer {
+  position: relative;
+  width: 100%;
+  background: var(--card-glass);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  backdrop-filter: blur(24px) saturate(1.5);
+  border: 1px solid var(--edge);
+  border-radius: 28px;
+  box-shadow: 0 0 0 1px var(--hair), var(--sh-lg);
+  transition: box-shadow 0.3s;
+  text-align: start;
+}
+/* Focus follows the text field only (the tool buttons inside draw their own outline). One focus language
+   for every composer (hero, dock, closing; pointer, touch or keyboard): the same 2px ink ring behind a 2px
+   paper gap as every other control, >= 3:1 against paper, cards and the aurora (WCAG 1.4.11 / 2.4.11).
+   In dark mode --ink is the light ink, so the ring stays bright. */
+.ac-composer:has(textarea:focus) {
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--ink), var(--sh-lg);
+}
+.ac-composer__field {
+  position: relative;
+}
+.ac-composer textarea {
+  display: block;
+  width: 100%;
+  resize: none;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 19px;
+  line-height: 1.45;
+  padding: 22px 26px 6px;
+  min-height: 72px;
+}
+.ac-composer textarea:focus-visible {
+  outline: none;
+}
+.ac-composer__ph {
+  position: absolute;
+  inset-inline: 26px;
+  top: 22px;
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--ink-3);
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ac-composer__ph-text {
+  display: inline-block;
+  max-width: 100%;
+}
+.ac-composer__ph-text.is-leaving {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  animation: ph-out 0.24s ease both;
+}
+.ac-composer__ph-text.is-entering {
+  animation: ph-in 0.24s ease both;
+}
+@keyframes ph-out {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: translateY(-6px); }
+}
+@keyframes ph-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.ac-ph-compact {
+  display: none;
+}
+@media (max-width: 760px) {
+  .ac-ph-wide:has(+ .ac-ph-compact) {
+    display: none;
+  }
+  .ac-ph-compact {
+    display: inline;
+  }
+}
+.ac-composer__tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px 10px 12px;
+}
+.ac-composer__tools-l {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  min-width: 0;
+}
+.ac-composer__hint {
+  font-size: 13px;
+  color: var(--ink-3);
+  margin-inline-start: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ac-icon-btn {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  flex: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-icon-btn:hover {
+    background: var(--hair);
+    color: var(--ink);
+  }
+}
+.ac-icon-btn.is-listening {
+  background: var(--maple-wash);
+  color: var(--maple);
+  animation: pulse-ring 1.6s ease-out infinite;
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--maple) 35%, transparent); }
+  100% { box-shadow: 0 0 0 12px transparent; }
+}
+.ac-send {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 0;
+  background: var(--maple);
+  color: #fff;
+  cursor: pointer;
+  flex: none;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 6px 16px -4px rgba(213, 43, 30, 0.55);
+  transition: transform 0.25s var(--ease), background 0.2s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-send:hover {
+    transform: scale(1.05);
+    background: var(--maple-ink);
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  [data-theme='dark'] .ac-send:hover {
+    background: #c9301f;
+  }
+}
+/* The ring sits off the maple fill, in ink, so it contrasts with both the button and the surface. */
+.ac-send:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+.ac-send:disabled {
+  opacity: 0.55;
+  transform: none;
+}
+.ac-send.is-stop {
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: var(--sh-md);
+}
+.ac-composer__files {
+  list-style: none;
+  margin: 0;
+  padding: 14px 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ac-composer__file {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 4px 4px 4px;
+  padding-inline-end: 6px;
+  border-radius: 12px;
+  background: var(--paper-2);
+  border: 1px solid var(--hair);
+}
+.ac-composer__note {
+  position: absolute;
+  inset-inline-start: 18px;
+  bottom: calc(100% + 10px);
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13.5px;
+  box-shadow: var(--sh-md);
+  animation: rise 0.3s var(--ease) both;
+  max-width: calc(100% - 36px);
+}
+
+/* dock variant */
+.ac-composer--dock textarea {
+  min-height: 56px;
+  padding: 17px 22px 4px;
+  font-size: 17px;
+}
+.ac-composer--dock .ac-composer__ph {
+  inset-inline: 22px;
+  top: 17px;
+  font-size: 17px;
+}
+.ac-composer--dock .ac-composer__tools {
+  padding: 2px 10px 8px;
+}
+.ac-composer--dock .ac-send {
+  width: 44px;
+  height: 44px;
+}
+
+@media (max-width: 760px) {
+  .ac-composer textarea,
+  .ac-composer__ph {
+    font-size: 17px;
+  }
+  .ac-composer--hero textarea {
+    padding: 18px 20px 4px;
+    min-height: 84px;
+  }
+  .ac-composer--hero .ac-composer__ph,
+  .ac-composer--closing .ac-composer__ph {
+    inset-inline: 20px;
+    top: 18px;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .ac-composer--closing textarea {
+    padding: 18px 20px 4px;
+  }
+  .ac-composer--hero .ac-composer__hint,
+  .ac-composer--closing .ac-composer__hint {
+    display: none;
+  }
+  .ac-composer--dock {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: end;
+    border-radius: 26px;
+  }
+  .ac-composer--dock .ac-composer__files {
+    grid-column: 1 / -1;
+  }
+  .ac-composer--dock .ac-composer__field {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .ac-composer--dock textarea {
+    min-height: 52px;
+    padding: 14px 4px 14px 2px;
+    font-size: 16px;
+  }
+  .ac-composer--dock .ac-composer__ph {
+    inset-inline: 2px 4px;
+    top: 14px;
+    font-size: 16px;
+  }
+  .ac-composer--dock .ac-composer__tools {
+    display: contents;
+  }
+  .ac-composer--dock .ac-composer__tools-l {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 4px 0 4px 4px;
+  }
+  .ac-composer--dock .ac-composer__tools-l > button:nth-of-type(2) {
+    display: none;
+  }
+  .ac-composer--dock .ac-composer__hint {
+    display: none;
+  }
+  .ac-composer--dock .ac-send {
+    grid-column: 3;
+    grid-row: 2;
+    margin: 4px;
+  }
+}

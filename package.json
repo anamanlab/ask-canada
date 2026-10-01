@@ -1,0 +1,54 @@
+{
+  "name": "canada",
+  "version": "0.1.0",
+  "private": true,
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "check:i18n": "node scripts/check-i18n.mjs && node scripts/fr-typography.mjs",
+    "check:typography": "node scripts/fr-typography.mjs",
+    "check:scenarios": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-scenarios.mjs",
+    "check:guards": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-abuse-guards.mjs",
+    "art": "node scripts/build-art.mjs",
+    "shot": "node scripts/shot.mjs"
+  },
+  "dependencies": {
+    "@ai-sdk/amazon-bedrock": "^5.0.102",
+    "@ai-sdk/anthropic": "^4.0.69",
+    "@ai-sdk/azure": "^4.0.86",
+    "@ai-sdk/gateway": "^4.0.101",
+    "@ai-sdk/react": "^4.0.126",
+    "@vercel/firewall": "^1.2.5",
+    "@vercel/functions": "^3.9.9",
+    "ai": "^7.0.123",
+    "botid": "^1.5.11",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.49.0",
+    "motion": "^13.4.6",
+    "next": "16.3.7",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "streamdown": "^2.6.0",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.7",
+    "playwright": "1.63.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@10.28.2"
+}

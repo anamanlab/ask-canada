@@ -1,0 +1,2829 @@
+{
+  "recent": {
+    "mode": "recent",
+    "query": null,
+    "category": "all",
+    "lang": "en",
+    "fetchedAt": "2026-09-30T15:14:40.269Z",
+    "searchUrl": "https://recalls-rappels.canada.ca/en/search/site",
+    "subscribeUrl": "https://recalls-rappels.canada.ca/en/subscribe",
+    "reportUrl": "https://www.canada.ca/en/services/health/report-health-safety-concern.html",
+    "vehicleUrl": "https://tc.canada.ca/en/road-transportation/defects-recalls-vehicles-tires-child-car-seats",
+    "live": true,
+    "total": 19689,
+    "items": [
+      {
+        "id": "certain-3-inch-grundfos-sqflex-solar-submersible-pumps-recalled-due-electric-shock",
+        "title": "Certain 3-inch Grundfos SQFlex Solar Submersible Pumps recalled due to electric shock hazard",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/certain-3-inch-grundfos-sqflex-solar-submersible-pumps-recalled-due-electric-shock",
+        "kind": "recall",
+        "type": "Consumer product recall",
+        "category": "consumer",
+        "date": "2026-09-29",
+        "details": {
+          "brand": "Grundfos",
+          "product": "Grundfos 3-inch SQFlex Solar Submersible Pumps",
+          "issue": [
+            "Consumer products - Electrical hazard"
+          ],
+          "whatToDo": "Immediately stop using the recalled product and contact Grundfos or your installer for a repair or replacement.",
+          "publishedBy": "Health Canada",
+          "affected": [
+            {
+              "product": "3 SQF-2"
+            },
+            {
+              "product": "3 SQF-3"
+            },
+            {
+              "product": "6 SQF-2"
+            },
+            {
+              "product": "6 SQF-3"
+            },
+            {
+              "product": "11 SQF-2"
+            }
+          ],
+          "affectedTotal": 5
+        }
+      },
+      {
+        "id": "certain-summerhill-market-brand-raspberries-and-raspberry-containing-products-recalled",
+        "title": "Certain Summerhill Market brand raspberries and raspberry-containing products recalled due to norovirus",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/certain-summerhill-market-brand-raspberries-and-raspberry-containing-products-recalled",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2026-09-29",
+        "details": {
+          "brand": "Summerhill Market",
+          "product": "Frozen raspberries, frozen berry mix, frozen smoothie mix, protein power pod raspberry",
+          "issue": [
+            "Food - Microbial contamination - Norovirus"
+          ],
+          "whatToDo": "Do not consume, use, sell, serve, or distribute recalled products",
+          "distribution": "Ontario",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 2",
+          "affected": [
+            {
+              "brand": "Summerhill Market",
+              "product": "Frozen Raspberries",
+              "size": "800 g",
+              "upc": "0 56647 15698 3",
+              "codes": "Sold from July 29, 2026 up to and including September 15, 2026"
+            },
+            {
+              "brand": "Summerhill Market",
+              "product": "Frozen Berry Mix",
+              "size": "900 g",
+              "upc": "0 56647 15706 5",
+              "codes": "Sold from July 29, 2026 up to and including September 15, 2026"
+            },
+            {
+              "brand": "Summerhill Market",
+              "product": "Frozen Smoothie Mix",
+              "size": "900 g",
+              "upc": "0 56647 15705 8",
+              "codes": "Sold from July 29, 2026 up to and including September 15, 2026"
+            },
+            {
+              "product": "Protein Power Pod Raspberry",
+              "size": "135 g",
+              "upc": "0 56647 16430 8",
+              "codes": "Sold from July 29, 2026 up to and including September 15, 2026"
+            }
+          ],
+          "affectedTotal": 4
+        }
+      },
+      {
+        "id": "smarter-snacks-brand-vegan-protein-puff-chili-lime-flavored-recalled-due-undeclared-0",
+        "title": "Smarter Snacks brand Vegan Protein Puff Chili & Lime Flavored recalled due to undeclared milk",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/smarter-snacks-brand-vegan-protein-puff-chili-lime-flavored-recalled-due-undeclared-0",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2026-09-29",
+        "details": {
+          "brand": "Smarter Snacks",
+          "product": "Vegan Protein Puff Chili & Lime Flavored",
+          "issue": [
+            "Food - Allergen - Milk"
+          ],
+          "whatToDo": "Do not consume recalled products to which you are allergic or sensitive.",
+          "distribution": "National, Online",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 1",
+          "affected": [
+            {
+              "brand": "Smarter Snacks",
+              "product": "Vegan Protein Puff Chili & Lime Flavored",
+              "size": "50 g",
+              "upc": "8 684041 306837",
+              "codes": "05/05/2026 SS 125 L1; 04/17/2026 SS 107 L1"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "bd-alaristm-pump-module-and-subset-compatible-pump-infusion-sets",
+        "title": "BD Alaris™ Pump Module and subset of Compatible Pump Infusion Sets",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/bd-alaristm-pump-module-and-subset-compatible-pump-infusion-sets",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "Carefusion 303, Inc., BD Switzerland Sarl",
+          "product": "BD Alaris™ Pump Module and subset of Compatible Pump Infusion Sets",
+          "issue": [
+            "Medical devices - Performance"
+          ],
+          "whatToDo": "Contact the manufacturer if you require additional information.",
+          "publishedBy": "Health Canada",
+          "recallClass": "Type II",
+          "affected": [
+            {
+              "product": "8100",
+              "codes": "More than 10 numbers, contact manufacturer."
+            },
+            {
+              "product": "2430-0500",
+              "codes": "More than 10 numbers, contact manufacturer."
+            },
+            {
+              "product": "10561554",
+              "codes": "More than 10 numbers, contact manufacturer."
+            },
+            {
+              "product": "2465-0007",
+              "codes": "More than 10 numbers, contact manufacturer."
+            },
+            {
+              "product": "10010453",
+              "codes": "More than 10 numbers, contact manufacturer."
+            },
+            {
+              "product": "10010454",
+              "codes": "More than 10 numbers, contact manufacturer."
+            }
+          ],
+          "affectedTotal": 43
+        }
+      },
+      {
+        "id": "smarter-snacks-brand-vegan-protein-puff-chili-lime-flavored-contains-undeclared-milk",
+        "title": "Smarter Snacks brand Vegan Protein Puff Chili & Lime Flavored contains undeclared milk",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/smarter-snacks-brand-vegan-protein-puff-chili-lime-flavored-contains-undeclared-milk",
+        "kind": "alert",
+        "type": "Food safety warning",
+        "category": "food",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "Smarter Snacks",
+          "product": "Vegan Protein Puff Chili & Lime Flavored",
+          "issue": [
+            "Food - Allergen - Milk"
+          ],
+          "whatToDo": "Do not consume affected products to which you are allergic or sensitive.",
+          "distribution": "National, Online",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "affected": [
+            {
+              "brand": "Smarter Snacks",
+              "product": "Vegan Protein Puff Chili & Lime Flavored",
+              "size": "50 g",
+              "upc": "8 684041 306837",
+              "codes": "05/05/2026 SS 125 L1"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "omniasecuretm-mri-surescantm",
+        "title": "OmniaSecure™ MRI SureScan™",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/omniasecuretm-mri-surescantm",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "MEDTRONIC INC.",
+          "product": "OmniaSecure™ MRI SureScan™",
+          "issue": [
+            "Medical devices - Performance"
+          ],
+          "whatToDo": "Contact the manufacturer if you require additional information.",
+          "publishedBy": "Health Canada",
+          "recallClass": "Type II",
+          "affected": [
+            {
+              "product": "3930M79",
+              "codes": "More than 10 numbers, contact manufacturer."
+            },
+            {
+              "product": "3930M74",
+              "codes": "More than 10 numbers, contact manufacturer."
+            }
+          ],
+          "affectedTotal": 2
+        }
+      },
+      {
+        "id": "pms-fampridine-10-mg-tablet-affected-lot-may-contain-foreign-material-particles",
+        "title": "PMS-FAMPRIDINE 10 mg Tablet: Affected lot may contain foreign material particles.",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/pms-fampridine-10-mg-tablet-affected-lot-may-contain-foreign-material-particles",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "Pharmascience Inc.",
+          "product": "PMS-FAMPRIDINE",
+          "issue": [
+            "Health products - Contamination"
+          ],
+          "whatToDo": "Consult your healthcare provider prior to discontinuing use of the affected product, or for any health concerns.",
+          "distribution": "Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Ontario, Quebec",
+          "publishedBy": "Health Canada",
+          "recallClass": "Type II",
+          "affected": [
+            {
+              "brand": "PHARMASCIENCE INC.",
+              "product": "PMS-FAMPRIDINE",
+              "codes": "24123884"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "nutraphase-brand-clean-beans-roasted-broad-beans-ketchup-flavour-recalled-due",
+        "title": "Nutraphase brand Clean Beans Roasted Broad Beans Ketchup flavour recalled due to undeclared milk",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/nutraphase-brand-clean-beans-roasted-broad-beans-ketchup-flavour-recalled-due",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "Nutraphase",
+          "product": "Roasted Broad Beans",
+          "issue": [
+            "Food - Allergen - Milk"
+          ],
+          "whatToDo": "Do not use, sell, serve or distribute the affected product.",
+          "distribution": "National, Online",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 2",
+          "affected": [
+            {
+              "brand": "Nutraphase",
+              "product": "Clean Beans Roasted Broad Beans Ketchup",
+              "size": "85 g",
+              "upc": "6 28618 00297 3",
+              "codes": "BEST BEFORE JUL/18/2027 LOT: NECA2507G"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "transport-canada-recall-2026422-midwest-industries-inc",
+        "title": "Transport Canada Recall - 2026422 - MIDWEST INDUSTRIES INC.",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026422-midwest-industries-inc",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "YAMAHA, SHORELAND'R",
+          "product": "Light Trailer recalled by MIDWEST INDUSTRIES INC.",
+          "issue": [
+            "Vehicle - Label"
+          ],
+          "publishedBy": "Transport Canada"
+        }
+      },
+      {
+        "id": "amplatzertm-amulettm-left-atrial-appendage-occluder",
+        "title": "Amplatzer™ Amulet™ Left Atrial Appendage Occluder",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/amplatzertm-amulettm-left-atrial-appendage-occluder",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2026-09-25"
+      },
+      {
+        "id": "perma-handtm-silk-suture",
+        "title": "PERMA-HAND™ Silk Suture",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/perma-handtm-silk-suture",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2026-09-25"
+      },
+      {
+        "id": "sanofi-aventis-canada-inc-recalling-certain-insulin-pens-and-cartridges",
+        "title": "Sanofi-Aventis Canada Inc. recalling certain insulin pens and cartridges",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/sanofi-aventis-canada-inc-recalling-certain-insulin-pens-and-cartridges",
+        "kind": "advisory",
+        "type": "Public advisory",
+        "category": "health",
+        "date": "2026-09-25"
+      },
+      {
+        "id": "limited-number-sarclisa-single-use-vials-may-have-been-frozen-during-shipment",
+        "title": "Limited number of Sarclisa single use vials may have been frozen during shipment",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/limited-number-sarclisa-single-use-vials-may-have-been-frozen-during-shipment",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2026-09-25"
+      },
+      {
+        "id": "transport-canada-recall-2026433-fiat-chrysler-automobiles",
+        "title": "Transport Canada Recall - 2026433 - FIAT CHRYSLER AUTOMOBILES",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026433-fiat-chrysler-automobiles",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-09-25",
+        "details": {
+          "brand": "JEEP",
+          "product": "SUV recalled by FIAT CHRYSLER AUTOMOBILES",
+          "issue": [
+            "Vehicle - Accessories"
+          ],
+          "publishedBy": "Transport Canada"
+        }
+      },
+      {
+        "id": "transport-canada-recall-2026434-volkswagen",
+        "title": "Transport Canada Recall - 2026434 - VOLKSWAGEN",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026434-volkswagen",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-09-25",
+        "details": {
+          "brand": "VOLKSWAGEN",
+          "product": "SUV recalled by VOLKSWAGEN",
+          "issue": [
+            "Vehicle - Electrical"
+          ],
+          "publishedBy": "Transport Canada"
+        }
+      },
+      {
+        "id": "interstimtm-systems",
+        "title": "InterStim™ Systems",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/interstimtm-systems",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "likoralltm-patient-lift-systems",
+        "title": "Likorall™ Patient Lift Systems",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/likoralltm-patient-lift-systems",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "go-beanz-brand-roasted-broadbeans-ketchup-and-salt-pepper-flavors-recalled-due",
+        "title": "Go! Beanz brand Roasted Broadbeans (Ketchup and Salt & Pepper flavors) recalled due to undeclared milk",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/go-beanz-brand-roasted-broadbeans-ketchup-and-salt-pepper-flavors-recalled-due",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "apo-semaglutide-injection-incorrect-dose-display-0",
+        "title": "Apo-Semaglutide Injection : Incorrect dose display",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/apo-semaglutide-injection-incorrect-dose-display-0",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "inzoner-detachment-system",
+        "title": "Inzone® Detachment System",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/inzoner-detachment-system",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "galanz-retro-refrigerators-recalled-due-fire-and-burn-hazards",
+        "title": "Galanz Retro Refrigerators recalled due to fire and burn hazards",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/galanz-retro-refrigerators-recalled-due-fire-and-burn-hazards",
+        "kind": "recall",
+        "type": "Consumer product recall",
+        "category": "consumer",
+        "date": "2026-09-24",
+        "details": {
+          "brand": "Galanz",
+          "product": "Galanz Retro Refrigerators",
+          "issue": [
+            "Consumer products - Fire hazard",
+            "Consumer products - Burn hazard"
+          ],
+          "whatToDo": "Immediately stop using the recalled product, unplug it and contact Galanz to schedule a free in-home repair by a qualified technician.",
+          "publishedBy": "Health Canada",
+          "affected": [
+            {
+              "product": "Galanz Retro Refrigerator"
+            },
+            {
+              "product": "Galanz Retro Refrigerator"
+            }
+          ],
+          "affectedTotal": 2
+        }
+      },
+      {
+        "id": "inmo-air3-smart-glasses-recalled-due-burn-hazard",
+        "title": "INMO AIR3 Smart Glasses recalled due to burn hazard",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/inmo-air3-smart-glasses-recalled-due-burn-hazard",
+        "kind": "recall",
+        "type": "Consumer product recall",
+        "category": "consumer",
+        "date": "2026-09-24",
+        "details": {
+          "brand": "INMO",
+          "product": "INMO AIR3 Smart Glasses",
+          "issue": [
+            "Consumer products - Burn hazard"
+          ],
+          "whatToDo": "Immediately stop using the recalled product and update the product firmware to version 3.16 before reusing the product.",
+          "publishedBy": "Health Canada"
+        }
+      },
+      {
+        "id": "transport-canada-recall-2026426-bombardier-recreational-products",
+        "title": "Transport Canada Recall - 2026426 - BOMBARDIER RECREATIONAL PRODUCTS",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026426-bombardier-recreational-products",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "chungjungwon-brand-sunchang-ssamjang-seasoned-bean-paste-recalled-due-undeclared",
+        "title": "Chungjungwon brand Sunchang Ssamjang (seasoned bean paste) recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/chungjungwon-brand-sunchang-ssamjang-seasoned-bean-paste-recalled-due-undeclared",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-23"
+      },
+      {
+        "id": "richters-brand-dried-lemongrass-recalled-due-presence-stones",
+        "title": "Richters brand Dried Lemongrass recalled due to presence of stones",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/richters-brand-dried-lemongrass-recalled-due-presence-stones",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-23"
+      },
+      {
+        "id": "williams-cystoscopic-injection-needle",
+        "title": "Williams Cystoscopic Injection Needle",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/williams-cystoscopic-injection-needle",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2026-09-23"
+      },
+      {
+        "id": "transport-canada-recall-2026432-ford",
+        "title": "Transport Canada Recall - 2026432 - FORD",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026432-ford",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-09-23"
+      },
+      {
+        "id": "rj-king-fisheries-ltd-and-moncton-fish-market-brand-frozen-cooked-lobster-meat",
+        "title": "R.J. King Fisheries Ltd. and Moncton Fish Market brand frozen cooked lobster meat recalled due to Staphylococcus aureus",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/rj-king-fisheries-ltd-and-moncton-fish-market-brand-frozen-cooked-lobster-meat",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-22"
+      },
+      {
+        "id": "so-delicious-dairy-free-brand-salted-caramel-non-dairy-frozen-dessert-cashew-base",
+        "title": "So Delicious Dairy Free brand Salted Caramel Non-dairy Frozen Dessert, Cashew Base recalled due to plastic-like and gravel-like fragments",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/so-delicious-dairy-free-brand-salted-caramel-non-dairy-frozen-dessert-cashew-base",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-22"
+      },
+      {
+        "id": "cambridge-audio-yoyo-m-portable-bluetooth-speakers-recalled-due-fire-hazard",
+        "title": "Cambridge Audio Yoyo (M) Portable Bluetooth Speakers recalled due to fire hazard",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/cambridge-audio-yoyo-m-portable-bluetooth-speakers-recalled-due-fire-hazard",
+        "kind": "recall",
+        "type": "Consumer product recall",
+        "category": "consumer",
+        "date": "2026-09-22"
+      }
+    ]
+  },
+  "recentFr": {
+    "mode": "recent",
+    "query": null,
+    "category": "all",
+    "lang": "fr",
+    "fetchedAt": "2026-09-30T15:14:43.488Z",
+    "searchUrl": "https://recalls-rappels.canada.ca/fr/recherche/site",
+    "subscribeUrl": "https://recalls-rappels.canada.ca/fr/abonnez-vous",
+    "reportUrl": "https://www.canada.ca/fr/services/sante/signaler-probleme-lie-sante-ou-securite.html",
+    "vehicleUrl": "https://tc.canada.ca/fr/transport-routier/defauts-rappels-vehicules-pneus-sieges-auto-enfant",
+    "live": true,
+    "total": 19590,
+    "items": [
+      {
+        "id": "certaines-pompes-submersibles-solaires-grundfos-sqflex-3-pouces-rappelees-en-raison",
+        "title": "Certaines pompes submersibles solaires Grundfos SQFlex de 3 pouces rappelées en raison d'un risque de choc électrique",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/certaines-pompes-submersibles-solaires-grundfos-sqflex-3-pouces-rappelees-en-raison",
+        "kind": "recall",
+        "type": "Rappel de produits de consommation",
+        "category": "consumer",
+        "date": "2026-09-29",
+        "details": {
+          "brand": "Grundfos",
+          "product": "Pompes submersibles solaires Grundfos SQFlex de 3 pouces",
+          "issue": [
+            "Produits de consommation - Risque de choc électrique"
+          ],
+          "whatToDo": "Cessez immédiatement d'utiliser le produit rappelé et contactez Grundfos ou votre installateur pour obtenir une réparation ou un remplacement.",
+          "publishedBy": "Santé Canada",
+          "affected": [
+            {
+              "product": "3 SQF-2"
+            },
+            {
+              "product": "3 SQF-3"
+            },
+            {
+              "product": "6 SQF-2"
+            },
+            {
+              "product": "6 SQF-3"
+            },
+            {
+              "product": "11 SQF-2"
+            }
+          ],
+          "affectedTotal": 5
+        }
+      },
+      {
+        "id": "rappel-certains-framboises-et-produits-contenant-framboises-marque-summerhill-market-en",
+        "title": "Rappel de certains framboises et de produits contenant des framboises de marque Summerhill Market en raison de la présence de norovirus",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/rappel-certains-framboises-et-produits-contenant-framboises-marque-summerhill-market-en",
+        "kind": "recall",
+        "type": "Rappel d’aliments",
+        "category": "food",
+        "date": "2026-09-29",
+        "details": {
+          "brand": "Summerhill Market",
+          "product": "« Frozen raspberries » , « frozen berry mix » , « frozen smoothie mix » , « protein power pod raspberry »",
+          "issue": [
+            "Aliments - Contamination microbienne - Norovirus"
+          ],
+          "whatToDo": "Des produits visés par un rappel ne doivent pas être consommés, utilisés, vendus, servis ou distribués",
+          "distribution": "Ontario",
+          "publishedBy": "Agence canadienne d'inspection des aliments",
+          "recallClass": "Classe 2",
+          "affected": [
+            {
+              "brand": "Summerhill Market",
+              "product": "« Frozen Raspberries »",
+              "size": "800 g",
+              "upc": "0 56647 15698 3",
+              "codes": "Vendu du 29 juillet 2026 jusqu’au 15 septembre 2026 inclusivement"
+            },
+            {
+              "brand": "Summerhill Market",
+              "product": "« Frozen Berry Mix »",
+              "size": "900 g",
+              "upc": "0 56647 15706 5",
+              "codes": "Vendu du 29 juillet 2026 jusqu’au 15 septembre 2026 inclusivement"
+            },
+            {
+              "brand": "Summerhill Market",
+              "product": "« Frozen Smoothie Mix »",
+              "size": "900 g",
+              "upc": "0 56647 15705 8",
+              "codes": "Vendu du 29 juillet 2026 jusqu’au 15 septembre 2026 inclusivement"
+            },
+            {
+              "product": "« Protein Power Pod Raspberry »",
+              "size": "135 g",
+              "upc": "0 56647 16430 8",
+              "codes": "Vendu du 29 juillet 2026 jusqu’au 15 septembre 2026 inclusivement"
+            }
+          ],
+          "affectedTotal": 4
+        }
+      },
+      {
+        "id": "rappel-vegan-protein-puff-chili-lime-flavored-marque-smarter-snacks-en-raison-0",
+        "title": "Rappel de « Vegan Protein Puff Chili & Lime Flavored » de marque Smarter Snacks en raison de la présence non déclarée de lait",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/rappel-vegan-protein-puff-chili-lime-flavored-marque-smarter-snacks-en-raison-0",
+        "kind": "recall",
+        "type": "Rappel d’aliments",
+        "category": "food",
+        "date": "2026-09-29",
+        "details": {
+          "brand": "Smarter Snacks",
+          "product": "« Vegan Protein Puff Chili & Lime Flavored »",
+          "issue": [
+            "Aliments - Allergène - Lait"
+          ],
+          "whatToDo": "Ne consommez pas des produits visés par un rappel et auxquels vous êtes allergique ou sensible.",
+          "distribution": "Nationale, En ligne",
+          "publishedBy": "Agence canadienne d'inspection des aliments",
+          "recallClass": "Classe 1",
+          "affected": [
+            {
+              "brand": "Smarter Snacks",
+              "product": "« Vegan Protein Puff Chili & Lime Flavored »",
+              "size": "50 g",
+              "upc": "8 684041 306837",
+              "codes": "05/05/2026 SS 125 L1; 04/17/2026 SS 107 L1"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "module-pompe-bd-alaristm-et-sous-ensemble-dispositifs-perfusion-compatibles",
+        "title": "Module de pompe BD Alaris™ et sous-ensemble de dispositifs de perfusion compatibles",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/module-pompe-bd-alaristm-et-sous-ensemble-dispositifs-perfusion-compatibles",
+        "kind": "recall",
+        "type": "Rappel de produits de santé",
+        "category": "health",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "Carefusion 303, Inc., BD Switzerland Sarl",
+          "product": "Module de pompe BD Alaris™ et sous-ensemble de dispositifs de perfusion compatibles",
+          "issue": [
+            "Matériel médical - Rendement"
+          ],
+          "whatToDo": "Contactez le fabricant si vous avez besoin d'informations supplémentaires.",
+          "publishedBy": "Santé Canada",
+          "recallClass": "Type II",
+          "affected": [
+            {
+              "product": "Module de pompe BD Alaris™",
+              "codes": "Plus de 10 numéros, contactez le fabricant."
+            },
+            {
+              "product": "Sous-ensemble de dispositifs de perfusion BD Alaris™ compatibles",
+              "codes": "Plus de 10 numéros, contactez le fabricant."
+            },
+            {
+              "product": "Sous-ensemble de dispositifs de perfusion BD Alaris™ compatibles",
+              "codes": "Plus de 10 numéros, contactez le fabricant."
+            },
+            {
+              "product": "Sous-ensemble de dispositifs de perfusion BD Alaris™ compatibles",
+              "codes": "Plus de 10 numéros, contactez le fabricant."
+            },
+            {
+              "product": "Sous-ensemble de dispositifs de perfusion BD Alaris™ compatibles",
+              "codes": "Plus de 10 numéros, contactez le fabricant."
+            },
+            {
+              "product": "Sous-ensemble de dispositifs de perfusion BD Alaris™ compatibles",
+              "codes": "Plus de 10 numéros, contactez le fabricant."
+            }
+          ],
+          "affectedTotal": 43
+        }
+      },
+      {
+        "id": "presence-non-declaree-lait-dans-vegan-protein-puff-chili-lime-flavored-marque-smarter",
+        "title": "Présence non déclarée de lait dans « Vegan Protein Puff Chili & Lime Flavored » de marque Smarter Snacks",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/presence-non-declaree-lait-dans-vegan-protein-puff-chili-lime-flavored-marque-smarter",
+        "kind": "alert",
+        "type": "Avis de salubrité des aliments",
+        "category": "food",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "Smarter Snacks",
+          "product": "« Vegan Protein Puff Chili & Lime Flavored »",
+          "issue": [
+            "Aliments - Allergène - Lait"
+          ],
+          "whatToDo": "Ne consommez pas des produits visés et auxquels vous êtes allergique ou sensible.",
+          "distribution": "Nationale, En ligne",
+          "publishedBy": "Agence canadienne d'inspection des aliments",
+          "affected": [
+            {
+              "brand": "Smarter Snacks",
+              "product": "« Vegan Protein Puff Chili & Lime Flavored »",
+              "size": "50 g",
+              "upc": "8 684041 306837",
+              "codes": "05/05/2026 SS 125 L1"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "sonde-omniasecuretm-mri-surescantm",
+        "title": "Sonde OmniaSecure™ MRI SureScan™",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/sonde-omniasecuretm-mri-surescantm",
+        "kind": "recall",
+        "type": "Rappel de produits de santé",
+        "category": "health",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "MEDTRONIC INC.",
+          "product": "Sonde OmniaSecure™ MRI SureScan™",
+          "issue": [
+            "Matériel médical - Rendement"
+          ],
+          "whatToDo": "Contactez le fabricant si vous avez besoin d'informations supplémentaires.",
+          "publishedBy": "Santé Canada",
+          "recallClass": "Type II",
+          "affected": [
+            {
+              "product": "Sonde OmniaSecure™ MRI SureScan™",
+              "codes": "Plus de 10 numéros, contactez le fabricant."
+            },
+            {
+              "product": "Sonde OmniaSecure™ MRI SureScan™",
+              "codes": "Plus de 10 numéros, contactez le fabricant."
+            }
+          ],
+          "affectedTotal": 2
+        }
+      },
+      {
+        "id": "pms-fampridine-10-mg-comprime-lot-affecte-pourrait-contenir-particules-matiere",
+        "title": "PMS-FAMPRIDINE 10 mg Comprimé: Le lot affecté pourrait contenir des particules de matière étrangère.",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/pms-fampridine-10-mg-comprime-lot-affecte-pourrait-contenir-particules-matiere",
+        "kind": "recall",
+        "type": "Rappel de produits de santé",
+        "category": "health",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "Pharmascience Inc.",
+          "product": "PMS-FAMPRIDINE",
+          "issue": [
+            "Produits de santé - Contamination"
+          ],
+          "whatToDo": "Consultez votre professionnel de la santé avant de cesser d’utiliser le produit concerné, ou pour toute préoccupation quant à votre santé.",
+          "distribution": "Alberta, Colombie-Britannique, Manitoba, Nouveau-Brunswick, Terre-Neuve et Labrador, Ontario, Québec",
+          "publishedBy": "Santé Canada",
+          "recallClass": "Type II",
+          "affected": [
+            {
+              "brand": "PHARMASCIENCE INC.",
+              "product": "PMS-FAMPRIDINE",
+              "codes": "24123884"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "rappel-clean-beans-gourganes-grillees-saveur-ketchup-marque-nutraphase-en-raison",
+        "title": "Rappel de « Clean Beans gourganes grillées de saveur Ketchup » de marque Nutraphase en raison de la présence non déclarée de lait",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/rappel-clean-beans-gourganes-grillees-saveur-ketchup-marque-nutraphase-en-raison",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "Nutraphase",
+          "product": "Gourganes grilleés",
+          "issue": [
+            "Aliments - Allergène - Lait"
+          ],
+          "whatToDo": "Le produit visé ne doit pas être utilisé, vendu, servi ou distribué.",
+          "distribution": "Nationale, En ligne",
+          "publishedBy": "Agence canadienne d'inspection des aliments",
+          "recallClass": "Classe 2",
+          "affected": [
+            {
+              "brand": "Nutraphase",
+              "product": "« Clean Beans Gourganes Grillées Ketchup »",
+              "size": "85 g",
+              "upc": "6 28618 00297 3",
+              "codes": "MEILLEUR AVANT JUL/18/2027 LOT: NECA2507G"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "numero-rappel-transports-canada-2026422-midwest-industries-inc",
+        "title": "Numéro de rappel de Transports Canada - 2026422 - MIDWEST INDUSTRIES INC.",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/numero-rappel-transports-canada-2026422-midwest-industries-inc",
+        "kind": "recall",
+        "type": "Rappel de véhicule",
+        "category": "vehicles",
+        "date": "2026-09-28",
+        "details": {
+          "brand": "YAMAHA, SHORELAND'R",
+          "product": "Remorque légère rappelé par MIDWEST INDUSTRIES INC.",
+          "issue": [
+            "Véhicules - Étiquette"
+          ],
+          "publishedBy": "Transports Canada"
+        }
+      },
+      {
+        "id": "dispositif-occlusion-appendice-auriculaire-gauche-amulettm-amplatzer",
+        "title": "Dispositif d’occlusion de l’appendice auriculaire gauche Amulet™ Amplatzer",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/dispositif-occlusion-appendice-auriculaire-gauche-amulettm-amplatzer",
+        "kind": "recall",
+        "type": "Rappel de produits de santé",
+        "category": "health",
+        "date": "2026-09-25"
+      },
+      {
+        "id": "fil-suture-en-soie-perma-handtm",
+        "title": "Fil de suture en soie PERMA-HAND™",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/fil-suture-en-soie-perma-handtm",
+        "kind": "recall",
+        "type": "Rappel de produits de santé",
+        "category": "health",
+        "date": "2026-09-25"
+      },
+      {
+        "id": "sanofi-aventis-canada-inc-procede-au-rappel-certains-stylos-injecteurs-et-cartouches",
+        "title": "Sanofi-Aventis Canada Inc. procède au rappel de certains stylos injecteurs et cartouches d’insuline",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/sanofi-aventis-canada-inc-procede-au-rappel-certains-stylos-injecteurs-et-cartouches",
+        "kind": "advisory",
+        "type": "Avis public",
+        "category": "health",
+        "date": "2026-09-25"
+      },
+      {
+        "id": "certaines-unites-sarclisa-peuvent-avoir-ete-exposees-au-gel-durant-leur-transport",
+        "title": "Certaines unités de Sarclisa peuvent avoir été exposées au gel durant leur transport.",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/certaines-unites-sarclisa-peuvent-avoir-ete-exposees-au-gel-durant-leur-transport",
+        "kind": "recall",
+        "type": "Rappel de produits de santé",
+        "category": "health",
+        "date": "2026-09-25"
+      },
+      {
+        "id": "numero-rappel-transports-canada-2026433-fiat-chrysler-automobiles",
+        "title": "Numéro de rappel de Transports Canada - 2026433 - FIAT CHRYSLER AUTOMOBILES",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/numero-rappel-transports-canada-2026433-fiat-chrysler-automobiles",
+        "kind": "recall",
+        "type": "Rappel de véhicule",
+        "category": "vehicles",
+        "date": "2026-09-25",
+        "details": {
+          "brand": "JEEP",
+          "product": "Véhicule utilitaire-sport rappelé par FIAT CHRYSLER AUTOMOBILES",
+          "issue": [
+            "Véhicules - Accessoires"
+          ],
+          "publishedBy": "Transports Canada"
+        }
+      },
+      {
+        "id": "numero-rappel-transports-canada-2026434-volkswagen",
+        "title": "Numéro de rappel de Transports Canada - 2026434 - VOLKSWAGEN",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/numero-rappel-transports-canada-2026434-volkswagen",
+        "kind": "recall",
+        "type": "Rappel de véhicule",
+        "category": "vehicles",
+        "date": "2026-09-25",
+        "details": {
+          "brand": "VOLKSWAGEN",
+          "product": "Véhicule utilitaire-sport rappelé par VOLKSWAGEN",
+          "issue": [
+            "Véhicules - Circuit électrique"
+          ],
+          "publishedBy": "Transports Canada"
+        }
+      },
+      {
+        "id": "systemes-interstimtm",
+        "title": "Systèmes InterStim™",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/systemes-interstimtm",
+        "kind": "recall",
+        "type": "Rappel de produits de santé",
+        "category": "health",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "likoralltm-systemes-leve-personne",
+        "title": "Likorall™, systèmes de lève-personne",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/likoralltm-systemes-leve-personne",
+        "kind": "recall",
+        "type": "Rappel de produits de santé",
+        "category": "health",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "rappel-gourganes-grillees-saveurs-ketchup-et-sel-poivre-marque-go-beanz-en-raison",
+        "title": "Rappel de gourganes grillées (saveurs de Ketchup et Sel & Poivre) de marque Go! Beanz en raison de la présence non déclarée de lait",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/rappel-gourganes-grillees-saveurs-ketchup-et-sel-poivre-marque-go-beanz-en-raison",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "apo-semaglutide-injection-affichage-incorrect-dose-0",
+        "title": "Apo-Semaglutide Injection : Affichage incorrect de la dose",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/apo-semaglutide-injection-affichage-incorrect-dose-0",
+        "kind": "recall",
+        "type": "Rappel de produits de santé",
+        "category": "health",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "systeme-detachement-inzoner",
+        "title": "Système de détachement InZone®",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/systeme-detachement-inzoner",
+        "kind": "recall",
+        "type": "Rappel de produits de santé",
+        "category": "health",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "refrigerateurs-retro-galanz-rappeles-en-raison-risques-incendie-et-brulure",
+        "title": "Réfrigérateurs Retro Galanz rappelés en raison de risques d'incendie et de brûlure",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/refrigerateurs-retro-galanz-rappeles-en-raison-risques-incendie-et-brulure",
+        "kind": "recall",
+        "type": "Rappel de produits de consommation",
+        "category": "consumer",
+        "date": "2026-09-24",
+        "details": {
+          "brand": "Galanz",
+          "product": "Réfrigérateurs Retro Galanz",
+          "issue": [
+            "Produits de consommation - Risque d’incendie",
+            "Produits de consommation - Risque de brûlure"
+          ],
+          "whatToDo": "Cesser immédiatement d’utiliser le produit rappelé, le débrancher et communiquer avec Galanz pour planifier une réparation gratuite à domicile par un technicien qualifié.",
+          "publishedBy": "Santé Canada",
+          "affected": [
+            {
+              "product": "Réfrigérateur Retro Galanz",
+              "codes": "GLR76TRDER"
+            },
+            {
+              "product": "Réfrigérateur Retro Galanz",
+              "codes": "GLR76TRDER"
+            }
+          ],
+          "affectedTotal": 2
+        }
+      },
+      {
+        "id": "lunettes-intelligentes-inmo-air3-rappelees-en-raison-risque-brulure",
+        "title": "Lunettes intelligentes INMO AIR3 rappelées en raison d'un risque de brûlure",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/lunettes-intelligentes-inmo-air3-rappelees-en-raison-risque-brulure",
+        "kind": "recall",
+        "type": "Rappel de produits de consommation",
+        "category": "consumer",
+        "date": "2026-09-24",
+        "details": {
+          "brand": "INMO",
+          "product": "Lunettes intelligentes INMO AIR3",
+          "issue": [
+            "Produits de consommation - Risque de brûlure"
+          ],
+          "whatToDo": "Cesser immédiatement d’utiliser le produit rappelé et mettre à jour le micrologiciel du produit à la version 3.16 avant de réutiliser le produit.",
+          "publishedBy": "Santé Canada"
+        }
+      },
+      {
+        "id": "numero-rappel-transports-canada-2026426-bombardier-recreational-products",
+        "title": "Numéro de rappel de Transports Canada - 2026426 - BOMBARDIER RECREATIONAL PRODUCTS",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/numero-rappel-transports-canada-2026426-bombardier-recreational-products",
+        "kind": "recall",
+        "type": "Rappel de véhicule",
+        "category": "vehicles",
+        "date": "2026-09-24"
+      },
+      {
+        "id": "rappel-pate-pate-soja-melange-marque-chungjungwon-en-raison-presence-non-declaree",
+        "title": "Rappel de « Pâte de pâte de soja mélange » de marque Chungjungwon en raison de la présence non déclarée d'arachides",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/rappel-pate-pate-soja-melange-marque-chungjungwon-en-raison-presence-non-declaree",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-23"
+      },
+      {
+        "id": "rappel-dried-lemongrass-marque-richters-en-raison-presence-cailloux",
+        "title": "Rappel de « Dried Lemongrass » de marque Richters en raison de la présence de cailloux",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/rappel-dried-lemongrass-marque-richters-en-raison-presence-cailloux",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-23"
+      },
+      {
+        "id": "aiguille-pour-injection-cystoscopique-williams",
+        "title": "Aiguille pour injection cystoscopique de Williams",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/aiguille-pour-injection-cystoscopique-williams",
+        "kind": "recall",
+        "type": "Rappel de produits de santé",
+        "category": "health",
+        "date": "2026-09-23"
+      },
+      {
+        "id": "numero-rappel-transports-canada-2026432-ford",
+        "title": "Numéro de rappel de Transports Canada - 2026432 - FORD",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/numero-rappel-transports-canada-2026432-ford",
+        "kind": "recall",
+        "type": "Rappel de véhicule",
+        "category": "vehicles",
+        "date": "2026-09-23"
+      },
+      {
+        "id": "rappel-chair-homard-cuite-et-congelee-marque-rj-king-fisheries-ltd-et-moncton-fish",
+        "title": "Rappel de Chair de homard cuite et congelée de marque R.J. King Fisheries Ltd. et Moncton Fish Market en raison de la présence de la bactérie Staphylococcus aureus",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/rappel-chair-homard-cuite-et-congelee-marque-rj-king-fisheries-ltd-et-moncton-fish",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-22"
+      },
+      {
+        "id": "rappel-dessert-glace-non-laitier-base-noix-cajou-saveur-caramel-sale-marque-so",
+        "title": "Rappel de dessert glacé non laitier à base de noix de cajou à saveur caramel salé de marque So Delicious Sans Produits Laitiers en raison de morceaux ressemblant à du plastique et du gravier",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/rappel-dessert-glace-non-laitier-base-noix-cajou-saveur-caramel-sale-marque-so",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-22"
+      },
+      {
+        "id": "enceintes-bluetooth-portables-yoyo-m-cambridge-audio-rappelees-en-raison-risque",
+        "title": "Enceintes Bluetooth portables Yoyo (M) de Cambridge Audio rappelées en raison d’un risque d’incendie",
+        "url": "https://recalls-rappels.canada.ca/fr/avis-rappel/enceintes-bluetooth-portables-yoyo-m-cambridge-audio-rappelees-en-raison-risque",
+        "kind": "recall",
+        "type": "Rappel de produits de consommation",
+        "category": "consumer",
+        "date": "2026-09-22"
+      }
+    ]
+  },
+  "peanut": {
+    "mode": "search",
+    "query": "peanut",
+    "category": "all",
+    "lang": "en",
+    "fetchedAt": "2026-09-30T15:14:53.771Z",
+    "searchUrl": "https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=peanut",
+    "subscribeUrl": "https://recalls-rappels.canada.ca/en/subscribe",
+    "reportUrl": "https://www.canada.ca/en/services/health/report-health-safety-concern.html",
+    "vehicleUrl": "https://tc.canada.ca/en/road-transportation/defects-recalls-vehicles-tires-child-car-seats",
+    "live": true,
+    "total": 72,
+    "items": [
+      {
+        "id": "chungjungwon-brand-sunchang-ssamjang-seasoned-bean-paste-recalled-due-undeclared",
+        "title": "Chungjungwon brand Sunchang Ssamjang (seasoned bean paste) recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/chungjungwon-brand-sunchang-ssamjang-seasoned-bean-paste-recalled-due-undeclared",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-09-23",
+        "details": {
+          "brand": "Chungjungwon",
+          "product": "Sunchang Ssamjang (seasoned bean paste)",
+          "issue": [
+            "Food - Allergen - Peanut"
+          ],
+          "whatToDo": "Do not use, sell, serve or distribute the affected product.",
+          "distribution": "New Brunswick, Ontario",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 2",
+          "affected": [
+            {
+              "brand": "Chungjungwon (Korean characters only)",
+              "product": "Sunchang Ssamjang (seasoned bean paste)",
+              "size": "14 kg",
+              "upc": "8 801052 773261",
+              "codes": "All codes where peanut is not declared on the label"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "pk-brand-roasted-lemon-n-chilli-peanuts-recalled-due-salmonella",
+        "title": "PK brand Roasted Lemon N’ Chilli Peanuts recalled due to Salmonella",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/pk-brand-roasted-lemon-n-chilli-peanuts-recalled-due-salmonella",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2026-09-11",
+        "details": {
+          "brand": "PK",
+          "product": "Roasted Lemon N’ Chilli Peanuts",
+          "issue": [
+            "Food - Microbial contamination - Salmonella"
+          ],
+          "whatToDo": "Do not consume, use, sell, serve, or distribute recalled products",
+          "distribution": "Ontario, Quebec",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 2",
+          "affected": [
+            {
+              "brand": "PK",
+              "product": "Roasted Lemon N’ Chilli Peanuts",
+              "size": "65 g",
+              "upc": "6 28998 00124 5",
+              "codes": "BB: 2027/JN/30* Batch no: CN94"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "ofood-brand-mild-ssamjang-original-seasoned-soybean-paste-recalled-due-improperly",
+        "title": "Ofood brand Mild Ssamjang Original Seasoned Soybean Paste recalled due to improperly declared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/ofood-brand-mild-ssamjang-original-seasoned-soybean-paste-recalled-due-improperly",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2026-09-08",
+        "details": {
+          "brand": "Ofood",
+          "product": "Mild Ssamjang Original Seasoned Soybean Paste",
+          "issue": [
+            "Food - Allergen - Peanut"
+          ],
+          "whatToDo": "Do not consume recalled products to which you are allergic or sensitive.",
+          "distribution": "National",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 1",
+          "affected": [
+            {
+              "brand": "Ofood",
+              "product": "Mild Ssamjang Original Seasoned Soybean Paste",
+              "size": "170 g",
+              "upc": "8 801052 048192",
+              "codes": "All codes where peanut is not declared on the bilingual label."
+            },
+            {
+              "brand": "Ofood",
+              "product": "Mild Ssamjang Original Seasoned Soybean Paste",
+              "size": "500 g",
+              "upc": "8 801052 048215",
+              "codes": "All codes where peanut is not declared on the bilingual label."
+            },
+            {
+              "brand": "Ofood",
+              "product": "Mild Ssamjang Original Seasoned Soybean Paste",
+              "size": "1 kg",
+              "upc": "8 801052 048208",
+              "codes": "All codes where peanut is not declared on the bilingual label."
+            }
+          ],
+          "affectedTotal": 3
+        }
+      },
+      {
+        "id": "mounit-el-bait-brand-tahina-and-halva-recalled-due-undeclared-peanut",
+        "title": "Mounit el Bait brand Tahina and Halva recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/mounit-el-bait-brand-tahina-and-halva-recalled-due-undeclared-peanut",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2026-08-14",
+        "details": {
+          "brand": "Mounit El Bait",
+          "product": "Tahina, Halva Plain, Halva with Chocolate, Halva with Pistachios",
+          "issue": [
+            "Food - Allergen - Peanut"
+          ],
+          "whatToDo": "Do not consume recalled products to which you are allergic or sensitive.",
+          "distribution": "Manitoba, Ontario, Quebec",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 1",
+          "affected": [
+            {
+              "brand": "Mounit el Bait",
+              "product": "Tahina",
+              "size": "454 g",
+              "upc": "5 281029 254208",
+              "codes": "All codes where peanut is not declared on the label"
+            },
+            {
+              "brand": "Mounit el Bait",
+              "product": "Halva Plain",
+              "size": "454 g",
+              "upc": "5 281029 254352",
+              "codes": "All codes where peanut is not declared on the label"
+            },
+            {
+              "brand": "Mounit el Bait",
+              "product": "Halva Plain",
+              "size": "908 g",
+              "upc": "5 281029 254369",
+              "codes": "All codes where peanut is not declared on the label"
+            },
+            {
+              "brand": "Mounit el Bait",
+              "product": "Halva with Pistachios",
+              "size": "454 g",
+              "upc": "5 281029 254574",
+              "codes": "All codes where peanut is not declared on the label"
+            },
+            {
+              "brand": "Mounit el Bait",
+              "product": "Halva with Pistachios",
+              "size": "908 g",
+              "upc": "5 281029 254581",
+              "codes": "All codes where peanut is not declared on the label"
+            },
+            {
+              "brand": "Mounit el Bait",
+              "product": "Halva with Chocolate",
+              "size": "454 g",
+              "upc": "5 281029 254468",
+              "codes": "All codes where peanut is not declared on the label"
+            }
+          ],
+          "affectedTotal": 7
+        }
+      },
+      {
+        "id": "westside-sauce-brand-peanut-thai-recalled-due-spoilage",
+        "title": "Westside Sauce brand Peanut Thai recalled due to spoilage",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/westside-sauce-brand-peanut-thai-recalled-due-spoilage",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-07-23",
+        "details": {
+          "brand": "Westside Sauce",
+          "product": "Peanut Thai",
+          "issue": [
+            "Food - Microbial contamination - Non harmful (quality or spoilage)"
+          ],
+          "whatToDo": "Do not use, sell, serve or distribute the affected product.",
+          "distribution": "Online, Alberta, British Columbia, Manitoba, Ontario, Saskatchewan",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 3",
+          "affected": [
+            {
+              "brand": "Westside Sauce",
+              "product": "Peanut Thai",
+              "size": "237 ml",
+              "upc": "6 27987 67780 5",
+              "codes": "Best Before: 05/02/2028; Lot 351"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "mounit-el-bait-brand-tahina-recalled-due-undeclared-peanut",
+        "title": "Mounit el Bait brand Tahina recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/mounit-el-bait-brand-tahina-recalled-due-undeclared-peanut",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2026-07-17",
+        "details": {
+          "brand": "Mounit El Bait",
+          "product": "Tahina",
+          "issue": [
+            "Food - Allergen - Peanut"
+          ],
+          "whatToDo": "Do not consume recalled products to which you are allergic or sensitive.",
+          "distribution": "Ontario, Quebec",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 1",
+          "affected": [
+            {
+              "brand": "Mounit el Bait",
+              "product": "Tahina",
+              "size": "454 g",
+              "upc": "281029 254215",
+              "codes": "PRO: 07/01/2026 EXP: 06/01/2029 LOTNO: 250715"
+            },
+            {
+              "brand": "Mounit el Bait",
+              "product": "Tahina",
+              "size": "908 g",
+              "upc": "5 281029 254215",
+              "codes": "PRO: 07/01/2026 EXP: 06/01/2029 LOTNO: 250715"
+            }
+          ],
+          "affectedTotal": 2
+        }
+      },
+      {
+        "id": "chongqing-hot-and-sour-sauce-recalled-due-undeclared-peanut",
+        "title": "Chongqing Hot and Sour Sauce recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/chongqing-hot-and-sour-sauce-recalled-due-undeclared-peanut",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2026-07-10",
+        "details": {
+          "brand": "[Chinese characters only]",
+          "product": "Chongqing Hot and Sour Sauce",
+          "issue": [
+            "Food - Allergen - Peanut"
+          ],
+          "whatToDo": "Do not consume recalled products to which you are allergic or sensitive.",
+          "distribution": "British Columbia, Ontario, Quebec",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 2",
+          "affected": [
+            {
+              "brand": "[Chinese characters only]",
+              "product": "Chongqing Hot and Sour Sauce",
+              "size": "228 g",
+              "upc": "6 930777 200980",
+              "codes": "All codes where peanut is not declared on the label"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "baixiang-brand-artificial-spicy-beef-soup-flavor-instant-noodles-recalled-due-0",
+        "title": "Baixiang brand Artificial Spicy Beef Soup Flavor Instant Noodles recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/baixiang-brand-artificial-spicy-beef-soup-flavor-instant-noodles-recalled-due-0",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-03-11",
+        "details": {
+          "brand": "Baixiang",
+          "product": "Artificial Spicy Beef Soup Flavor Instant Noodles",
+          "issue": [
+            "Food - Allergen - Peanut"
+          ],
+          "whatToDo": "Do not use, sell, serve or distribute the affected product.",
+          "distribution": "British Columbia, Ontario",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 2",
+          "affected": [
+            {
+              "brand": "Baixiang",
+              "product": "Artificial Spicy Beef Soup Flavor Instant Noodles",
+              "size": "555 g",
+              "upc": "6 935270 642008",
+              "codes": "PD/LOT: 12112025 SD; BB: 11102026 (DDMMYYYY)"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "zoraw-brand-milk-chocolate-recalled-due-improperly-declared-almond-and-peanut",
+        "title": "ZoRaw brand Milk Chocolate recalled due to improperly declared almond and peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/zoraw-brand-milk-chocolate-recalled-due-improperly-declared-almond-and-peanut",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-03-10"
+      },
+      {
+        "id": "tom-bumble-nutty-and-tom-bumble-brand-peanut-butter-flake-candy-recalled-due-pieces",
+        "title": "Tom Bumble Nutty and Tom Bumble brand Peanut Butter Flake Candy recalled due to pieces of plastic",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/tom-bumble-nutty-and-tom-bumble-brand-peanut-butter-flake-candy-recalled-due-pieces",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-01-19"
+      },
+      {
+        "id": "krispy-kernels-brand-vitality-dried-fruit-nuts-seeds-and-yogurt-recalled-due",
+        "title": "Krispy Kernels brand Vitality Dried Fruit, Nuts, Seeds and Yogurt recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/krispy-kernels-brand-vitality-dried-fruit-nuts-seeds-and-yogurt-recalled-due",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2025-11-13"
+      },
+      {
+        "id": "ocean-swallow-brand-sesame-candy-recalled-due-undeclared-peanut",
+        "title": "Ocean Swallow brand Sesame Candy recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/ocean-swallow-brand-sesame-candy-recalled-due-undeclared-peanut",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2025-07-29"
+      },
+      {
+        "id": "nutriart-brand-and-laura-secord-brand-chocolate-products-recalled-due-undeclared",
+        "title": "Nutriart brand and Laura Secord brand chocolate products recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/nutriart-brand-and-laura-secord-brand-chocolate-products-recalled-due-undeclared",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2025-07-17"
+      },
+      {
+        "id": "greenworld-fine-foods-brand-tahini-rashi-recalled-due-undeclared-peanut-0",
+        "title": "Greenworld Fine Foods brand Tahini-Rashi recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/greenworld-fine-foods-brand-tahini-rashi-recalled-due-undeclared-peanut-0",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2025-03-31"
+      },
+      {
+        "id": "grandis-brand-tahini-paste-recalled-due-undeclared-peanut",
+        "title": "Grandis brand Tahini Paste recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/grandis-brand-tahini-paste-recalled-due-undeclared-peanut",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2025-03-21"
+      }
+    ]
+  },
+  "carSeat": {
+    "mode": "search",
+    "query": "car seat",
+    "category": "all",
+    "lang": "en",
+    "fetchedAt": "2026-09-30T15:14:53.991Z",
+    "searchUrl": "https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=%22car+seat%22",
+    "subscribeUrl": "https://recalls-rappels.canada.ca/en/subscribe",
+    "reportUrl": "https://www.canada.ca/en/services/health/report-health-safety-concern.html",
+    "vehicleUrl": "https://tc.canada.ca/en/road-transportation/defects-recalls-vehicles-tires-child-car-seats",
+    "live": true,
+    "total": 110,
+    "items": [
+      {
+        "id": "transport-canada-recall-2026399-britax",
+        "title": "Transport Canada Recall - 2026399 - BRITAX",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026399-britax",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-08-24",
+        "details": {
+          "brand": "BRITAX",
+          "product": "Child Car Seat recalled by BRITAX",
+          "issue": [
+            "Vehicle - Structure"
+          ],
+          "publishedBy": "Transport Canada"
+        }
+      },
+      {
+        "id": "transport-canada-recall-2026354-goodbaby",
+        "title": "Transport Canada Recall - 2026354 - GOODBABY",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026354-goodbaby",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-07-29",
+        "details": {
+          "brand": "EVENFLO",
+          "product": "Child Car Seat recalled by GOODBABY",
+          "issue": [
+            "Vehicle - Seats And Restraints"
+          ],
+          "publishedBy": "Transport Canada"
+        }
+      },
+      {
+        "id": "joolz-aer2-car-seat-adapter-set-recalled-due-fall-hazard",
+        "title": "Joolz Aer2 Car Seat Adapter Set recalled due to fall hazard",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/joolz-aer2-car-seat-adapter-set-recalled-due-fall-hazard",
+        "kind": "recall",
+        "type": "Consumer product recall",
+        "category": "consumer",
+        "date": "2026-06-18",
+        "details": {
+          "brand": "Joolz",
+          "product": "Joolz Aer2 Car Seat Adapter Set",
+          "issue": [
+            "Consumer products - Fall hazard"
+          ],
+          "whatToDo": "Immediately stop using the recalled product and visit www.joolzcarseatadapter.expertinquiry.com to register for the recall and be given instructions to return the product for a refund.",
+          "publishedBy": "Health Canada"
+        }
+      },
+      {
+        "id": "transport-canada-recall-2026231-dorel-juvenile-canada",
+        "title": "Transport Canada Recall - 2026231 - DOREL JUVENILE CANADA",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026231-dorel-juvenile-canada",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-05-25",
+        "details": {
+          "brand": "MAXI-COSI",
+          "product": "Child Car Seat recalled by DOREL JUVENILE CANADA",
+          "issue": [
+            "Vehicle - Structure"
+          ],
+          "publishedBy": "Transport Canada"
+        }
+      },
+      {
+        "id": "health-canada-warns-belecoo-car-seat-sold-3-1-baby-stroller-previously-available",
+        "title": "Health Canada warns that the Belecoo Car Seat sold with the 3 in 1 Baby Stroller previously available on AliExpress may pose a risk of injury",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/health-canada-warns-belecoo-car-seat-sold-3-1-baby-stroller-previously-available",
+        "kind": "advisory",
+        "type": "Consumer product advisory",
+        "category": "consumer",
+        "date": "2026-05-08",
+        "details": {
+          "brand": "Belecoo",
+          "product": "Belecoo Car Seat sold with the 3 in 1 Baby Stroller",
+          "issue": [
+            "Consumer products - Injury hazard"
+          ],
+          "whatToDo": "Immediately stop using the affected car seat and dispose of it in such a way that it cannot be used again.",
+          "publishedBy": "Health Canada"
+        }
+      },
+      {
+        "id": "transport-canada-recall-2026178-fiat-chrysler-automobiles",
+        "title": "Transport Canada Recall - 2026178 - FIAT CHRYSLER AUTOMOBILES",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026178-fiat-chrysler-automobiles",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-04-17",
+        "details": {
+          "brand": "JEEP",
+          "product": "SUV recalled by FIAT CHRYSLER AUTOMOBILES",
+          "issue": [
+            "Vehicle - Seats And Restraints"
+          ],
+          "publishedBy": "Transport Canada"
+        }
+      },
+      {
+        "id": "transport-canada-recall-2026057-goodbaby",
+        "title": "Transport Canada Recall - 2026057 - GOODBABY",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026057-goodbaby",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-02-27",
+        "details": {
+          "brand": "EVENFLO",
+          "product": "Child Car Seat recalled by GOODBABY",
+          "issue": [
+            "Vehicle - Label"
+          ],
+          "publishedBy": "Transport Canada"
+        }
+      },
+      {
+        "id": "transport-canada-recall-2026039-diono",
+        "title": "Transport Canada Recall - 2026039 - DIONO",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026039-diono",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-02-04",
+        "details": {
+          "brand": "DIONO",
+          "product": "Child Car Seat recalled by DIONO",
+          "issue": [
+            "Vehicle - Label"
+          ],
+          "publishedBy": "Transport Canada"
+        }
+      },
+      {
+        "id": "transport-canada-recall-2026015-goodbaby",
+        "title": "Transport Canada Recall - 2026015 - GOODBABY",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2026015-goodbaby",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-01-22"
+      },
+      {
+        "id": "transport-canada-recall-2025722-goodbaby",
+        "title": "Transport Canada Recall - 2025722 - GOODBABY",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2025722-goodbaby",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2026-01-07"
+      },
+      {
+        "id": "transport-canada-recall-2025644-goodbaby",
+        "title": "Transport Canada Recall - 2025644 - GOODBABY",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/transport-canada-recall-2025644-goodbaby",
+        "kind": "recall",
+        "type": "Vehicle recall",
+        "category": "vehicles",
+        "date": "2025-11-25"
+      },
+      {
+        "id": "health-canada-warns-travel-car-seat-toddler-available-amazonca-may-pose-risk-injury",
+        "title": "Health Canada warns that \"Travel Car Seat for toddler\" available on Amazon.ca may pose a risk of injury",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/health-canada-warns-travel-car-seat-toddler-available-amazonca-may-pose-risk-injury",
+        "kind": "advisory",
+        "type": "Consumer product advisory",
+        "category": "consumer",
+        "date": "2025-02-21",
+        "details": {
+          "brand": "Generic",
+          "product": "Travel Car Seat For Toddler",
+          "issue": [
+            "Consumer products - Injury hazard"
+          ],
+          "whatToDo": "Immediately stop using the affected products and safely dispose of them in such a way that they cannot be used again.",
+          "publishedBy": "Health Canada"
+        }
+      },
+      {
+        "id": "health-canada-warns-baby-car-seat-infants-and-toddlers-available-amazonca-may-pose",
+        "title": "Health Canada warns that Baby car seat for infants and toddlers, available on Amazon.ca may pose a risk of injury",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/health-canada-warns-baby-car-seat-infants-and-toddlers-available-amazonca-may-pose",
+        "kind": "advisory",
+        "type": "Consumer product advisory",
+        "category": "consumer",
+        "date": "2024-12-09"
+      },
+      {
+        "id": "health-canada-warns-various-car-strap-booster-pads-and-car-seat-cushions-may-pose-risk",
+        "title": "Health Canada warns that Various Car Strap Booster Pads and Car Seat Cushions may pose a risk of injury",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/health-canada-warns-various-car-strap-booster-pads-and-car-seat-cushions-may-pose-risk",
+        "kind": "advisory",
+        "type": "Consumer product advisory",
+        "category": "consumer",
+        "date": "2024-08-23"
+      },
+      {
+        "id": "health-canada-warns-uberboost-inflatable-booster-car-seats-pose-risk-injury",
+        "title": "Health Canada warns that UberBoost Inflatable Booster Car Seats pose a risk of injury",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/health-canada-warns-uberboost-inflatable-booster-car-seats-pose-risk-injury",
+        "kind": "advisory",
+        "type": "Consumer product advisory",
+        "category": "consumer",
+        "date": "2024-06-28"
+      }
+    ]
+  },
+  "advil": {
+    "query": "Advil",
+    "kind": "name",
+    "lang": "en",
+    "fetchedAt": "2026-09-30T11:45:00.000Z",
+    "dpdUrl": "https://health-products.canada.ca/dpd-bdpp/",
+    "lnhpdUrl": "https://health-products.canada.ca/lnhpd-bdpsnh/index-eng.jsp",
+    "sideEffectUrl": "https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-reporting.html",
+    "live": true,
+    "total": 48,
+    "marketed": 25,
+    "products": [
+      {
+        "drugCode": 92825,
+        "din": "02443562",
+        "brand": "ADVIL 12 HOUR",
+        "company": "HALEON CANADA ULC",
+        "className": "Human",
+        "status": "marketed",
+        "ingredients": [
+          {
+            "name": "IBUPROFEN",
+            "strength": "600",
+            "unit": "MG"
+          }
+        ],
+        "forms": [
+          "Tablet (Extended-Release)"
+        ],
+        "routes": [
+          "Oral"
+        ],
+        "schedules": [
+          "NON-PRESCRIPTION DRUGS"
+        ],
+        "access": "otc",
+        "url": "https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=92825",
+        "ais": 1,
+        "statusLabel": "Marketed",
+        "since": "2016-08-22"
+      },
+      {
+        "drugCode": 13452,
+        "din": "01933531",
+        "brand": "ADVIL CAPLETS",
+        "company": "HALEON CANADA ULC",
+        "className": "Human",
+        "status": "marketed",
+        "ingredients": [
+          {
+            "name": "IBUPROFEN",
+            "strength": "200",
+            "unit": "MG"
+          }
+        ],
+        "forms": [
+          "Tablet"
+        ],
+        "routes": [
+          "Oral"
+        ],
+        "schedules": [
+          "NON-PRESCRIPTION DRUGS"
+        ],
+        "access": "otc",
+        "url": "https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=13452",
+        "ais": 1,
+        "statusLabel": "Marketed",
+        "since": "1992-12-31"
+      },
+      {
+        "drugCode": 13625,
+        "din": "01933558",
+        "brand": "ADVIL TABLETS",
+        "company": "HALEON CANADA ULC",
+        "className": "Human",
+        "status": "marketed",
+        "ingredients": [
+          {
+            "name": "IBUPROFEN",
+            "strength": "200",
+            "unit": "MG"
+          }
+        ],
+        "forms": [
+          "Tablet"
+        ],
+        "routes": [
+          "Oral"
+        ],
+        "schedules": [
+          "NON-PRESCRIPTION DRUGS"
+        ],
+        "access": "otc",
+        "url": "https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=13625",
+        "ais": 1,
+        "statusLabel": "Marketed",
+        "since": "1993-12-31"
+      },
+      {
+        "drugCode": 97565,
+        "din": "02485400",
+        "brand": "ADVIL MINI-GELS",
+        "company": "HALEON CANADA ULC",
+        "className": "Human",
+        "status": "marketed",
+        "ingredients": [
+          {
+            "name": "IBUPROFEN",
+            "strength": "200",
+            "unit": "MG"
+          }
+        ],
+        "forms": [
+          "Capsule"
+        ],
+        "routes": [
+          "Oral"
+        ],
+        "schedules": [
+          "NON-PRESCRIPTION DRUGS"
+        ],
+        "access": "otc",
+        "url": "https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=97565",
+        "ais": 1,
+        "statusLabel": "Marketed",
+        "since": "2019-07-30"
+      },
+      {
+        "drugCode": 65432,
+        "din": "02241769",
+        "brand": "ADVIL LIQUI-GELS",
+        "company": "HALEON CANADA ULC",
+        "className": "Human",
+        "status": "marketed",
+        "ingredients": [
+          {
+            "name": "IBUPROFEN",
+            "strength": "200",
+            "unit": "MG"
+          }
+        ],
+        "forms": [
+          "Capsule"
+        ],
+        "routes": [
+          "Oral"
+        ],
+        "schedules": [
+          "NON-PRESCRIPTION DRUGS"
+        ],
+        "access": "otc",
+        "url": "https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=65432",
+        "ais": 1,
+        "statusLabel": "Marketed",
+        "since": "2000-10-02"
+      },
+      {
+        "drugCode": 90021,
+        "din": "02415623",
+        "brand": "ADVIL ARTHRITIS PAIN",
+        "company": "HALEON CANADA ULC",
+        "className": "Human",
+        "status": "marketed",
+        "ingredients": [
+          {
+            "name": "IBUPROFEN",
+            "strength": "400",
+            "unit": "MG"
+          }
+        ],
+        "forms": [
+          "Capsule"
+        ],
+        "routes": [
+          "Oral"
+        ],
+        "schedules": [
+          "NON-PRESCRIPTION DRUGS"
+        ],
+        "access": "otc",
+        "url": "https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=90021",
+        "ais": 1,
+        "statusLabel": "Marketed",
+        "since": "2014-07-07"
+      }
+    ]
+  },
+  "ozempicFr": {
+    "query": "02471469",
+    "kind": "din",
+    "lang": "fr",
+    "fetchedAt": "2026-09-30T11:45:00.000Z",
+    "dpdUrl": "https://health-products.canada.ca/dpd-bdpp/?lang=fre",
+    "lnhpdUrl": "https://health-products.canada.ca/lnhpd-bdpsnh/index-fra.jsp",
+    "sideEffectUrl": "https://www.canada.ca/fr/sante-canada/services/medicaments-produits-sante/medeffet-canada/declaration-effets-indesirables.html",
+    "live": true,
+    "total": 1,
+    "marketed": 1,
+    "products": [
+      {
+        "drugCode": 96058,
+        "din": "02471469",
+        "brand": "OZEMPIC",
+        "descriptor": "DISTRIBUE DES DOSES DE 1 MG. STYLO PRÉREMPLI MULTIDOSE",
+        "company": "NOVO NORDISK CANADA INC",
+        "className": "Humain",
+        "status": "marketed",
+        "ingredients": [
+          {
+            "name": "Sémaglutide",
+            "strength": "1.34",
+            "unit": "MG",
+            "perUnit": "ML"
+          }
+        ],
+        "forms": [
+          "Solution"
+        ],
+        "routes": [
+          "Sous-cutanée"
+        ],
+        "schedules": [
+          "Annexe D",
+          "Médicaments sur ordonnance"
+        ],
+        "access": "rx",
+        "url": "https://health-products.canada.ca/dpd-bdpp/info?lang=fre&code=96058",
+        "ais": 1,
+        "statusLabel": "Commercialisé",
+        "since": "2018-02-22"
+      }
+    ]
+  },
+  "cuba": {
+    "lang": "en",
+    "fetchedAt": "2026-09-30T11:45:00.000Z",
+    "query": "Cuba",
+    "travelDate": null,
+    "clinicBy": null,
+    "urls": {
+      "notices": "https://travel.gc.ca/travelling/health-safety/travel-health-notices",
+      "vaccines": "https://travel.gc.ca/travelling/health-safety/vaccines",
+      "clinic": "https://travel.gc.ca/travelling/health-safety/clinic",
+      "advisories": "https://travel.gc.ca/travelling/advisories"
+    },
+    "live": true,
+    "destination": "Cuba",
+    "unknownDestination": false,
+    "notices": [
+      {
+        "id": "540",
+        "level": 2,
+        "title": "Chikungunya: Advice for travellers",
+        "locations": [
+          "Costa Rica",
+          "Cuba",
+          "French Guiana",
+          "Mauritius",
+          "Nicaragua",
+          "Suriname"
+        ],
+        "global": false,
+        "updated": "2026-05-19",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/540"
+      },
+      {
+        "id": "517",
+        "level": 1,
+        "title": "Dengue: Advice for travellers",
+        "locations": [
+          "Bangladesh",
+          "Cambodia",
+          "Cuba",
+          "Kenya",
+          "Malaysia",
+          "Maldives",
+          "Marshall Islands",
+          "Samoa",
+          "Sri Lanka",
+          "Vanuatu",
+          "Vietnam"
+        ],
+        "global": false,
+        "updated": "2026-09-08",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/517"
+      },
+      {
+        "id": "504",
+        "level": 1,
+        "title": "Measles: Advice for travellers",
+        "locations": [
+          "All Countries"
+        ],
+        "global": true,
+        "updated": "2025-11-13",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/504"
+      }
+    ],
+    "totalNotices": 9,
+    "highestLevel": 2
+  },
+  "cubaFr": {
+    "lang": "fr",
+    "fetchedAt": "2026-09-30T11:45:00.000Z",
+    "query": "Cuba",
+    "travelDate": null,
+    "clinicBy": null,
+    "urls": {
+      "notices": "https://voyage.gc.ca/voyager/sante-securite/conseils-sante-voyageurs",
+      "vaccines": "https://voyage.gc.ca/voyager/sante-securite/vaccins",
+      "clinic": "https://voyage.gc.ca/voyager/sante-securite/clinique",
+      "advisories": "https://voyage.gc.ca/voyager/avertissements"
+    },
+    "live": true,
+    "destination": "Cuba",
+    "unknownDestination": false,
+    "notices": [
+      {
+        "id": "540",
+        "level": 2,
+        "title": "Chikungunya : Conseils à l'intention des voyageurs",
+        "locations": [
+          "Costa Rica",
+          "Cuba",
+          "Guyane française",
+          "Maurice",
+          "Nicaragua",
+          "Suriname"
+        ],
+        "global": false,
+        "updated": "2026-05-19",
+        "url": "https://voyage.gc.ca/voyager/sante-securite/conseils-sante-voyageurs/540"
+      },
+      {
+        "id": "517",
+        "level": 1,
+        "title": "Dengue: Conseils à l'intention des voyageurs",
+        "locations": [
+          "Bangladesh",
+          "Cambodge",
+          "Cuba",
+          "Îles Marshall",
+          "Kenya",
+          "Malaisie",
+          "Maldives",
+          "Samoa",
+          "Sri Lanka",
+          "Vanuatu",
+          "Vietnam"
+        ],
+        "global": false,
+        "updated": "2026-09-08",
+        "url": "https://voyage.gc.ca/voyager/sante-securite/conseils-sante-voyageurs/517"
+      },
+      {
+        "id": "504",
+        "level": 1,
+        "title": "Rougeole: Conseils à l'intention des voyageurs",
+        "locations": [
+          "Tous les pays"
+        ],
+        "global": true,
+        "updated": "2025-11-13",
+        "url": "https://voyage.gc.ca/voyager/sante-securite/conseils-sante-voyageurs/504"
+      }
+    ],
+    "totalNotices": 9,
+    "highestLevel": 2
+  },
+  "drc": {
+    "lang": "en",
+    "fetchedAt": "2026-09-30T11:45:00.000Z",
+    "query": "Democratic Republic of Congo",
+    "travelDate": null,
+    "clinicBy": null,
+    "urls": {
+      "notices": "https://travel.gc.ca/travelling/health-safety/travel-health-notices",
+      "vaccines": "https://travel.gc.ca/travelling/health-safety/vaccines",
+      "clinic": "https://travel.gc.ca/travelling/health-safety/clinic",
+      "advisories": "https://travel.gc.ca/travelling/advisories"
+    },
+    "live": true,
+    "destination": "Democratic Republic of Congo (Kinshasa)",
+    "unknownDestination": false,
+    "notices": [
+      {
+        "id": "549",
+        "level": 3,
+        "title": "Ebola disease in Democratic Republic of the Congo",
+        "locations": [
+          "Democratic Republic of Congo (Kinshasa)"
+        ],
+        "global": false,
+        "updated": "2026-09-28",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/549"
+      },
+      {
+        "id": "508",
+        "level": 2,
+        "title": "Polio: Advice for travellers",
+        "locations": [
+          "Afghanistan",
+          "Angola",
+          "Benin",
+          "Cameroon",
+          "Central African Republic",
+          "Chad",
+          "Côte d'Ivoire (Ivory Coast)",
+          "Democratic Republic of Congo (Kinshasa)",
+          "Djibouti",
+          "Ethiopia",
+          "Germany",
+          "Guinea",
+          "Israel and Palestine",
+          "Laos",
+          "Malawi",
+          "Mali",
+          "Namibia",
+          "Niger",
+          "Nigeria",
+          "Pakistan",
+          "Papua New Guinea",
+          "Somalia",
+          "South Sudan",
+          "Sudan",
+          "Tanzania",
+          "Togo",
+          "United Kingdom",
+          "Yemen",
+          "Zambia"
+        ],
+        "global": false,
+        "updated": "2026-09-09",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/508"
+      },
+      {
+        "id": "504",
+        "level": 1,
+        "title": "Measles: Advice for travellers",
+        "locations": [
+          "All Countries"
+        ],
+        "global": true,
+        "updated": "2025-11-13",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/504"
+      }
+    ],
+    "totalNotices": 9,
+    "highestLevel": 3
+  },
+  "all": {
+    "lang": "en",
+    "fetchedAt": "2026-09-30T11:45:00.000Z",
+    "query": null,
+    "travelDate": null,
+    "clinicBy": null,
+    "urls": {
+      "notices": "https://travel.gc.ca/travelling/health-safety/travel-health-notices",
+      "vaccines": "https://travel.gc.ca/travelling/health-safety/vaccines",
+      "clinic": "https://travel.gc.ca/travelling/health-safety/clinic",
+      "advisories": "https://travel.gc.ca/travelling/advisories"
+    },
+    "live": true,
+    "destination": null,
+    "unknownDestination": false,
+    "notices": [
+      {
+        "id": "549",
+        "level": 3,
+        "title": "Ebola disease in Democratic Republic of the Congo",
+        "locations": [
+          "Democratic Republic of Congo (Kinshasa)"
+        ],
+        "global": false,
+        "updated": "2026-09-28",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/549"
+      },
+      {
+        "id": "508",
+        "level": 2,
+        "title": "Polio: Advice for travellers",
+        "locations": [
+          "Afghanistan",
+          "Angola",
+          "Benin",
+          "Cameroon",
+          "Central African Republic",
+          "Chad",
+          "Côte d'Ivoire (Ivory Coast)",
+          "Democratic Republic of Congo (Kinshasa)",
+          "Djibouti",
+          "Ethiopia",
+          "Germany",
+          "Guinea",
+          "Israel and Palestine",
+          "Laos",
+          "Malawi",
+          "Mali",
+          "Namibia",
+          "Niger",
+          "Nigeria",
+          "Pakistan",
+          "Papua New Guinea",
+          "Somalia",
+          "South Sudan",
+          "Sudan",
+          "Tanzania",
+          "Togo",
+          "United Kingdom",
+          "Yemen",
+          "Zambia"
+        ],
+        "global": false,
+        "updated": "2026-09-09",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/508"
+      },
+      {
+        "id": "515",
+        "level": 2,
+        "title": "Mpox: Advice for travellers",
+        "locations": [
+          "Madagascar"
+        ],
+        "global": false,
+        "updated": "2026-05-25",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/515"
+      },
+      {
+        "id": "540",
+        "level": 2,
+        "title": "Chikungunya: Advice for travellers",
+        "locations": [
+          "Costa Rica",
+          "Cuba",
+          "French Guiana",
+          "Mauritius",
+          "Nicaragua",
+          "Suriname"
+        ],
+        "global": false,
+        "updated": "2026-05-19",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/540"
+      },
+      {
+        "id": "517",
+        "level": 1,
+        "title": "Dengue: Advice for travellers",
+        "locations": [
+          "Bangladesh",
+          "Cambodia",
+          "Cuba",
+          "Kenya",
+          "Malaysia",
+          "Maldives",
+          "Marshall Islands",
+          "Samoa",
+          "Sri Lanka",
+          "Vanuatu",
+          "Vietnam"
+        ],
+        "global": false,
+        "updated": "2026-09-08",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/517"
+      },
+      {
+        "id": "547",
+        "level": 1,
+        "title": "Yellow fever in the Americas",
+        "locations": [
+          "Colombia"
+        ],
+        "global": false,
+        "updated": "2026-08-10",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/547"
+      },
+      {
+        "id": "528",
+        "level": 1,
+        "title": "Diphtheria: Advice for travellers",
+        "locations": [
+          "Chad",
+          "Guinea",
+          "Haiti",
+          "Mali",
+          "Mauritania",
+          "Niger",
+          "Nigeria",
+          "Senegal",
+          "Somalia"
+        ],
+        "global": false,
+        "updated": "2026-06-22",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/528"
+      },
+      {
+        "id": "502",
+        "level": 1,
+        "title": "Avian influenza: Advice for travellers",
+        "locations": [
+          "Cambodia",
+          "China"
+        ],
+        "global": false,
+        "updated": "2026-04-13",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/502"
+      },
+      {
+        "id": "504",
+        "level": 1,
+        "title": "Measles: Advice for travellers",
+        "locations": [
+          "All Countries"
+        ],
+        "global": true,
+        "updated": "2025-11-13",
+        "url": "https://travel.gc.ca/travelling/health-safety/travel-health-notices/504"
+      }
+    ],
+    "totalNotices": 9,
+    "highestLevel": 3
+  },
+  "ozempic": {
+    "query": "Ozempic",
+    "kind": "name",
+    "lang": "en",
+    "fetchedAt": "2026-09-30T11:45:00.000Z",
+    "dpdUrl": "https://health-products.canada.ca/dpd-bdpp/",
+    "lnhpdUrl": "https://health-products.canada.ca/lnhpd-bdpsnh/index-eng.jsp",
+    "sideEffectUrl": "https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-reporting.html",
+    "live": true,
+    "total": 6,
+    "marketed": 2,
+    "products": [
+      {
+        "drugCode": 96058,
+        "din": "02471469",
+        "brand": "OZEMPIC",
+        "descriptor": "DISPENSES 1 MG DOSES. MULTIDOSE PREFILLED PEN",
+        "company": "NOVO NORDISK CANADA INC",
+        "className": "Human",
+        "status": "marketed",
+        "statusLabel": "Marketed",
+        "since": "2018-02-22",
+        "ingredients": [
+          {
+            "name": "SEMAGLUTIDE",
+            "strength": "1.34",
+            "unit": "MG",
+            "perUnit": "ML"
+          }
+        ],
+        "forms": [
+          "Solution"
+        ],
+        "routes": [
+          "Subcutaneous"
+        ],
+        "schedules": [
+          "SCHEDULE D",
+          "PRESCRIPTION"
+        ],
+        "access": "rx",
+        "url": "https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=96058",
+        "ais": 1
+      },
+      {
+        "drugCode": 102895,
+        "din": "02540258",
+        "brand": "OZEMPIC",
+        "descriptor": "DISPENSES 0.25 MG OR 0.5 MG DOSES. MULTIDOSE PREFILLED PEN",
+        "company": "NOVO NORDISK CANADA INC",
+        "className": "Human",
+        "status": "marketed",
+        "statusLabel": "Marketed",
+        "since": "2023-12-22",
+        "ingredients": [
+          {
+            "name": "SEMAGLUTIDE",
+            "strength": "0.68",
+            "unit": "MG",
+            "perUnit": "ML"
+          }
+        ],
+        "forms": [
+          "Solution"
+        ],
+        "routes": [
+          "Subcutaneous"
+        ],
+        "schedules": [
+          "SCHEDULE D",
+          "PRESCRIPTION"
+        ],
+        "access": "rx",
+        "url": "https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=102895",
+        "ais": 1
+      }
+    ]
+  },
+  "advilRecalls": {
+    "mode": "search",
+    "query": "Advil",
+    "category": "all",
+    "lang": "en",
+    "fetchedAt": "2026-09-30T22:59:07.051Z",
+    "searchUrl": "https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=Advil",
+    "subscribeUrl": "https://recalls-rappels.canada.ca/en/subscribe",
+    "reportUrl": "https://www.canada.ca/en/services/health/report-health-safety-concern.html",
+    "vehicleUrl": "https://tc.canada.ca/en/road-transportation/defects-recalls-vehicles-tires-child-car-seats",
+    "live": true,
+    "total": 3,
+    "items": [
+      {
+        "id": "two-lots-advil-cold-sinus-daynight-convenience-pack-recalled-due-labelling-error-may",
+        "title": "Two lots of Advil Cold & Sinus Day/Night Convenience Pack recalled due to labelling error that may cause confusion between daytime and nighttime tablets",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/two-lots-advil-cold-sinus-daynight-convenience-pack-recalled-due-labelling-error-may",
+        "kind": "advisory",
+        "type": "Public advisory",
+        "category": "health",
+        "date": "2021-10-03"
+      },
+      {
+        "id": "advil-cold-sinus-convenience-pack-2021-10-02",
+        "title": "Advil Cold & Sinus Convenience Pack (2021-10-02)",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/advil-cold-sinus-convenience-pack-2021-10-02",
+        "kind": "recall",
+        "type": "Health product recall",
+        "category": "health",
+        "date": "2021-10-02"
+      },
+      {
+        "id": "no-scientific-evidence-ibuprofen-worsens-covid-19-symptoms",
+        "title": "No scientific evidence that ibuprofen worsens COVID-19 symptoms",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/no-scientific-evidence-ibuprofen-worsens-covid-19-symptoms",
+        "kind": "alert",
+        "type": "Information update",
+        "category": "health",
+        "date": "2020-03-20"
+      }
+    ]
+  },
+  "sesame": {
+    "mode": "search",
+    "query": "sesame",
+    "category": "all",
+    "lang": "en",
+    "fetchedAt": "2026-09-30T22:59:07.516Z",
+    "searchUrl": "https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=sesame",
+    "subscribeUrl": "https://recalls-rappels.canada.ca/en/subscribe",
+    "reportUrl": "https://www.canada.ca/en/services/health/report-health-safety-concern.html",
+    "vehicleUrl": "https://tc.canada.ca/en/road-transportation/defects-recalls-vehicles-tires-child-car-seats",
+    "live": true,
+    "total": 65,
+    "items": [
+      {
+        "id": "skip-hop-baby-sesame-street-elmo-silicone-teether-recalled-due-choking-hazard",
+        "title": "Skip Hop Baby Sesame Street Elmo Silicone Teether recalled due to choking hazard",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/skip-hop-baby-sesame-street-elmo-silicone-teether-recalled-due-choking-hazard",
+        "kind": "recall",
+        "type": "Consumer product recall",
+        "category": "consumer",
+        "date": "2026-09-03",
+        "details": {
+          "brand": "Skip Hop",
+          "product": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+          "issue": [
+            "Consumer products - Choking hazard"
+          ],
+          "whatToDo": "Immediately stop using the recalled product and contact Skip Hop Inc. for instructions on disposal of the product and to receive a refund in the form of a gift card.",
+          "publishedBy": "Health Canada"
+        }
+      },
+      {
+        "id": "onetang-brand-walnut-soft-candy-black-sesame-recalled-due-presence-stones",
+        "title": "OneTang brand Walnut Soft Candy with Black Sesame recalled due to presence of stones",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/onetang-brand-walnut-soft-candy-black-sesame-recalled-due-presence-stones",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-08-21",
+        "details": {
+          "brand": "OneTang",
+          "product": "Walnut Soft Candy with Black Sesame",
+          "issue": [
+            "Food - Extraneous Material"
+          ],
+          "whatToDo": "Do not use, sell, serve or distribute the affected product.",
+          "distribution": "Manitoba, Ontario",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 3",
+          "affected": [
+            {
+              "brand": "OneTang",
+              "product": "Walnut Soft Candy with Black Sesame",
+              "size": "160 g",
+              "upc": "6 954427 522321",
+              "codes": "Best before: 2027/MAY/02"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "various-salem-foods-brand-jarred-products-recalled-due-undeclared-wheat-mustard-and",
+        "title": "Various Salem Foods brand jarred products recalled due to undeclared wheat, mustard and sesame",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/various-salem-foods-brand-jarred-products-recalled-due-undeclared-wheat-mustard-and",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-08-14",
+        "details": {
+          "brand": "Salem Foods",
+          "product": "Spices, Colouring, Citric Acid and Sprinkles",
+          "issue": [
+            "Food - Allergen - Wheat",
+            "Food - Allergen - Gluten",
+            "Food - Allergen - Mustard",
+            "Food - Allergen - Sesame seeds"
+          ],
+          "whatToDo": "Do not use, sell, serve or distribute the affected products.",
+          "distribution": "Alberta, British Columbia, Manitoba, Nova Scotia, Ontario, Quebec, Saskatchewan",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 2",
+          "affected": [
+            {
+              "brand": "Salem Foods",
+              "product": "Rosemary",
+              "size": "90 g",
+              "upc": "8 25685 00414 9",
+              "codes": "All codes where wheat, sesame and mustard are not declared on the label"
+            },
+            {
+              "brand": "Salem Foods",
+              "product": "Spearmint",
+              "size": "120 g",
+              "upc": "8 25685 00193 3",
+              "codes": "All codes where wheat, sesame and mustard are not declared on the label"
+            },
+            {
+              "brand": "Salem Foods",
+              "product": "Dill Seeds",
+              "size": "200 g",
+              "upc": "8 25685 00222 0",
+              "codes": "All codes where wheat, sesame and mustard are not declared on the label"
+            },
+            {
+              "brand": "Salem Foods",
+              "product": "Fennel Seeds",
+              "size": "135 g",
+              "upc": "8 25685 00224 4",
+              "codes": "All codes where wheat, sesame and mustard are not declared on the label"
+            },
+            {
+              "brand": "Salem Foods",
+              "product": "Anise Seeds",
+              "size": "135 g",
+              "upc": "8 25685 00160 5",
+              "codes": "All codes where wheat, sesame and mustard are not declared on the label"
+            },
+            {
+              "brand": "Salem Foods",
+              "product": "Black Seeds",
+              "size": "200 g",
+              "upc": "8 25685 00182 7",
+              "codes": "All codes where wheat, sesame and mustard are not declared on the label"
+            }
+          ],
+          "affectedTotal": 17
+        }
+      },
+      {
+        "id": "zhou-hei-ya-brand-wide-vermicelli-sesame-sauce-recalled-due-undeclared-shrimp",
+        "title": "Zhou Hei Ya brand Wide Vermicelli with Sesame Sauce recalled due to undeclared shrimp",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/zhou-hei-ya-brand-wide-vermicelli-sesame-sauce-recalled-due-undeclared-shrimp",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2026-08-13",
+        "details": {
+          "brand": "Zhou Hei Ya",
+          "product": "Wide Vermicelli with Sesame Sauce",
+          "issue": [
+            "Food - Allergen - Crustacean and shellfish"
+          ],
+          "whatToDo": "Do not consume recalled products to which you are allergic or sensitive.",
+          "distribution": "Ontario, Quebec, Saskatchewan",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 2",
+          "affected": [
+            {
+              "brand": "Zhou Hei Ya (Chinese characters only)",
+              "product": "Wide Vermicelli with Sesame Sauce",
+              "size": "248 g",
+              "upc": "6 978378 870324",
+              "codes": "2026/03/13 2026/10/12"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "goodfood-brand-meatball-meals-recalled-due-undeclared-egg-and-sesame",
+        "title": "Goodfood brand meatball meals recalled due to undeclared egg and sesame",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/goodfood-brand-meatball-meals-recalled-due-undeclared-egg-and-sesame",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2026-07-20",
+        "details": {
+          "brand": "Goodfood",
+          "product": "Meatball meals",
+          "issue": [
+            "Food - Allergen - Egg",
+            "Food - Allergen - Sesame seeds"
+          ],
+          "whatToDo": "Do not use, sell, serve or distribute the affected products.",
+          "distribution": "Online, Quebec",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 2",
+          "affected": [
+            {
+              "brand": "Goodfood",
+              "product": "Middle Eastern-Style Pork Meatballs with Orzo and Roasted Vegetables",
+              "size": "405 g",
+              "upc": "--",
+              "codes": "Best Before 26JL12"
+            },
+            {
+              "brand": "Goodfood",
+              "product": "Teriyaki Beef Meatballs with Carrots, Edamame & Rice",
+              "size": "425 g",
+              "upc": "--",
+              "codes": "Best Before 26JL12"
+            }
+          ],
+          "affectedTotal": 2
+        }
+      },
+      {
+        "id": "various-salem-foods-brand-ground-spices-and-spice-blends-recalled-due-undeclared-0",
+        "title": "Various Salem Foods brand Ground Spices and Spice Blends recalled due to undeclared wheat, sesame and mustard",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/various-salem-foods-brand-ground-spices-and-spice-blends-recalled-due-undeclared-0",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2026-06-26",
+        "details": {
+          "brand": "Salem Foods",
+          "product": "Ground Spices and Spice Blends",
+          "issue": [
+            "Food - Allergen - Wheat",
+            "Food - Allergen - Sesame seeds",
+            "Food - Allergen - Mustard",
+            "Food - Allergen - Gluten"
+          ],
+          "whatToDo": "Do not consume recalled products to which you are allergic or sensitive. Do not consume the recalled products if you have celiac disease or other gluten-related disorders.",
+          "distribution": "National",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 1",
+          "affected": [
+            {
+              "brand": "Salem Foods",
+              "product": "Cookies Spices",
+              "size": "200 g",
+              "upc": "8 25685 00240 4",
+              "codes": "All codes where wheat, sesame and mustard are not declared on the label"
+            },
+            {
+              "brand": "Salem Foods",
+              "product": "Ground Cardamom",
+              "size": "180 g",
+              "upc": "8 25685 00410 1",
+              "codes": "All codes where wheat, sesame and mustard are not declared on the label"
+            },
+            {
+              "brand": "Salem Foods",
+              "product": "Spearmint",
+              "size": "120 g",
+              "upc": "8 25685 00420 0",
+              "codes": "All codes where wheat, sesame and mustard are not declared on the label"
+            }
+          ],
+          "affectedTotal": 3
+        }
+      },
+      {
+        "id": "aoun-brand-tahineh-recalled-due-salmonella-3",
+        "title": "Aoun brand Tahineh recalled due to Salmonella",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/aoun-brand-tahineh-recalled-due-salmonella-3",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2025-12-13",
+        "details": {
+          "brand": "Aoun",
+          "product": "Tahineh",
+          "issue": [
+            "Food - Microbial contamination - Salmonella"
+          ],
+          "whatToDo": "Do not consume, use, sell, serve, or distribute recalled products",
+          "distribution": "Alberta, New Brunswick, Nova Scotia, Ontario, Quebec, Saskatchewan",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 2",
+          "affected": [
+            {
+              "brand": "Aoun",
+              "product": "Tahineh – Ground Sesame 100%",
+              "upc": "5 283000 904980",
+              "codes": "Best Before : 2026 JL08 Lot # 0907L/THA"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "aoun-brand-tahineh-recalled-due-salmonella-2",
+        "title": "Aoun brand Tahineh recalled due to Salmonella",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/aoun-brand-tahineh-recalled-due-salmonella-2",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2025-11-26",
+        "details": {
+          "brand": "Aoun",
+          "product": "Tahineh",
+          "issue": [
+            "Food - Microbial contamination - Salmonella"
+          ],
+          "whatToDo": "Do not consume, use, sell, serve, or distribute recalled products",
+          "distribution": "Ontario, Quebec",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 2",
+          "affected": [
+            {
+              "brand": "Aoun",
+              "product": "Tahineh – Ground Sesame",
+              "size": "400 g",
+              "upc": "5 283000 905710",
+              "codes": "2026 DE 09; 0512L/THA"
+            },
+            {
+              "brand": "Aoun",
+              "product": "Tahineh – Ground Sesame 100%",
+              "size": "800 g",
+              "upc": "5 283000 904980",
+              "codes": "2026 DE 09; 0512L/THA"
+            }
+          ],
+          "affectedTotal": 2
+        }
+      },
+      {
+        "id": "bsa-wiberg-brand-shish-taouk-marine-plus-sauce-recalled-due-undeclared-sesame",
+        "title": "BSA Wiberg brand “Shish Taouk Mariné Plus Sauce” recalled due to undeclared sesame",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/bsa-wiberg-brand-shish-taouk-marine-plus-sauce-recalled-due-undeclared-sesame",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2025-11-24",
+        "details": {
+          "brand": "BSA Wiberg",
+          "product": "“Shish Taouk Mariné Plus Sauce”",
+          "issue": [
+            "Food - Allergen - Sesame seeds"
+          ],
+          "whatToDo": "Do not use, sell, serve or distribute the affected product.",
+          "distribution": "Ontario, Quebec",
+          "publishedBy": "Canadian Food Inspection Agency",
+          "recallClass": "Class 1",
+          "affected": [
+            {
+              "brand": "BSA Wiberg",
+              "product": "“Shish Taouk Mariné Plus Sauce”",
+              "size": "0.23 kg",
+              "codes": "Lot: 103252217"
+            }
+          ],
+          "affectedTotal": 1
+        }
+      },
+      {
+        "id": "arvinda-s-brand-tandoori-masala-recalled-due-undeclared-sesame",
+        "title": "Arvinda's brand Tandoori Masala recalled due to undeclared sesame",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/arvinda-s-brand-tandoori-masala-recalled-due-undeclared-sesame",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2025-11-06"
+      },
+      {
+        "id": "ocean-swallow-brand-sesame-candy-recalled-due-undeclared-peanut",
+        "title": "Ocean Swallow brand Sesame Candy recalled due to undeclared peanut",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/ocean-swallow-brand-sesame-candy-recalled-due-undeclared-peanut",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2025-07-29"
+      },
+      {
+        "id": "8-cakes-brand-chocolate-products-recalled-due-improperly-declared-wheat-walnut-sesame",
+        "title": "8 Cakes brand chocolate products recalled due to improperly declared wheat, walnut, sesame, soy and milk",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/8-cakes-brand-chocolate-products-recalled-due-improperly-declared-wheat-walnut-sesame",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2025-02-14"
+      },
+      {
+        "id": "david-roberts-gourmet-brand-nut-honey-mix-recalled-due-undeclared-wheat-and-sesame",
+        "title": "David Roberts Gourmet brand Nut & Honey Mix recalled due to undeclared wheat and sesame",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/david-roberts-gourmet-brand-nut-honey-mix-recalled-due-undeclared-wheat-and-sesame",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2025-02-04"
+      },
+      {
+        "id": "sweet-fix-brand-chocolate-bars-recalled-due-undeclared-wheat-sesame-and-milk",
+        "title": "Sweet Fix brand chocolate bars recalled due to undeclared wheat, sesame and milk",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/sweet-fix-brand-chocolate-bars-recalled-due-undeclared-wheat-sesame-and-milk",
+        "kind": "recall",
+        "type": "Notification",
+        "category": "food",
+        "date": "2024-12-23"
+      },
+      {
+        "id": "eat-smart-brand-asian-sesame-sesame-asiatique-chopped-salad-kit-recalled-due-listeria",
+        "title": "Eat Smart brand Asian Sesame (Sésame asiatique) Chopped Salad Kit recalled due to Listeria monocytogenes",
+        "url": "https://recalls-rappels.canada.ca/en/alert-recall/eat-smart-brand-asian-sesame-sesame-asiatique-chopped-salad-kit-recalled-due-listeria",
+        "kind": "recall",
+        "type": "Food recall warning",
+        "category": "food",
+        "date": "2021-08-24"
+      }
+    ],
+    "allergen": true
+  }
+}

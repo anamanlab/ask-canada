@@ -1,0 +1,52 @@
+/**
+ * Reference towns for the parks map (capitals, big cities, park gateways), in the order the map prefers them
+ * when a regional view has room for only a few. Approximate town centres. Also the first entries of the
+ * server's list of known starting places (places.ts), so each town is written down once.
+ */
+export type Town = { names: string[]; lat: number; lng: number; label: { en: string; fr: string } };
+
+export const TOWNS: Town[] = [
+  { names: ['vancouver'], lat: 49.2827, lng: -123.1207, label: { en: 'Vancouver', fr: 'Vancouver' } },
+  { names: ['calgary'], lat: 51.0447, lng: -114.0719, label: { en: 'Calgary', fr: 'Calgary' } },
+  { names: ['edmonton'], lat: 53.5461, lng: -113.4938, label: { en: 'Edmonton', fr: 'Edmonton' } },
+  { names: ['toronto'], lat: 43.6532, lng: -79.3832, label: { en: 'Toronto', fr: 'Toronto' } },
+  { names: ['montreal', 'montréal'], lat: 45.5019, lng: -73.5674, label: { en: 'Montréal', fr: 'Montréal' } },
+  { names: ['ottawa'], lat: 45.4215, lng: -75.6972, label: { en: 'Ottawa', fr: 'Ottawa' } },
+  { names: ['winnipeg'], lat: 49.8951, lng: -97.1384, label: { en: 'Winnipeg', fr: 'Winnipeg' } },
+  { names: ['quebec', 'québec', 'quebec city', 'ville de quebec'], lat: 46.8139, lng: -71.208, label: { en: 'Québec City', fr: 'Québec' } },
+  { names: ['halifax'], lat: 44.6488, lng: -63.5752, label: { en: 'Halifax', fr: 'Halifax' } },
+  { names: ['victoria'], lat: 48.4284, lng: -123.3656, label: { en: 'Victoria', fr: 'Victoria' } },
+  { names: ['regina'], lat: 50.4452, lng: -104.6189, label: { en: 'Regina', fr: 'Regina' } },
+  { names: ['saskatoon'], lat: 52.1332, lng: -106.67, label: { en: 'Saskatoon', fr: 'Saskatoon' } },
+  { names: ["st. john's", 'st johns', "st john's", 'saint-jean de terre-neuve'], lat: 47.5615, lng: -52.7126, label: { en: "St. John's", fr: 'St. John’s' } },
+  { names: ['charlottetown'], lat: 46.2382, lng: -63.1311, label: { en: 'Charlottetown', fr: 'Charlottetown' } },
+  { names: ['fredericton'], lat: 45.9636, lng: -66.6431, label: { en: 'Fredericton', fr: 'Fredericton' } },
+  { names: ['whitehorse'], lat: 60.7212, lng: -135.0568, label: { en: 'Whitehorse', fr: 'Whitehorse' } },
+  { names: ['yellowknife'], lat: 62.454, lng: -114.3718, label: { en: 'Yellowknife', fr: 'Yellowknife' } },
+  { names: ['iqaluit'], lat: 63.7467, lng: -68.517, label: { en: 'Iqaluit', fr: 'Iqaluit' } },
+  { names: ['kelowna'], lat: 49.888, lng: -119.496, label: { en: 'Kelowna', fr: 'Kelowna' } },
+  { names: ['kamloops'], lat: 50.674, lng: -120.327, label: { en: 'Kamloops', fr: 'Kamloops' } },
+  { names: ['prince george'], lat: 53.917, lng: -122.749, label: { en: 'Prince George', fr: 'Prince George' } },
+  { names: ['thunder bay'], lat: 48.3809, lng: -89.2477, label: { en: 'Thunder Bay', fr: 'Thunder Bay' } },
+  { names: ['sudbury', 'grand sudbury'], lat: 46.4917, lng: -80.993, label: { en: 'Sudbury', fr: 'Sudbury' } },
+  { names: ['moncton'], lat: 46.0878, lng: -64.7782, label: { en: 'Moncton', fr: 'Moncton' } },
+  { names: ['saint john'], lat: 45.273, lng: -66.063, label: { en: 'Saint John', fr: 'Saint John' } },
+  { names: ['sydney'], lat: 46.136, lng: -60.194, label: { en: 'Sydney', fr: 'Sydney' } },
+  { names: ['corner brook'], lat: 48.951, lng: -57.952, label: { en: 'Corner Brook', fr: 'Corner Brook' } },
+  { names: ['rimouski'], lat: 48.449, lng: -68.524, label: { en: 'Rimouski', fr: 'Rimouski' } },
+  { names: ['saguenay', 'chicoutimi', 'jonquiere', 'jonquière'], lat: 48.428, lng: -71.068, label: { en: 'Saguenay', fr: 'Saguenay' } },
+  { names: ['lethbridge'], lat: 49.694, lng: -112.833, label: { en: 'Lethbridge', fr: 'Lethbridge' } },
+  { names: ['red deer'], lat: 52.268, lng: -113.811, label: { en: 'Red Deer', fr: 'Red Deer' } },
+  { names: ['grande prairie'], lat: 55.171, lng: -118.795, label: { en: 'Grande Prairie', fr: 'Grande Prairie' } },
+  { names: ['brandon'], lat: 49.848, lng: -99.95, label: { en: 'Brandon', fr: 'Brandon' } },
+  { names: ['thompson'], lat: 55.743, lng: -97.855, label: { en: 'Thompson', fr: 'Thompson' } },
+  { names: ['prince albert'], lat: 53.203, lng: -105.753, label: { en: 'Prince Albert', fr: 'Prince Albert' } },
+  { names: ['inuvik'], lat: 68.36, lng: -133.723, label: { en: 'Inuvik', fr: 'Inuvik' } },
+  { names: ['dawson city', 'dawson'], lat: 64.06, lng: -139.432, label: { en: 'Dawson City', fr: 'Dawson City' } },
+  { names: ['fort mcmurray'], lat: 56.726, lng: -111.381, label: { en: 'Fort McMurray', fr: 'Fort McMurray' } },
+  { names: ['nanaimo'], lat: 49.166, lng: -123.94, label: { en: 'Nanaimo', fr: 'Nanaimo' } },
+  { names: ['sherbrooke'], lat: 45.4042, lng: -71.8929, label: { en: 'Sherbrooke', fr: 'Sherbrooke' } },
+  { names: ['trois-rivieres', 'trois-rivières', 'trois rivieres'], lat: 46.343, lng: -72.543, label: { en: 'Trois-Rivières', fr: 'Trois-Rivières' } },
+  { names: ['kingston'], lat: 44.231, lng: -76.486, label: { en: 'Kingston', fr: 'Kingston' } },
+  { names: ['london'], lat: 42.9849, lng: -81.2453, label: { en: 'London', fr: 'London' } },
+];

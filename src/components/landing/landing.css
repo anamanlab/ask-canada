@@ -1,0 +1,3010 @@
+/* Landing page. Ported from design direction A ("Northern Light") with grafts from B and C. */
+
+/* ---------- Scenes (sky + aurora + lake/treeline) ---------- */
+.l-scene {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+/* A 3% monochrome grain dithers the long sky gradients, so they stay glass-smooth instead of banding. */
+.l-scene::after,
+.ac-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.l-sun {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  width: 900px;
+  height: 420px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, var(--sun, rgba(255, 236, 214, 0.9)), transparent);
+}
+[data-theme='dark'] .l-sun {
+  --sun: rgba(120, 170, 200, 0.14);
+}
+.l-aurora {
+  position: absolute;
+  left: -4%;
+  right: -4%;
+  top: 6%;
+  height: 62%;
+  opacity: 0.62;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+}
+[data-theme='dark'] .l-aurora.has-dark {
+  mix-blend-mode: screen;
+  opacity: 0.55;
+}
+/* The aurora's three ribbons (see Aurora.tsx), in a frame that is the combined drawing's 1600 × 600 cover
+   crop of the box, centred. Each ribbon file is 40 units wider on both sides, so a ribbon drifting in is
+   really there; the frame clips them where the combined file's edge did, and the box clips the frame as it
+   clipped its background. */
+.l-aurora,
+.l-shore__aurora {
+  container-type: size;
+  overflow: hidden;
+}
+.l-ribbons {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+/* Browsers without container units keep the frame at the box (the aurora stretches to it). */
+@supports (width: 1cqw) {
+  .l-ribbons {
+    --w: max(100cqw, 100cqh * 8 / 3);
+    inset: auto;
+    left: calc((100cqw - var(--w)) / 2);
+    top: calc((100cqh - var(--w) * 3 / 8) / 2);
+    width: var(--w);
+    height: calc(var(--w) * 3 / 8);
+  }
+}
+.l-ribbons--dark,
+[data-theme='dark'] .has-dark > .l-ribbons:not(.l-ribbons--dark) {
+  display: none;
+}
+[data-theme='dark'] .has-dark > .l-ribbons--dark {
+  display: block;
+}
+/* Each ribbon drifts and breathes on its own clock, scaling about its own top edge (y = 40, 3 and 237 of
+   600, printed by scripts/build-art.mjs). Transform only: the compositor moves them, nothing repaints. */
+.l-ribbon {
+  position: absolute;
+  top: 0;
+  left: -2.5%;
+  width: 105%;
+  max-width: none;
+  height: 100%;
+  /* A ribbon above the fold is a background (see Aurora.tsx): stretched to the box, as the image is. */
+  background: center / 100% 100% no-repeat;
+  animation: l-ribbon 38s ease-in-out infinite alternate;
+}
+.l-ribbon--1 {
+  transform-origin: 0 calc(40 / 600 * 100%);
+}
+.l-ribbon--2 {
+  transform-origin: 0 calc(3 / 600 * 100%);
+  animation-duration: 52s;
+  animation-delay: -12s;
+}
+.l-ribbon--3 {
+  transform-origin: 0 calc(237 / 600 * 100%);
+  animation-duration: 30s;
+  animation-delay: -6s;
+}
+/* Offsets in units of the 1680-unit-wide ribbon file. */
+@keyframes l-ribbon {
+  0% { transform: translateX(calc(-30 / 1680 * 100%)) scaleY(0.94); }
+  50% { transform: translateX(calc(10 / 1680 * 100%)) scaleY(1.04); }
+  100% { transform: translateX(calc(34 / 1680 * 100%)) scaleY(0.97); }
+}
+.l-land {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 46%;
+  background: var(--land) center bottom / cover no-repeat;
+}
+[data-theme='dark'] .l-land {
+  background-image: var(--land-d);
+}
+@media (max-width: 760px) {
+  .l-land {
+    background-image: var(--land-m);
+  }
+  [data-theme='dark'] .l-land {
+    background-image: var(--land-dm);
+  }
+}
+
+/* ---------- Shore: the phone hero's lake (see Shore.tsx) ---------- */
+/* The drawing's palettes are baked into its files (scripts/build-art.mjs). The page keeps a few of its colours:
+   the lake's floor, which the water carries on below the drawing, its middle depth (--sr-lm), the still tone the
+   task tiles sit on, the valley mist, which haloes the trust
+   line, and the glitter it draws over the water. */
+.l-lake {
+  --sr-lc: #d4cde2;
+  --sr-lm: #dcc6d2;
+  --sr-va: #f6d9c6;
+  --sr-glint: #fffaf0;
+  --sr-glint-o: 1;
+}
+[data-theme='dark'] .l-lake {
+  --sr-lc: #0c1729;
+  --sr-lm: #10203a;
+  --sr-va: #1d3a58;
+  --sr-glint: #eef4ff;
+  --sr-glint-o: 0.62;
+}
+/* The still scene (light and dark files swap here; only the one on screen is fetched), and over it what
+   moves on the water: small layers that only change opacity and position, so nothing is repainted. */
+.l-shore__art {
+  background: var(--art) center top / cover no-repeat;
+}
+[data-theme='dark'] .l-shore__art {
+  background-image: var(--art-d);
+}
+/* One glint: bright at its heart, gone at its rim, so none has an edge. Each breathes from a fifth of its
+   brightness (--o, with its period and phase set inline) to all of it. */
+.l-shore__fx i {
+  background: radial-gradient(closest-side, var(--sr-glint), color-mix(in srgb, var(--sr-glint) 55%, transparent) 45%, transparent);
+  opacity: calc(var(--o) * var(--sr-glint-o));
+  animation: sr-twinkle 4s ease-in-out infinite;
+}
+@keyframes sr-twinkle {
+  0%, 100% { opacity: calc(var(--o) * var(--sr-glint-o)); }
+  50% { opacity: calc(var(--o) * var(--sr-glint-o) * 0.2); }
+}
+/* A breath of mist on the water, drifting very slowly. */
+.l-shore__mist {
+  background: var(--mist) 0 0 / 100% 100% no-repeat;
+  animation: sr-mist 56s ease-in-out infinite alternate;
+}
+[data-theme='dark'] .l-shore__mist {
+  background-image: var(--mist-d);
+}
+@keyframes sr-mist {
+  from { transform: translate(calc(-18 * var(--sr-u)), 0); opacity: 0.9; }
+  50% { opacity: 0.55; }
+  to { transform: translate(calc(18 * var(--sr-u)), calc(-2 * var(--sr-u))); opacity: 0.9; }
+}
+/* The canoe on the open water. The box is its drawing's frame; the file runs on below it (for the
+   reflection), so the art is a pseudo-element over the frame, as wide and taller. */
+.l-canoe::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: var(--art) 0 0 / 100% 100% no-repeat;
+}
+[data-theme='dark'] .l-canoe::before {
+  background-image: var(--art-d);
+}
+/* The near bank: granite and reeds at the bay's bottom corner (a still file per theme). */
+.l-fore {
+  background: var(--art) 0 100% / 100% auto no-repeat;
+}
+[data-theme='dark'] .l-fore {
+  background-image: var(--art-d);
+}
+/* The phone's statement of status (above the header). Hidden on wider screens, where the kicker speaks. */
+.l-idstrip {
+  display: none;
+}
+/* Night: the aurora, mirrored in the lake (see Shore). Screen-blended, so it only ever adds light. */
+.l-shore__aurora {
+  display: none;
+}
+
+/* ---------- Hero ---------- */
+.l-hero {
+  position: relative;
+  margin: 12px;
+  border-radius: 40px;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: max(820px, min(calc(100svh - 24px), 1000px));
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 34%, var(--sky-low) 56%, var(--sky-glow) 74%, var(--lake-top) 100%);
+}
+.l-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--hair);
+  pointer-events: none;
+  z-index: 5;
+}
+.l-hero__inner {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Bottom room so the treeline starts below the last row of chips (the hero grows if chips wrap). */
+  padding: clamp(12px, 3.6vh, 56px) 20px 40px;
+}
+.l-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  margin: 0 0 22px;
+  padding: 7px 14px 7px 10px;
+  border-radius: 999px;
+  /* No backdrop blur: the sky and aurora behind are already soft, so it would be invisible (and recomputed
+     every frame over the drifting aurora). */
+  background: var(--card-glass);
+  border: 1px solid var(--hair);
+}
+.l-kicker__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pine);
+  box-shadow: 0 0 0 4px var(--pine-wash);
+}
+.l-hello {
+  text-wrap: balance;
+  font-family: var(--font-serif-stack);
+  font-weight: 380;
+  font-variation-settings: 'opsz' 72;
+  font-size: clamp(44px, 7.6vw, 112px);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  margin: 0;
+  color: var(--ink);
+}
+.l-hello > span {
+  display: block;
+  white-space: nowrap;
+}
+/* The second official language is a quiet line under the greeting, about half its size. */
+.l-hello .l-hello__alt {
+  font-style: italic;
+  font-size: 0.48em;
+  font-weight: 380;
+  line-height: 1.1;
+  margin-top: 0.26em;
+  color: var(--ink-2);
+  letter-spacing: -0.025em;
+  padding-inline-end: 0.06em;
+}
+/* The maple full stop is the greeting's own mark: the second language's stays in its own ink at every width. */
+.l-stop {
+  color: var(--maple);
+}
+.l-hello__alt .l-stop {
+  color: inherit;
+}
+.l-lede {
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.42;
+  color: var(--ink-2);
+  margin: 20px 0 0;
+  max-width: 36ch;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+/* Phones get one short line in English and French (see Hero); wider screens keep the full lede. */
+.l-lede--phone {
+  display: none;
+}
+@media (min-width: 761px) {
+  .l-lede {
+    max-width: 62ch;
+  }
+  .l-lede__line {
+    display: block;
+    text-wrap: balance;
+  }
+}
+.l-hero__composer {
+  width: min(780px, 100%);
+  margin-top: clamp(26px, 3.6vh, 44px);
+}
+.l-trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13.5px;
+  color: var(--ink-2);
+}
+.l-trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.l-trust li.l-trust__short {
+  display: none;
+}
+.l-chips {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 1180px;
+}
+.l-chips button {
+  font-size: 14.5px;
+  padding-inline: 12px 15px;
+  /* Solid chips read cleanly over the treeline instead of letting the spruce show through (being opaque,
+     they need no backdrop blur). */
+  background: var(--card);
+  border-color: var(--hair-2);
+}
+/* Keep the treeline below the chip rows (the lake gives up a little height). */
+.l-hero .l-land {
+  bottom: -56px;
+}
+.l-chips .w-only {
+  display: list-item;
+}
+/* The phone-only pieces of the hero (its own landscape, the "Every service" link) stay out of wider layouts,
+   and the tasks wrapper is transparent to the desktop flex column. */
+.l-shore,
+.l-allsvc,
+.l-lake__open {
+  display: none;
+}
+.l-lake,
+.l-hero__tasks {
+  display: contents;
+}
+.l-nowrap {
+  white-space: nowrap;
+}
+/* The hero aurora drifts, very slowly (about a minute per sweep), on top of its ribbons' own drift. */
+.l-hero > .l-scene .l-aurora {
+  animation: l-drift 52s ease-in-out infinite alternate;
+}
+@keyframes l-drift {
+  from { transform: translateX(-2.5%); }
+  to { transform: translateX(2.5%); }
+}
+/* Phones swap in a short name over a quiet second line (see AskChip), so the four tiles match. */
+.l-chip-short {
+  display: none;
+}
+@media (max-width: 760px) {
+  .l-chip-long {
+    display: none;
+  }
+  .l-chip-short {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+  }
+}
+.l-hero__foot {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 18px 20px 20px;
+}
+.l-scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0 18px 0 14px;
+  border-radius: 999px;
+  background: var(--card-glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--hair);
+  box-shadow: var(--sh-sm);
+}
+/* Wider screens: the treeline thins into the lake mist where the cue sits, so the cue floats in a clearing
+   on the shore and no spruce runs into it. */
+@media (min-width: 761px) {
+  .l-hero > .l-scene .l-land {
+    -webkit-mask-image: radial-gradient(ellipse 210px 78px at 50% calc(100% - 42px), transparent 42%, #000 100%);
+    mask-image: radial-gradient(ellipse 210px 78px at 50% calc(100% - 42px), transparent 42%, #000 100%);
+  }
+}
+.l-scroll-cue svg {
+  animation: nudge 2.4s ease-in-out infinite;
+}
+@keyframes nudge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+/* ---------- Section scaffolding ---------- */
+.l-section {
+  padding: clamp(88px, 11vw, 160px) clamp(20px, 4vw, 48px) 0;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.l-h2 {
+  text-wrap: balance;
+  font-family: var(--font-serif-stack);
+  font-weight: 380;
+  font-variation-settings: 'opsz' 60;
+  font-size: clamp(40px, 5.4vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  margin: 0;
+  max-width: 16ch;
+}
+.l-h2 em {
+  font-style: italic;
+  font-weight: 340;
+  color: var(--ink-2);
+}
+.l-sub {
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 46ch;
+  margin: 22px 0 0;
+  text-wrap: pretty;
+}
+.l-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.l-center .eyebrow {
+  justify-content: center;
+}
+.l-center .eyebrow::before {
+  display: none;
+}
+
+/* Eyebrows on the landing: the sans, 12px semibold, lightly tracked (mono is kept for the step numerals only). */
+:is(.l-section, .l-night, .l-closing) .eyebrow {
+  font-family: var(--font-sans-stack);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- Widget showcase (aurora glass stage) ---------- */
+.l-stage {
+  position: relative;
+  margin-top: 56px;
+  border-radius: 40px;
+  padding: clamp(28px, 5vw, 72px) clamp(16px, 4vw, 56px);
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(120% 90% at 50% 110%, var(--sky-glow), transparent 60%), linear-gradient(180deg, var(--paper-2), var(--sky-low));
+  border: 1px solid var(--hair);
+}
+.l-stage .l-aurora {
+  top: -20%;
+  height: 80%;
+  opacity: 0.45;
+}
+.l-cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: end;
+}
+.l-wcard {
+  container-type: inline-size;
+  background: var(--card);
+  border-radius: 24px;
+  box-shadow: var(--sh-lg);
+  border: 1px solid var(--hair);
+  overflow: hidden;
+  text-align: start;
+}
+/* Wide/narrow copy inside a showcase card: the card's own width decides (phones get the short rows). */
+.l-wcard .l-narrow {
+  display: none;
+}
+@container (max-width: 330px) {
+  .l-wcard .l-wide {
+    display: none;
+  }
+  /* Narrow segmented control: slim segments that share the spare width (the French labels, « En personne »
+     and « Poste », each keep air around them), and only the chosen method keeps its sublabel. */
+  .l-wcard .l-seg {
+    margin-inline: -4px;
+    padding: 2px;
+  }
+  .l-wcard .l-seg > span {
+    padding: 6px 3px;
+    font-size: 12px;
+  }
+  .l-wcard .l-seg > span:not(.on) small {
+    display: none;
+  }
+  .l-wcard span.l-narrow {
+    display: inline;
+  }
+  .l-wcard div.l-narrow {
+    display: flex;
+  }
+  /* The header gives its icon's width to the title, so "Passport renewal planner" stays on one line. */
+  .l-wcard .l-wc-head > span:first-child {
+    display: none;
+  }
+  /* Rows stack: a small muted label above its value, so the two never run together as one sentence. */
+  .l-wcard .l-rowline {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .l-wcard .l-rowline > span {
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+  .l-wcard .l-rowline b {
+    font-size: 15px;
+    text-align: start;
+    white-space: normal;
+  }
+}
+.l-wcard--center {
+  transform: translateY(-18px);
+}
+.l-wc-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px 14px;
+}
+.l-wc-title {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+}
+.l-wc-sub {
+  font-size: 13px;
+  color: var(--ink-3);
+  line-height: 1.3;
+}
+.l-wc-body {
+  padding: 4px 20px 18px;
+}
+.l-wc-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 10px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--hair);
+  color: var(--ink-2);
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+/* Source chrome speaks in the same calm sans as the rest of the page: the page address a quieter grey, the
+   checked date in pine, figures tabular. */
+.l-wc-foot > span:first-child {
+  color: var(--ink-3);
+}
+.l-wc-foot > span {
+  white-space: nowrap;
+}
+.l-wc-foot .ok {
+  color: var(--pine);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.l-bignum {
+  font-family: var(--font-serif-stack);
+  font-variation-settings: 'opsz' 72;
+  font-weight: 400;
+  font-size: 56px;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.l-bignum small {
+  font-family: var(--font-sans-stack);
+  font-size: 15px;
+  letter-spacing: 0;
+  color: var(--ink-3);
+  font-weight: 500;
+  margin-inline-start: 6px;
+}
+.l-bar {
+  height: 6px;
+  border-radius: 6px;
+  background: var(--paper-2);
+  overflow: hidden;
+  margin: 12px 0 14px;
+}
+.l-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--a-teal), var(--pine));
+}
+.l-rowline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--hair);
+  font-size: 14px;
+}
+.l-rowline:first-of-type {
+  border-top: 0;
+}
+.l-rowline > span {
+  min-width: 0;
+  text-wrap: balance;
+}
+.l-rowline b {
+  font-weight: 600;
+  text-align: end;
+  white-space: nowrap;
+}
+.l-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--pine-wash);
+  color: var(--pine);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+/* The check sits on the first line of a wrapped status, not in the middle of the block. */
+.l-status > svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.l-seg {
+  display: flex;
+  padding: 3px;
+  border-radius: 12px;
+  background: var(--paper-2);
+  gap: 2px;
+  margin: 12px 0 4px;
+}
+.l-seg > span {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px;
+  border-radius: 9px;
+  color: var(--ink-2);
+  line-height: 1.25;
+}
+.l-seg > span small {
+  display: block;
+  font-size: 11px;
+  font-weight: 450;
+  color: var(--ink-3);
+}
+.l-seg > span.on {
+  background: var(--seg-on);
+  color: var(--ink);
+  box-shadow: var(--sh-sm);
+}
+.l-hol {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  border-top: 1px solid var(--hair);
+}
+.l-hol:first-child {
+  border-top: 0;
+}
+.l-hol-name {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.l-hol-day {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+/* ---------- Flag band: 1 : 2 : 1 ---------- */
+.l-flag {
+  --flag: var(--maple);
+  position: relative;
+  margin: clamp(88px, 11vw, 160px) 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  min-height: 720px;
+  isolation: isolate;
+}
+.l-flag__band {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--flag) 92%, #fff), var(--flag) 55%, color-mix(in srgb, var(--flag) 86%, #000));
+  color: #fff;
+}
+.l-flag__band::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 6px);
+  pointer-events: none;
+}
+.l-flag__word {
+  position: absolute;
+  font-family: var(--font-serif-stack);
+  font-weight: 380;
+  font-variation-settings: 'opsz' 72;
+  font-size: clamp(72px, 8.2vw, 136px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+.l-flag__band--start .l-flag__word {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  left: 50%;
+  bottom: 48px;
+  translate: -50% 0;
+}
+.l-flag__band--end .l-flag__word {
+  writing-mode: vertical-rl;
+  left: 50%;
+  top: 48px;
+  translate: -50% 0;
+  font-style: italic;
+  font-weight: 340;
+}
+.l-flag__tag {
+  position: absolute;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.88;
+}
+.l-flag__band--start .l-flag__tag {
+  top: 28px;
+  inset-inline-start: 28px;
+}
+.l-flag__band--end .l-flag__tag {
+  bottom: 28px;
+  inset-inline-end: 28px;
+}
+.l-flag__white {
+  position: relative;
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  place-items: center;
+  padding: 64px 24px;
+}
+/* Night: the centre band stays a lighter, warm field, so the flag still reads red / white / red. */
+[data-theme='dark'] .l-flag__white {
+  background: color-mix(in oklab, var(--paper) 88%, color-mix(in oklab, var(--ink) 75%, var(--amber)));
+}
+.l-flag__caption {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px clamp(20px, 4vw, 48px) 0;
+  font-size: 13px;
+  color: var(--ink-3);
+  text-wrap: pretty;
+}
+.l-demo {
+  position: relative;
+  z-index: 2;
+  width: min(560px, 100%);
+  border-radius: 28px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  box-shadow: var(--sh-lg);
+  overflow: hidden;
+  text-align: start;
+}
+.l-demo__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--hair);
+  font-weight: 600;
+  font-size: 15px;
+}
+.l-demo__lang {
+  margin-inline-start: auto;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-2);
+  background: var(--paper-2);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.l-demo__body {
+  padding: 20px;
+}
+.l-demo__q {
+  margin: 0 0 16px auto;
+  width: fit-content;
+  max-width: 88%;
+  padding: 11px 16px;
+  border-radius: 20px 20px 6px 20px;
+  background: var(--bubble);
+  box-shadow: inset 0 0 0 1px var(--hair);
+  font-size: 15px;
+}
+.l-demo__a {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.l-demo__a b {
+  font-weight: 600;
+}
+.l-demo__plan {
+  margin-top: 16px;
+  border: 1px solid var(--hair);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.l-demo__plan-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+}
+.l-demo__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--hair);
+}
+.l-demo__stats > div {
+  padding: 12px 16px;
+}
+.l-demo__stats > div + div {
+  border-inline-start: 1px solid var(--hair);
+}
+.l-demo__stats small {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.l-demo__stats b {
+  font-family: var(--font-serif-stack);
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  font-variation-settings: 'opsz' 36;
+}
+.l-demo__stats b span {
+  font-family: var(--font-sans-stack);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-3);
+  margin-inline-start: 5px;
+  letter-spacing: 0;
+}
+.l-demo__plan-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px 10px 16px;
+  background: var(--paper-2);
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.l-mono {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.l-demo__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-sans-stack);
+  font-size: 13px;
+  font-weight: 550;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.l-demo__form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 16px 16px;
+  padding: 6px 6px 6px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--hair-2);
+  background: var(--card);
+}
+.l-demo__input {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  font-size: 15px;
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.l-float {
+  position: absolute;
+  z-index: 3;
+  width: 272px;
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  box-shadow: var(--sh-lg);
+  text-align: start;
+  color: var(--ink);
+}
+.l-float--a {
+  top: -22px;
+  inset-inline-end: calc(100% - 14px);
+}
+.l-float--b {
+  bottom: 96px;
+  inset-inline-start: calc(100% - 28px);
+  /* Narrower than the holiday card so it stops short of the "Demandez." wordmark. */
+  width: 244px;
+}
+/* French leads with « Demandez. », the long wordmark, in the first band: it stands at the band's outer edge,
+   clear of the holiday card (as the advisory card stops short of the long wordmark in the last band). */
+@media (min-width: 1081px) {
+  .l-flag--long-lead .l-flag__band--start .l-flag__word {
+    left: 28px;
+    translate: none;
+  }
+}
+.l-float__k {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.l-float__t {
+  font-family: var(--font-serif-stack);
+  font-size: 25px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 8px 0 6px;
+  font-variation-settings: 'opsz' 36;
+}
+.l-float__d {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--ink-2);
+  margin: 0;
+}
+.l-risk {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  margin: 12px 0 8px;
+}
+.l-risk i {
+  height: 6px;
+  border-radius: 6px;
+  background: var(--paper-3);
+}
+.l-risk i.on-0 { background: var(--pine); }
+.l-risk i.on-1 { background: #d8a31a; }
+.l-risk i.on-2 { background: #e36b1d; }
+.l-risk i.on-3 { background: var(--maple); }
+/* The advisory card's outline while the live feed answers (see FlagDemo): the card's size, bars for its lines. */
+.l-float--skel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 186px;
+}
+.l-float--skel i {
+  display: block;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--paper-3);
+}
+.l-float--skel .l-float__skel-t {
+  height: 24px;
+  margin: 2px 0;
+}
+.l-float--skel .l-float__skel-risk {
+  height: 6px;
+  margin: 4px 0;
+}
+
+/* ---------- How it works ---------- */
+.l-steps {
+  list-style: none;
+  margin: 64px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+}
+.l-step {
+  position: relative;
+  min-width: 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--hair-2);
+  display: flex;
+  flex-direction: column;
+}
+.l-step__n {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-sans-stack);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+/* The step numeral: the same sans, with lining tabular figures, in maple. */
+.l-step__num {
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: 0.02em;
+  color: var(--maple-ink);
+}
+/* Side by side, the three steps share their rows (subgrid): number, heading, body and illustration line
+   up across columns even when one heading takes two lines. */
+@media (min-width: 761px) {
+  .l-steps {
+    grid-template-rows: auto auto auto 1fr;
+    row-gap: 0;
+  }
+  .l-step {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    align-content: start;
+  }
+  /* All three illustration tiles share the row's height (the hand-off in step 3 is the tallest). */
+  .l-steps .l-step__art {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .l-steps .l-step__art > div {
+    flex: 1;
+  }
+}
+.l-step h3 {
+  font-family: var(--font-serif-stack);
+  font-weight: 420;
+  font-variation-settings: 'opsz' 36;
+  font-size: 32px;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 14px 0 12px;
+  text-wrap: balance;
+}
+.l-step p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 16.5px;
+  max-width: 34ch;
+}
+.l-step__art {
+  margin-top: auto;
+  padding-top: 26px;
+}
+.l-step__art > div {
+  /* A floor, not a cap: longer translations grow the tile instead of clipping the example inside it. */
+  min-height: 156px;
+  border-radius: 22px;
+  background: var(--paper-2);
+  border: 1px solid var(--hair);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+.l-mini-bubble {
+  background: var(--card);
+  border-radius: 18px 18px 6px 18px;
+  padding: 12px 16px;
+  font-size: 14.5px;
+  box-shadow: var(--sh-md);
+  max-width: 92%;
+}
+.l-mini-bubble .who {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+  color: var(--ink-3);
+  font-size: 12px;
+}
+.l-wave {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  height: 18px;
+}
+.l-wave i {
+  width: 3px;
+  border-radius: 3px;
+  background: var(--maple);
+  display: block;
+  animation: wave 1.2s ease-in-out infinite;
+}
+.l-wave i:nth-child(2n) { animation-delay: -0.3s; }
+.l-wave i:nth-child(3n) { animation-delay: -0.6s; }
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.6); }
+  50% { transform: scaleY(1); }
+}
+.l-mini-answer {
+  width: 100%;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: var(--sh-md);
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+.l-mini-answer b {
+  color: var(--ink);
+  font-weight: 600;
+}
+.l-src-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--hair);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--ink-2);
+  max-width: 100%;
+}
+.l-src-pill i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pine);
+  flex: none;
+}
+.l-handoff {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  padding: 14px 20px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 500;
+  font-size: 15px;
+  box-shadow: var(--sh-md);
+}
+
+/* Step 3: the button in the answer, a short link line, and the canada.ca page it opens (address bar with a
+   lock and a check, a heading, two lines of text and the page's own action). */
+.l-step__art > .l-hand {
+  flex-direction: column;
+  gap: 0;
+  padding: 18px 18px 0;
+  justify-content: flex-start;
+}
+.l-hand .l-handoff {
+  position: relative;
+  z-index: 1;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+.l-hand__link {
+  display: block;
+  width: 0;
+  height: 14px;
+  border-inline-start: 1.5px dashed var(--hair-2);
+}
+.l-hand__page {
+  display: block;
+  width: min(100%, 272px);
+  border-radius: 14px 14px 0 0;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-bottom: 0;
+  box-shadow: var(--sh-md);
+  overflow: hidden;
+  text-align: start;
+}
+.l-hand__bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 10px;
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--hair);
+  font-size: 12px;
+  font-weight: 550;
+  color: var(--ink-2);
+}
+.l-hand__ok {
+  display: grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  margin-inline-start: 3px;
+  border-radius: 50%;
+  background: var(--pine);
+  color: #fff;
+}
+.l-hand__body {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 12px 14px 16px;
+  border-top: 3px solid var(--maple);
+  margin-top: -1px;
+}
+.l-hand__body i {
+  display: block;
+  height: 6px;
+  width: 92%;
+  border-radius: 3px;
+  background: var(--hair-2);
+}
+.l-hand__body .l-hand__h {
+  height: 9px;
+  width: 62%;
+  background: color-mix(in srgb, var(--ink) 70%, transparent);
+}
+.l-hand__body .l-hand__short {
+  width: 70%;
+}
+.l-hand__body .l-hand__cta {
+  width: 34%;
+  height: 16px;
+  margin-top: 3px;
+  border-radius: 999px;
+  background: var(--ink);
+  opacity: 0.85;
+}
+
+/* ---------- Privacy: the night ---------- */
+.l-night {
+  --focus-ring: #fff;
+  --sky-top: #070d19;
+  --sky-mid: #0a1426;
+  --sky-low: #10223a;
+  --sky-glow: #1b3350;
+  position: relative;
+  margin: clamp(88px, 11vw, 160px) 12px 0;
+  border-radius: 40px;
+  overflow: hidden;
+  isolation: isolate;
+  color: #eef1f5;
+  background: linear-gradient(180deg, var(--sky-top), var(--sky-mid) 40%, var(--sky-low) 70%, var(--sky-glow));
+  padding: clamp(72px, 9vw, 128px) clamp(20px, 5vw, 72px);
+}
+.l-night .l-aurora {
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  top: 2%;
+  height: 70%;
+  /* The brightest band rides above the heading, not behind the body copy. */
+  transform: translateY(-140px);
+  /* Fades out downward (and at the sides), so the curtain never ends in a hard line inside the panel. */
+  -webkit-mask-image: linear-gradient(180deg, #000 40%, transparent 94%), linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(180deg, #000 40%, transparent 94%), linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+  mask-composite: intersect;
+}
+.l-stars {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(1px 1px at 12% 18%, #fff9, transparent 60%), radial-gradient(1px 1px at 28% 8%, #fff8, transparent 60%),
+    radial-gradient(1.4px 1.4px at 44% 22%, #fffb, transparent 60%), radial-gradient(1px 1px at 63% 12%, #fff7, transparent 60%),
+    radial-gradient(1px 1px at 78% 26%, #fff9, transparent 60%), radial-gradient(1.2px 1.2px at 88% 9%, #fffa, transparent 60%),
+    radial-gradient(1px 1px at 6% 40%, #fff6, transparent 60%), radial-gradient(1px 1px at 94% 44%, #fff6, transparent 60%),
+    radial-gradient(1px 1px at 52% 5%, #fff8, transparent 60%), radial-gradient(1px 1px at 36% 36%, #fff5, transparent 60%),
+    radial-gradient(1px 1px at 71% 40%, #fff5, transparent 60%), radial-gradient(1px 1px at 19% 30%, #fff7, transparent 60%);
+}
+.l-night::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 38%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(70% 100% at 50% 100%, rgba(98, 240, 178, 0.1), transparent 70%);
+}
+.l-night__inner {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.l-night__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.l-night .eyebrow {
+  color: rgba(255, 255, 255, 0.94);
+}
+.l-night .l-h2 {
+  color: #fff;
+  max-width: 13ch;
+}
+.l-night .l-h2 em {
+  display: block;
+  color: rgba(255, 255, 255, 0.86);
+}
+.l-night .l-sub {
+  color: rgba(255, 255, 255, 0.92);
+}
+/* A night scrim behind the copy column keeps text >= 4.5:1 over the brightest aurora band. */
+.l-night__grid > div:first-child {
+  position: relative;
+  isolation: isolate;
+}
+.l-night__grid > div:first-child::before {
+  content: '';
+  position: absolute;
+  inset: -96px -96px -110px;
+  z-index: -1;
+  background: radial-gradient(closest-side, rgba(8, 14, 28, 0.82), rgba(8, 14, 28, 0.66) 55%, rgba(8, 14, 28, 0.3) 80%, transparent);
+  pointer-events: none;
+}
+.l-lockmark {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  /* No backdrop blur: behind it is only the soft night sky, so it would be invisible (and recomputed every
+     frame over the drifting aurora). */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  margin-bottom: 34px;
+  box-shadow: 0 0 60px -10px rgba(98, 240, 178, 0.5);
+}
+.l-device {
+  border-radius: 28px;
+  background: rgba(10, 18, 32, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(22px) saturate(1.3);
+  backdrop-filter: blur(22px) saturate(1.3);
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+.l-device__top {
+  padding: 26px 28px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.l-device__k {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(238, 241, 245, 0.72);
+  margin: 0;
+}
+.l-device__nothing {
+  font-family: var(--font-serif-stack);
+  font-weight: 380;
+  font-variation-settings: 'opsz' 72;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 8px 0 10px;
+  color: #fff;
+}
+.l-device__p {
+  margin: 0;
+  font-size: 14.5px;
+  color: rgba(238, 241, 245, 0.78);
+}
+.l-device__bottom {
+  padding: 22px 28px 26px;
+}
+.l-device__list {
+  list-style: none;
+  margin: 12px 0 14px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.l-device__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Examples of what a saved plan looks like: ghosted outlines, clearly not real items. */
+.l-device__list.is-preview {
+  margin: 14px 0 0;
+}
+.l-device__item.is-example {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: transparent;
+  opacity: 0.62;
+}
+.l-device__item.is-example .l-device__ico {
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+}
+.l-device__ico {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  flex: none;
+}
+.l-device__t {
+  font-size: 14.5px;
+  font-weight: 550;
+  color: #fff;
+  display: block;
+}
+.l-device__d {
+  font-size: 13px;
+  color: rgba(238, 241, 245, 0.66);
+  display: block;
+}
+.l-device__empty {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+.l-device__clear {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0e1a2b;
+  border: 0;
+  font-weight: 550;
+  font-size: 14.5px;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .l-device__clear:hover {
+    background: #fff;
+  }
+}
+.l-promises {
+  list-style: none;
+  padding: 0;
+  margin: 64px 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.l-promise {
+  padding: 22px 22px 24px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  backdrop-filter: blur(18px) saturate(1.3);
+}
+.l-promise svg {
+  color: #62f0b2;
+}
+.l-promise h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 16px 0 6px;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+.l-promise p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: rgba(238, 241, 245, 0.76);
+  /* One measure for every row: lines run full width, and only the last line is kept from ending on a lone word. */
+  text-wrap: pretty;
+}
+.l-promise h3 {
+  text-wrap: balance;
+}
+
+/* ---------- Sources ---------- */
+.l-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+.l-claims {
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+.l-claims li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 16px;
+  color: var(--ink-2);
+  text-wrap: balance;
+}
+.l-claims svg {
+  color: var(--pine);
+  margin-top: 3px;
+  flex: none;
+}
+.l-proof {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  min-width: 0;
+}
+.l-quote {
+  position: relative;
+  border-radius: 28px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  box-shadow: var(--sh-lg);
+  padding: 22px 24px 20px;
+}
+.l-quote__head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.l-leafbadge {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: var(--maple);
+  color: #fff;
+  flex: none;
+  box-shadow: 0 6px 14px -6px rgba(213, 43, 30, 0.6);
+}
+.l-quote__t {
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.l-crumbs {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.l-quote blockquote {
+  margin: 16px 0 16px;
+  padding-inline-start: 18px;
+  border-inline-start: 2px solid var(--maple);
+  font-family: var(--font-serif-stack);
+  font-variation-settings: 'opsz' 24;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.l-stamps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.l-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 500;
+  background: var(--paper-2);
+  color: var(--ink-2);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.l-stamp--ok {
+  background: var(--pine-wash);
+  color: var(--pine);
+}
+.l-srclist {
+  border-radius: 24px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  box-shadow: var(--sh-md);
+  overflow: hidden;
+}
+.l-srclist__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--hair);
+  font-size: 13.5px;
+}
+.l-srclist__head b {
+  font-weight: 600;
+}
+.l-srclist__head span {
+  color: var(--ink-3);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.l-srclist ol {
+  list-style: none;
+  margin: 0;
+  padding: 6px 8px;
+}
+.l-srclist li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+}
+.l-srclist li + li {
+  border-top: 1px solid var(--hair);
+}
+.l-srclist .n {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  background: var(--paper-2);
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-2);
+}
+.l-srclist .t {
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 1.3;
+  /* A wrapped domain starts at the title's own edge (a gap, not a margin, sits between them). */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 6px;
+  text-wrap: pretty;
+}
+/* The same quiet sans as the quote card's breadcrumb above it, so the two source labels read as one system. */
+.l-srclist .dom {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-3);
+}
+.l-srclist .v {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--pine);
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  white-space: nowrap;
+}
+.l-domains {
+  list-style: none;
+  max-width: 1240px;
+  margin: clamp(64px, 8vw, 104px) auto 0;
+  padding: 22px clamp(20px, 4vw, 48px);
+  border-block: 1px solid var(--hair);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 30px;
+  text-align: center;
+}
+/* One quiet, wrapped list of domains. Each carries its own small mark (a bullet, not a separator), so
+   every line starts the same way and nothing dangles at a line end or leads the next line. */
+.l-domains li {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  color: var(--ink-2);
+  overflow-wrap: anywhere;
+}
+.l-domains li::before {
+  content: '';
+  flex: none;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--pine);
+  opacity: 0.55;
+}
+
+/* ---------- Directory ---------- */
+.l-dir {
+  margin: 56px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--hair-2);
+}
+.l-dir li {
+  display: flex;
+}
+.l-svc {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 26px 24px 28px 0;
+  border-bottom: 1px solid var(--hair);
+  text-decoration: none;
+  min-height: 176px;
+  background: none;
+  border-inline: 0;
+  border-top: 0;
+  text-align: start;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.l-dir li:not(:nth-child(4n + 1)) .l-svc {
+  padding-inline-start: 24px;
+  border-inline-start: 1px solid var(--hair);
+}
+.l-svc__n {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.l-svc__q {
+  font-family: var(--font-serif-stack);
+  font-style: italic;
+  font-variation-settings: 'opsz' 24;
+  font-size: 19px;
+  line-height: 1.3;
+  color: var(--ink-2);
+  letter-spacing: -0.01em;
+  transition: color 0.2s;
+}
+.l-svc__go {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-3);
+  transition: color 0.2s, gap 0.25s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .l-svc:hover .l-svc__go {
+    color: var(--maple-ink);
+    gap: 10px;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .l-svc:hover .l-svc__q {
+    color: var(--ink);
+  }
+}
+.l-svc__chev,
+.l-svc__ico {
+  display: none;
+}
+
+/* ---------- Closing ---------- */
+.l-closing {
+  --sky-top: #f6f1f0;
+  --sky-mid: #f3e6e6;
+  --sky-low: #f1dad8;
+  --sky-glow: #f7d3bc;
+  --lake-top: #f1d9cc;
+  position: relative;
+  margin: clamp(88px, 11vw, 160px) 12px 0;
+  border-radius: 40px;
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+  background: linear-gradient(180deg, var(--sky-top), var(--sky-low) 50%, var(--sky-glow) 76%, var(--lake-top));
+  padding: clamp(72px, 9vw, 128px) 20px clamp(180px, calc(9vw + 100px), 240px);
+  color: #0e1a2b;
+}
+[data-theme='dark'] .l-closing {
+  --sky-top: #0f0c18;
+  --sky-mid: #1a1324;
+  --sky-low: #25182c;
+  --sky-glow: #3b2536;
+  --lake-top: #2a1b2c;
+  color: #f3eef2;
+}
+.l-closing::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--hair);
+  pointer-events: none;
+}
+/* The prairie: sized to the panel's width (the drawing is 1600 × 360), anchored to its floor. */
+.l-prairie {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  height: max(200px, calc((100vw - 24px) * 0.225));
+  background: var(--art) center bottom / cover no-repeat;
+}
+[data-theme='dark'] .l-prairie {
+  background-image: var(--art-d);
+}
+.l-closing .l-aurora {
+  top: 0;
+  height: 70%;
+}
+.l-closing__leaf {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: min(760px, 110vw);
+  transform: translate(-50%, -50%);
+  color: var(--maple);
+  opacity: 0.09;
+  z-index: -1;
+  pointer-events: none;
+  /* The mark fades toward its edges, and is cut off above the stem (which starts ~78% down the leaf):
+     on its own, a faint stem reads as a stray bar under the button, not as part of a flag. */
+  -webkit-mask-image: radial-gradient(closest-side, #000 52%, transparent 88%), linear-gradient(180deg, #000 64%, transparent 76%);
+  -webkit-mask-composite: source-in;
+  mask-image: radial-gradient(closest-side, #000 52%, transparent 88%), linear-gradient(180deg, #000 64%, transparent 76%);
+  mask-composite: intersect;
+}
+.l-closing .eyebrow {
+  color: inherit;
+  opacity: 0.8;
+}
+.l-closing__h {
+  font-family: var(--font-serif-stack);
+  font-weight: 380;
+  font-variation-settings: 'opsz' 72;
+  font-size: clamp(48px, 7.4vw, 112px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  margin: 0;
+}
+.l-closing__h span {
+  display: block;
+  text-wrap: balance;
+}
+.l-closing__h em {
+  display: block;
+  font-style: italic;
+  font-weight: 340;
+  color: var(--maple);
+}
+[data-theme='dark'] .l-closing__h em {
+  color: #ff8a7e;
+}
+.l-closing .l-sub {
+  margin: 22px auto 0;
+  color: inherit;
+  opacity: 0.8;
+}
+.l-closing__composer {
+  width: min(680px, 100%);
+  margin: 40px auto 0;
+}
+.l-closing__alt {
+  margin-top: 16px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1180px) {
+  .l-float--a {
+    inset-inline-end: calc(100% - 12px);
+  }
+  .l-float--b {
+    inset-inline-start: calc(100% - 12px);
+  }
+}
+@media (max-width: 1080px) {
+  .l-cards {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .l-cards .l-wcard:first-child {
+    display: none;
+  }
+  .l-promises {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .l-dir {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .l-dir li:not(:nth-child(4n + 1)) .l-svc {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+  }
+  .l-dir li:nth-child(2n) .l-svc {
+    padding-inline-start: 24px;
+    border-inline-start: 1px solid var(--hair);
+  }
+  .l-float {
+    display: none;
+  }
+  .l-night__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  /* Single column: the copy runs further down into the aurora, so it glows more softly here. */
+  .l-night .l-aurora {
+    opacity: 0.5;
+  }
+}
+/* Tablet portrait: size the hero to the content instead of desktop height, and centre the stack, so the
+   treeline sits just under the chips instead of leaving an empty band of sky above it. */
+@media (min-width: 700px) and (max-width: 1024px) and (orientation: portrait) {
+  .l-hero {
+    min-height: min(calc(100svh - 24px), 900px);
+  }
+  .l-hero__inner {
+    justify-content: center;
+    padding-bottom: 72px;
+  }
+}
+@media (max-width: 760px) {
+  /* Phones: one calm hero, full-bleed and one screen tall. The greeting and two short sentences in a
+     golden-hour sky; the question box, a solid card, and the trust line on open sky; then the shore: low
+     hills, the sun (by night, the moon) over the far shore between stands of spruce, its path on the water
+     and a canoe, above four tasks. */
+  .l-hero {
+    margin: 0;
+    border-radius: 0;
+    /* One screen, measured without the browser's bars (svh): the bay grows into whatever height the words
+       and tasks leave. On a short screen it shrinks to its floor, so the first row of tasks is above the fold. */
+    min-height: 100vh;
+    min-height: 100svh;
+    background: linear-gradient(180deg, #f5f2ef 0%, #f3ecea 20%, #f7e2d3 42%, #f9d3b3 60%, #f6c6a2 100%);
+  }
+  [data-theme='dark'] .l-hero {
+    background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 22%, var(--sky-low) 44%, var(--sky-glow) 66%, var(--sky-glow) 100%);
+  }
+  .l-hero::after,
+  .l-kicker,
+  .l-hero__foot,
+  .l-hero > .l-scene .l-land,
+  .l-hero > .l-scene .l-sun {
+    display: none;
+  }
+  /* The aurora rides above the greeting (not across the lede), and fades out before the question box. By
+     day it is only a breath of colour in the high sky; the golden hour below is the subject. Its lower edge
+     is feathered over half its height, so the curtain never ends in a line against the far ridge. */
+  .l-hero > .l-scene .l-aurora {
+    top: -2%;
+    height: 46%;
+    opacity: 0.26;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 14%, #000 30%, rgb(0 0 0 / 0.5) 52%, transparent 84%);
+    mask-image: linear-gradient(180deg, transparent 0, #000 14%, #000 30%, rgb(0 0 0 / 0.5) 52%, transparent 84%);
+  }
+  /* Night: a curtain of light that thins all the way down the sky. It is quieter than on wider screens
+     and starts to fade just under the header, on one long eased ramp that ends past the lede (about 55% of
+     the hero), so the ribbons' bright hems never gather into a band behind the greeting. */
+  [data-theme='dark'] .l-hero > .l-scene .l-aurora.has-dark {
+    height: 57%;
+    opacity: 0.42;
+    --au-fade: linear-gradient(
+      180deg,
+      transparent 0,
+      #000 9%,
+      rgb(0 0 0 / 0.86) 16%,
+      rgb(0 0 0 / 0.66) 25%,
+      rgb(0 0 0 / 0.47) 35%,
+      rgb(0 0 0 / 0.31) 46%,
+      rgb(0 0 0 / 0.18) 58%,
+      rgb(0 0 0 / 0.09) 70%,
+      rgb(0 0 0 / 0.03) 84%,
+      transparent
+    );
+    -webkit-mask-image: var(--au-fade);
+    mask-image: var(--au-fade);
+  }
+  /* Night: a soft pool of sky behind the greeting, so both lines keep their contrast on the brightest band. */
+  [data-theme='dark'] .l-hello {
+    position: relative;
+  }
+  [data-theme='dark'] .l-hello::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -34px -40px -64px;
+    background: radial-gradient(closest-side, color-mix(in srgb, var(--sky-top) 62%, transparent), transparent);
+    pointer-events: none;
+  }
+  .l-hero__inner {
+    padding: 24px 16px 0;
+  }
+  /* The menu keeps its container on phones: a soft 44px circle (a wash and a hairline, no blur), so the tap
+     target is signalled as it is on wider screens. */
+  .l-hero .ac-head--landing .ac-btn-pill {
+    background: color-mix(in srgb, var(--card) 58%, transparent);
+    border-color: var(--hair);
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  /* The language switch is plain text beside it (no fill, no hairline), so the menu is the header's only
+     filled control and the wordmark leads. It keeps its 44px target; a press still washes it. */
+  .l-hero .ac-head--landing .ac-btn-quiet {
+    padding-inline: 12px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .l-hero .ac-head--landing .ac-btn-quiet:active {
+    background: color-mix(in srgb, var(--card) 58%, transparent);
+  }
+  .l-hero .ac-head--landing .ac-head__actions > .ac-btn-pill {
+    margin-inline-start: 4px;
+  }
+  .l-hero .ac-head--landing {
+    padding-inline-end: 16px;
+  }
+  /* The lake. Geometry, in one place:
+     --sr-u     pixels per drawing unit (the drawing is 440 units tall; its waterline is 200 units down);
+     --lk-gap   the air between the lede and the question box;
+     --lk-shore where the waterline falls, measured down from the top of the bay (the band under the trust
+                line). The hills, the tallest pines and the sun (or the moon) all stay under about 50 units,
+                so they clear the trust line and the question box. On a tall screen the shore drops a
+                little, and gives them more sky. */
+  .l-lake {
+    --sr-u: 1.4px;
+    --lk-gap: 36px;
+    --lk-shore: clamp(72px, calc(100svh - 728px), 104px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    width: 100%;
+    padding-top: var(--lk-gap);
+  }
+  /* The bay: the band between the trust line and the tasks. It holds the scene, pinned by its waterline
+     (so the shore and the sun always land here, whatever the words above weigh), and the canoe. The drawing reaches up
+     behind the trust line and question box to the lede, and down behind the tasks; below its last row the
+     water carries on in CSS (the hero clips it). It gives up height first on short screens, never all of it. */
+  .l-lake__open {
+    display: block;
+    position: relative;
+    flex: 1 0 auto;
+    min-height: calc(var(--lk-shore) + 92px);
+  }
+  .l-shore {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    inset-inline: -16px;
+    top: calc(var(--lk-shore) - 200 * var(--sr-u));
+    height: calc(440 * var(--sr-u) + 100vh);
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent calc(436 * var(--sr-u)), var(--sr-lc) calc(436 * var(--sr-u)));
+  }
+  .l-shore__art,
+  .l-shore__fx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(440 * var(--sr-u));
+  }
+  /* Glints and mist in drawing units: the drawing is centred, so x = 400 falls on the box's centre line. */
+  .l-shore__fx i,
+  .l-shore__mist {
+    position: absolute;
+  }
+  .l-shore__fx i {
+    left: calc(50% + (var(--x) - var(--rx) - 400) * var(--sr-u));
+    top: calc((var(--y) - var(--ry)) * var(--sr-u));
+    width: calc(2 * var(--rx) * var(--sr-u));
+    height: calc(2 * var(--ry) * var(--sr-u));
+  }
+  .l-shore__mist {
+    left: calc(50% - 400 * var(--sr-u));
+    top: calc(190 * var(--sr-u));
+    width: calc(800 * var(--sr-u));
+    height: calc(30 * var(--sr-u));
+  }
+  [data-theme='dark'] .l-shore__aurora {
+    display: block;
+    position: absolute;
+    inset-inline: -20%;
+    top: calc(200 * var(--sr-u) + 10px);
+    height: 300px;
+    /* Mirrored and a little squashed, and smeared by the water, so the curtain's hem never reads as an edge. */
+    transform: scaleY(-0.8) translateY(-100%);
+    transform-origin: 50% 0;
+    opacity: 0.36;
+    filter: blur(7px);
+    mix-blend-mode: screen;
+    /* Mirrored, so the element's bottom edge is the one nearest the shore. */
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 50%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0, #000 50%, #000 86%, transparent 100%);
+  }
+  /* The canoe is the scene's subject: large on the open water, below and to the left of the sun's path (its
+     wake runs back across the glitter). It is in the bay from the first frame (no negative delay, so it
+     never depends on when the page paints), paddles slowly west, fades out before the reeds, and fades back
+     in where it began. --cw: its drawing's width on screen (the hull is about half of it). */
+  .l-canoe {
+    --cw: 176px;
+    position: absolute;
+    top: calc(var(--lk-shore) + 30px);
+    left: calc(50% - 86px);
+    width: var(--cw);
+    height: calc(var(--cw) * 14 / 52);
+    animation: l-canoe 96s linear infinite;
+  }
+  /* The drawing's 52 × 14 frame is the box; the file runs on below it (52 × 16), for the reflection. */
+  .l-canoe::before {
+    top: 0;
+    height: calc(var(--cw) * 16 / 52);
+  }
+  @keyframes l-canoe {
+    0% { transform: translateX(0); opacity: 1; }
+    86% { transform: translateX(-84px); opacity: 1; }
+    93% { transform: translateX(-92px); opacity: 0; }
+    94% { transform: translateX(10px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  /* The near bank stands in the page's own corner, in front of the canoe. The drawing is 150 × 122 with its
+     waterline 78 units down: that line sits --fl above the task tiles, and under it the bank's reflection
+     fades into the water (it is all but spent where the tiles begin, and the last of it runs out behind
+     them), so the bank ends in water, never in an edge. */
+  .l-fore {
+    --fw: 150px;
+    --fl: 24px;
+    position: absolute;
+    inset-inline-start: -16px;
+    bottom: calc(var(--fl) - var(--fw) * 44 / 150);
+    width: var(--fw);
+    height: calc(var(--fw) * 122 / 150);
+  }
+  [dir='rtl'] .l-fore {
+    transform: scaleX(-1);
+  }
+  .l-hero__tasks {
+    display: block;
+    position: relative;
+    padding: 0 0 22px;
+  }
+  /* Still water under the tasks. Hung from the tiles' own top edge, so it lands there whatever height the
+     hero takes: the glitter, the swells and the path of the sun (or the moon) fade out over the 56px above
+     the tiles, the tiles and the link to every service sit on one calm tone of the lake (nothing shows in the
+     gaps between them), and that tone settles into the page only under the link, by the hero's edge. */
+  .l-hero__tasks::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset-inline: -16px;
+    top: -56px;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--sr-lm) 0%, transparent) 0,
+      color-mix(in srgb, var(--sr-lm) 62%, transparent) 30px,
+      var(--sr-lm) 58px,
+      var(--sr-lm) calc(100% - 46px),
+      color-mix(in srgb, var(--paper) 22%, var(--sr-lm)) calc(100% - 32px),
+      color-mix(in srgb, var(--paper) 72%, var(--sr-lm)) calc(100% - 12px),
+      var(--paper)
+    );
+  }
+  /* Status, stated quietly above the header (where an official site would state that it is official): who runs this and where
+     its answers come from, with a link to the details. */
+  .l-idstrip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    position: relative;
+    z-index: 3;
+    min-height: 28px;
+    margin: 0;
+    padding: 0 16px;
+    font-size: clamp(11px, 3.1vw, 12px);
+    line-height: 1.2;
+    color: var(--ink-2);
+    text-decoration: none;
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--hair);
+    white-space: nowrap;
+  }
+  .l-idstrip__ico {
+    width: 13px;
+    height: 13px;
+    flex: none;
+    color: var(--pine);
+  }
+  .l-idstrip__k {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .l-idstrip__sep {
+    color: var(--ink-3);
+  }
+  .l-idstrip__short {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .l-idstrip__info {
+    width: 14px;
+    height: 14px;
+    flex: none;
+    margin-inline-start: 0.25em;
+    color: var(--ink-3);
+  }
+  .l-idstrip:active {
+    background: var(--paper-2);
+  }
+  .l-idstrip:focus-visible {
+    outline: 2px solid var(--maple);
+    outline-offset: -3px;
+  }
+  .l-allsvc {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    margin: 4px auto 0;
+    padding: 0 12px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 550;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .l-allsvc:active {
+    background: var(--paper-2);
+  }
+  /* The question box is the one object to touch: a solid card lifted off the scene (no glass, so nothing
+     of the ridges shows through and nothing is blurred per frame), a hairline, and a soft shadow. */
+  .l-hero__composer .ac-composer--hero {
+    border-radius: 24px;
+    background: color-mix(in srgb, var(--card) 96%, transparent);
+    border-color: var(--hair-2);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    /* Two tight layers in the sky's own amber, so the card lifts off the sunset without greying it. */
+    box-shadow: 0 1px 2px rgb(150 84 36 / 0.1), 0 14px 30px -12px rgb(176 96 40 / 0.3);
+  }
+  [data-theme='dark'] .l-hero__composer .ac-composer--hero {
+    background: color-mix(in srgb, #1b2942 96%, transparent);
+    box-shadow: 0 22px 44px -20px rgb(0 0 0 / 0.75);
+  }
+  /* A compact question box: one line of text over the tools while it waits, a second line once it is in use
+     (the field still grows as you type). The rotating examples are ones that fit that one line. */
+  .l-hero__composer .ac-composer--hero textarea {
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 14px 18px 2px;
+    min-height: 0;
+  }
+  .l-hero__composer .ac-composer--hero:not(:focus-within):has(.ac-composer__ph) textarea {
+    max-height: calc(16px * 1.4 + 16px);
+  }
+  .l-hero__composer .ac-composer--hero .ac-composer__ph {
+    inset-inline: 18px;
+    top: 14px;
+    font-size: 16px;
+    line-height: 1.4;
+    display: block;
+    white-space: nowrap;
+  }
+  .l-hero__composer .ac-composer--hero .ac-composer__ph-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+  /* The tools sit on one line, grouped at the end of the row beside the send button (inset 12px from the
+     end and the bottom): attach and voice keep their 44px targets and read in the secondary ink at a
+     heavier stroke, so the row is one cluster, not a light corner and a heavy one. The language hint stays
+     off phones (the greeting and the language link already say it). */
+  .l-hero__composer .ac-composer--hero .ac-composer__tools {
+    gap: 6px;
+    padding-block: 2px 12px;
+    padding-inline: 12px;
+  }
+  .l-hero__composer .ac-composer--hero .ac-composer__tools-l {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 0;
+  }
+  .l-hero__composer .ac-composer--hero .ac-icon-btn {
+    color: var(--ink-2);
+  }
+  .l-hero__composer .ac-composer--hero .ac-icon-btn svg {
+    stroke-width: 1.9;
+  }
+  .l-hero__composer .ac-composer--hero .ac-send {
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 0.25) inset, 0 3px 7px -3px rgb(213 43 30 / 0.6);
+  }
+  /* The greeting is sized from its own measured width (--hello-em, see Hero) to sit inside the column under
+     it, with the same air at both sides as the words in the question box. The second language is a quiet
+     accent under it. */
+  .l-hello {
+    font-size: clamp(38px, calc((100vw - 88px) / var(--hello-em, 7)), 60px);
+    letter-spacing: -0.045em;
+  }
+  .l-hello .l-hello__alt {
+    font-size: 0.47em;
+    font-weight: 400;
+    margin-top: 0.3em;
+    letter-spacing: -0.02em;
+    color: color-mix(in srgb, var(--ink) 74%, transparent);
+  }
+  [data-theme='dark'] .l-hello .l-hello__alt {
+    color: color-mix(in srgb, #fff 88%, transparent);
+  }
+  [data-theme='dark'] .l-hello > :not(.l-hello__alt) .l-stop {
+    color: #ff5a4d;
+  }
+  .l-trust li {
+    display: none;
+  }
+  /* The promises, centred under the question box at one size (13px) on every phone. English and French are
+     two phrases that fit one line at 360px; a longer language wraps to a second centred line, never shrinks. */
+  .l-trust li.l-trust__short {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 18px;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .l-trust__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    white-space: nowrap;
+  }
+  .l-trust__check {
+    width: 0.92em;
+    height: 0.92em;
+    flex: none;
+  }
+  /* In the valley mist, the words carry a soft halo of the mist behind them. */
+  .l-trust li.l-trust__short {
+    text-shadow: 0 0 10px var(--sr-va), 0 0 2px var(--sr-va);
+  }
+  .l-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  /* Phones: the three plan figures become label / value rows instead of three cramped columns. */
+  .l-demo__stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .l-demo__stats > div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 16px;
+  }
+  .l-demo__stats > div + div {
+    border-inline-start: 0;
+    border-top: 1px solid var(--hair);
+  }
+  .l-demo__stats b {
+    font-size: 22px;
+    white-space: nowrap;
+  }
+  .l-lede {
+    font-size: 17px;
+    line-height: 1.45;
+    margin-top: 14px;
+    max-width: 24ch;
+  }
+  /* One short line. */
+  .l-lede--wide {
+    display: none;
+  }
+  .l-lede--phone {
+    display: block;
+    max-width: none;
+  }
+  .l-hero__composer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-top: 0;
+  }
+  .l-trust {
+    color: var(--ink-2);
+    align-self: center;
+    width: 100%;
+    max-width: 420px;
+    margin-top: 12px;
+    position: relative;
+    z-index: 1;
+  }
+  /* Phones: four tasks in a 2 × 2 grid of solid tiles on the still water. Each has its icon in a small
+     square tinted for the task, its name, and a quiet second line; the type is sized from the widest line
+     (--chip-em), so no line wraps or is cut in English or French. */
+  .l-chips {
+    --chip-pad: 10px;
+    --chip-ico: 30px;
+    --chip-gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 8px;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+  .l-chips li {
+    display: flex;
+    min-width: 0;
+  }
+  .l-chips .w-only {
+    display: none;
+  }
+  .l-chips button {
+    --tile: var(--ink-2);
+    width: 100%;
+    min-height: 56px;
+    padding: 8px var(--chip-pad);
+    gap: var(--chip-gap);
+    border-radius: 18px;
+    justify-content: flex-start;
+    text-align: start;
+    white-space: nowrap;
+    font-size: clamp(13px, calc(((min(100vw - 32px, 440px) - 8px) / 2 - 2 * var(--chip-pad) - var(--chip-ico) - var(--chip-gap) - 3px) / var(--chip-em, 7)), 15px);
+    font-weight: 600;
+    line-height: 1.2;
+    /* Light on the water, not a white block over it: plain alpha (no blur), so the lake's tone comes through. */
+    background: color-mix(in srgb, var(--card) 80%, transparent);
+    /* A neutral hairline and one very soft, cool shadow. */
+    border-color: rgb(24 32 56 / 0.1);
+    box-shadow: 0 1px 2px rgb(24 32 56 / 0.05), 0 8px 18px -12px rgb(24 32 56 / 0.3);
+  }
+  [data-theme='dark'] .l-chips button {
+    background: color-mix(in srgb, #1b2942 94%, transparent);
+    border-color: var(--hair);
+    box-shadow: 0 10px 22px -14px rgb(0 0 0 / 0.7);
+  }
+  .l-chips button > span {
+    min-width: 0;
+  }
+  .l-chip-short__t,
+  .l-chip-short__sub {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .l-chip-short__sub {
+    font-size: max(11px, 0.82em);
+    font-weight: 450;
+    line-height: 1.25;
+    color: var(--ink-3);
+  }
+  /* The icon's own box is the tile: a rounded square washed in the task's hue, the glyph drawn in it. */
+  .l-chips button svg {
+    box-sizing: border-box;
+    width: var(--chip-ico);
+    height: var(--chip-ico);
+    padding: 7px;
+    border-radius: 10px;
+    color: var(--tile);
+    background: color-mix(in srgb, var(--tile) 13%, transparent);
+  }
+  .l-chips .l-chip--passport {
+    --tile: #2c4f8c;
+  }
+  .l-chips .l-chip--taxes {
+    --tile: var(--pine);
+  }
+  .l-chips .l-chip--ccb {
+    --tile: #96601a;
+  }
+  .l-chips .l-chip--travel {
+    --tile: #1b6f86;
+  }
+  [data-theme='dark'] .l-chips .l-chip--passport {
+    --tile: #9dbcf0;
+  }
+  [data-theme='dark'] .l-chips .l-chip--ccb {
+    --tile: #e9bd72;
+  }
+  [data-theme='dark'] .l-chips .l-chip--travel {
+    --tile: #7fd0e2;
+  }
+  .l-aurora {
+    top: 6%;
+    height: 48%;
+    left: -70%;
+    right: -70%;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .l-section {
+    padding-top: 96px;
+  }
+  .l-cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .l-wcard--center {
+    transform: none;
+    order: -1;
+  }
+  .l-cards .l-wcard:first-child {
+    display: block;
+  }
+  .l-stage {
+    margin-top: 40px;
+    border-radius: 28px;
+    padding: 20px 14px;
+  }
+  /* Flag band turns on its side for phones: red / white / red, top to bottom. */
+  .l-flag {
+    margin-top: 96px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 168px auto 150px;
+    min-height: 0;
+  }
+  .l-flag__band--start .l-flag__word,
+  .l-flag__band--end .l-flag__word {
+    writing-mode: horizontal-tb;
+    transform: none;
+    translate: none;
+    font-size: min(72px, 15vw);
+    top: auto;
+    bottom: 16px;
+  }
+  /* 16px of air between the ENGLISH tag and the wordmark's ascenders. */
+  .l-flag__band--start .l-flag__word {
+    left: 20px;
+    top: 58px;
+    bottom: auto;
+  }
+  /* Both wordmarks share the 20px inline-start edge of the tags above them. */
+  .l-flag__band--start .l-flag__word,
+  .l-flag__band--end .l-flag__word {
+    left: auto;
+    right: auto;
+    inset-inline-start: max(20px, env(safe-area-inset-left));
+    translate: none;
+  }
+  .l-flag__band--start .l-flag__tag {
+    top: 20px;
+    inset-inline-start: 20px;
+  }
+  .l-flag__band--end .l-flag__tag {
+    top: 20px;
+    bottom: auto;
+    inset-inline-start: 20px;
+    inset-inline-end: auto;
+  }
+  .l-flag__white {
+    padding: 0 12px;
+  }
+  /* Dark phones: the card sits on one continuous red field (a dark strip beside it read as a seam). */
+  [data-theme='dark'] .l-flag__white {
+    background: var(--flag);
+  }
+  .l-demo {
+    margin: -44px 0 -56px;
+  }
+  .l-flag__caption {
+    padding-top: 14px;
+  }
+  /* "Flag proportions 1 : 2 : 1" describes the side-by-side bands; stacked on phones, it doesn't apply. */
+  .l-flag__caption > :first-child {
+    display: none;
+  }
+  .l-steps {
+    gap: 44px;
+    margin-top: 44px;
+  }
+  .l-domains {
+    gap: 8px 20px;
+  }
+  .l-domains li {
+    font-size: 14px;
+  }
+  .l-night {
+    margin: 96px 8px 0;
+    border-radius: 32px;
+    padding: 64px 20px 64px;
+  }
+  .l-device__nothing {
+    font-size: 52px;
+  }
+  .l-promises {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 40px;
+  }
+  .l-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .l-dir {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  /* Phones and narrow tablets: one list, like the Menu's service rows — icon, name, the example question on
+     one line, and a chevron — so every row reads as a question you can tap. */
+  .l-dir li .l-svc,
+  .l-dir li:nth-child(2n) .l-svc,
+  .l-dir li:not(:nth-child(4n + 1)) .l-svc {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) 16px;
+    grid-template-areas: 'ico name chev' 'ico q chev';
+    align-items: start;
+    column-gap: 14px;
+    row-gap: 2px;
+    padding: 14px 4px;
+    padding-inline-start: 0;
+    border-inline-start: 0;
+    min-height: 72px;
+  }
+  .l-svc__ico {
+    grid-area: ico;
+    align-self: start;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--paper-2);
+    color: var(--ink-2);
+  }
+  .l-svc__n {
+    grid-area: name;
+    align-self: end;
+    line-height: 1.3;
+  }
+  /* The whole question, always: it wraps (never truncates), so French reads as completely as English. */
+  .l-svc__q {
+    grid-area: q;
+    align-self: start;
+    font-size: 15px;
+    line-height: 1.35;
+    text-wrap: pretty;
+  }
+  .l-svc__go {
+    display: none;
+  }
+  .l-svc__chev {
+    grid-area: chev;
+    align-self: center;
+    display: grid;
+    place-items: center;
+    color: var(--ink-3);
+  }
+  .l-svc:active {
+    background: var(--paper-2);
+  }
+  .l-closing {
+    margin: 96px 8px 0;
+    border-radius: 32px;
+    padding: 64px 16px 160px;
+  }
+}
+
+@media (max-width: 760px) and (min-height: 800px) {
+  /* Tall phones: the bay has room, so the whole scene is drawn about 15% larger about its waterline (hills,
+     pines and sun rise to just under the trust line), and the canoe a third larger and nearer the middle of
+     the water, between the question box and the tasks. The scene is pinned art behind the content, so its
+     size moves nothing in the layout. */
+  .l-lake {
+    --sr-u: 1.6px;
+    /* The far hills stand about 76px over the waterline at this size: they start right under the trust
+       line, and the sun's glow reaches up behind the question box, so the box sits in the scene. */
+    --lk-shore: clamp(76px, calc(100svh - 766px), 84px);
+  }
+  .l-canoe {
+    --cw: 230px;
+    top: calc(var(--lk-shore) + 46px);
+    left: calc(50% - 56px);
+    animation-name: l-canoe-tall;
+  }
+  @keyframes l-canoe-tall {
+    0% { transform: translateX(0); opacity: 1; }
+    86% { transform: translateX(-66px); opacity: 1; }
+    93% { transform: translateX(-74px); opacity: 0; }
+    94% { transform: translateX(10px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+}
+
+@media (max-width: 420px) {
+  .l-demo__checked {
+    display: none;
+  }
+}
+@media (max-width: 380px) {
+  /* Small phones: a little less air above the greeting and a slightly smaller lake, so the whole hero
+     (French included) still fits one 740pt screen. */
+  .l-hero__inner {
+    padding-top: 14px;
+  }
+  .l-lake {
+    --sr-u: 1.3px;
+    --lk-gap: 30px;
+    --lk-shore: clamp(62px, calc(100svh - 664px), 96px);
+  }
+  /* The water gives up a little more on the shortest screens, down to the canoe's own depth. */
+  .l-lake__open {
+    min-height: calc(var(--lk-shore) + clamp(64px, 100svh - 520px, 82px));
+  }
+  .l-canoe {
+    --cw: 160px;
+    top: calc(var(--lk-shore) + 25px);
+    left: calc(50% - 80px);
+  }
+  .l-fore {
+    --fw: 132px;
+    --fl: 18px;
+  }
+  .l-chips {
+    --chip-ico: 28px;
+    --chip-gap: 8px;
+  }
+  .l-chips button svg {
+    padding: 6.5px;
+  }
+}
+@media (max-width: 340px) {
+  /* The narrowest phones: slimmer tiles and a slightly smaller floor for their type, so the longest French
+     line is still whole. */
+  .l-chips {
+    --chip-pad: 8px;
+    --chip-ico: 24px;
+    --chip-gap: 6px;
+  }
+  .l-chips button {
+    font-size: clamp(12px, calc(((100vw - 40px) / 2 - 2 * var(--chip-pad) - var(--chip-ico) - var(--chip-gap) - 3px) / var(--chip-em, 7)), 15px);
+  }
+  .l-chips button svg {
+    padding: 5px;
+    border-radius: 8px;
+  }
+}
+/* Small phones: a tighter page, and the widget showcase becomes a swipeable rail. */
+@media (max-width: 480px) {
+  .l-stage {
+    padding: 16px 0;
+  }
+  .l-cards {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    padding: 4px 16px 12px;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  .l-cards::-webkit-scrollbar {
+    display: none;
+  }
+  .l-cards > .l-wcard {
+    flex: 0 0 86%;
+    scroll-snap-align: start;
+  }
+  .l-section {
+    padding-top: 64px;
+  }
+  .l-steps {
+    gap: 32px;
+    margin-top: 36px;
+  }
+  .l-step {
+    padding-top: 22px;
+  }
+  .l-step h3 {
+    font-size: 27px;
+    margin: 10px 0 8px;
+  }
+  .l-step__art {
+    padding-top: 18px;
+  }
+  .l-step__art > div {
+    min-height: 112px;
+  }
+  .l-domains {
+    margin-top: 56px;
+    gap: 6px 16px;
+    padding-block: 18px;
+  }
+  .l-domains li {
+    font-size: 13px;
+  }
+  .l-dir {
+    margin-top: 28px;
+  }
+  .l-flag,
+  .l-night,
+  .l-closing {
+    margin-top: 64px;
+  }
+  .l-night {
+    padding-bottom: 56px;
+  }
+  .l-closing {
+    padding: 52px 16px 150px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .l-scroll-cue svg,
+  .l-wave i,
+  .l-hero > .l-scene .l-aurora,
+  .l-ribbon,
+  .l-shore__fx i,
+  .l-shore__mist {
+    animation: none;
+  }
+  /* The canoe rests in the bay, where it starts, instead of crossing it. */
+  .l-canoe {
+    animation: none;
+    transform: none;
+  }
+}
+/* Laptop widths: the side bands are narrow, so the French wordmark hugs the outer edge and the
+   advisory card stays clear of its glyphs. */
+@media (min-width: 1081px) and (max-width: 1360px) {
+  .l-flag__band--end .l-flag__word {
+    left: auto;
+    right: 8px;
+    translate: none;
+  }
+  .l-float--b {
+    width: 212px;
+  }
+  /* The same, mirrored, when the long wordmark leads (French). */
+  .l-flag--long-lead .l-flag__band--start .l-flag__word {
+    left: 8px;
+    font-size: clamp(72px, 7vw, 96px);
+  }
+  .l-flag--long-lead .l-float--a {
+    width: 212px;
+  }
+}
+
+/* Phones: the four privacy promises become one glass card with hairline-divided rows (icon inline with
+   the title, one short line under it), instead of four tall, mostly empty tiles. */
+@media (max-width: 640px) {
+  .l-promises {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin-top: 32px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(18px) saturate(1.3);
+    backdrop-filter: blur(18px) saturate(1.3);
+    overflow: hidden;
+  }
+  .l-promise {
+    display: grid;
+    grid-template-columns: 22px minmax(0, 1fr);
+    column-gap: 14px;
+    align-items: start;
+    padding: 16px 18px 17px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .l-promise + .l-promise {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .l-promise svg {
+    grid-row: span 2;
+    margin-top: 1px;
+  }
+  .l-promise h3 {
+    font-size: 16px;
+    line-height: 1.35;
+    margin: 0 0 3px;
+  }
+  .l-promise p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+}
+
+/* Loops pause while their block is off-screen (see Animated.tsx). */
+[data-offscreen],
+[data-offscreen] *,
+[data-offscreen] *::before,
+[data-offscreen] *::after {
+  animation-play-state: paused !important;
+}

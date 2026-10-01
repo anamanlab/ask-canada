@@ -1,0 +1,11 @@
+# Local-only material: never upload to a deployment.
+.shots
+.launch
+.dev.log
+.dev.log.meta
+reference
+design
+.git
+.next
+node_modules
+*.log

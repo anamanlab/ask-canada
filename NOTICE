@@ -1,0 +1,15 @@
+Ask Canada
+Copyright (c) 2026 Ryan Campbell and Ask Canada contributors. MIT License.
+
+Third-party material:
+- vendor/cds-ai-answers: Canadian Digital Service "AI Answers" guidance, MIT License.
+  Copyright (c) Lisa Fast; Copyright (c) His Majesty the King in Right of Canada, as represented by the
+  Minister of Employment and Social Development Canada. Source: https://github.com/cds-snc/ai-answers
+- Newsreader and Geist typefaces: SIL Open Font License 1.1, https://openfontlicense.org (src/app/_og;
+  Newsreader self-hosted in src/app/_fonts, cut down from Google Fonts' files by scripts/build-fonts.py;
+  Geist via Google Fonts at build).
+- Noto Sans script families: SIL Open Font License 1.1.
+- Lucide icons: ISC License.
+- Map tiles: © OpenStreetMap contributors (ODbL), © CARTO.
+- Government of Canada content: paraphrased and linked under the Terms and conditions of canada.ca
+  (non-commercial reproduction). Ask Canada is not affiliated with the Government of Canada.

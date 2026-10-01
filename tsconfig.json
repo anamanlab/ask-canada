@@ -1,0 +1,74 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@country/pack": [
+        "./src/countries/ca/pack.ts"
+      ],
+      "@country/pack-server": [
+        "./src/countries/ca/pack.server.ts"
+      ],
+      "@country/mark": [
+        "./src/countries/ca/brand/Mark.tsx"
+      ],
+      "@country/brand": [
+        "./src/countries/ca/brand/index.ts"
+      ],
+      "@country/map": [
+        "./src/countries/ca/map.ts"
+      ],
+      "@country/tools": [
+        "./src/countries/ca/tools/index.ts"
+      ],
+      "@country/scenarios": [
+        "./src/countries/ca/scenarios/index.ts"
+      ],
+      "@country/widgets": [
+        "./src/countries/ca/widgets/registry.ts"
+      ],
+      "@country/fixtures": [
+        "./src/countries/ca/widgets/fixtures.ts"
+      ]
+    },
+    "types": [
+      "node",
+      "react",
+      "react-dom"
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,1049 @@
+/* The chat screen: thread, answers, sources, actions, dock and history (imported with the chat runtime and ToolPart). */
+.ac-chat {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+.ac-glow {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 460px;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, #000 10%, transparent);
+  mask-image: linear-gradient(180deg, #000 10%, transparent);
+}
+.ac-glow__sky {
+  position: absolute;
+  inset-inline: -10%;
+  top: -150px;
+  height: 560px;
+  background: var(--au) center / cover no-repeat;
+  opacity: 0.36;
+  mix-blend-mode: multiply;
+}
+/* At night the aurora's curtain rays read as scan lines behind a short header band, so the chat keeps
+   only its glow: a heavy blur melts the rays into a soft sky (the landing keeps the full curtains). */
+[data-theme='dark'] .ac-glow__sky {
+  background-image: var(--au-d);
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  filter: blur(28px) saturate(1.1);
+  transform: translateZ(0);
+}
+.ac-thread {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  width: 100%;
+  max-width: 792px;
+  margin: 0 auto;
+  padding: 28px 16px 40px;
+  outline: none;
+}
+.ac-turn.is-last {
+  min-height: calc(100svh - 260px);
+}
+.ac-turn + .ac-turn {
+  margin-top: 56px;
+}
+.ac-msg-user {
+  display: flex;
+  justify-content: flex-end;
+  margin: 8px 0 36px;
+  animation: rise 0.6s var(--ease) both;
+}
+.ac-bubble {
+  max-width: min(78%, 520px);
+  padding: 14px 20px;
+  border-radius: 24px 24px 8px 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--bubble);
+  box-shadow: inset 0 0 0 1px var(--hair);
+  overflow-wrap: anywhere;
+}
+[dir='rtl'] .ac-bubble {
+  border-radius: 24px 24px 24px 8px;
+}
+.ac-msg-ai {
+  animation: rise 0.7s 0.05s var(--ease) both;
+}
+.ac-ai-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.ac-ai-meta__sub {
+  font-weight: 400;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+.ac-orb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: var(--card);
+  box-shadow: 0 0 0 1px var(--hair), 0 4px 14px -4px rgba(47, 127, 160, 0.35);
+  flex: none;
+}
+.ac-orb::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  padding: 2px;
+  background: conic-gradient(from 200deg, var(--a-green), var(--a-teal), var(--a-violet), var(--a-rose), var(--a-green));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.9;
+}
+.ac-thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1.45;
+  padding: 6px 0;
+}
+.ac-thinking__dots {
+  display: inline-flex;
+  flex: none;
+  gap: 5px;
+}
+.ac-thinking__dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ink-3);
+  animation: blink 1.2s infinite ease-in-out both;
+}
+.ac-thinking__dots i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.ac-thinking__dots i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.25; transform: scale(0.85); }
+  40% { opacity: 1; transform: none; }
+}
+
+/* ---------- Answer typography ---------- */
+.ac-answer {
+  font-size: 17.5px;
+  line-height: 1.62;
+  color: var(--ink);
+}
+/* Spacing lives on the container, so blocks sit the same distance apart while streaming and when done.
+   (Doubled class: it must outrank the `.ac-answer p/ul` margin resets below; headings keep their own.) */
+.ac-answer.ac-answer > * + * {
+  margin-block-start: 14px;
+}
+/* An answer written over two steps is two blocks: they sit as far apart as two paragraphs. */
+.ac-answer-block + .ac-answer-block {
+  margin-block-start: 14px;
+}
+.ac-answer p {
+  margin: 0;
+  max-width: 64ch;
+  text-wrap: pretty;
+}
+.ac-answer strong {
+  font-weight: 600;
+}
+.ac-answer .ac-lead {
+  font-family: var(--font-serif-stack);
+  font-variation-settings: 'opsz' 48;
+  font-weight: 400;
+  font-size: clamp(26px, 2.4vw, 31px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  max-width: 30ch;
+  text-wrap: balance;
+}
+.ac-answer em.ac-keep {
+  white-space: nowrap;
+}
+.ac-answer .ac-lead em {
+  color: var(--maple);
+  font-style: italic;
+  font-variation-settings: 'opsz' 48;
+}
+.ac-answer h2:not(.ac-lead),
+.ac-answer h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 22px 0 8px;
+}
+.ac-answer ul,
+.ac-answer ol {
+  margin: 0;
+  /* Hanging indent: markers sit in the gutter, wrapped lines align with the first line's text.
+     (streamdown sets `list-inside` + `[li_&]:pl-6`; both are overridden here.) */
+  list-style-position: outside !important;
+  padding-inline-start: 1.25em !important;
+  max-width: 62ch;
+}
+.ac-answer li {
+  padding-inline-start: 4px !important;
+}
+.ac-answer li > ul,
+.ac-answer li > ol {
+  margin-top: 8px;
+  padding-inline-start: 1.25em !important;
+}
+.ac-answer li + li {
+  margin-top: 8px;
+}
+.ac-answer li::marker {
+  color: var(--maple);
+}
+.ac-answer ol > li::marker {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+/* A list item whose text hasn't streamed in yet shouldn't show a lone bullet. */
+.ac-answer li:empty {
+  display: none;
+}
+.ac-answer a:not(.ac-cite) {
+  color: var(--ink);
+  text-decoration-color: var(--hair-2);
+  text-underline-offset: 3px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-answer a:not(.ac-cite):hover {
+    text-decoration-color: var(--ink);
+  }
+}
+.ac-answer table {
+  border-collapse: collapse;
+  font-size: 15px;
+  width: 100%;
+}
+.ac-answer th,
+.ac-answer td {
+  border-bottom: 1px solid var(--hair);
+  padding: 8px 10px;
+  text-align: start;
+}
+.ac-answer code {
+  font-family: var(--font-mono-stack);
+  font-size: 0.88em;
+  background: var(--paper-2);
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+.ac-cite {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  margin-inline: 3px 2px;
+  border-radius: 6px;
+  background: var(--paper-2);
+  border: 1px solid var(--hair);
+  font-family: var(--font-mono-stack);
+  font-size: 11px;
+  line-height: 1;
+  color: var(--ink-2);
+  text-decoration: none;
+  vertical-align: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+/* 20px visual chip, 44px touch target (WCAG 2.5.8 / SPEC). */
+.ac-cite::after {
+  content: '';
+  position: absolute;
+  inset: -12px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-cite:hover {
+    background: var(--card);
+    color: var(--maple);
+  }
+}
+.ac-cite[aria-expanded='true'] {
+  background: var(--card);
+  color: var(--maple);
+  border-color: var(--hair-2);
+}
+button.ac-cite {
+  cursor: pointer;
+  font-weight: 400;
+}
+/* The word before a citation and the chip(s) never part across a line break. */
+.ac-cites {
+  white-space: nowrap;
+}
+/* Merged citations ("2·3"): one chip, one target, a small list of the sources. */
+.ac-citepop {
+  position: fixed;
+  z-index: 60;
+  padding: 6px;
+  border-radius: 18px;
+  border: 1px solid var(--hair);
+  background: var(--card);
+  box-shadow: var(--sh-lg);
+  animation: jump-in 0.18s ease-out both;
+  white-space: normal;
+}
+.ac-citepop ul {
+  list-style: none !important;
+  margin: 0;
+  padding: 0 !important;
+  max-width: none;
+}
+.ac-citepop li {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ac-citepop__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  color: var(--ink);
+  text-decoration: none !important;
+  line-height: 1.3;
+}
+.ac-citepop__item:focus-visible,
+.ac-citepop__item:active {
+  background: var(--paper-2);
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-citepop__item:hover {
+    background: var(--paper-2);
+  }
+}
+.ac-citepop__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+.ac-citepop__title {
+  font-size: 14px;
+  font-weight: 550;
+}
+.ac-citepop__host {
+  font-family: var(--font-mono-stack);
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+.ac-citepop__go {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: var(--ink-3);
+}
+.ac-widget {
+  margin: 26px 0 22px;
+}
+@media (max-width: 760px) {
+  .ac-thread {
+    padding: 18px var(--gutter) 28px;
+  }
+  .ac-bubble {
+    max-width: 86%;
+    font-size: 16.5px;
+    padding: 12px 18px;
+  }
+  .ac-answer {
+    font-size: 16.5px;
+  }
+  .ac-answer .ac-lead {
+    font-size: 26px;
+  }
+  .ac-widget {
+    margin: 22px 0 20px;
+  }
+  .ac-turn.is-last {
+    min-height: calc(100svh - 220px);
+  }
+}
+
+/* ---------- Sources ---------- */
+.ac-sources {
+  margin: 22px 0 6px;
+}
+.ac-sources__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.ac-sources__head h3 {
+  margin: 0;
+  font-family: var(--font-mono-stack);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.ac-sources__q {
+  font-size: 13px;
+  color: var(--ink-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 50%;
+}
+.ac-sources__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+.ac-src {
+  display: flex;
+  gap: 12px;
+  height: 100%;
+  padding: 12px 14px 12px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--hair);
+  background: var(--card);
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-src:hover {
+    border-color: var(--hair-2);
+    box-shadow: var(--sh-sm);
+    transform: translateY(-1px);
+  }
+}
+.ac-src__num {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  background: var(--paper-2);
+  font-family: var(--font-mono-stack);
+  font-size: 11.5px;
+  color: var(--ink-2);
+  flex: none;
+}
+.ac-src__body {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  row-gap: 2px;
+  align-content: start;
+  min-width: 0;
+  flex: 1;
+}
+.ac-src__dom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono-stack);
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+.ac-src__warn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--amber);
+}
+.ac-src__title {
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 1.3;
+  color: var(--ink);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+/* Pinned to the bottom row, so dates line up across cards whether a title takes one line or two. */
+.ac-src__checked {
+  display: inline-flex;
+  align-self: end;
+  align-items: center;
+  gap: 4px;
+  min-height: 1.4em;
+  margin-top: 4px;
+  font-family: var(--font-mono-stack);
+  font-size: 11.5px;
+  color: var(--pine);
+}
+.ac-src__checked.is-plain {
+  color: var(--ink-3);
+}
+.ac-sources__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-top: 6px;
+  padding: 0 12px;
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
+  color: var(--ink-2);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-sources__more:hover {
+    background: var(--hair);
+  }
+}
+
+/* ---------- Actions + follow-ups ---------- */
+.ac-actions {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  margin: 12px 0 0;
+  margin-inline-start: -8px;
+}
+.ac-actions__sep {
+  width: 1px;
+  height: 18px;
+  background: var(--hair-2);
+  margin: 0 8px;
+}
+.ac-actions__lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-2);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-actions__lang:hover {
+    background: var(--hair);
+    color: var(--ink);
+  }
+}
+/* Phones: the language switch takes its own line (the divider becomes the line break), never a dangling rule. */
+@media (max-width: 480px) {
+  .ac-actions__sep {
+    flex-basis: 100%;
+    height: 4px;
+    margin: 0;
+    background: none;
+  }
+}
+.ac-toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-inline-start: 6px;
+  font-size: 13px;
+  color: var(--pine);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.ac-toast:empty {
+  display: none;
+}
+.ac-toast.is-on {
+  opacity: 1;
+}
+.ac-toast.is-warn {
+  color: var(--ink-2);
+}
+.ac-stopped {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0 0;
+}
+.ac-stopped__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 28px;
+  padding: 0 11px 0 9px;
+  border-radius: 999px;
+  background: var(--paper-2);
+  border: 1px solid var(--hair);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+.ac-stopped__icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+/* "Answer cut short": a line icon instead of the filled stop square. */
+.ac-stopped__icon--line {
+  width: 13px;
+  height: 13px;
+  border-radius: 0;
+}
+.ac-stopped__go,
+.ac-stopped__alt {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 550;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.12s var(--ease);
+}
+.ac-stopped__go {
+  border: 1px solid var(--hair-2);
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--sh-sm);
+}
+/* A quiet chip of the same height, so a wrapped "Edit question" lines up with the row's left edge. */
+.ac-stopped__alt {
+  border: 1px solid var(--hair-2);
+  background: transparent;
+  color: var(--ink-2);
+}
+.ac-stopped__go:active,
+.ac-stopped__alt:active {
+  transform: scale(0.97);
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-stopped__alt:hover {
+    background: var(--hair);
+    color: var(--ink);
+  }
+  .ac-stopped__go:hover {
+    border-color: var(--ink-3);
+  }
+}
+
+.ac-stopped__short {
+  display: none;
+}
+/* Phones: the same "Stopped" chip, then two compact buttons on one line (44px touch targets). */
+@media (max-width: 479px) {
+  .ac-stopped {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+  .ac-stopped__pill {
+    flex: none;
+    padding: 0 10px 0 8px;
+    margin-inline-end: 2px;
+  }
+  .ac-stopped__go,
+  .ac-stopped__alt {
+    padding: 0 12px;
+    white-space: nowrap;
+  }
+  .ac-stopped__long {
+    display: none;
+  }
+  .ac-stopped__short {
+    display: inline;
+  }
+}
+/* 360px phones: French ("Interrompu · Continuer · Modifier") still fits inside the 16px gutter. */
+@media (max-width: 379px) {
+  .ac-stopped {
+    gap: 4px;
+  }
+  .ac-stopped__pill {
+    padding: 0 8px 0 7px;
+    gap: 6px;
+  }
+  .ac-stopped__go,
+  .ac-stopped__alt {
+    padding: 0 10px;
+    gap: 6px;
+  }
+}
+
+/* Note in the person's own language, above an answer whose details follow in English/French. */
+.ac-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--paper-2);
+  border: 1px solid var(--hair);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 64ch;
+}
+.ac-note__icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  margin-top: 3px;
+  color: var(--ink-3);
+}
+
+/* Official handoff: the one primary action under an answer. */
+.ac-handoff {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin: 22px 0 6px;
+}
+.ac-handoff--pending {
+  min-height: 48px;
+}
+.ac-handoff__note {
+  margin: 0;
+  max-width: 40ch;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+/* Handoff to an official finder: type where you are here, then continue there. */
+.ac-handoff--search {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) auto;
+  justify-content: start;
+  align-items: end;
+  gap: 10px 12px;
+  max-width: 100%;
+}
+.ac-handoff--search .ac-handoff__note {
+  grid-column: 1 / -1;
+  max-width: 56ch;
+}
+@media (max-width: 560px) {
+  .ac-handoff--search {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ac-handoff__go {
+    width: 100%;
+  }
+}
+.ac-msg-ai.is-streaming {
+  min-height: 40vh;
+}
+.ac-followups {
+  margin: 30px 0 8px;
+}
+.ac-followups h3 {
+  font-family: var(--font-mono-stack);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 0 12px;
+}
+.ac-followups ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ac-fu {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 10px 18px 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--hair);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 450;
+  text-align: start;
+  line-height: 1.3;
+  cursor: pointer;
+  box-shadow: var(--sh-sm);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s, border-color 0.2s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-fu:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sh-md);
+    border-color: var(--hair-2);
+  }
+}
+
+/* ---------- Dock ---------- */
+/* Always pinned to the bottom of the viewport. The fade scrim appears only while content sits under it. */
+.ac-dock {
+  position: sticky;
+  bottom: 0;
+  z-index: 15;
+  padding: 36px 16px calc(14px + env(safe-area-inset-bottom));
+  pointer-events: none;
+}
+/* The scrim starts 40px above the dock, so content fades out gently instead of being sliced by its edge. */
+.ac-dock::before {
+  content: '';
+  position: absolute;
+  inset: -40px 0 0;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in srgb, var(--paper) 55%, transparent) 40px,
+    color-mix(in srgb, var(--paper) 92%, transparent) 64px,
+    var(--paper) 84px
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.ac-dock.has-scrim::before {
+  opacity: 1;
+}
+.ac-dock__inner {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+.ac-fine {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--ink-3);
+  margin: 10px 0 0;
+}
+.ac-thread-foot {
+  display: none;
+  font-size: 12.5px;
+  color: var(--ink-3);
+  text-align: center;
+  margin: 40px 8px 0;
+  line-height: 1.5;
+  animation: fade-in 0.4s ease both;
+}
+.ac-jump {
+  position: absolute;
+  z-index: 2;
+  bottom: calc(100% + 12px);
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: max-content;
+  min-height: 40px;
+  padding: 0 16px 0 13px;
+  border-radius: 999px;
+  border: 1px solid var(--hair);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 500;
+  box-shadow: var(--sh-md);
+  cursor: pointer;
+  animation: jump-in 0.18s ease-out both;
+}
+[dir='rtl'] .ac-jump {
+  translate: 50% 0;
+}
+.ac-jump:active {
+  scale: 0.97;
+}
+@keyframes jump-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+/* "Jump to latest" lands the answer just under the sticky header. */
+.ac-msg-ai {
+  scroll-margin-top: 88px;
+}
+@media (max-width: 760px) {
+  /* One 16px gutter for the answer text, widget cards and the question box (and its focus ring). */
+  .ac-dock {
+    padding: 22px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+  }
+  .ac-fine {
+    display: none;
+  }
+  .ac-thread-foot {
+    display: block;
+  }
+}
+
+/* History sheet */
+.ac-textbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 12px;
+  margin-inline-start: -12px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-2);
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-textbtn:hover {
+    background: var(--hair);
+    color: var(--maple-ink);
+  }
+}
+.ac-hist {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 4px;
+}
+/* Rows sit inside the sheet's content column (the same 20px / 24px edge as the title): the hover / current
+   fill starts on that edge and the row's content is inset 12px within it. */
+.ac-hist__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  padding-inline: 12px 4px;
+  isolation: isolate;
+}
+.ac-hist__row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 16px;
+  background: transparent;
+  transition: background 0.2s;
+}
+.ac-hist__row.is-current::before {
+  background: var(--paper-2);
+  box-shadow: inset 0 0 0 1px var(--hair);
+}
+.ac-hist__row:active::before {
+  background: var(--paper-2);
+}
+@media (hover: hover) and (pointer: fine) {
+  .ac-hist__row:hover::before {
+    background: var(--paper-2);
+  }
+}
+.ac-hist__open {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 56px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: start;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.ac-hist__now {
+  color: var(--pine);
+  font-weight: 550;
+}
+.ac-hist-empty {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 0 8px;
+}
+.ac-hist-empty__art {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: var(--card);
+  color: var(--ink-2);
+  box-shadow: 0 0 0 1px var(--hair), var(--sh-md);
+  margin-bottom: 22px;
+}
+.ac-hist-empty__art::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from 200deg, var(--a-green), var(--a-teal), var(--a-violet), var(--a-rose), var(--a-green));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.7;
+}
+.ac-hist-empty__t {
+  margin: 0;
+  font-family: var(--font-serif-stack);
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.ac-hist-empty__p {
+  margin: 8px 0 0;
+  max-width: 34ch;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+.ac-hist-try {
+  padding: 4px 0 8px;
+}
+.ac-hist-empty .ac-fu,
+.ac-hist-try .ac-fu {
+  justify-content: flex-start;
+  border-radius: 18px;
+  box-shadow: none;
+}
+
+@media print {
+  .ac-dock,
+  .ac-jump,
+  .ac-stopped button {
+    display: none !important;
+  }
+  .ac-thread-foot {
+    display: block !important;
+  }
+}

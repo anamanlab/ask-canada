@@ -1,0 +1,152 @@
+/* Site footer (Footer.tsx): brand, links, privacy controls, the emergency line and the disclaimer. */
+.l-foot {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 64px clamp(20px, 4vw, 48px) 44px;
+}
+.l-foot__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+  gap: 32px 40px;
+}
+.l-foot__tag {
+  margin: 14px 0 0;
+  max-width: 34ch;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+.l-foot h2 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.l-foot ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.l-foot li a,
+.l-foot li button {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  padding: 0;
+  font-size: 14.5px;
+  color: var(--ink-2);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-align: start;
+}
+@media (hover: hover) and (pointer: fine) {
+  .l-foot li a:hover,
+  .l-foot li button:hover {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+.l-foot__sos {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--maple-wash);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+}
+/* The numbers are the most important taps on the page: each gets a 44px-tall target without moving the text. */
+.l-foot__sos a {
+  display: inline-block;
+  padding: 13px 10px;
+  margin: -13px -10px;
+  border-radius: 999px;
+  color: inherit;
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+}
+/* On phones the two sentences split evenly across two lines; the number never sits alone. */
+.l-foot__sos > span {
+  text-wrap: balance;
+}
+@media (max-width: 560px) {
+  /* Phones: two short lines, one per number, set close together as one card. */
+  .l-foot__sos {
+    align-items: flex-start;
+    border-radius: 20px;
+    padding: 12px 18px 12px 16px;
+  }
+  .l-foot__sos > span {
+    line-height: 26px;
+    text-wrap: wrap;
+  }
+  .l-foot__sos > span > .whitespace-nowrap:first-of-type::after {
+    content: '\A';
+    white-space: pre;
+  }
+  .l-foot__sos a {
+    padding-block: 9px;
+    margin-block: -9px;
+  }
+  .l-foot__sos > svg {
+    margin-top: 5px;
+  }
+}
+.l-foot__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hair);
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+.l-foot__disc {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  max-width: 76ch;
+  margin: 0;
+}
+.l-foot__disc svg {
+  width: 14px;
+  height: 14px;
+  color: var(--maple);
+  flex: none;
+  margin-top: 4px;
+}
+.l-foot__domain {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+@media (max-width: 1080px) {
+  .l-foot__top {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+@media (max-width: 760px) {
+  .l-foot__top {
+    gap: 28px 20px;
+  }
+  .l-foot__top > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 480px) {
+  .l-foot {
+    padding-top: 48px;
+  }
+}

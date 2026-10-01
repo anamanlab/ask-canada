@@ -1,0 +1,113 @@
+{
+  "$comment": "Natural rephrasings that must route to a given scenario (checked by scripts/check-scenarios.mjs). Add one whenever a real question dead-ends.",
+  "$never": {
+    "$comment": "Guards: these questions must NEVER route to the named scenario (checked by scripts/check-scenarios.mjs). A payment date is the wrong answer for someone who just moved or arrived.",
+    "benefit-payments": [
+      "Can I get the GST credit if I just moved to Canada?",
+      "I just arrived in Canada. When is my next GST payment?",
+      "When is the next benefit payment? I recently moved here.",
+      "I’m a newcomer, when do I get the GST/HST credit?",
+      "I just moved from Ontario, when is my next GST payment?",
+      "Je viens d’arriver au Canada, quand est le prochain versement du crédit de TPS?",
+      "Nouvel arrivant : ai-je droit au crédit de TPS?",
+      "J’ai déménagé, quelles sont les dates de versement?"
+    ]
+  },
+  "ccb": [
+    "Am I eligible for the Canada Child Benefit if I just moved here from Ontario?",
+    "Can I get the child benefit?",
+    "How do I apply for CCB?",
+    "Is there money for my kids?",
+    "Suis-je admissible à l’allocation canadienne pour enfants?",
+    "Comment demander l’ACE?",
+    "J’ai déménagé de l’Ontario, ai-je droit à l’allocation pour enfants?"
+  ],
+  "benefit-payments": [
+    "When is the next GST/HST credit payment?",
+    "When is the next Canada Child Benefit payment?",
+    "When do I get paid my benefits?",
+    "Quand est le prochain versement du crédit de TPS?",
+    "Quelles sont les dates de versement?"
+  ],
+  "taxes-file": [
+    "How can I file my taxes for free?",
+    "Can I do my taxes for free?",
+    "Where can I find a free tax clinic?",
+    "Comment produire ma déclaration gratuitement?",
+    "Où trouver un comptoir d’impôts gratuit?"
+  ],
+  "ei-regular": [
+    "How do I apply for Employment Insurance?",
+    "I got laid off, what now?",
+    "Can I get EI?",
+    "Comment demander l’assurance-emploi?",
+    "J’ai perdu mon emploi, que faire?"
+  ],
+  "oas": [
+    "When can I start getting Old Age Security?",
+    "How does OAS work?",
+    "Quand puis-je recevoir la Sécurité de la vieillesse?",
+    "Comment fonctionne la SV?"
+  ],
+  "travel-advisory": [
+    "Is it safe to travel to Mexico right now?",
+    "Is Portugal safe to visit?",
+    "Any travel advisories for Japan?",
+    "Est-ce sécuritaire de voyager au Mexique?",
+    "Puis-je voyager au Portugal?"
+  ],
+  "recalls": [
+    "Are there any recent product recalls?",
+    "Has this food been recalled?",
+    "Y a-t-il des rappels de produits récents?"
+  ],
+  "recalls-vehicle": [
+    "Was my car seat recalled?",
+    "Is my car part of a safety recall?",
+    "Mon siège d’auto a-t-il été rappelé?"
+  ],
+  "passport-office": [
+    "Find a passport office near me",
+    "Where is the closest passport office?",
+    "Trouver un bureau des passeports près de chez moi",
+    "Où est le bureau des passeports le plus proche?"
+  ],
+  "passport-photo": [
+    "What makes a passport photo acceptable?",
+    "Passport photo requirements",
+    "Quelles sont les exigences pour la photo de passeport?"
+  ],
+  "passport-references": [
+    "Who can be my reference?",
+    "Who can be a reference for my passport renewal?",
+    "Qui peut être ma référence?"
+  ],
+  "passport-urgent": [
+    "I’m travelling before it arrives",
+    "I need my passport urgently",
+    "Je voyage avant de le recevoir",
+    "J’ai besoin de mon passeport en urgence"
+  ],
+  "citizenship": [
+    "What do I need for citizenship?",
+    "How long until I can apply for citizenship?",
+    "De quoi ai-je besoin pour la citoyenneté?"
+  ],
+  "passport-renew": [
+    "كيف أجدد جواز سفري؟",
+    "我的护照怎么续签？",
+    "ਮੈਂ ਆਪਣਾ ਪਾਸਪੋਰਟ ਕਿਵੇਂ ਰੀਨਿਊ ਕਰਾਂ?",
+    "¿Cómo renuevo mi pasaporte?"
+  ],
+  "newcomer-benefits": [
+    "Can I get the GST credit if I just moved to Canada?",
+    "I just arrived in Canada. Can I get benefits?",
+    "I’m a newcomer, how do I get the GST/HST credit?",
+    "We immigrated last month with two kids. Can we get the child benefit?",
+    "Can I get the GST credit if I just moved?",
+    "I just moved from Ontario, when is my next GST payment?",
+    "Je viens d’arriver au Canada, ai-je droit au crédit de TPS?",
+    "Nouvel arrivant : ai-je droit au crédit de TPS?",
+    "Nous sommes arrivés au Canada avec nos enfants. Avons-nous droit à l’allocation pour enfants?"
+  ]
+}

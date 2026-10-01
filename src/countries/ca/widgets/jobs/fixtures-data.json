@@ -1,0 +1,1214 @@
+{
+  "note": "Real Job Bank data captured 2026-09-30 (search results for 'nurse' / 'infirmier' across Canada and 'registered nurse' in Toronto, wages + outlook for registered nurses, profile 993). Used only by lab fixtures.",
+  "searchEn": {
+    "total": 1144,
+    "jobs": [
+      {
+        "id": "50335159",
+        "title": "Nurse",
+        "employer": "HealthOPM",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-09-21",
+        "salary": {
+          "min": 70,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$70.00 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50335159"
+      },
+      {
+        "id": "50282172",
+        "title": "Registered nurse (R.N.)",
+        "employer": "SHIRETOWN NURSING HOME",
+        "location": "Pictou (NS)",
+        "province": "NS",
+        "date": "2026-09-14",
+        "salary": {
+          "min": 33,
+          "max": 42,
+          "period": "hour",
+          "negotiable": true,
+          "raw": "$33.00 to $42.00 hourly (to be negotiated)"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50282172"
+      },
+      {
+        "id": "50344338",
+        "title": "RN (registered nurse)",
+        "employer": "WeKare Nursing and Homecare Services",
+        "location": "Cranbrook (BC)",
+        "province": "BC",
+        "date": "2026-09-22",
+        "salary": {
+          "min": 46.92,
+          "max": 58.95,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$46.92 to $58.95 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50344338"
+      },
+      {
+        "id": "50376077",
+        "title": "Nurse",
+        "employer": "Island Community Mental Health",
+        "location": "Victoria (BC)",
+        "province": "BC",
+        "date": "2026-09-17",
+        "salary": {
+          "min": 49.2,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$49.20 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50376077"
+      },
+      {
+        "id": "50369002",
+        "title": "RN (registered nurse)",
+        "employer": "BeHome Nursing",
+        "location": "Simcoe (ON)",
+        "province": "ON",
+        "date": "2026-09-25",
+        "salary": {
+          "min": 32,
+          "max": 35,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$32.00 to $35.00 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": true,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50369002"
+      },
+      {
+        "id": "50377268",
+        "title": "Nurse",
+        "employer": "Prosperity Workforce Solutions",
+        "location": "",
+        "date": "2026-09-27",
+        "salary": {
+          "min": 42,
+          "max": 52,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$42.00 to $52.00 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": true,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50377268"
+      },
+      {
+        "id": "50345314",
+        "title": "RN (registered nurse)",
+        "employer": "WeKare Nursing and Homecare",
+        "location": "Vernon (BC)",
+        "province": "BC",
+        "date": "2026-09-22",
+        "salary": {
+          "min": 42.84,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$42.84 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50345314"
+      },
+      {
+        "id": "50373394",
+        "title": "Nurse",
+        "employer": "SASKATCHEWAN CANCER AGENCY",
+        "location": "Saskatoon (SK)",
+        "province": "SK",
+        "date": "2026-09-26",
+        "salary": {
+          "raw": "Pay Band 6 $38.58 to $50.07 (6 step range)",
+          "negotiable": false
+        },
+        "postedOnJobBank": false,
+        "isNew": true,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50373394"
+      },
+      {
+        "id": "50370169",
+        "title": "Nurse",
+        "employer": "ErinoakKids Center for Treatment and Development",
+        "location": "Brampton (ON)",
+        "province": "ON",
+        "date": "2026-09-25",
+        "salary": {
+          "min": 31.64,
+          "max": 37.03,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$31.64 to $37.03 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": true,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50370169"
+      },
+      {
+        "id": "50380162",
+        "title": "Nurse practitioner",
+        "employer": "NL Health Services",
+        "location": "Natuashish (NL)",
+        "province": "NL",
+        "date": "2026-09-28",
+        "salary": {
+          "min": 52.31,
+          "max": 64.92,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$52.31 to $64.92 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": true,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50380162"
+      },
+      {
+        "id": "50380191",
+        "title": "Nurse practitioner",
+        "employer": "NL Health Services",
+        "location": "Hopedale (NL)",
+        "province": "NL",
+        "date": "2026-09-28",
+        "salary": {
+          "min": 52.31,
+          "max": 64.92,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$52.31 to $64.92 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": true,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50380191"
+      },
+      {
+        "id": "50364549",
+        "title": "Nurse practitioner",
+        "employer": "Vitalité Health Network",
+        "location": "Various locations",
+        "date": "2026-09-25",
+        "salary": {
+          "min": 63.31,
+          "max": 77.06,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$63.31 to $77.06 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": true,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50364549"
+      }
+    ],
+    "byProvince": [
+      {
+        "code": "AB",
+        "count": 50
+      },
+      {
+        "code": "BC",
+        "count": 66
+      },
+      {
+        "code": "MB",
+        "count": 9
+      },
+      {
+        "code": "NB",
+        "count": 61
+      },
+      {
+        "code": "NL",
+        "count": 137
+      },
+      {
+        "code": "NT",
+        "count": 0
+      },
+      {
+        "code": "NS",
+        "count": 93
+      },
+      {
+        "code": "NU",
+        "count": 0
+      },
+      {
+        "code": "ON",
+        "count": 297
+      },
+      {
+        "code": "PE",
+        "count": 5
+      },
+      {
+        "code": "QC",
+        "count": 167
+      },
+      {
+        "code": "SK",
+        "count": 239
+      },
+      {
+        "code": "YT",
+        "count": 0
+      }
+    ]
+  },
+  "searchFr": {
+    "total": 1200,
+    "jobs": [
+      {
+        "id": "50364400",
+        "title": "Infirmier autorisé/infirmière autorisée",
+        "employer": "Chancellor Park",
+        "location": "St. John's (NL)",
+        "province": "NL",
+        "date": "2026-09-25",
+        "salary": {
+          "min": 41.96,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "41,96 $ de l'heure"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": true,
+        "directApply": true,
+        "url": "https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/50364400"
+      },
+      {
+        "id": "50384331",
+        "title": "Infirmier autorisé/infirmière autorisée",
+        "employer": "ATK Care INC.",
+        "location": "Fordwich (ON)",
+        "province": "ON",
+        "date": "2026-09-28",
+        "salary": {
+          "min": 41,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "41,00 $ de l'heure"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": true,
+        "directApply": true,
+        "url": "https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/50384331"
+      },
+      {
+        "id": "50306156",
+        "title": "Infirmier autorisé/infirmière autorisée",
+        "employer": "ATK Care INC.",
+        "location": "Fordwich (ON)",
+        "province": "ON",
+        "date": "2026-09-17",
+        "salary": {
+          "min": 41,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "41,00 $ de l'heure"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/50306156"
+      },
+      {
+        "id": "50387569",
+        "title": "Infirmier auxiliaire/infirmière auxiliaire",
+        "employer": "Groupe Vitae",
+        "location": "Québec (QC)",
+        "province": "QC",
+        "date": "2026-09-29",
+        "salary": {
+          "min": 26,
+          "max": 30,
+          "period": "year",
+          "negotiable": false,
+          "raw": "26,00 $ à 30,00 $ par année"
+        },
+        "postedOnJobBank": false,
+        "isNew": true,
+        "directApply": false,
+        "url": "https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/50387569"
+      },
+      {
+        "id": "50291340",
+        "title": "Infirmier autorisé/infirmière autorisée",
+        "employer": "Gifted Hands Health Services",
+        "location": "Haliburton (ON)",
+        "province": "ON",
+        "date": "2026-09-15",
+        "salary": {
+          "min": 55,
+          "max": 60,
+          "period": "hour",
+          "negotiable": true,
+          "raw": "55,00 $ à 60,00 $ de l'heure (à négocier)"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/50291340"
+      },
+      {
+        "id": "50282172",
+        "title": "Infirmier autorisé/infirmière autorisée",
+        "employer": "SHIRETOWN NURSING HOME",
+        "location": "Pictou (NS)",
+        "province": "NS",
+        "date": "2026-09-14",
+        "salary": {
+          "min": 33,
+          "max": 42,
+          "period": "hour",
+          "negotiable": true,
+          "raw": "33,00 $ à 42,00 $ de l'heure (à négocier)"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/50282172"
+      },
+      {
+        "id": "50284099",
+        "title": "Infirmier autorisé/infirmière autorisée",
+        "employer": "River View Manor Inc.",
+        "location": "Bath (NB)",
+        "province": "NB",
+        "date": "2026-09-14",
+        "salary": {
+          "min": 46.53,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "46,53 $ de l'heure"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/50284099"
+      },
+      {
+        "id": "50283665",
+        "title": "Infirmier autorisé/infirmière autorisée",
+        "employer": "River View Manor Inc.",
+        "location": "Bath (NB)",
+        "province": "NB",
+        "date": "2026-09-14",
+        "salary": {
+          "min": 46.53,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "46,53 $ de l'heure"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/50283665"
+      }
+    ],
+    "byProvince": [
+      {
+        "code": "AB",
+        "count": 51
+      },
+      {
+        "code": "BC",
+        "count": 74
+      },
+      {
+        "code": "MB",
+        "count": 11
+      },
+      {
+        "code": "NB",
+        "count": 72
+      },
+      {
+        "code": "NS",
+        "count": 94
+      },
+      {
+        "code": "NU",
+        "count": 0
+      },
+      {
+        "code": "ON",
+        "count": 314
+      },
+      {
+        "code": "QC",
+        "count": 170
+      },
+      {
+        "code": "SK",
+        "count": 241
+      },
+      {
+        "code": "NL",
+        "count": 148
+      },
+      {
+        "code": "NT",
+        "count": 0
+      },
+      {
+        "code": "YT",
+        "count": 0
+      },
+      {
+        "code": "PE",
+        "count": 5
+      }
+    ]
+  },
+  "wagesCa": {
+    "unit": "hour",
+    "updated": "2025-11-19",
+    "refPeriod": "2023-2024",
+    "provinces": [
+      {
+        "code": "AB",
+        "low": 30,
+        "median": 47.5,
+        "high": 54.49
+      },
+      {
+        "code": "BC",
+        "low": 35,
+        "median": 47.58,
+        "high": 57
+      },
+      {
+        "code": "MB",
+        "low": 34,
+        "median": 45,
+        "high": 52.4
+      },
+      {
+        "code": "NB",
+        "low": 31,
+        "median": 44.77,
+        "high": 49
+      },
+      {
+        "code": "NL",
+        "low": 33.65,
+        "median": 44,
+        "high": 52
+      },
+      {
+        "code": "NT",
+        "low": 45,
+        "median": 58,
+        "high": 69.23
+      },
+      {
+        "code": "NS",
+        "low": 30.2,
+        "median": 41.5,
+        "high": 50
+      },
+      {
+        "code": "NU",
+        "low": 45,
+        "median": 57.99,
+        "high": 71.57
+      },
+      {
+        "code": "ON",
+        "low": 29,
+        "median": 42,
+        "high": 55
+      },
+      {
+        "code": "PE",
+        "low": 31.5,
+        "median": 42,
+        "high": 49.98
+      },
+      {
+        "code": "QC",
+        "low": 27,
+        "median": 40,
+        "high": 50
+      },
+      {
+        "code": "SK",
+        "low": 38,
+        "median": 47.13,
+        "high": 52.2
+      },
+      {
+        "code": "YT",
+        "low": 33,
+        "median": 48.5,
+        "high": 60.88
+      }
+    ],
+    "regions": [],
+    "national": {
+      "low": 30,
+      "median": 43.27,
+      "high": 54.37
+    }
+  },
+  "wagesOn": {
+    "unit": "hour",
+    "updated": "2025-11-19",
+    "refPeriod": "2023-2024",
+    "provinces": [
+      {
+        "code": "ON",
+        "low": 29,
+        "median": 42,
+        "high": 55
+      }
+    ],
+    "regions": [
+      {
+        "name": "Hamilton–Niagara Peninsula",
+        "low": 29.6,
+        "median": 43,
+        "high": 56,
+        "geo": "geo6261",
+        "fr": "Hamilton–Niagara Peninsula"
+      },
+      {
+        "name": "Kingston–Pembroke",
+        "low": 31.64,
+        "median": 42.9,
+        "high": 56,
+        "geo": "geo8961",
+        "fr": "Kingston–Pembroke"
+      },
+      {
+        "name": "Kitchener–Waterloo–Barrie",
+        "low": 29.73,
+        "median": 41,
+        "high": 55,
+        "geo": "geo27236",
+        "fr": "Kitchener–Waterloo–Barrie"
+      },
+      {
+        "name": "London",
+        "low": 31.4,
+        "median": 43.27,
+        "high": 55,
+        "geo": "geo27234",
+        "fr": "London"
+      },
+      {
+        "name": "Muskoka–Kawarthas",
+        "low": 35,
+        "median": 43.69,
+        "high": 54.37,
+        "geo": "geo8792",
+        "fr": "Muskoka–Kawarthas"
+      },
+      {
+        "name": "Northeast",
+        "low": 31,
+        "median": 44,
+        "high": 55,
+        "geo": "geo6363",
+        "fr": "Nord-Est"
+      },
+      {
+        "name": "Northwest",
+        "low": 31,
+        "median": 42.5,
+        "high": 56,
+        "geo": "geo8848",
+        "fr": "Nord-Ouest"
+      },
+      {
+        "name": "Ottawa",
+        "low": 28.85,
+        "median": 45,
+        "high": 54.38,
+        "geo": "geo9193",
+        "fr": "Ottawa"
+      },
+      {
+        "name": "Stratford–Bruce Peninsula",
+        "low": 30,
+        "median": 39,
+        "high": 53,
+        "geo": "geo27235",
+        "fr": "Stratford–Bruce Peninsula"
+      },
+      {
+        "name": "Toronto",
+        "low": 28,
+        "median": 40.59,
+        "high": 55,
+        "geo": "geo9219",
+        "fr": "Toronto"
+      },
+      {
+        "name": "Windsor–Sarnia",
+        "low": 27.86,
+        "median": 44,
+        "high": 55,
+        "geo": "geo27233",
+        "fr": "Windsor–Sarnia"
+      }
+    ],
+    "national": {
+      "low": 30,
+      "median": 43.27,
+      "high": 54.37
+    }
+  },
+  "outlook": {
+    "NL": {
+      "stars": 5,
+      "label": "Very good"
+    },
+    "PE": {
+      "stars": 5,
+      "label": "Very good"
+    },
+    "NS": {
+      "stars": 5,
+      "label": "Very good"
+    },
+    "NB": {
+      "stars": 5,
+      "label": "Very good"
+    },
+    "QC": {
+      "stars": 3,
+      "label": "Moderate"
+    },
+    "ON": {
+      "stars": 5,
+      "label": "Very good"
+    },
+    "MB": {
+      "stars": 4,
+      "label": "Good"
+    },
+    "SK": {
+      "stars": 4,
+      "label": "Good"
+    },
+    "AB": {
+      "stars": 4,
+      "label": "Good"
+    },
+    "BC": {
+      "stars": 4,
+      "label": "Good"
+    },
+    "YT": {
+      "stars": 4,
+      "label": "Good"
+    },
+    "NT": {
+      "stars": 5,
+      "label": "Very good"
+    },
+    "NU": {
+      "stars": 5,
+      "label": "Very good"
+    }
+  },
+  "searchToronto": {
+    "total": 29,
+    "jobs": [
+      {
+        "id": "50367060",
+        "title": "Registered nurse - telehealth",
+        "employer": "Foundever Assistance Services Corporation",
+        "location": "Moncton (NB)",
+        "province": "NB",
+        "date": "2026-09-25",
+        "salary": {
+          "min": 38,
+          "max": 40.5,
+          "period": "hour",
+          "negotiable": true,
+          "raw": "$38.00 to $40.50 hourly (to be negotiated)"
+        },
+        "workplace": "remote",
+        "postedOnJobBank": true,
+        "isNew": true,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50367060"
+      },
+      {
+        "id": "50335159",
+        "title": "Nurse",
+        "employer": "HealthOPM",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-09-21",
+        "salary": {
+          "min": 70,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$70.00 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50335159"
+      },
+      {
+        "id": "49947010",
+        "title": "Registered nurse (R.N.)",
+        "employer": "CITY HEALTHCARE SERVICES",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-07-22",
+        "salary": {
+          "min": 41.5,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$41.50 hourly"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/49947010"
+      },
+      {
+        "id": "49879021",
+        "title": "Registered nurse (R.N.)",
+        "employer": "Spectrum Health Care",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-07-10",
+        "salary": {
+          "min": 26.75,
+          "max": 40.63,
+          "period": "hour",
+          "negotiable": true,
+          "raw": "$26.75 to $40.63 hourly (to be negotiated)"
+        },
+        "workplace": "road",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/49879021"
+      },
+      {
+        "id": "50281602",
+        "title": "Registered practical nurse (R.P.N.)",
+        "employer": "VON Canada",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-09-14",
+        "salary": {
+          "min": 22.92,
+          "max": 27.45,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$22.92 to $27.45 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50281602"
+      },
+      {
+        "id": "49650062",
+        "title": "Registered nurse (R.N.)",
+        "employer": "Valleyview Residence",
+        "location": "North York (ON)",
+        "province": "ON",
+        "date": "2026-06-04",
+        "salary": {
+          "min": 36.06,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$36.06 hourly"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/49650062"
+      },
+      {
+        "id": "50334931",
+        "title": "Emergency nurse",
+        "employer": "HealthOPM",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-09-21",
+        "salary": {
+          "min": 50,
+          "max": 55,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$50.00 to $55.00 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50334931"
+      },
+      {
+        "id": "50333771",
+        "title": "Registered nurse (R.N.)",
+        "employer": "Fox Flight Air Ambulance",
+        "location": "Etobicoke (ON)",
+        "province": "ON",
+        "date": "2026-09-21",
+        "salary": {
+          "min": 90000,
+          "period": "year",
+          "negotiable": false,
+          "raw": "$90,000.00 annually"
+        },
+        "workplace": "road",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50333771"
+      },
+      {
+        "id": "50379737",
+        "title": "Nurse",
+        "employer": "LOFT Community Services",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-09-21",
+        "salary": {
+          "min": 32.22,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$32.22 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50379737"
+      },
+      {
+        "id": "50285737",
+        "title": "Registered practical nurse (R.P.N.)",
+        "employer": "Belmont House",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-09-14",
+        "salary": {
+          "min": 31.3,
+          "max": 34.91,
+          "period": "hour",
+          "negotiable": true,
+          "raw": "$31.30 to $34.91 hourly (to be negotiated)"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50285737"
+      },
+      {
+        "id": "50364381",
+        "title": "Visiting nurse",
+        "employer": "The Care Company Inc.",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-09-08",
+        "salary": {
+          "min": 33.25,
+          "max": 43.25,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$33.25 to $43.25 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50364381"
+      },
+      {
+        "id": "49770382",
+        "title": "Registered nurse (R.N.)",
+        "employer": "Mariann Nursing Home and Residence",
+        "location": "Richmond Hill (ON)",
+        "province": "ON",
+        "date": "2026-06-22",
+        "salary": {
+          "min": 41.28,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$41.28 hourly"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/49770382"
+      },
+      {
+        "id": "50353917",
+        "title": "Registered nurse (R.N.)",
+        "employer": "Unify Men's Health Inc",
+        "location": "East York (ON)",
+        "province": "ON",
+        "date": "2026-09-23",
+        "salary": {
+          "min": 56.34,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$56.34 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": true,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50353917"
+      },
+      {
+        "id": "50370169",
+        "title": "Nurse",
+        "employer": "ErinoakKids Center for Treatment and Development",
+        "location": "Brampton (ON)",
+        "province": "ON",
+        "date": "2026-09-25",
+        "salary": {
+          "min": 31.64,
+          "max": 37.03,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$31.64 to $37.03 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": true,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50370169"
+      },
+      {
+        "id": "50295525",
+        "title": "Foot care nurse",
+        "employer": "BioPed Footcare",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-09-15",
+        "salary": {
+          "min": 24.01,
+          "max": 30,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$24.01 to $30.00 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50295525"
+      },
+      {
+        "id": "50208866",
+        "title": "Registered nurse - telehealth",
+        "employer": "Foundever Assistance Services Corporation",
+        "location": "Ottawa (ON)",
+        "province": "ON",
+        "date": "2026-09-02",
+        "salary": {
+          "min": 38,
+          "max": 40.5,
+          "period": "hour",
+          "negotiable": true,
+          "raw": "$38.00 to $40.50 hourly (to be negotiated)"
+        },
+        "workplace": "remote",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50208866"
+      },
+      {
+        "id": "50351431",
+        "title": "Mental health nurse",
+        "employer": "Ontario Public Service",
+        "location": "Scarborough (ON)",
+        "province": "ON",
+        "date": "2026-09-23",
+        "salary": {
+          "min": 42.1,
+          "max": 60.46,
+          "period": "week",
+          "negotiable": true,
+          "raw": "$42.10 to $60.46 weekly (to be negotiated)"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50351431"
+      },
+      {
+        "id": "50156399",
+        "title": "Registered practical nurse (R.P.N.)",
+        "employer": "MASSIMO HEALTHCARE TALENT MOBILITY INC,",
+        "location": "Brampton (ON)",
+        "province": "ON",
+        "date": "2026-08-25",
+        "salary": {
+          "min": 28,
+          "max": 40,
+          "period": "hour",
+          "negotiable": true,
+          "raw": "$28.00 to $40.00 hourly (to be negotiated)"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50156399"
+      },
+      {
+        "id": "50243018",
+        "title": "Nurse",
+        "employer": "Christie Gardens",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-09-08",
+        "salary": {
+          "min": 32.44,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$32.44 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50243018"
+      },
+      {
+        "id": "50307075",
+        "title": "RN (registered nurse)",
+        "employer": "Raymond D. Stein Medicine Professional Corporation",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-09-17",
+        "salary": {
+          "min": 36,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$36.00 hourly"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50307075"
+      },
+      {
+        "id": "50289527",
+        "title": "Nurse",
+        "employer": "Prosperity Workforce Solutions",
+        "location": "Toronto (ON)",
+        "province": "ON",
+        "date": "2026-09-14",
+        "salary": {
+          "min": 52.83,
+          "max": 74.83,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$52.83 to $74.83 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50289527"
+      },
+      {
+        "id": "50331771",
+        "title": "Recovery room nurse",
+        "employer": "HealthOPM",
+        "location": "Burlington (ON)",
+        "province": "ON",
+        "date": "2026-09-16",
+        "salary": {
+          "min": 48,
+          "max": 52,
+          "period": "hour",
+          "negotiable": false,
+          "raw": "$48.00 to $52.00 hourly"
+        },
+        "postedOnJobBank": false,
+        "isNew": false,
+        "directApply": false,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50331771"
+      },
+      {
+        "id": "50104249",
+        "title": "Nurse",
+        "employer": "MASSIMO HEALTHCARE TALENT MOBILITY INC,",
+        "location": "Brampton (ON)",
+        "province": "ON",
+        "date": "2026-08-18",
+        "salary": {
+          "min": 28,
+          "max": 40,
+          "period": "hour",
+          "negotiable": true,
+          "raw": "$28.00 to $40.00 hourly (to be negotiated)"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50104249"
+      },
+      {
+        "id": "50052025",
+        "title": "Registered practical nurse (R.P.N.)",
+        "employer": "Oakville Children's Homes",
+        "location": "Oakville (ON)",
+        "province": "ON",
+        "date": "2026-08-11",
+        "salary": {
+          "min": 74000,
+          "period": "year",
+          "negotiable": false,
+          "raw": "$74,000.00 annually"
+        },
+        "workplace": "onsite",
+        "postedOnJobBank": true,
+        "isNew": false,
+        "directApply": true,
+        "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50052025"
+      }
+    ],
+    "byProvince": []
+  }
+}
