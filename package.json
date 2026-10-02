@@ -24,6 +24,7 @@
     "@ai-sdk/azure": "^4.0.86",
     "@ai-sdk/gateway": "^4.0.101",
     "@ai-sdk/react": "^4.0.126",
+    "@vercel/analytics": "^2.0.1",
     "@vercel/firewall": "^1.2.5",
     "@vercel/functions": "^3.9.9",
     "ai": "^7.0.123",

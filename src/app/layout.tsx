@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 // Site chrome (header, brand, menu) is on every page. The landing's, the footer's and the chat's own
 // sheets load with their components.
@@ -97,6 +98,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
         >
           {children}
         </I18nProvider>
+        <Analytics />
       </body>
     </html>
   );
