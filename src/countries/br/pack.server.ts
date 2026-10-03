@@ -88,10 +88,14 @@ export const packServer: CountryPack = {
     factsChecked: CHECKED,
     holidays: nationalDaysOff(),
     holidaysUrl: HOLIDAYS_URL,
+    // The demo card answers a holiday question, so its three figures describe one:
+    // cost (nothing to observe), answer speed, and whether offices work. `unit` is the
+    // processing-time value the card reads; `dateLabel` is the service-status value.
     demo: {
       amountLabel: 'Gratuito',
+      unit: 'No mesmo dia',
       unitLabel: 'No mesmo dia',
-      dateLabel: 'Imediato',
+      dateLabel: 'Suspenso',
     },
     // No `taxDeadline`. Brazil has no single fixed annual personal filing date to count down to: Simples
     // Nacional's DAS is due the 20th of the following month, and the Receita re-announces the IRPF deadline

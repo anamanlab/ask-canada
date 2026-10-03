@@ -90,6 +90,12 @@ export type CountryPack = {
     accent?: { base: string; ink: string; wash: string };
     /** Accent used for the flag-proportion band and the brand mark. */
     flagColor: string;
+    /**
+     * Optional diamond (losango) in the flag band's white field, in this colour.
+     * A pack whose flag carries a rhombus sets it; a pack without one leaves it
+     * unset and the band renders plain. Decorative only, never content.
+     */
+    flagDiamond?: string;
   };
   emergency: {
     /** Police, fire, ambulance. */

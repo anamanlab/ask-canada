@@ -28,4 +28,8 @@ export const brand: ClientPack['brand'] = {
   accent: { base: '#009C3B', ink: '#007A2E', wash: 'rgba(0, 156, 59, 0.1)' },
   // Bandeira do Brasil green: the accent colour for the flag-proportion band and the mark in icons.
   flagColor: '#009C3B',
+  // The flag's yellow rhombus, drawn behind the flag band's answer card. Without it the
+  // band is green stripes claiming flag proportions; with it, green field, yellow
+  // losango, white answer — the flag, with a question where the globe would be.
+  flagDiamond: '#FFDF00',
 };

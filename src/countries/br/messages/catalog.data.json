@@ -289,8 +289,8 @@
     "en": "Live from the MGI · {date}"
   },
   "flag.figures": {
-    "pt": "Os números exibidos vêm do {source}, verificados em {date}.",
-    "en": "The figures shown come from {source}, verified on {date}."
+    "pt": "Os números exibidos vêm do gov.br, verificados em {date}.",
+    "en": "Figures shown come from gov.br, checked {date}."
   },
   "flag.demo.q": {
     "pt": "Qual é o próximo feriado nacional?",
@@ -301,40 +301,40 @@
     "en": "What is the next holiday?"
   },
   "flag.demo.a1": {
-    "pt": "O próximo feriado nacional",
-    "en": "The next national holiday"
+    "pt": "A resposta traz",
+    "en": "The answer gives"
   },
   "flag.demo.a2": {
-    "pt": "é dia ",
-    "en": "is "
+    "pt": "data, nome e tipo.",
+    "en": "the date, name and kind."
   },
   "flag.demo.a3": {
-    "pt": ". É também um ",
-    "en": ". It is also a "
+    "pt": "É um",
+    "en": "It is a"
   },
   "flag.demo.a4": {
-    "pt": "no calendário do governo federal.",
-    "en": "on the federal government calendar."
+    "pt": "feriado nacional, sem expediente.",
+    "en": "national holiday — no federal service."
   },
   "flag.demo.eligible": {
-    "pt": "Feriados e",
-    "en": "Holidays and"
+    "pt": "Sem expediente",
+    "en": "No federal service"
   },
   "flag.demo.fee": {
-    "pt": "pontos",
-    "en": "optional"
+    "pt": "Custo",
+    "en": "Cost"
   },
   "flag.demo.processing": {
-    "pt": "facultativos",
-    "en": "non-service days"
+    "pt": "Resposta",
+    "en": "Answer"
   },
   "flag.demo.days": {
     "pt": "Próximo dia",
     "en": "Next day"
   },
   "flag.demo.ready": {
-    "pt": "Resultado",
-    "en": "Result"
+    "pt": "Expediente",
+    "en": "Service"
   },
   "flag.demo.try": {
     "pt": "Pergunte por qualquer serviço",
@@ -501,8 +501,8 @@
     "en": "Every year the Ministry of Public Management publishes a Portaria in the official gazette with the dates of national holidays and of optional non-service days. That is the list we use, not one from the internet."
   },
   "sources.updated": {
-    "pt": "Conferido em",
-    "en": "Checked on"
+    "pt": "Conferido em {date}",
+    "en": "Updated {date}"
   },
   "sources.list.title": {
     "pt": "Domínios oficiais usados pelo Ask Brasil",
@@ -1017,8 +1017,8 @@
     "en": "Example: someone asks what the next holiday is. Ask Brasil answers in plain language and shows the list with the Portaria that set it."
   },
   "flag.caption": {
-    "pt": "Proporções da bandeira 1 : 2 : 1 — o verde do Brasil, com a sua pergunta no lugar do campo.",
-    "en": "Flag proportions 1 : 2 : 1 — Brazil's green, with your question where the field would be."
+    "pt": "O verde e o amarelo do Brasil — com a sua pergunta no lugar do campo.",
+    "en": "Brazil's green and yellow — with your question in place of the field."
   },
   "lang.note": {
     "pt": "O português é o idioma oficial do Brasil e tem interface completa e revisada. O inglês também é mantido com interface revisada, para visitantes e falantes de outras línguas. Nos demais idiomas, os menus podem ainda estar traduzidos por máquina.",
@@ -1039,5 +1039,69 @@
   "landing.statusLink": {
     "pt": "Sobre este serviço",
     "en": "About this service"
+  },
+  "privacy.account.t": {
+    "pt": "Sem conta",
+    "en": "No account needed"
+  },
+  "privacy.account.p": {
+    "pt": "Pergunte direto. Nunca perguntamos quem você é.",
+    "en": "Ask right away. We never ask who you are."
+  },
+  "privacy.stored.t": {
+    "pt": "Apague quando quiser",
+    "en": "Clear it any time"
+  },
+  "privacy.stored.p": {
+    "pt": "Planos e listas ficam neste aparelho. Apague tudo com um toque.",
+    "en": "Plans and checklists stay on this device. Remove them all with one tap."
+  },
+  "privacy.tracking.t": {
+    "pt": "Sem rastreamento",
+    "en": "No tracking"
+  },
+  "privacy.tracking.p": {
+    "pt": "Sem cookies de rastreamento, sem perfil de anúncios. Nunca.",
+    "en": "No tracking cookies and no ad profiles. Ever."
+  },
+  "privacy.numbers.t": {
+    "pt": "Nunca seus números",
+    "en": "Never your numbers"
+  },
+  "privacy.numbers.p": {
+    "pt": "Nunca pedimos seu CPF, dados bancários ou passaporte. A identificação acontece nos sites oficiais.",
+    "en": "We will never ask for your CPF, banking or passport number. Sign-ins happen on official sites."
+  },
+  "sources.claim.1": {
+    "pt": "Links para a página exata, não só para o site",
+    "en": "Links to the exact page, not just the website"
+  },
+  "sources.claim.2": {
+    "pt": "Taxas, datas e prazos mostram quando foram conferidos",
+    "en": "Fees, dates and deadlines show when they were last checked"
+  },
+  "sources.claim.3": {
+    "pt": "Dados ao vivo: Selic, inflação, dólar e Câmara",
+    "en": "Live data: Selic, inflation, the dollar and the Chamber"
+  },
+  "sources.list.1": {
+    "pt": "Serviços do Governo Federal",
+    "en": "Federal Government services"
+  },
+  "sources.list.2": {
+    "pt": "Meu INSS: benefícios e aposentadoria",
+    "en": "Meu INSS: benefits and retirement"
+  },
+  "sources.list.3": {
+    "pt": "CadÚnico: benefícios sociais",
+    "en": "CadÚnico: social benefits"
+  },
+  "closing.title": {
+    "pt": "Do que você precisa?",
+    "en": "What do you need?"
+  },
+  "closing.titleEm": {
+    "pt": "We're listening.",
+    "en": "Estamos ouvindo."
   }
 }

@@ -93,6 +93,24 @@ export async function FlagDemo() {
         </span>
       </div>
       <div className="l-flag__white">
+        {/* The flag's rhombus, for packs whose flag carries one. It sits behind the
+          cards (first in paint order) and never holds content: green field, yellow
+          losango, white answer — the flag, with a question where the globe would be. */}
+        {pack.brand.flagDiamond ? (
+          <div
+            aria-hidden
+            style={{
+              position: 'absolute',
+              left: '50%',
+              top: '50%',
+              width: 'min(460px, 80%)',
+              aspectRatio: '1 / 1',
+              transform: 'translate(-50%, -50%) rotate(45deg)',
+              background: pack.brand.flagDiamond,
+              borderRadius: 32,
+            }}
+          />
+        ) : null}
         <div className="relative w-full max-w-[560px]">
           {nextHoliday ? (
             <aside className="l-float l-float--a" aria-label={t('flag.holidayLabel')}>
