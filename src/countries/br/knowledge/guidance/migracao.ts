@@ -16,15 +16,19 @@ export const MIGRACAO_GUIDANCE = `
 ### Pages to cite
 - Ministério da Justiça e Segurança Pública: https://www.gov.br/mj/pt-br
 - Ministério das Relações Exteriores: https://www.gov.br/mre/pt-br
+- Polícia Federal — Passaporte: https://www.gov.br/pf/pt-br/assuntos/passaporte
 - Casa Civil: https://www.gov.br/casacivil/pt-br
 - Serviços federais (passaporte, visto, residência): https://www.gov.br/pt-br/servicos
 
 ### Rules and context
 - O passaporte comum é brasileiro e é emitido pela Polícia Federal. Serviços no exterior são do Itamaraty.
+- A taxa comum do passaporte é R$ 257,25 por pessoa, paga por GRU no PagTesouro (PIX, cartão ou boleto) depois do formulário. Urgência ou emergência soma R$ 77,17 e totaliza R$ 334,42. Passaporte anterior válido perdido ou danificado sem crime soma R$ 257,25 e totaliza R$ 514,50. Valores verificados em 2026-10-02 na página oficial do serviço.
+- O fluxo é formulário, taxa, agendamento, atendimento presencial com biometria e retirada na mesma unidade. A entrega leva em geral de 6 a 10 dias úteis e o prazo máximo de retirada é 90 dias corridos.
 - Visto e residência no exterior mudam com a política de imigração do país de destino; sempre cite a data da fonte.
 
 ### Never say
 - Nunca peça passaporte, CPF ou dados de viagem.
+- Nunca cite valor de passaporte de memória: leia a seção Custos da página oficial do serviço com fetchOfficialPage.
 
 ### Common misconceptions
 - “Dá para renovar tudo online”: confirme na página oficial antes de afirmar que o atendimento é presencial.

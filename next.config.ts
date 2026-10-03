@@ -22,6 +22,15 @@ const countryAlias = {
 };
 
 /**
+ * The Workers runtime module. It exists only on Cloudflare Workers, so the Next.js build (Vercel, containers)
+ * aliases it to a stub with no bindings (src/lib/ai/off-workers-env.ts). The Workers build goes through
+ * vite.config.ts, which strips that alias again so the runtime resolves the module for real. Exported so the
+ * two files cannot drift on the specifier.
+ */
+export const WORKERS_RUNTIME_MODULE = 'cloudflare:workers';
+const workersRuntimeStub = path.resolve('./src/lib/ai/off-workers-env.ts');
+
+/**
  * Vercel BotID (invisible bot check on POST /api/chat, see src/lib/ai/bot-check.ts) exists only on Vercel.
  * Builds made there (`VERCEL=1`) get the browser challenge and its same-origin rewrites; every other build
  * (Docker, local) gets neither, and the server-side check is a no-op. `BOTID_MODE=off` removes it on Vercel too.
@@ -59,10 +68,10 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   devIndicators: false,
   env: { NEXT_PUBLIC_COUNTRY: COUNTRY, NEXT_PUBLIC_BOTID: BOTID ? '1' : '' },
-  turbopack: { resolveAlias: countryAlias },
+  turbopack: { resolveAlias: { ...countryAlias, [WORKERS_RUNTIME_MODULE]: workersRuntimeStub } },
   webpack(config) {
     const abs = Object.fromEntries(Object.entries(countryAlias).map(([k, v]) => [k, path.resolve(v)]));
-    config.resolve.alias = { ...config.resolve.alias, ...abs };
+    config.resolve.alias = { ...config.resolve.alias, ...abs, [WORKERS_RUNTIME_MODULE]: workersRuntimeStub };
     return config;
   },
   /**

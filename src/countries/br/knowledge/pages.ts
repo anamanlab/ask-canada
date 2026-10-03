@@ -44,27 +44,33 @@ export const PAGES: Page[] = [
     ministry: 'receita',
   },
   {
+    title: { pt: 'Inscrever Cidadão no Cadastro de Pessoas Físicas (CPF)', en: 'Register an individual for a CPF' },
+    url: 'https://www.gov.br/pt-br/servicos/inscrever-no-cpf',
+    keywords: ['cpf', 'inscrever no cpf', 'inscrição no cpf', 'tirar cpf', 'fazer cpf', 'emitir cpf', 'cpf registration'],
+    ministry: 'receita',
+  },
+  {
     title: { pt: 'Ministério da Saúde', en: 'Ministry of Health' },
     url: 'https://www.gov.br/saude/pt-br',
-    keywords: ['saude', 'ministerio da saude', 'sus', 'vacinacao', 'plano de saude', 'medicamento'],
+    keywords: ['saude', 'ministerio da saude', 'sus', 'vacinacao', 'plano de saude', 'medicamento', 'doacao de orgaos'],
     ministry: 'saude',
   },
   {
     title: { pt: 'Ministério do Desenvolvimento e Assistência Social', en: 'Ministry of Social Development' },
     url: 'https://www.gov.br/mds/pt-br',
-    keywords: ['bolsa familia', 'cadunico', 'cadastro unico', 'auxilio', 'cras', 'assistencia social', 'beneficio social'],
+    keywords: ['bolsa familia', 'auxilio brasil', 'bpc', 'bpc idoso', 'bpc deficiente', 'cadunico', 'cadastro unico', 'auxilio', 'cras', 'assistencia social', 'beneficio social'],
     ministry: 'familia',
   },
   {
     title: { pt: 'Ministério do Trabalho e Emprego', en: 'Ministry of Labour and Employment' },
     url: 'https://www.gov.br/trabalho-e-emprego/pt-br',
-    keywords: ['trabalho', 'emprego', 'carteira de trabalho', 'ctps', 'fgts', 'decimo terceiro', 'ferias'],
+    keywords: ['trabalho', 'emprego', 'carteira de trabalho', 'ctps', 'fgts', 'decimo terceiro', 'salario', 'ferias'],
     ministry: 'trabalho',
   },
   {
     title: { pt: 'Ministério da Educação', en: 'Ministry of Education' },
     url: 'https://www.gov.br/mec/pt-br',
-    keywords: ['educacao', 'ensino', 'escola', 'universidade', 'fies', 'prouni', 'enem'],
+    keywords: ['educacao', 'ensino', 'escola', 'transferencia de escola', 'universidade', 'fies', 'prouni', 'enem'],
     ministry: 'educacao',
   },
   {
@@ -76,7 +82,7 @@ export const PAGES: Page[] = [
   {
     title: { pt: 'Ministério de Minas e Energia', en: 'Ministry of Mines and Energy' },
     url: 'https://www.gov.br/mme/pt-br',
-    keywords: ['energia', 'energia eletrica', 'conta de luz', 'aneel', 'tarifa', 'petrobras'],
+    keywords: ['energia', 'energia eletrica', 'conta de luz', 'aneel', 'tarifa', 'bandeira', 'solar', 'petrobras'],
     ministry: 'energia',
   },
   {
@@ -88,13 +94,19 @@ export const PAGES: Page[] = [
   {
     title: { pt: 'Ministério da Justiça e Segurança Pública', en: 'Ministry of Justice and Public Security' },
     url: 'https://www.gov.br/mj/pt-br',
-    keywords: ['justica', 'policia federal', 'passaporte', 'visto', 'imigracao', 'defensoria'],
+    keywords: ['justica', 'policia federal', 'visto', 'imigracao', 'defensoria'],
+    ministry: 'migracao',
+  },
+  {
+    title: { pt: 'Obter passaporte — Portal de Serviços', en: 'Get a passport — Services Portal' },
+    url: 'https://www.gov.br/pt-br/servicos/obter-passaporte-comum-para-brasileiro',
+    keywords: ['passaporte', 'obter passaporte', 'tirar passaporte', 'renovar passaporte', 'valor do passaporte', 'taxa do passaporte', 'quanto custa o passaporte', 'gru', 'pagtesouro', 'policia federal', 'agendamento', '6 a 10 dias uteis', 'passaporte perdido', 'passaporte danificado'],
     ministry: 'migracao',
   },
   {
     title: { pt: 'Ministério das Relações Exteriores', en: 'Ministry of Foreign Affairs' },
     url: 'https://www.gov.br/mre/pt-br',
-    keywords: ['itamaraty', 'relações exteriores', 'visto', 'consulado', 'embaixada', 'passaporte no exterior'],
+    keywords: ['itamaraty', 'relações exteriores', 'visto', 'visto de turista', 'visto de estudo', 'visto de trabalho', 'consulado', 'embaixada', 'passaporte no exterior', 'seguro viagem', 'moeda estrangeira'],
     ministry: 'migracao',
   },
   {
@@ -124,7 +136,7 @@ export const PAGES: Page[] = [
   {
     title: { pt: 'Tribunal Superior Eleitoral (TSE)', en: 'Superior Electoral Court' },
     url: 'https://www.tse.jus.br',
-    keywords: ['tse', 'eleicao', 'eleitoral', 'voto', 'candidata', 'titulo de eleitor'],
+    keywords: ['tse', 'eleicao', 'eleitoral', 'voto', 'candidata', 'titulo de eleitor', 'justificativa de voto'],
     ministry: 'congresso',
   },
   {

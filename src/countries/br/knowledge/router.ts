@@ -40,7 +40,7 @@ const RULES: [string, RegExp][] = [
   ['energia', /\b(energia|eletrica|eletro|conta de luz|luz|aneel|bandeira tarifaria|tarifa|reajuste|kwh|energia solar|solar|gerador)\b/i],
   ['meioambiente', /\b(meio ambiente|ambiental|licenca|licenciamento|ibama|icmbio|preservacao permanente|app|agua|agencia nacional de aguas|ana|desmatamento|poluicao)\b/i],
   ['justica', /\b(justica|processo|processual|audiencia|intimacao|cartorio|notario|registro civil|casamento|nascimento|obito|defensoria|advogado|juizado|stj|stf|tst|cnj|divorcio)\b/i],
-  ['numeros', /\b(selic|ipca|inflacao|cambio|dolar|moeda|taxa|indicador|pib|economia|ibge|bco central|banco central|cdi)\b/i],
+  ['numeros', /\b(selic|ipca|inflacao|cambio|dolar|moeda|taxa (selic|de juros|do banco central)|indicador|pib|economia|ibge|bco central|banco central|cdi)\b/i],
   ['congresso', /\b(congresso|camara|senado|deputado|senador|proposicao|projeto de lei|pl\b|pec\b|votacao|votou|lei nova|legislacao)\b/i],
 ];
 
@@ -84,6 +84,11 @@ const SOURCE_ROUTES: [string, string, RegExp][] = [
     'servicoDetalhe',
     'the full official record for one federal service — its stages, audience, time, and links',
     /\b(etapas?|passo a passo|quanto tempo|quem pode|o que (preciso|e preciso|necessito)|quais documentos|what are the steps|how long does it take|who can apply|what documents)\b/,
+  ],
+  [
+    'servicoDetalhe',
+    'the official service record plus the fee on its official page — identify the service, then read the fee with fetchOfficialPage',
+    /\b(quanto custa|qual (e |eh |é )?(o )?valor|que valor|qual (e |eh |é )?a taxa|quanto e|preco|precos|custo|custa|taxa|gru|pagtesouro|boleto|how much (does|is)|what (is|are) the (fee|fees|cost|price))\b/,
   ],
   [
     'camaraDeputado',

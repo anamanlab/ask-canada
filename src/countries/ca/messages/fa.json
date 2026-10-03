@@ -60,6 +60,8 @@
   "showcase.passport.mailSub": "فرم کاغذی",
   "showcase.passport.fee": "۱۰ سال · ۵ سال",
   "showcase.passport.feeShort": "هزینه · ۱۰ سال",
+  "showcase.passport.feeValue": "۱۶۳٫۵۰ دلار کانادا · ۱۲۲٫۵۰ دلار کانادا",
+  "showcase.passport.feeValueShort": "۱۶۳٫۵۰ دلار کانادا",
   "showcase.passport.processing": "آنلاین",
   "showcase.passport.processingValue": "۲۰ روز کاری + ارسال پستی",
   "showcase.passport.processingValueShort": "۲۰ روز کاری + پست",

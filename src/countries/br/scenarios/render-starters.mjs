@@ -96,6 +96,11 @@ for (const [id, spec] of entries) {
       for (const marker of GARBLE) if (s.includes(marker)) fail(`${id}.${field}.${lang}: garbled prose "${marker}"`);
     }
   }
+  // Optional per-starter checked date; falls back to global CHECKED.
+  const starterChecked = spec.checked ?? CHECKED;
+  if (starterChecked && !/^\d{4}-\d{2}-\d{2}$/.test(starterChecked)) {
+    fail(`${id}.checked: must be YYYY-MM-DD`);
+  }
   if (spec.note) {
     for (const lang of ['pt', 'en']) {
       if (typeof spec.note[lang] !== 'string' || !spec.note[lang]?.trim()) {
@@ -152,6 +157,7 @@ const STARTERS = ${JSON.stringify(
     reply: { pt: assemble(spec, 'pt'), en: assemble(spec, 'en') },
     followUps: spec.followUps,
     exclude: (spec.exclude ?? []).map(collapseNestedClasses),
+    checked: (spec.checked ?? CHECKED),
   })),
   null,
   2,
@@ -165,7 +171,7 @@ const scenarios: Scenario[] = STARTERS.map((s) => ({
   match: s.match.map((pattern) => new RegExp(pattern, 'i')),
   exclude: s.exclude.map((pattern) => new RegExp(pattern, 'i')),
   reply: s.reply,
-  checked: CHECKED,
+  checked: s.checked,
   followUps: s.followUps,
 }));
 

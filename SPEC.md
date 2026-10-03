@@ -35,7 +35,8 @@
   makes no administrative decisions; `docs/ACCESSIBILITY.md` conformance notes.
 
 - Deployable on GC infrastructure, not just Vercel: provider-agnostic model config in `src/lib/ai/model.ts`
-  (`AI_PROVIDER=anthropic|gateway|azure|bedrock` via the matching `@ai-sdk/*` providers, lazy-imported), a
+  (`AI_PROVIDER=anthropic|google|gateway|azure|bedrock|workers-ai` via the matching `@ai-sdk/*` providers,
+  lazy-imported), a
   production `Dockerfile` (Next standalone output) + `docs/DEPLOY.md` covering Vercel, AWS (ECS/Lambda) and
   Azure, and rate-limit storage behind an interface (memory / Redis) so no Vercel-only service is required.
 

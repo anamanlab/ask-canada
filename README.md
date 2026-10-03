@@ -33,9 +33,11 @@ Checks: `pnpm typecheck`, `pnpm lint`, `pnpm check:i18n` (EN/FR parity), screens
 
 | Variable | Purpose |
 | --- | --- |
-| `AI_PROVIDER` | `anthropic` \| `gateway` \| `azure` \| `bedrock` (default: `anthropic` when `ANTHROPIC_API_KEY` is set, else `gateway`). |
+| `AI_PROVIDER` | `anthropic` \| `google` \| `gateway` \| `azure` \| `bedrock` \| `workers-ai` (default: `anthropic` when `ANTHROPIC_API_KEY` is set, then `google` when `GEMINI_API_KEY` is set, else `gateway`). |
 | `ANTHROPIC_API_KEY` | Anthropic directly (`claude-sonnet-5-5`); also enables Anthropic web search restricted to official domains. |
+| `GEMINI_API_KEY` | Google Gemini directly (`gemini-3.8-flash`); native Google Search grounding is opt-in. |
 | *(none)* | Vercel AI Gateway (`anthropic/claude-sonnet-5.5`) via OIDC (`vercel env pull`). |
+| *(none)* | Cloudflare Workers AI (`@cf/zai-org/glm-4.7-flash`) through the `AI` binding: no model key, billed on the account's neuron allowance (10,000 neurons/day free). Cloudflare Workers only. |
 | `AI_MODEL` | Model id / Azure deployment / Bedrock model id. |
 | `AZURE_RESOURCE_NAME`, `AZURE_API_KEY`, `AZURE_BASE_URL` | Azure OpenAI / AI Foundry. |
 | `AWS_REGION` (+ AWS credentials) | Amazon Bedrock. |

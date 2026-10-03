@@ -96,6 +96,14 @@ export type CountryPack = {
      * unset and the band renders plain. Decorative only, never content.
      */
     flagDiamond?: string;
+  /** Currency symbol (e.g. 'R$ ', '$ ') used in the system prompt for example fees. */
+  currencySymbol?: string;
+  /** Example fee amount as a string (e.g. '257,25') used in the system prompt. */
+  exampleFee?: string;
+  /** Three-letter ISO currency code (e.g. 'BRL', 'CAD'). */
+  currency?: string;
+  /** Official home page URL (English) for citation examples. */
+  officialHomeUrl?: string;
   };
   emergency: {
     /** Police, fire, ambulance. */

@@ -59,6 +59,8 @@
   "showcase.passport.mailSub": "Formulaire",
   "showcase.passport.fee": "10 ans · 5 ans",
   "showcase.passport.feeShort": "Frais · 10 ans",
+  "showcase.passport.feeValue": "163,50 $ · 122,50 $",
+  "showcase.passport.feeValueShort": "163,50 $",
   "showcase.passport.processing": "En ligne",
   "showcase.passport.processingValue": "20 jours ouvrables + poste",
   "showcase.passport.processingValueShort": "20 j. ouvr. + poste",

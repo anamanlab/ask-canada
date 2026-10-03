@@ -327,7 +327,9 @@ export async function POST(req: Request) {
       turn.set({ model: id });
       const force = Boolean(answerLocale) || (!pack.locales.official.includes(locale) && target === locale);
       const grounding = await groundingForTurn(asked);
-      // With Anthropic, add its native web search restricted to official domains.
+      // With Anthropic, add native web search restricted to official domains.
+      // Google's native grounding cannot be domain-restricted and is off in prod (GEMINI_SEARCH_GROUNDING=0).
+      // The `searchOfficialSources` tool already has an allowlisted DuckDuckGo fallback.
       const runTools: ToolSet =
         provider === 'anthropic' && LIMITS.webSearchMaxUses > 0
           ? {
@@ -351,7 +353,13 @@ export async function POST(req: Request) {
           steps.push(step);
           const cost =
             reportedCostUsd(step.providerMetadata) ??
-            estimateCostUsd(id, step.usage, step.toolCalls.filter((call) => call.toolName === 'web_search').length);
+            estimateCostUsd(
+              id,
+              step.usage,
+              // `google_search` is Gemini's grounding; charged at the same per-search rate until
+              // its own price is confirmed, so the breaker errs early rather than late.
+              step.toolCalls.filter((call) => call.toolName === 'web_search' || call.toolName === 'google_search').length,
+            );
           turn.step(step.usage, cost);
           return guard.record(cost);
         },

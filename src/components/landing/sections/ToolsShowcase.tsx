@@ -94,16 +94,15 @@ export async function ToolsShowcase() {
                   <small>{t('showcase.passport.mailSub')}</small>
                 </span>
               </div>
-              {/* Narrow cards (phones) show the 10-year fee only, so labels and values never break mid-figure. */}
+              {/* The fee figures are the pack's: Canada reads "$163.50 · $122.50",
+                  Brazil "R$ 257,25". Never hardcode a country's money in core. */}
               <div className="l-rowline l-wide">
                 <span>{t('showcase.passport.fee')}</span>
-                <b>
-                  {fmt.currency(163.5, { minimumFractionDigits: 2 })} · {fmt.currency(122.5, { minimumFractionDigits: 2 })}
-                </b>
+                <b>{t('showcase.passport.feeValue')}</b>
               </div>
               <div className="l-rowline l-narrow">
                 <span>{t('showcase.passport.feeShort')}</span>
-                <b>{fmt.currency(163.5, { minimumFractionDigits: 2 })}</b>
+                <b>{t('showcase.passport.feeValueShort')}</b>
               </div>
               <div className="l-rowline">
                 <span>{t('showcase.passport.processing')}</span>

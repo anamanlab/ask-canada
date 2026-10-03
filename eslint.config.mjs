@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     "vendor/**",
     "design/**",
+    // Build output and generated types from the Cloudflare Workers (vinext) build.
+    ".cloudflare/**",
   ]),
   // Raw <img> where next/image doesn't apply: data-URL previews of what the person attached, map tiles
   // (hundreds of tiny third-party images positioned by hand, hidden when one fails to load) and the landing's

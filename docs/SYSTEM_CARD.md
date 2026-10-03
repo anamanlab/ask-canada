@@ -20,7 +20,7 @@ submits applications or takes payments. Those steps are handed off to official s
 | Component | Detail |
 | --- | --- |
 | UI | Next.js 16 / React 19, streamed answers (AI SDK v7 UI message stream), widgets rendered from tool calls |
-| Model | Provider-agnostic (`AI_PROVIDER`: Anthropic, Vercel AI Gateway, Azure, Bedrock); default Claude Sonnet |
+| Model | Provider-agnostic (`AI_PROVIDER`: Anthropic, Google Gemini, Vercel AI Gateway, Azure, Bedrock, Cloudflare Workers AI); default Claude Sonnet |
 | Tools | Pack widget tools (e.g. `passportPlanner`), `officialGuidance` (CDS department guidance), `fetchOfficialPage`, `searchOfficialSources`, `suggestFollowUps` |
 | Grounding | System prompt + routed department guidance from CDS AI Answers + fetched official pages |
 | Fallback | Deterministic scripted engine (same tools) when no model is configured or the model fails |

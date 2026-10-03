@@ -114,16 +114,17 @@ export async function fetchOfficialPage(url: string, signal?: AbortSignal) {
  * Portable search: first the pack's offline index of curated official pages (private, deterministic),
  * then — only if SEARCH_FALLBACK=duckduckgo — a site-restricted web search.
  */
-export async function searchOfficial(query: string, lang: 'en' | 'fr' = 'en') {
-  const local = await searchLocalSources(query, lang).catch(() => []);
+export async function searchOfficial(query: string, lang: string = 'en') {
+  const local = await searchLocalSources(query, lang as 'en' | 'fr').catch(() => []);
   if (local.length || process.env.SEARCH_FALLBACK !== 'duckduckgo') {
     return { results: local, note: local.length ? undefined : 'No curated page matched. Try fetchOfficialPage on the official page you know.' };
   }
-  const domains = pack.sources.allowlist.slice(0, 6);
+  const domains = pack.sources.allowlist;
   const q = `${query} ${domains.map((d) => `site:${d}`).join(' OR ')}`;
+  const kl = lang === 'fr' ? 'ca-fr' : lang === 'pt' ? 'br-pt' : lang === 'es' ? 'es-es' : 'ca-en';
   return cached(`search:${lang}:${q}`, async () => {
     try {
-      const res = await fetch(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(q)}&kl=${lang === 'fr' ? 'ca-fr' : 'ca-en'}`, {
+      const res = await fetch(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(q)}&kl=${kl}`, {
         headers: { 'user-agent': `Mozilla/5.0 (compatible; ${BOT})` },
         signal: AbortSignal.timeout(6000),
       });
@@ -157,7 +158,7 @@ export const officialSourceTools = {
       'Search official government websites only. Returns up to 6 results (title, url, snippet). Use it to find the right official page when you are not sure of the URL, then fetch it with fetchOfficialPage.',
     inputSchema: z.object({
       query: z.string().min(2).max(160).describe('What to look for, in plain words (no personal details).'),
-      lang: z.enum(['en', 'fr']).optional(),
+      lang: z.enum(['en', 'fr', 'pt', 'es']).optional(),
     }),
     execute: async ({ query, lang }) => searchOfficial(query, lang),
   }),

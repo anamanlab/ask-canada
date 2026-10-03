@@ -54,7 +54,7 @@ export const pack: ClientPack = {
   sources: {
     allowlist: [
       'gov.br',
-      'su-gov.br',
+      'sougov.br',
       'jus.br',
       'bcb.gov.br',
       'ibge.gov.br',

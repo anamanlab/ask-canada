@@ -24,8 +24,8 @@ const STARTERS = [
       "(wh[oòóôõö] q[uùúûü][aàáâãä]l[iìíîï]f[iìíîï][eèéêë]s|wh[oòóôõö] [cç][aàáâãä][nñ] g[eèéêë]t|h[oòóôõö]w d[oòóôõö] [iìíîï] g[eèéêë]t).*(bp[cç]|l[oòóôõö]w [iìíîï][nñ][cç][oòóôõö]m[eèéêë])"
     ],
     "reply": {
-      "pt": "# O BPC é para quem tem 60 anos ou mais, ou uma deficiência, e não consegue se sustentar sozinho.\n\nSão três condições: idade de 60 anos ou mais (qualquer idade no caso de deficiência), renda mensal por pessoa da família de até 1 salário mínimo, e não receber já um benefício de valor igual ou maior, como aposentadoria ou pensão. O BPC não é aposentadoria: é vitalício e não aumenta com contribuições.\n\nA renda e o CadÚnico são conferidos no CRAS da sua cidade.\n\n[1](https://www.gov.br/mds/pt-br)",
-      "en": "# The BPC is for people aged 60 or over, or with a disability, who cannot support themselves.\n\nThere are three conditions: being 60 or over (any age for a disability), a household income of up to one minimum wage per person, and not already receiving a benefit of equal or greater value, such as a pension. The BPC is not a pension: it lasts for life and does not rise with contributions.\n\nIncome and the CadÚnico record are checked at your city's CRAS.\n\n[1](https://www.gov.br/mds/pt-br)"
+      "pt": "# O BPC é para quem tem 65 anos ou mais, ou uma deficiência, e não consegue se sustentar sozinho.\n\nSão três condições: idade de 65 anos ou mais (qualquer idade no caso de deficiência), renda mensal por pessoa da família de até ¼ de salário mínimo, e não receber já um benefício de valor igual ou maior, como aposentadoria ou pensão. O BPC não é aposentadoria: passa por revisão periódica e não aumenta com contribuições.\n\nA renda e o CadÚnico são conferidos no CRAS da sua cidade. O benefício é revisto a cada dois anos.\n\n[1](https://www.gov.br/mds/pt-br)",
+      "en": "# The BPC is for people aged 65 or over, or with a disability, who cannot support themselves.\n\nThere are three conditions: being 65 or over (any age for a disability), a household income of up to one-quarter of the minimum wage per person, and not already receiving a benefit of equal or greater value, such as a pension. The BPC is not a pension: it undergoes periodic review and does not rise with contributions.\n\nIncome and the CadÚnico record are checked at your city's CRAS. The benefit is reviewed every two years.\n\n[1](https://www.gov.br/mds/pt-br)"
     },
     "followUps": {
       "pt": [
@@ -37,7 +37,8 @@ const STARTERS = [
         "Does the BPC count as a pension?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "benefits-cadunico",
@@ -48,8 +49,8 @@ const STARTERS = [
       "bolsa fam"
     ],
     "reply": {
-      "pt": "# O CadÚnico é o cadastro que abre a porta dos benefícios sociais, e ele é feito no CRAS.\n\nVocê se cadastra na prefeitura ou no CRAS do seu município, com os documentos de quem mora com você. É esse cadastro que define o acesso ao Bolsa Família, ao BPC, ao Auxílio Brasil e a outros programas. Ele não se atualiza sozinho: a família é reconferida periodicamente.\n\n[1](https://www.gov.br/mds/pt-br)",
-      "en": "# The CadÚnico is the register that opens the door to social benefits, and it is done at the CRAS.\n\nYou register at city hall or at your municipality's CRAS, with the documents of everyone you live with. That register is what decides access to Bolsa Família, the BPC, Auxílio Brasil and other programmes. It does not update itself: the household is re-checked periodically.\n\n[1](https://www.gov.br/mds/pt-br)"
+      "pt": "# O CadÚnico é o cadastro que abre a porta dos benefícios sociais, e ele é feito no CRAS.\n\nVocê se cadastra na prefeitura ou no CRAS do seu município, com os documentos de quem mora com você. É esse cadastro que define o acesso ao Bolsa Família, ao BPC, ao Auxílio Brasil e a outros programas. Ele não se atualiza sozinho: a família é reconferida periodicamente.\n\nBolsa Família: para famílias com renda per capita até R$ 218, com prioridade para quem tem crianças, adolescentes, gestantes ou nutrizes. O benefício médio varia por composição familiar; consulte o CRAS para o valor exato do seu caso.\n\n[1](https://www.gov.br/mds/pt-br)",
+      "en": "# The CadÚnico is the register that opens the door to social benefits, and it is done at the CRAS.\n\nYou register at city hall or at your municipality's CRAS, with the documents of everyone you live with. That register is what decides access to Bolsa Família, the BPC, Auxílio Brasil and other programmes. It does not update itself: the household is re-checked periodically.\n\nBolsa Família: for households with per-capita income up to R$ 218, prioritising those with children, adolescents, pregnant or nursing women. The average benefit varies by family composition; check with your CRAS for the exact amount for your case.\n\n[1](https://www.gov.br/mds/pt-br)"
     },
     "followUps": {
       "pt": [
@@ -61,7 +62,8 @@ const STARTERS = [
         "Does the BPC require the CadÚnico?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "taxes-irpf",
@@ -85,14 +87,15 @@ const STARTERS = [
         "What is the simplified return?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "retirement-meuinss",
     "match": [
       "\\binss\\b|meu inss|aposentadoria|aposent|rgps|cnis",
       "(m[eèéêë][uùúûü] [iìíîï][nñ]ss|[aàáâãä]pply f[oòóôõö]r [aàáâãä] b[eèéêë][nñ][eèéêë]f[iìíîï]t|r[eèéêë]t[iìíîï]r[eèéêë]m[eèéêë][nñ]t b[eèéêë][nñ][eèéêë]f[iìíîï]t)",
-      "conta gov\\.br|gov\\.br|[níi]vel (prata|ouro|b[áa]sico)",
+      "conta gov\\.br|[níi]vel (prata|ouro|b[áa]sico)",
       "gov\\.br account|account level"
     ],
     "reply": {
@@ -111,18 +114,17 @@ const STARTERS = [
     },
     "exclude": [
       "perdi o (emprego|trabalho)|fui demitid|desempreg|seguro.?desemprego",
-      "(i lost my job|lay(ed)? off|unemploy)",
-      "como consultar um servi[çc]o|encontrar um servi[çc]o|buscar um servi[çc]o|procurar um servi[çc]o|consultar .* no gov\.br",
-      "how (do|can) i (find|look up|consult) a service"
-    ]
+      "(i lost my job|lay(ed)? off|unemploy)"
+    ],
+    "checked": "2026-10-02"
   },
   {
     "id": "health-sus",
     "match": [
       "\\bs[uùúûü]s\\b|\\b[uùúûü]bs\\b|\\b[uùúûü]p[aàáâãä]\\b|pl[aàáâãä][nñ][oòóôõö] d[eèéêë] s[aàáâãä][uùúûü]d[eèéêë]",
       "(h[oòóôõö]w d[oòóôõö][eèéêë]s th[eèéêë] s[uùúûü]s|h[eèéêë][aàáâãä]lth [uùúûü][nñ][iìíîï]t|\\bs[uùúûü]s\\b)",
-      "agenda(r|es)?|consulta|cart[ãa]o de vacina|vacina[çc][ãa]o",
-      "appointment|vaccinat|health unit"
+      "agend\\w* (de )?(consulta|atendiment[oó])|consulta|cart[ãa]o de vacina|vacina[çc][ãa]o|vacino|vacinar",
+      "health appointment|vaccinat|health unit|appointment (at|in|for) (a |the )?(health|hospital|clinic|ubs)"
     ],
     "reply": {
       "pt": "# O SUS é federal nas regras, mas quem atende você é a prefeitura ou o estado.\n\nUBS, UPA e hospital são oferta municipal ou estadual. A pasta federal define as regras, a cobertura e o financiamento; quem marca consulta e faz o atendimento é o município. Por isso \"como funciona o SUS na minha cidade\" tem de ser respondido pela secretaria de saúde do seu estado, não pelo Ministério da Saúde.\n\n[1](https://www.gov.br/saude/pt-br)",
@@ -134,11 +136,12 @@ const STARTERS = [
         "Onde vejo meu cartão de vacinação?"
       ],
       "en": [
-        "How do I book an appointment?",
+        "How do I book a health appointment?",
         "Where do I see my vaccination record?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "education-fies",
@@ -162,7 +165,8 @@ const STARTERS = [
         "Is municipal education federal?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "work-unemployment",
@@ -184,7 +188,8 @@ const STARTERS = [
         "Who qualifies for unemployment insurance?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "business-mei",
@@ -208,7 +213,8 @@ const STARTERS = [
         "How do I look up a CNPJ?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "documents-certidao",
@@ -219,8 +225,8 @@ const STARTERS = [
       "second (copy|issue)|cpf copy|work certificate"
     ],
     "reply": {
-      "pt": "# Certidão de nascimento, casamento e óbito saem no cartório do seu município, não em gov.br.\n\nA certidão de nascimento é emitida pelo Registro Civil das Pessoas Naturais da cidade onde você nasceu, e muitos cartórios já oferecem atendimento on-line ou por aplicativo. Documentos federais — CPF, certidões da Receita — ficam em órgãos federais, e são outra coisa. Me diga qual documento você precisa que eu digo onde ele sai.\n\n[1](https://www.gov.br/pt-br/servicos)",
-      "en": "# Birth, marriage and death certificates come from your municipality's registry, not from gov.br.\n\nA birth certificate is issued by the Civil Registry of the city where you were born, and many registries now offer online service or an app. Federal documents — your CPF, Receita certificates — sit with federal bodies, and are a different thing. Tell me which document you need and I will say where it comes from.\n\n[1](https://www.gov.br/pt-br/servicos)"
+      "pt": "# Certidão de nascimento, casamento e óbito saem no cartório do seu município, não em gov.br.\n\nA certidão de nascimento é emitida pelo Registro Civil das Pessoas Naturais da cidade onde você nasceu, e muitos cartórios já oferecem atendimento on-line ou por aplicativo. Documentos federais — CPF, certidões da Receita — ficam em órgãos federais, e são outra coisa. Me diga qual documento você precisa que eu digo onde ele sai.\n\nSegunda via do CPF: emitida pela Receita Federal, pode ser solicitada on-line no serviço \"Obter Cartão de CPF\" (https://www.gov.br/pt-br/servicos/obter-cartao-de-cpf) ou nas unidades de atendimento. É gratuita e sai na hora na maioria dos casos.\n\n[1](https://www.gov.br/pt-br/servicos)",
+      "en": "# Birth, marriage and death certificates come from your municipality's registry, not from gov.br.\n\nA birth certificate is issued by the Civil Registry of the city where you were born, and many registries now offer online service or an app. Federal documents — your CPF, Receita certificates — sit with federal bodies, and are a different thing. Tell me which document you need and I will say where it comes from.\n\nSecond CPF copy: issued by the Federal Revenue, requestable online via the \"Obter Cartão de CPF\" service (https://www.gov.br/pt-br/servicos/obter-cartao-de-cpf) or at service units. Free and usually issued on the spot.\n\n[1](https://www.gov.br/pt-br/servicos)"
     },
     "followUps": {
       "pt": [
@@ -235,7 +241,8 @@ const STARTERS = [
     "exclude": [
       "casamento civil|registro civil|no nascimento do|onde registro",
       "civil marriage|register a birth|register the birth"
-    ]
+    ],
+    "checked": "2026-10-02"
   },
   {
     "id": "family-marriage",
@@ -259,15 +266,16 @@ const STARTERS = [
         "Where do I register a birth?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "housing-housing",
     "match": [
       "m[iìíîï][nñ]h[aàáâãä] [cç][aàáâãä]s[aàáâãä] m[iìíîï][nñ]h[aàáâãä] v[iìíîï]d[aàáâãä]|h[aàáâãä]b[iìíîï]t[aàáâãä][cç][aàáâãä][oòóôõö]|[aàáâãä]l[uùúûü]g[uùúûü][eèéêë]l s[oòóôõö][cç][iìíîï][aàáâãä]l|[cç]r[eèéêë]d[iìíîï]t[oòóôõö] h[aàáâãä]b[iìíîï]t[aàáâãä][cç][iìíîï][oòóôõö][nñ][aàáâãä]l",
       "(my h[oòóôõö]m[eèéêë] my l[iìíîï]f[eèéêë]|s[oòóôõö][cç][iìíîï][aàáâãä]l h[oòóôõö][uùúûü]s[iìíîï][nñ]g|h[oòóôõö][uùúûü]s[iìíîï][nñ]g [cç]r[eèéêë]d[iìíîï]t)",
-      "inscri[çc][ãa]o|como (me )?inscrevo|onde (fa[çc]o a )?inscri",
-      "apply|sign up|where do I apply"
+      "inscri[çc][ãa]o.{0,60}(m[iìíîï][nñ]h[aàáâãä] [cç][aàáâãä]s[aàáâãä]|h[aàáâãä]b[iìíîï]t[aàáâãä][cç]|a[làáâãä]l[uùúûü]g[uùúûü][eèéêë]l)|(m[iìíîï][nñ]h[aàáâãä] [cç][aàáâãä]s[aàáâãä]|h[aàáâãä]b[iìíîï]t[aàáâãä][cç]|a[làáâãä]l[uùúûü]g[uùúûü][eèéêë]l).{0,60}inscri[çc][ãa]o",
+      "(my h[oòóôõö]m[eèéêë] my l[iìíîï]f[eèéêë]|s[oòóôõö][cç][iìíîï][aàáâãä]l h[oòóôõö]uùúûü]s[iìíîï][nñ]g|h[oòóôõö]uùúûü]s[iìíîï][nñ]g [cç]r[eèéêë]d[iìíîï]t).{0,40}(apply|sign up)|(apply|sign up) (for|to) (my h[oòóôõö]m[eèéêë] my l[iìíîï]f[eèéêë]|s[oòóôõö][cç][iìíîï][aàáâãä]l h[oòóôõö]uùúûü]s[iìíîï][nñ]g|h[oòóôõö]uùúûü]s[iìíîï][nñ]g [cç]r[eèéêë]d[iìíîï]t)|where do i apply (for )?(my h[oòóôõö]m[eèéêë] my l[iìíîï]f[eèéêë]|s[oòóôõö][cç][iìíîï][aàáâãä]l h[oòóôõö]uùúûü]s[iìíîï][nñ]g|h[oòóôõö]uùúûü]s[iìíîï][nñ]g [cç]r[eèéêë]d[iìíîï]t)"
     ],
     "reply": {
       "pt": "# Minha Casa, Minha Vida é federal no financiamento, mas a seleção é da prefeitura ou do estado.\n\nO governo federal financia e subsidia; o município faz a seleção e assina o contrato com quem foi escolhido. Isso quer dizer que as regras — renda, tempo de moradia, não ter outro imóvel — são aplicadas localmente, e o programa tem várias linhas, com regras diferentes. Diga onde você mora que eu aponto a prefeitura responsável.\n\n[1](https://www.gov.br/pt-br/servicos)",
@@ -275,27 +283,28 @@ const STARTERS = [
     },
     "followUps": {
       "pt": [
-        "Onde faço a inscrição?",
+        "Onde faço a inscrição da Minha Casa Minha Vida?",
         "Quem tem direito ao aluguel social?"
       ],
       "en": [
-        "Where do I apply?",
+        "Where do I apply for social housing?",
         "Who qualifies for social housing?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "passports-passport",
     "match": [
       "p[aàáâãä]ss[aàáâãä]p[oòóôõö]rt[eèéêë]",
       "(p[aàáâãä]ssp[oòóôõö]rt|f[iìíîï]rst p[aàáâãä]ssp[oòóôõö]rt)",
-      "agend|policia federal",
-      "book|appointment|federal police"
+      "p[oòóôõö]l[iìíîï][cç][iìíîï][aàáâãä] f[eèéêë]d[eèéêë]r[aàáâãä]l|agend\\w* (na |no |de |da |do )?(p[oòóôõö]l[iìíîï][cç][iìíîï][aàáâãä] f[eèéêë]d[eèéêë]r[aàáâãä]l|passaporte)|(p[oòóôõö]l[iìíîï][cç][iìíîï][aàáâãä] f[eèéêë]d[eèéêë]r[aàáâãä]l|passaporte).{0,40}agend\\w*",
+      "federal police|book (an? )?appointment (at|in|for)|passport appointment"
     ],
     "reply": {
-      "pt": "# O passaporte comum é emitido pela Polícia Federal e hoje ainda exige comparecimento presencial.\n\nVocê inicia o pedido no site da Polícia Federal, mas retira o documento numa unidade da PF, mediante agendamento. Leve documento de identidade com foto, CPF e a certidão de nascimento ou casamento. Este serviço não pede o número do seu passaporte nem o seu CPF — a emissão acontece lá.\n\n[1](https://www.gov.br/mj/pt-br)",
-      "en": "# A Brazilian passport is issued by the Federal Police and today still requires you to turn up in person.\n\nYou start the request on the Federal Police site, but you collect the document at a PF unit, by appointment. Bring photo ID, your CPF and your birth or marriage certificate. This service never asks for your passport number or your CPF — that happens there.\n\n[1](https://www.gov.br/mj/pt-br)"
+      "pt": "# O passaporte comum custa R$ 257,25 e é emitido pela Polícia Federal, com atendimento presencial.\n\nA taxa comum é R$ 257,25 por pessoa, paga por GRU no PagTesouro (PIX, cartão ou boleto) depois do formulário. Urgência ou emergência soma R$ 77,17 e totaliza R$ 334,42. Passaporte anterior válido perdido ou danificado sem crime soma R$ 257,25 e totaliza R$ 514,50.\n\nO pedido começa no site da Polícia Federal e termina na mesma unidade da PF, com agendamento: documento de identidade com foto e CPF, e a entrega leva em geral de 6 a 10 dias úteis. Este serviço nunca pede seu CPF ou senha.\n\n[1](https://www.gov.br/pt-br/servicos/obter-passaporte-comum-para-brasileiro)",
+      "en": "# A common passport costs R$ 257.25 and is issued by the Federal Police, with an in-person appointment.\n\nThe common fee is R$ 257.25 per person, paid by GRU on PagTesouro (PIX, card or boleto) after the form. Urgency or emergency adds R$ 77.17 for a total of R$ 334.42. A prior valid passport lost or damaged without a crime adds R$ 257.25 for a total of R$ 514.50.\n\nThe request starts on the Federal Police site and ends at the same PF unit, by appointment: photo ID and CPF, and delivery usually takes 6 to 10 business days. This service never asks for your CPF or password.\n\n[1](https://www.gov.br/pt-br/servicos/obter-passaporte-comum-para-brasileiro)"
     },
     "followUps": {
       "pt": [
@@ -310,7 +319,8 @@ const STARTERS = [
     "exclude": [
       "no exterior|abroad|consulado|consulate|itamaraty",
       "abroad|consulate"
-    ]
+    ],
+    "checked": "2026-10-02"
   },
   {
     "id": "immigration-visa",
@@ -332,14 +342,15 @@ const STARTERS = [
         "How do I renew a passport abroad?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "civic-bill",
     "match": [
       "pr[oòóôõö]j[eèéêë]t[oòóôõö] d[eèéêë] l[eèéêë][iìíîï]|d[eèéêë]p[uùúûü]t[aàáâãä]d[oòóôõö]|s[eèéêë][nñ][aàáâãä]d[oòóôõö]r|[cç][aàáâãä]m[aàáâãä]r[aàáâãä]|s[eèéêë][nñ][aàáâãä]d[oòóôõö]|[cç][oòóôõö][nñ]gr[eèéêë]ss[oòóôõö]",
       "(project|bill) of law|congress|my (deputy|senator)|legislative|how do i follow a bill",
-      "vota[çc][ãa]o|resultado da vota|di[áa]rio oficial|\\bdou\\b",
+      "vota[çc][ãa]o|resultado da vota|di[áa]rio oficial|dou eletr[oô]nico",
       "voting|voting result|gazette"
     ],
     "reply": {
@@ -356,7 +367,8 @@ const STARTERS = [
         "Where do I see a voting result?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "transport-fine",
@@ -380,12 +392,13 @@ const STARTERS = [
         "Where do I look up fines?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "energy-bill",
     "match": [
-      "[cç][oòóôõö][nñ]t[aàáâãä] d[eèéêë] l[uùúûü]z|[eèéêë][nñ][eèéêë]rg[iìíîï][aàáâãä] [eèéêë]l[eèéêë]tr[iìíîï][cç][aàáâãä]|t[aàáâãä]r[iìíîï]f[aàáâãä]|b[aàáâãä][nñ]d[eèéêë][iìíîï]r[aàáâãä] t[aàáâãä]r[iìíîï]f[aàáâãä]r[iìíîï][aàáâãä]|[aàáâãä][nñ][eèéêë][eèéêë]l",
+      "[cç][oòóôõö][nñ]t[aàáâãä] d[eèéêë] l[uùúûü]z|[eèéêë][nñ][eèéêë]rg[iìíîï][aàáâãä] [eèéêë]l[eèéêë]tr[iìíîï][cç][aàáâãä]|tarif[aàáâãä] (de |da |do )?[eèéêë]nerg|[eèéêë]nerg[iìíîï]a.{0,40}tarif[aàáâãä]|b[aàáâãä][nñ]d[eèéêë][iìíîï]r[aàáâãä] t[aàáâãä]r[iìíîï]f[aàáâãä]r[iìíîï][aàáâãä]|[aàáâãä][nñ][eèéêë][eèéêë]l",
       "([eèéêë]l[eèéêë][cç]tr[iìíîï][cç][iìíîï]ty b[iìíîï]ll|[eèéêë][nñ][eèéêë]rgy t[aàáâãä]r[iìíîï]ff|[cç][oòóôõö][nñ]t[aàáâãä] d[eèéêë] l[uùúûü]z)",
       "solar|bandeira tarif|gerador",
       "solar|tariff flag|generator"
@@ -404,7 +417,8 @@ const STARTERS = [
         "Who sets the tariff flag?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "environment-licence",
@@ -428,12 +442,13 @@ const STARTERS = [
         "How do I find the licensing body?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "justice-legal-aid",
     "match": [
-      "defensoria|juizado|assistencia juridica|advogado|advogada|gratis",
+      "defensoria|juizado|assist[êe]ncia jur[ií]dica|advogad[oa]|(gr[aáàâã]t\\w*|de gra[cç]a).{0,40}(advogado|advogada|defensoria)|(advogado|advogada|defensoria).{0,40}(gr[aáàâã]t\\w*|de gra[cç]a)",
       "(l[eèéêë]g[aàáâãä]l [aàáâãä][iìíîï]d|d[eèéêë]f[eèéêë][nñ]s[oòóôõö]r[iìíîï][aàáâãä]|l[aàáâãä]wy[eèéêë]r|sm[aàáâãä]ll [cç]l[aàáâãä][iìíîï]ms)",
       "legal aid|defensoria|lawyer|small claims",
       "legal aid|defensoria|lawyer|small claims"
@@ -452,7 +467,8 @@ const STARTERS = [
         "How do I know if I qualify for legal aid?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "security-rights",
@@ -476,7 +492,8 @@ const STARTERS = [
         "How do I report anonymously?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "money-selic",
@@ -498,7 +515,8 @@ const STARTERS = [
         "Who measures the IPCA?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   },
   {
     "id": "world-abroad",
@@ -520,7 +538,8 @@ const STARTERS = [
         "How do I book at the consulate?"
       ]
     },
-    "exclude": []
+    "exclude": [],
+    "checked": "2026-10-02"
   }
 ];
 
@@ -532,7 +551,7 @@ const scenarios: Scenario[] = STARTERS.map((s) => ({
   match: s.match.map((pattern) => new RegExp(pattern, 'i')),
   exclude: s.exclude.map((pattern) => new RegExp(pattern, 'i')),
   reply: s.reply,
-  checked: CHECKED,
+  checked: s.checked,
   followUps: s.followUps,
 }));
 
