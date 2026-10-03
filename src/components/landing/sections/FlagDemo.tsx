@@ -3,7 +3,7 @@
  * live cards floating beside it (the next holiday, and a travel advisory streamed in from travel.gc.ca).
  */
 import { Suspense, type CSSProperties } from 'react';
-import { Calendar, Check, Plane } from 'lucide-react';
+import { Calendar, Check, Airplane } from '@phosphor-icons/react';
 import type { Locale } from '@/lib/i18n/config';
 import { packServer as pack } from '@/countries/active.server';
 import { getLandingCopy } from '../copy';
@@ -22,7 +22,7 @@ async function AdvisoryCard() {
   return (
     <aside className="l-float l-float--b" aria-label={t('flag.advisoryLabel')}>
       <p className="l-float__k m-0">
-        <Plane className="size-3.5 text-maple" aria-hidden />
+        <Airplane className="size-3.5 text-[var(--maple)]" aria-hidden />
         {t('flag.advisory')}
       </p>
       <p className="l-float__t" lang={dataLang}>
@@ -93,10 +93,14 @@ export async function FlagDemo() {
         </span>
       </div>
       <div className="l-flag__white">
-        {/* The flag's rhombus, for packs whose flag carries one. It sits behind the
-          cards (first in paint order) and never holds content: green field, yellow
-          losango, white answer — the flag, with a question where the globe would be. */}
-        {pack.brand.flagDiamond ? (
+        {/* The Brazilian flag: green field, yellow rhombus, blue circle with stars and "Ordem e Progresso" band. */}
+        {pack.brand.Flag ? (
+          <pack.brand.Flag
+            aria-hidden
+            className="absolute inset-0 w-full h-full"
+            style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
+          />
+        ) : pack.brand.flagDiamond ? (
           <div
             aria-hidden
             style={{
@@ -115,7 +119,7 @@ export async function FlagDemo() {
           {nextHoliday ? (
             <aside className="l-float l-float--a" aria-label={t('flag.holidayLabel')}>
               <p className="l-float__k m-0">
-                <Calendar className="size-3.5 text-maple" aria-hidden />
+                <Calendar className="size-3.5 text-[var(--maple)]" aria-hidden />
                 {t('flag.nextHoliday')}
               </p>
               <p className="l-float__t" lang={dataLang}>

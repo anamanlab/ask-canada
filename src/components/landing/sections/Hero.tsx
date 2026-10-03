@@ -3,7 +3,7 @@
  * phones, the lake (Shore), with the setting sun and a canoe, fills the band above the tasks.
  */
 import type { CSSProperties } from 'react';
-import { ArrowRight, Check, ChevronDown, Info, Lock, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Check, CaretDown, Info, Lock, ShieldCheck } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { pack } from '@/countries/active';
 import type { Locale } from '@/lib/i18n/config';
@@ -150,17 +150,17 @@ export async function Hero() {
             <li className="l-trust__short">
               {trustParts.map((part, i) => (
                 <span key={i} className="l-trust__item">
-                  <Check className="l-trust__check text-pine" aria-hidden strokeWidth={2.4} />
+                  <Check className={`l-trust__check ${pack.id === 'br' ? 'text-[var(--maple)]' : 'text-pine'}`} aria-hidden strokeWidth={2.4} />
                   {part}
                 </span>
               ))}
             </li>
             <li>
-              <ShieldCheck className="size-4 text-pine" aria-hidden strokeWidth={1.8} />
+              <ShieldCheck className={`size-4 ${pack.id === 'br' ? 'text-[var(--maple)]' : 'text-pine'}`} aria-hidden strokeWidth={1.8} />
               {t('hero.trust.source')}
             </li>
             <li>
-              <Lock className="size-4 text-pine" aria-hidden strokeWidth={1.8} />
+              <Lock className={`size-4 ${pack.id === 'br' ? 'text-[var(--maple)]' : 'text-pine'}`} aria-hidden strokeWidth={1.8} />
               {t('hero.trust.private')}
             </li>
           </ul>
@@ -194,7 +194,7 @@ export async function Hero() {
       </main>
       <div className="l-hero__foot">
         <a className="l-scroll-cue" href="#tools">
-          <ChevronDown className="size-4" aria-hidden />
+          <CaretDown className="size-4" aria-hidden />
           {t('hero.scroll')}
         </a>
       </div>

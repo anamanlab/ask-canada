@@ -17,6 +17,8 @@ import { tools as economia } from './economia';
 import { tools as ibge } from './ibge';
 import { tools as servico } from './servico';
 import { tools as camara } from './camara';
+import { tools as cnes } from './cnes';
+import { tools as anvisa } from './anvisa';
 
 const byWidget: Record<string, ToolSet> = {
   holidays,
@@ -24,6 +26,8 @@ const byWidget: Record<string, ToolSet> = {
   ibge,
   servico,
   camara,
+  cnes,
+  anvisa,
 };
 
 if (process.env.NODE_ENV !== 'production') {

@@ -4,7 +4,9 @@
  * doesn't already set. Widgets keep using '@/components/ui'.
  */
 'use client';
-import { cx } from '@/lib/cx';
 import { createChip } from '../core/chip';
+import type { FC } from 'react';
+import { cx } from '@/lib/cx';
 
-export const Chip = createChip(cx);
+const ChipComponent = createChip(cx);
+export const Chip: FC<React.ComponentPropsWithoutRef<typeof ChipComponent>> = ChipComponent;

@@ -13,5 +13,6 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
   const sp = await searchParams;
   const raw = Array.isArray(sp.q) ? sp.q[0] : sp.q;
   const q = raw?.trim().slice(0, 500) || undefined;
+
   return <AskApp initialQuery={q} maxInputChars={LIMITS.maxInputChars} landing={<Landing />} />;
 }

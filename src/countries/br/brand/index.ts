@@ -9,6 +9,7 @@
 import type { ClientPack } from '../../types';
 import { MARK_PATH, MARK_VIEWBOX } from './mark';
 import { Mark } from './Mark';
+import { Flag } from './Flag';
 
 export const brand: ClientPack['brand'] = {
   mode: 'independent',
@@ -19,6 +20,7 @@ export const brand: ClientPack['brand'] = {
   greeting: { en: 'Hello, Brazil', pt: 'Olá, Brasil' },
   ask: { en: 'Ask.', pt: 'Pergunte.' },
   Mark,
+  Flag,
   currencySymbol: 'R$ ',
   exampleFee: '257,25',
   currency: 'BRL',

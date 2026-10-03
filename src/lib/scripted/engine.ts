@@ -14,7 +14,10 @@ import type { Scenario } from './types';
 import { pickCopy } from './types';
 
 /** The languages scripted copy is written in: the pack's official ones (`fr` for Canada, `pt` for Brazil). */
-type Lang = Locale;
+type AnswerLang = Locale;
+
+/** Narrowed to the historical EN/FR pair for backward compatibility with pack code. */
+type Lang = 'en' | 'fr';
 
 const isOfficial = (l: Locale) => officialLocales.includes(l);
 
@@ -78,7 +81,7 @@ const HINTS: Partial<Record<Locale, { words: RegExp; diacritics: RegExp }>> = {
 };
 
 /** Decide which official language to write the scripted body in: the chosen one wins, then sniff the text. */
-export function detectLang(text: string, locale: Locale): Lang {
+export function detectLang(text: string, locale: Locale): AnswerLang {
   for (const l of officialLocales) {
     if (l === 'en') continue;
     if (l === locale) return l;
@@ -237,7 +240,7 @@ export async function runScripted({
 }: {
   /** Translated starter questions -> their English original (see aliases.ts). */
   aliases?: Map<string, string>;
-  forceLang?: Lang;
+  forceLang?: AnswerLang;
   /** ISO date the answers' facts were last verified (shown on sources that carry no date of their own). */
   checked?: string;
   /** The person's IANA time zone (from their browser), passed to tool inputs that need "today". */
@@ -254,10 +257,10 @@ export async function runScripted({
   const text = aliases?.get(normalizeQuestion(asked_)) ?? asked_;
   // The person's language (may be beyond the pack's official ones), and the language the scripted body is written in.
   const asked = forceLang ?? detectAnswerLocale(asked_, locale);
-  const lang: Lang = isOfficial(asked) ? asked : isOfficial(locale) ? locale : 'en';
+  const answerLang: AnswerLang = isOfficial(asked) ? asked : isOfficial(locale) ? locale : 'en';
   const other = !isOfficial(asked);
-  // Pack code written against the historical EN/FR pair reads `lang`; the real language is `locale`.
-  const ctx = { text, locale: lang, lang: (lang === 'fr' ? 'fr' : 'en') as 'en' | 'fr', timeZone };
+  const ctxLang: Lang = (answerLang === 'fr' ? 'fr' : 'en');
+  const ctx = { text, locale: answerLang, lang: ctxLang, timeZone };
   const scenario = pickScenario(scenarios, text, hasFiles);
   // A native reply in the person's language when the scenario has one; otherwise a short note in their
   // language (shown as a callout above the answer) and the sourced answer in an official language.
@@ -267,13 +270,13 @@ export async function runScripted({
   const verified = scenario?.checked ?? checked;
   writer.write({
     type: 'start',
-    messageMetadata: { lang: localized ? asked : lang, asked, ...(note ? { note } : {}), ...(verified && scenario?.id !== 'fallback' ? { checked: verified } : {}) },
+    messageMetadata: { lang: localized ? asked : answerLang, asked, ...(note ? { note } : {}), ...(verified && scenario?.id !== 'fallback' ? { checked: verified } : {}) },
   });
   writer.write({ type: 'start-step' });
   await sleep(380, signal);
 
   if (!scenario) {
-    await streamText(writer, NOT_FOUND[lang] ?? NOT_FOUND.en!, signal);
+    await streamText(writer, NOT_FOUND[answerLang] ?? NOT_FOUND.en!, signal);
   } else {
     let vars: Record<string, string> = {};
     try {
@@ -282,15 +285,15 @@ export async function runScripted({
       console.error(`[scripted] vars for ${scenario.id} failed`, err);
     }
     const fill = (s: string) => s.replace(/\{(\w+)\}/g, (m, k: string) => vars[k] ?? m);
-    await streamText(writer, fill(localized ?? pickCopy(scenario.reply, lang) ?? ''), signal);
+    await streamText(writer, fill(localized ?? pickCopy(scenario.reply, answerLang) ?? ''), signal);
     for (const call of scenario.toolCalls ?? []) {
       if (signal?.aborted) break;
       const input = typeof call.input === 'function' ? call.input(ctx) : call.input;
       await callTool(writer, tools, call.toolName, input, signal);
     }
-    const after = localized ? undefined : pickCopy(scenario.after, lang);
+    const after = localized ? undefined : pickCopy(scenario.after, answerLang);
     if (after && !signal?.aborted) await streamText(writer, fill(after), signal);
-    const followUps = localized ? undefined : pickCopy(scenario.followUps, lang);
+    const followUps = localized ? undefined : pickCopy(scenario.followUps, answerLang);
     if (followUps?.length && !signal?.aborted) {
       await callTool(writer, tools, 'suggestFollowUps', { questions: followUps }, signal);
     }

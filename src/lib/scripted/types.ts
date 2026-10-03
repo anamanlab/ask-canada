@@ -47,7 +47,8 @@ export type ScenarioToolCall = {
  *   on `lang === 'fr'` keeps compiling untouched. A pack whose official languages are not English and
  *   French (`pt` for Brazil) reads `locale` instead; `lang` falls back to `'en'` for those.
  */
-export type ScenarioCtx = { text: string; locale: Locale; lang: 'en' | 'fr'; timeZone?: string };
+export type Lang = 'en' | 'fr';
+export type ScenarioCtx = { text: string; locale: Locale; lang: Lang; timeZone?: string };
 
 export type Scenario = {
   id: string;

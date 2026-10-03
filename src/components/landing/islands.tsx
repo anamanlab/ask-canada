@@ -1,16 +1,16 @@
 'use client';
 /** Interactive islands inside the (server-rendered) landing page. */
-import type { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import { preload } from 'react-dom';
-import type { LucideIcon } from 'lucide-react';
-import { ArrowRight, ArrowUp, ArrowUpRight, Baby, BookUser, Briefcase, CalendarClock, ChevronRight, FileText, Globe, HandCoins, Plane, TriangleAlert } from 'lucide-react';
+import { ArrowRight, ArrowUp, ArrowUpRight, Baby, BookOpen, Briefcase, Calendar, CaretRight, FileText, Globe, HandCoins, Airplane, Warning } from '@phosphor-icons/react';
 import { useChatActions } from '@/components/chat/actions';
 import { Composer } from '@/components/chat/Composer';
 import { LinkButton } from '@/components/ui/plain/Button';
-import { Chip } from '@/components/ui/plain/Chip';
 import { ClearDeviceButton } from '@/components/site/ClearDevice';
 import { useDeviceItems } from '@/lib/device-store';
 import { useLanguageLink, useLocale } from '@/lib/i18n/provider';
+import { pack } from '@/countries/active';
+import { BrButton } from '@/components/ui/br/Button';
 
 /** `compactPlaceholders`: the phone rotation (examples that fit one line), index-aligned with `placeholders`. */
 export function HeroComposer({ placeholders, compactPlaceholders, hint }: { placeholders: string[]; compactPlaceholders?: string[]; hint: string }) {
@@ -30,14 +30,14 @@ export function ClosingComposer({ placeholder, compact, lang, label }: { placeho
   );
 }
 
-const CHIP_ICONS: Record<string, LucideIcon> = {
-  passport: BookUser,
+const CHIP_ICONS: Record<string, React.ComponentType<{ className?: string; size?: number | string }>> = {
+  passport: BookOpen,
   taxes: FileText,
   ccb: Baby,
   ei: Briefcase,
-  travel: Plane,
+  travel: Airplane,
   oas: HandCoins,
-  recalls: TriangleAlert,
+  recalls: Warning,
 };
 
 /**
@@ -50,12 +50,23 @@ const CHIP_ICONS: Record<string, LucideIcon> = {
  */
 export function AskChip({ id, label, short, sub, official, question }: { id: string; label: string; short?: string; sub?: string; official?: string; question: string }) {
   const { send } = useChatActions();
-  // Each visible form (desktop label, phone short form) carries the official name for screen readers when it differs.
+  const isBrazil = pack.id === 'br';
   const sr = (shown: string) => (official && official !== shown ? <span className="sr-only"> ({official})</span> : null);
-  return (
-    <Chip icon={CHIP_ICONS[id] ?? Globe} onClick={() => send(question)} className={`l-chip--${id}`}>
-      {short ? (
-        <>
+  const Icon = CHIP_ICONS[id] ?? Globe;
+  const onClick = () => send(question);
+
+  if (isBrazil) {
+    const renderContent = () => {
+      if (!short) {
+        return (
+          <React.Fragment>
+            {label}
+            {sr(label)}
+          </React.Fragment>
+        );
+      }
+      return (
+        <React.Fragment>
           <span className="l-chip-long">
             {label}
             {sr(label)}
@@ -67,22 +78,88 @@ export function AskChip({ id, label, short, sub, official, question }: { id: str
             </span>
             {sub ? <span className="l-chip-short__sub">{sub}</span> : null}
           </span>
-        </>
-      ) : (
-        <>
+        </React.Fragment>
+      );
+    };
+    return (
+      <BrButton
+        variant="secondary"
+        size="sm"
+        fullWidth
+        className={`l-chip--${id}`}
+        onClick={onClick}
+        icon={<Icon className="size-4" aria-hidden />}
+      >
+        {renderContent()}
+      </BrButton>
+    );
+  }
+
+  const renderContent = () => {
+    if (!short) {
+      return (
+        <React.Fragment>
           {label}
           {sr(label)}
-        </>
-      )}
-    </Chip>
+        </React.Fragment>
+      );
+    }
+    return (
+      <React.Fragment>
+        <span className="l-chip-long">
+          {label}
+          {sr(label)}
+        </span>
+        <span className="l-chip-short">
+          <span className="l-chip-short__t">
+            {short}
+            {sr(short)}
+          </span>
+          {sub ? <span className="l-chip-short__sub">{sub}</span> : null}
+        </span>
+      </React.Fragment>
+    );
+  };
+  return (
+    <button
+      type="button"
+      className={`l-chip--${id}`}
+      onClick={onClick}
+    >
+      {renderContent()}
+    </button>
   );
 }
 
 export function ServiceRow({ name, question, go, icon }: { name: string; question: string; go: string; icon?: ReactNode }) {
   const { send } = useChatActions();
   const { t } = useLocale();
+  const isBrazil = pack.id === 'br';
+  const onClick = () => send(question);
+
+  if (isBrazil) {
+    return (
+      <BrButton
+        variant="secondary"
+        size="md"
+        fullWidth
+        className="l-svc"
+        onClick={onClick}
+        iconPosition="end"
+        icon={<ArrowRight className="size-[15px] flip-rtl" aria-hidden />}
+      >
+        <div className="flex flex-col items-start gap-1 w-full">
+          {icon && <span className="l-svc__ico" aria-hidden>{icon}</span>}
+          <span className="l-svc__n text-left w-full">{name}</span>
+          <span className="l-svc__q text-left w-full">{t('landing.quote', { q: question })}</span>
+          <span className="l-svc__go text-left w-full">{go}</span>
+        </div>
+      </BrButton>
+    );
+  }
+
   return (
-    <button type="button" className="l-svc" onClick={() => send(question)}>
+    <button type="button" className="l-svc" onClick={onClick}>
       {icon ? (
         <span className="l-svc__ico" aria-hidden>
           {icon}
@@ -94,7 +171,7 @@ export function ServiceRow({ name, question, go, icon }: { name: string; questio
         {go} <ArrowRight className="size-[15px] flip-rtl" aria-hidden />
       </span>
       <span className="l-svc__chev" aria-hidden>
-        <ChevronRight className="size-4 flip-rtl" />
+        <CaretRight className="size-4 flip-rtl" />
       </span>
     </button>
   );
@@ -127,7 +204,7 @@ export function LanguageCTA() {
   );
 }
 
-const kindIcon: Record<string, LucideIcon> = { plan: BookUser, checklist: BookUser, reminder: CalendarClock, chat: CalendarClock };
+const kindIcon: Record<string, React.ComponentType<{ className?: string; size?: number | string }>> = { plan: BookOpen, checklist: BookOpen, reminder: Calendar, chat: Calendar };
 
 /** "Stored on our servers: Nothing." + what's saved on this device, with a working Clear button. */
 export function DeviceCard() {
@@ -147,11 +224,11 @@ export function DeviceCard() {
           <>
             <ul className="l-device__list">
               {shown.map((i) => {
-                const Icon = kindIcon[i.kind ?? 'plan'] ?? BookUser;
+                const Icon = kindIcon[i.kind ?? 'plan'] ?? BookOpen;
                 return (
                   <li key={i.key} className="l-device__item">
                     <span className="l-device__ico">
-                      <Icon className="size-[18px]" strokeWidth={1.7} aria-hidden />
+                      <Icon className="size-[18px]" aria-hidden />
                     </span>
                     <span className="min-w-0">
                       <span className="l-device__t truncate">{i.label}</span>
@@ -171,7 +248,7 @@ export function DeviceCard() {
             <ul className="l-device__list is-preview">
               <li className="l-device__item is-example">
                 <span className="l-device__ico">
-                  <BookUser className="size-[18px]" strokeWidth={1.7} aria-hidden />
+                  <BookOpen className="size-[18px]" aria-hidden />
                 </span>
                 <span>
                   <span className="l-device__t">{t('privacy.card.ex1')}</span>
@@ -180,7 +257,7 @@ export function DeviceCard() {
               </li>
               <li className="l-device__item is-example">
                 <span className="l-device__ico">
-                  <CalendarClock className="size-[18px]" strokeWidth={1.7} aria-hidden />
+                  <Calendar className="size-[18px]" aria-hidden />
                 </span>
                 <span>
                   <span className="l-device__t">{t('privacy.card.ex2')}</span>

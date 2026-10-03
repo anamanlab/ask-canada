@@ -14,6 +14,8 @@ export type BrandMode = 'independent' | 'official';
 
 export type MarkProps = { className?: string; title?: string };
 
+export type FlagProps = { className?: string; title?: string; style?: React.CSSProperties };
+
 export type ServiceArea = {
   /** Stable id; strings live in pack messages as `services.<id>.name|desc|starter|example`. */
   id: string;
@@ -77,6 +79,7 @@ export type CountryPack = {
     /** The single word set in the flag's vertical bands — the product's verb, as a person would say it. */
     ask?: Partial<Record<Locale, string>> & { en: string };
     Mark: ComponentType<MarkProps>;
+    Flag?: ComponentType<FlagProps>;
     /** Standalone SVG markup of the mark in a given colour (icons, social cards). */
     markSvg: (color: string) => string;
     /** Official mode only: the government signature block rendered in the header slot. */

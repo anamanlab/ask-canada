@@ -41,6 +41,7 @@
     "@ai-sdk/gateway": "^4.0.101",
     "@ai-sdk/google": "^4.0.87",
     "@ai-sdk/react": "^4.0.126",
+    "@phosphor-icons/react": "^2.1.10",
     "@vercel/analytics": "^2.0.1",
     "@vercel/firewall": "^1.2.5",
     "@vercel/functions": "^3.9.9",

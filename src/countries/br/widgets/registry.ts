@@ -7,4 +7,6 @@ export const widgets: WidgetEntry[] = [
   { id: 'ibge', prefix: 'ibge', load: () => import('./ibge') },
   { id: 'servico', prefix: 'servico', load: () => import('./servico') },
   { id: 'camara', prefix: 'camara', load: () => import('./camara') },
+  { id: 'cnes', prefix: 'cnes', load: () => import('./cnes') },
+  { id: 'anvisa', prefix: 'anvisa', load: () => import('./anvisa') },
 ];
