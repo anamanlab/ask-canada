@@ -1,0 +1,91 @@
+{
+  "_note": "Widget catalog for `camara`. Authored directly (not generated): hand-written, and check-i18n compares it to en.json key for key. Every string is descriptive and factual; nothing here ranks, compares or endorses.",
+  "deputyTitle": {
+    "pt": "Deputado federal",
+    "en": "Federal deputy"
+  },
+  "deputySubtitle": {
+    "pt": "Mandato na Câmara dos Deputados",
+    "en": "Mandate in the Chamber of Deputies"
+  },
+  "deputyNotFound": {
+    "pt": "Não encontrei esse deputado na legislatura atual:",
+    "en": "I could not find that deputy in the current legislature:"
+  },
+  "deputyNotFoundHint": {
+    "pt": "Tente o nome parlamentar, ou informe o estado e o partido.",
+    "en": "Try the ballot name, or give the state and party."
+  },
+  "civilName": {
+    "pt": "Nome civil",
+    "en": "Full name"
+  },
+  "party": {
+    "pt": "Partido",
+    "en": "Party"
+  },
+  "office": {
+    "pt": "Gabinete",
+    "en": "Office"
+  },
+  "email": {
+    "pt": "E-mail",
+    "en": "Email"
+  },
+  "moreDeputies": {
+    "pt": "Mais {count}: {names}",
+    "en": "More {count}: {names}"
+  },
+  "proposalTitle": {
+    "pt": "Proposição na Câmara",
+    "en": "Bill in the Chamber"
+  },
+  "proposalSubtitle": {
+    "pt": "Texto, situação e votação",
+    "en": "Text, status and vote"
+  },
+  "proposalNotFound": {
+    "pt": "Não encontrei essa proposição:",
+    "en": "I could not find that bill:"
+  },
+  "proposalNotFoundHint": {
+    "pt": "Tente o tipo, o número e o ano, como em \"PL 1051/2026\".",
+    "en": "Try the type, number and year, as in \"PL 1051/2026\"."
+  },
+  "lastVote": {
+    "pt": "Última votação",
+    "en": "Last vote"
+  },
+  "movements": {
+    "pt": "Últimas movimentações",
+    "en": "Latest movements"
+  },
+  "moreProposals": {
+    "pt": "Mais {count} proposição(ões) encontrada(s). Refine com tipo, número e ano.",
+    "en": "{count} more bill(s) found. Narrow it with type, number and year."
+  },
+  "yesVotes": {
+    "pt": "{count} sim",
+    "en": "{count} yes"
+  },
+  "noVotes": {
+    "pt": "{count} não",
+    "en": "{count} no"
+  },
+  "abstentions": {
+    "pt": "{count} abstenções",
+    "en": "{count} abstentions"
+  },
+  "symbolicVote": {
+    "pt": "Votação simbólica, sem placar nominal",
+    "en": "Symbolic vote, no nominal tally"
+  },
+  "note": {
+    "pt": "Dados abertos da Câmara dos Deputados. Fatos, sem avaliação: este cartão não classifica nem apoia parlamentares.",
+    "en": "Open data from the Chamber of Deputies. Facts without assessment: this card neither ranks nor endorses anyone."
+  },
+  "error": {
+    "pt": "Não foi possível consultar a Câmara agora.",
+    "en": "The Chamber could not be consulted right now."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Próximos dias sem expediente",
+  "subtitle": "Feriados nacionais e pontos facultativos do governo federal",
+  "legend": "Feriado nacional",
+  "legendHint": "Fixado em lei. Bancos e boa parte do comércio fecham.",
+  "legendOptional": "Ponto facultativo",
+  "legendOptionalHint": "Carnaval e Corpus Christi são pontos facultativos, não feriados nacionais. O governo federal não tem expediente.",
+  "empty": "Nenhum dia sem expediente nos próximos anos.",
+  "days": "{count, plural, one {# dia} other {# dias}} sem expediente",
+  "of": "de {count, plural, one {# dia} other {# dias}}",
+  "error": "Não foi possível carregar os feriados.",
+  "note": "As datas dos pontos facultativos são publicadas cada ano em uma Portaria do Ministério da Gestão. As listas ponto facultativo por ano ainda não publicadas não aparecem aqui."
+}

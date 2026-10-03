@@ -1,0 +1,22 @@
+{
+  "title": "Federal government service",
+  "subtitle": "Steps, timeframes and official channels",
+  "cost": "Cost",
+  "free": "Free",
+  "paid": "May have a cost",
+  "channel": "Where to apply",
+  "digital": "Online",
+  "inPerson": "In person",
+  "account": "Gov.br account",
+  "noAccount": "Not required",
+  "time": "Timeframe",
+  "noEstimate": "Not stated in the catalogue",
+  "audience": "Who it is for",
+  "contact": "Where to ask:",
+  "startOnline": "Start online",
+  "officialPage": "Official page",
+  "notFound": "I could not find that service in the official catalogue:",
+  "notFoundHint": "It may be a state or municipal service, or a new one. Try the name as it appears on gov.br, or ask for what you need.",
+  "note": "Steps and timeframes from the Services Portal. Legislation is on the official page; this card does not list laws.",
+  "error": "The catalogue could not be consulted right now."
+}

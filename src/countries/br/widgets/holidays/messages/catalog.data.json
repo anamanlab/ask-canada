@@ -1,0 +1,47 @@
+{
+  "_note": "Widget catalog for `holidays`. Authored directly (not generated): hand-written, and check-i18n compares it to en.json key for key.",
+  "title": {
+    "pt": "Próximos dias sem expediente",
+    "en": "Upcoming non-service days"
+  },
+  "subtitle": {
+    "pt": "Feriados nacionais e pontos facultativos do governo federal",
+    "en": "Federal national holidays and optional non-service days"
+  },
+  "legend": {
+    "pt": "Feriado nacional",
+    "en": "National holiday"
+  },
+  "legendHint": {
+    "pt": "Fixado em lei. Bancos e boa parte do comércio fecham.",
+    "en": "Fixed in law. Banks and most businesses close."
+  },
+  "legendOptional": {
+    "pt": "Ponto facultativo",
+    "en": "Optional non-service day"
+  },
+  "legendOptionalHint": {
+    "pt": "Carnaval e Corpus Christi são pontos facultativos, não feriados nacionais. O governo federal não tem expediente.",
+    "en": "Carnival and Corpus Christi are optional non-service days, not national holidays. The federal government does not work."
+  },
+  "empty": {
+    "pt": "Nenhum dia sem expediente nos próximos anos.",
+    "en": "No non-service days in the coming years."
+  },
+  "days": {
+    "pt": "{count, plural, one {# dia} other {# dias}} sem expediente",
+    "en": "{count, plural, one {# non-service day} other {# non-service days}}"
+  },
+  "of": {
+    "pt": "de {count, plural, one {# dia} other {# dias}}",
+    "en": "of {count, plural, one {# day} other {# days}}"
+  },
+  "error": {
+    "pt": "Não foi possível carregar os feriados.",
+    "en": "Could not load the holidays."
+  },
+  "note": {
+    "pt": "As datas dos pontos facultativos são publicadas cada ano em uma Portaria do Ministério da Gestão. As listas ponto facultativo por ano ainda não publicadas não aparecem aqui.",
+    "en": "Optional non-service days are published each year in a Portaria from the Ministry of Public Management. Years whose list has not been published yet do not appear here."
+  }
+}

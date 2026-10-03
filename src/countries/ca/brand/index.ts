@@ -12,6 +12,8 @@ export const brand: ClientPack['brand'] = {
   name: 'Ask Canada',
   domain: 'canada.ryancampbell.com',
   url: 'https://canada.ryancampbell.com',
+  greeting: { en: 'Hello, Canada', fr: 'Bonjour, Canada' },
+  ask: { en: 'Ask.', fr: 'Demandez.' },
   Mark,
   markSvg: (color) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${LEAF_VIEWBOX}"><path fill="${color}" d="${LEAF_PATH}"/></svg>`,
   themeColor: { light: '#F7F5F0', dark: '#0B1220' },

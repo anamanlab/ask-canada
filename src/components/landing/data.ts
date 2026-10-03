@@ -15,7 +15,9 @@ export function upcomingHolidays(n = 3, today = todayInPack()) {
 
 /** Days until the next individual tax filing deadline. */
 export function taxCountdown(today = todayInPack()) {
-  const { month, day, selfEmployedMonth, selfEmployedDay } = pack.showcase.taxDeadline;
+  const deadlineSpec = pack.showcase.taxDeadline;
+  if (!deadlineSpec) return null;
+  const { month, day, selfEmployedMonth, selfEmployedDay } = deadlineSpec;
   const pad = (n: number) => String(n).padStart(2, '0');
   const y = Number(today.slice(0, 4));
   const thisYear = `${y}-${pad(month)}-${pad(day)}`;
@@ -25,5 +27,5 @@ export function taxCountdown(today = todayInPack()) {
   const start = `${dy - 1}-${pad(month)}-${pad(day + 1 > 28 ? 1 : day + 1)}`;
   const days = diffDays(today, deadline);
   const progress = Math.min(1, Math.max(0, diffDays(start, today) / Math.max(1, diffDays(start, deadline))));
-  return { deadline, selfEmployed, taxYear: dy - 1, days, progress, today };
+  return { deadline, selfEmployed, taxYear: dy - 1, days, progress, today, source: deadlineSpec.source, url: deadlineSpec.url };
 }

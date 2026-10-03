@@ -264,5 +264,6 @@
   "closing.placeholder.short": "Essayez « Assurance-emploi? »",
   "sources.domains": "Official sources Ask Canada answers from",
   "flag.demo.caption": "Example: someone asks how to renew a passport that expires in March. Ask Canada answers in plain language and adds a renewal plan with the fee, processing time and a ready-by date.",
-  "doc.languageNote": "This page is available in Canada’s official languages, English and French, so its terms stay exact."
+  "doc.languageNote": "This page is available in Canada’s official languages, English and French, so its terms stay exact.",
+  "lang.note": "English and French are Canada’s official languages and have full, reviewed interfaces. Menus in other languages are translated with AI help and haven’t been reviewed by native speakers yet. Official program names stay in English and French."
 }

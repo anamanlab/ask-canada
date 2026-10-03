@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import type { CSSProperties } from 'react';
 import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 // Site chrome (header, brand, menu) is on every page. The landing's, the footer's and the chat's own
@@ -35,6 +36,15 @@ export async function generateMetadata(): Promise<Metadata> {
     formatDetection: { telephone: false },
   };
 }
+
+/**
+ * The pack's accent, as CSS variables. Core's tokens are historically named `maple`; the values are just
+ * "the accent", so a pack overrides the three variables and every `text-maple` / `bg-maple-wash` / `maple`
+ * ring follows without a single component changing.
+ */
+const accentVars = pack.brand.accent
+  ? ({ '--maple': pack.brand.accent.base, '--maple-ink': pack.brand.accent.ink, '--maple-wash': pack.brand.accent.wash } as CSSProperties)
+  : undefined;
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -81,7 +91,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
       data-theme={theme === 'system' ? undefined : theme}
       data-theme-pref={theme}
       className={fontVariables}
-      style={fontFaceVars}
+      style={accentVars ? { ...fontFaceVars, ...accentVars } : fontFaceVars}
       suppressHydrationWarning
     >
       <head>

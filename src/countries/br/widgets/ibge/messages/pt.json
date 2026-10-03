@@ -1,0 +1,16 @@
+{
+  "title": "Localização oficial",
+  "subtitle": "Município, estado e região segundo o IBGE",
+  "subtitleCode": "Código IBGE do município",
+  "region": "Região",
+  "immediate": "Região imediata",
+  "ambiguous": "Mais de um município tem esse nome. Confirme qual é o seu antes de usar o código.",
+  "notFound": "Não encontrei um município chamado",
+  "notFoundHint": "Tente o nome com a sigla do estado, por exemplo \"Recife PE\", ou o código do IBGE.",
+  "note": "Nomes e códigos do IBGE. O IBGE publica nomes em português; no modo inglês eles aparecem como estão.",
+  "error": "Não foi possível consultar o IBGE agora.",
+  "stateSubtitle": "Municípios do estado",
+  "municipality": "município",
+  "municipalities": "municípios",
+  "sampleNote": "Amostra em ordem alfabética. A lista completa está na página do IBGE."
+}

@@ -378,4 +378,4 @@ Obtenez le calendrier de votre enfant pour votre province ou territoire :`,
 
 // French typography applied once, to every French reply (amounts, $, %, :, « »), and one verified date
 // for every source in the answer, text citations included (the widget's sources carry the same CHECKED).
-export default health.map((sc) => ({ ...sc, checked: sc.checked ?? CHECKED, reply: { ...sc.reply, fr: typoFr(sc.reply.fr) } }));
+export default health.map((sc) => ({ ...sc, checked: sc.checked ?? CHECKED, reply: { ...sc.reply, fr: typoFr(sc.reply.fr!) } }));

@@ -32,7 +32,7 @@ export const coreTools = {
   }),
   officialHandoff: tool({
     description:
-      'Show ONE primary button that takes the person to the official page where they finish the task you cannot do for them: sign in, apply, pay, book, or search an official finder (for example a passport office locator by postal code). Use it when the next step happens on the official site. The label is a short verb phrase in their language naming the site ("Find an office on canada.ca"). Official domains only.',
+      `Show ONE primary button that takes the person to the official page where they finish the task you cannot do for them: sign in, apply, pay, book, or search an official finder (for example a passport office locator by postal code). Use it when the next step happens on the official site. The label is a short verb phrase in their language naming the site ("Find an office on ${pack.officialHomeLabel}"). Official domains only.`,
     inputSchema: z.object({
       url: z.string().url(),
       label: z.string().min(3).max(60),

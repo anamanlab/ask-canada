@@ -3,7 +3,7 @@
  * 2026-09-29), so source cards read "Who can apply: Canada child benefit" instead of a URL slug.
  * `withTitles()` rewrites `[n](url)` citations to `[n](url "Title")` for every URL it knows.
  */
-import type { Scenario } from '@/lib/scripted/types';
+import { mapCopy, type Scenario } from '@/lib/scripted/types';
 
 const C = 'https://www.canada.ca';
 const IRCC = `${C}/en/immigration-refugees-citizenship/services/canadian-passports`;
@@ -118,8 +118,8 @@ export const titleCitations = (text: string) => text.replace(CITE, (m, n: string
 /** Adds page titles to every citation in a list of scenarios (reply, after and intl replies). */
 export function withTitles(list: Scenario[]): Scenario[] {
   for (const s of list) {
-    s.reply = { en: titleCitations(s.reply.en), fr: titleCitations(s.reply.fr) };
-    if (s.after) s.after = { en: titleCitations(s.after.en), fr: titleCitations(s.after.fr) };
+    s.reply = mapCopy(s.reply, titleCitations);
+    if (s.after) s.after = mapCopy(s.after, titleCitations);
   }
   return list;
 }

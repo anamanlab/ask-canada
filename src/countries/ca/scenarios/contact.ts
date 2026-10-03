@@ -1,5 +1,5 @@
 /** Scripted scenarios for the `contact` widget (EN + FR). Facts and department rules: widgets/contact/data.ts. */
-import type { Scenario } from '@/lib/scripted/types';
+import { type Scenario, type ScenarioCtx } from '@/lib/scripted/types';
 import { both, FRAUD, PHONE_EN, PHONE_FR, TTY } from '../widgets/contact/scenario-match';
 import { craNote, eiNow, keepTogether, openNow, todayNote } from '../widgets/contact/scenario-notes';
 import { urgentScenarios } from '../widgets/contact/scenarios-urgent';
@@ -238,9 +238,9 @@ export default contact.map((sc) => {
   const vars = sc.vars;
   return {
     ...sc,
-    reply: { en: keepTogether(sc.reply.en), fr: keepTogether(sc.reply.fr) },
+    reply: { en: keepTogether(sc.reply.en), fr: keepTogether(sc.reply.fr!) },
     vars: vars
-      ? async (ctx: { text: string; lang: 'en' | 'fr' }) => {
+      ? async (ctx: ScenarioCtx) => {
           const v = await vars(ctx);
           return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, keepTogether(x)]));
         }

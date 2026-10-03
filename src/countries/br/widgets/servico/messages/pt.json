@@ -1,0 +1,22 @@
+{
+  "title": "Serviço do governo federal",
+  "subtitle": "Etapas, prazos e canais oficiais",
+  "cost": "Custo",
+  "free": "Gratuito",
+  "paid": "Pode ter custo",
+  "channel": "Onde pedir",
+  "digital": "Digital",
+  "inPerson": "Presencial",
+  "account": "Conta gov.br",
+  "noAccount": "Não exige",
+  "time": "Prazo",
+  "noEstimate": "O catálogo não informa",
+  "audience": "Para quem",
+  "contact": "Onde perguntar:",
+  "startOnline": "Começar on-line",
+  "officialPage": "Página oficial",
+  "notFound": "Não encontrei esse serviço no catálogo oficial:",
+  "notFoundHint": "Pode ser um serviço estadual, municipal ou novo. Tente o nome como está no gov.br, ou pergunte pelo que precisa.",
+  "note": "Etapas e prazos do Portal de Serviços. A legislação está na página oficial; este cartão não lista leis.",
+  "error": "Não foi possível consultar o catálogo agora."
+}

@@ -471,12 +471,13 @@ Les avertissements peuvent changer rapidement. Vérifiez-les avant de réserver 
             };
       }
       const updated = longDate(a.updated, lang);
+      const name = a.country.fr ?? a.country.en;
       return lang === 'fr'
         ? {
-            headline: `${a.country.fr} : *${a.text.fr.replace(/\.$/, '')}.*`,
-            body: `C’est l’avertissement officiel actuel du gouvernement du Canada pour ${a.country.fr}, mis à jour le ${updated}. La page officielle précise les régions visées, la sécurité, les exigences d’entrée et la santé.`,
-            url: a.url.fr,
-            urlTitle: `Conseils aux voyageurs : ${a.country.fr}`,
+            headline: `${name} : *${(a.text.fr ?? a.text.en).replace(/\.$/, '')}.*`,
+            body: `C’est l’avertissement officiel actuel du gouvernement du Canada pour ${name}, mis à jour le ${updated}. La page officielle précise les régions visées, la sécurité, les exigences d’entrée et la santé.`,
+            url: a.url.fr ?? a.url.en,
+            urlTitle: `Conseils aux voyageurs : ${name}`,
           }
         : {
             headline: `${a.country.en}: *${a.text.en.replace(/\.$/, '')}.*`,

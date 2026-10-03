@@ -1,0 +1,59 @@
+{
+  "_note": "Widget catalog for `ibge`. Authored directly (not generated): hand-written, and check-i18n compares it to en.json key for key.",
+  "title": {
+    "pt": "Localização oficial",
+    "en": "Official location"
+  },
+  "subtitle": {
+    "pt": "Município, estado e região segundo o IBGE",
+    "en": "Municipality, state and region per IBGE"
+  },
+  "subtitleCode": {
+    "pt": "Código IBGE do município",
+    "en": "IBGE municipality code"
+  },
+  "region": {
+    "pt": "Região",
+    "en": "Region"
+  },
+  "immediate": {
+    "pt": "Região imediata",
+    "en": "Immediate region"
+  },
+  "ambiguous": {
+    "pt": "Mais de um município tem esse nome. Confirme qual é o seu antes de usar o código.",
+    "en": "More than one municipality has this name. Confirm which one you mean before using the code."
+  },
+  "notFound": {
+    "pt": "Não encontrei um município chamado",
+    "en": "I could not find a municipality called"
+  },
+  "notFoundHint": {
+    "pt": "Tente o nome com a sigla do estado, por exemplo \"Recife PE\", ou o código do IBGE.",
+    "en": "Try the name with the state abbreviation, such as \"Recife PE\", or the IBGE code."
+  },
+  "note": {
+    "pt": "Nomes e códigos do IBGE. O IBGE publica nomes em português; no modo inglês eles aparecem como estão.",
+    "en": "Names and codes from IBGE. IBGE publishes place names in Portuguese; in English mode they are shown as they stand."
+  },
+  "error": {
+    "pt": "Não foi possível consultar o IBGE agora.",
+    "en": "IBGE could not be consulted right now."
+  },
+  "stateSubtitle": {
+    "pt": "Municípios do estado",
+    "en": "Municipalities of the state"
+  },
+  "municipality": {
+    "pt": "município",
+    "en": "municipality"
+  },
+  "municipalities": {
+    "pt": "municípios",
+    "en": "municipalities"
+  },
+  "sampleNote": {
+    "pt": "Amostra em ordem alfabética. A lista completa está na página do IBGE.",
+    "en": "An alphabetical sample. The full list is on the IBGE page."
+  }
+}

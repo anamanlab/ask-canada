@@ -191,7 +191,11 @@ export function SourceFooter({ sources }: { sources: ToolSource[] }) {
         {s.live ? (
           <>
             <span className="size-1.5 rounded-full bg-pine" aria-hidden />
-            {t('source.live')}
+            {s.fromCache && s.fetchedAt
+              // A cached live value and a fresh one must not wear the same badge.
+              // "Ao vivo · cache de 21:00" says which one this is.
+              ? t('source.cached', { time: fmt.time(s.fetchedAt, { hour: 'numeric', minute: '2-digit' }) })
+              : t('source.live')}
           </>
         ) : (
           <>

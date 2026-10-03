@@ -9,6 +9,7 @@
   "source.label": "منبع:",
   "source.checked": "بررسی‌شده در {date}",
   "source.live": "زنده",
+  "source.cached": "زنده · حافظه {time}",
   "source.more": "+{count} مورد دیگر",
   "source.officialPage": "صفحهٔ رسمی",
   "widget.loading": "در حال بارگذاری",

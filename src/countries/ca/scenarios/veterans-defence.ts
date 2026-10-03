@@ -3,7 +3,7 @@
  * (verified 2026-09-30). Tool calls are real: CAF careers come live from forces.ca.
  * The copy lives next to the widget: widgets/veterans-defence/scenario-copy/{join,vac}.ts.
  */
-import type { Scenario } from '@/lib/scripted/types';
+import { mapCopy, type Scenario } from '@/lib/scripted/types';
 import { CHECKED } from '../widgets/veterans-defence/data';
 import { joinScenarios } from '../widgets/veterans-defence/scenario-copy/join';
 import { uni } from '../widgets/veterans-defence/scenario-copy/shared';
@@ -19,7 +19,7 @@ for (const s of veteransDefence) {
   s.checked = CHECKED;
   s.match = s.match.map(uni);
   if (s.exclude) s.exclude = s.exclude.map(uni);
-  s.reply = { en: keepPhones(s.reply.en), fr: keepPhones(s.reply.fr) };
+  s.reply = mapCopy(s.reply, keepPhones);
 }
 
 export default veteransDefence;

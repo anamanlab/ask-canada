@@ -138,6 +138,11 @@ export const pack: ClientPack = {
       auroraDark: '/art/ca/aurora-night.svg',
     },
   },
+  // Canada's refined landing wording, which overrides the pack's own catalog for the keys it names.
+  landing: {
+    en: () => import('./landing/en.json'),
+    fr: () => import('./landing/fr.json'),
+  },
   silentTools: ['officialGuidance'],
   widgetIds: WIDGET_IDS,
 };

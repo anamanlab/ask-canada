@@ -25,6 +25,7 @@ export async function ToolsShowcase() {
       <div className="l-stage">
         <Aurora src={pack.art.hero.aurora} />
         <div className="l-cards">
+          {tax ? (
           <article className="l-wcard" aria-labelledby="w-tax">
             <div className="l-wc-head">
               <span className="grid size-9 place-items-center rounded-[11px] bg-glacier-wash text-glacier">
@@ -55,12 +56,13 @@ export async function ToolsShowcase() {
               </div>
             </div>
             <div className="l-wc-foot">
-              <span>canada.ca/taxes</span>
+              <a href={tax.url} target="_blank" rel="noopener noreferrer">{tax.source}</a>
               <span className="ok">
                 <Check className="size-3" aria-hidden /> {checked}
               </span>
             </div>
           </article>
+          ) : null}
 
           <article className="l-wcard l-wcard--center aurora-rule" aria-labelledby="w-pp">
             <div className="l-wc-head">
@@ -114,7 +116,7 @@ export async function ToolsShowcase() {
               </div>
             </div>
             <div className="l-wc-foot">
-              <span>canada.ca/passport</span>
+              <span>{`${pack.officialHomeLabel}/servicos`}</span>
               <span className="ok">
                 <Check className="size-3" aria-hidden /> {checked}
               </span>
@@ -139,7 +141,7 @@ export async function ToolsShowcase() {
                   <DateTileServer iso={h.date} month={d(h.date, { month: 'short' })} />
                   <div>
                     <div className="l-hol-name" lang={dataLang}>
-                      {h.name[L]}
+                      {h.name[L] ?? h.name.en}
                     </div>
                     <div className="l-hol-day">{d(h.date, { weekday: 'long' })}</div>
                   </div>
@@ -147,7 +149,7 @@ export async function ToolsShowcase() {
               ))}
             </div>
             <div className="l-wc-foot">
-              <span>canada.ca/holidays</span>
+              <span>{pack.officialHomeLabel}</span>
               <span className="ok">
                 <Check className="size-3" aria-hidden /> {checked}
               </span>

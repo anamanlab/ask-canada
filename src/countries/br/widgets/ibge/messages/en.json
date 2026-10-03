@@ -1,0 +1,16 @@
+{
+  "title": "Official location",
+  "subtitle": "Municipality, state and region per IBGE",
+  "subtitleCode": "IBGE municipality code",
+  "region": "Region",
+  "immediate": "Immediate region",
+  "ambiguous": "More than one municipality has this name. Confirm which one you mean before using the code.",
+  "notFound": "I could not find a municipality called",
+  "notFoundHint": "Try the name with the state abbreviation, such as \"Recife PE\", or the IBGE code.",
+  "note": "Names and codes from IBGE. IBGE publishes place names in Portuguese; in English mode they are shown as they stand.",
+  "error": "IBGE could not be consulted right now.",
+  "stateSubtitle": "Municipalities of the state",
+  "municipality": "municipality",
+  "municipalities": "municipalities",
+  "sampleNote": "An alphabetical sample. The full list is on the IBGE page."
+}

@@ -1,5 +1,6 @@
 /** Closing: What do you need? / On vous écoute. A last question box over the prairie at dusk. */
 import { pack } from '@/countries/active';
+import { localeInfo } from '@/lib/i18n/config';
 import { getLandingCopy } from '../copy';
 import { ClosingComposer, LanguageCTA } from '../islands';
 import { Prairie } from '../Prairie';
@@ -14,7 +15,7 @@ export async function Closing() {
       <Prairie className="l-prairie" />
       <Mark className="l-closing__leaf" />
       <p className="eyebrow l-center" style={{ justifyContent: 'center' }}>
-        English · Français
+        {pack.locales.official.map((l) => localeInfo(l).endonym).join(' · ')}
       </p>
       <h2 className="l-closing__h" id="t-close">
         <span lang={fr ? 'fr' : 'en'}>{fr ? 'De quoi avez‑vous besoin?' : 'What do you need?'}</span>

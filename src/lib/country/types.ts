@@ -29,13 +29,20 @@ export type SceneArt = {
   auroraDark?: string;
 };
 
+/**
+ * A travel advisory in the pack's official languages (`{ en, fr }` for Canada, `{ en, pt }` for Brazil);
+ * `en` is the source language. Same shape as `Holiday['name']`, which is why that type is defined the
+ * same way.
+ */
+export type LocalizedText = { en: string } & Partial<Record<Locale, string>>;
+
 export type Advisory = {
-  country: { en: string; fr: string };
+  country: LocalizedText;
   /** 0 normal precautions · 1 high degree of caution · 2 avoid non-essential travel · 3 avoid all travel */
   level: 0 | 1 | 2 | 3;
-  text: { en: string; fr: string };
+  text: LocalizedText;
   updated: string;
-  url: { en: string; fr: string };
+  url: LocalizedText;
 };
 
 export type CountryPack = {
@@ -61,12 +68,26 @@ export type CountryPack = {
     contact?: string;
     /** Public source code repository, if open source. */
     repository?: string;
+    /**
+     * The landing hero's greeting, keyed by locale: the line in the reader's own language comes first and
+     * the pack's other official language follows (`Hello, Canada.` / `Bonjour, Canada.`). English is the
+     * source language. Omitted falls back to the brand name.
+     */
+    greeting?: Partial<Record<Locale, string>> & { en: string };
+    /** The single word set in the flag's vertical bands — the product's verb, as a person would say it. */
+    ask?: Partial<Record<Locale, string>> & { en: string };
     Mark: ComponentType<MarkProps>;
     /** Standalone SVG markup of the mark in a given colour (icons, social cards). */
     markSvg: (color: string) => string;
     /** Official mode only: the government signature block rendered in the header slot. */
     OfficialSignature?: ComponentType<{ className?: string }>;
     themeColor: { light: string; dark: string };
+    /**
+     * The accent colour, overriding core's default (`--maple*`). A pack that does not set it keeps the
+     * default red, which is Canada's and reads as Canadian everywhere it appears: the mark, the send
+     * button, focus rings, the italic in a lead. `wash` is the tinted background.
+     */
+    accent?: { base: string; ink: string; wash: string };
     /** Accent used for the flag-proportion band and the brand mark. */
     flagColor: string;
   };
@@ -87,13 +108,35 @@ export type CountryPack = {
   officialHome: Partial<Record<Locale, string>> & { en: string };
   officialHomeLabel: string;
   services: ServiceArea[];
+  /**
+   * The starter chips across the top of the landing hero. Each id needs `chip.<id>`, `chip.<id>.q` and
+   * `chip.<id>.short` in the pack's catalogs; `chip.<id>.sub` and `chip.<id>.official` are optional.
+   * `wideOnly` keeps a chip off the phone hero, which shows four. Omitted falls back to Canada's list
+   * (CHIPS_DEFAULT in components/landing/sections/Hero.tsx).
+   */
+  chips?: { id: string; wideOnly?: boolean; official?: boolean }[];
   art: {
     hero: SceneArt;
     night: SceneArt;
     dusk: SceneArt;
   };
+  /**
+   * The remaining landing artwork, as themed pairs: the phone hero's shore, its mist, the boat on it and the
+   * near bank, plus the closing panel's plain. Each key is a name the core CSS already knows (`shore`,
+   * `shore-mist`, `shore-canoe`, `shore-fore`, `prairie`), so a pack replaces the drawing without a component
+   * changing. Omitted keys fall back to Canada's, which is only ever right for Canada.
+   */
+  phoneArt?: Record<string, { light: string; dark: string }>;
   /** Country knowledge + tool usage guidance appended to the core system prompt (English). */
   systemPrompt: string;
+  /**
+   * Optional landing copy that overrides this pack's own `messages` for the keys it names. It lives with
+   * the pack because it is the pack's presentation layer: Canada's refined English/French landing wording.
+   * A pack with no override (Brazil) simply uses its own catalogs, so no other country's copy can leak in.
+   */
+  landing?: Partial<Record<Locale, () => Promise<{ default: Messages }>>> & {
+    en: () => Promise<{ default: Messages }>;
+  };
   /** Country-level UI strings (hero copy, menu, footer). English is required. */
   messages: Partial<Record<Locale, () => Promise<{ default: Messages }>>> & {
     en: () => Promise<{ default: Messages }>;
@@ -104,7 +147,26 @@ export type CountryPack = {
     factsChecked: string;
     holidays: Holiday[];
     holidaysUrl: string;
-    taxDeadline: { month: number; day: number; selfEmployedMonth: number; selfEmployedDay: number; url: string };
+    /**
+     * The figures the landing's flag demo shows inside its sample answer card. `amount` and `date` stay
+     * numbers so they format per locale; a pack whose demoed thing costs nothing and takes no wait supplies
+     * the `*Label` words instead (Brazil's CadÚnico is free and immediate).
+     */
+    demo?: {
+      amount?: number;
+      amountLabel?: string;
+      unit?: string;
+      unitLabel?: string;
+      date?: string;
+      dateLabel?: string;
+    };
+    /**
+     * The annual personal tax filing deadline the landing counts down to, and the self-employed equivalent.
+     * Optional: not every country has one (Brazil's Simples Nacional DAS is monthly and the IRPF due date is
+     * re-announced every year), and the landing hides the card when it is absent rather than showing a
+     * deadline nobody has verified. `source` is the label shown in the card footer.
+     */
+    taxDeadline?: { month: number; day: number; selfEmployedMonth: number; selfEmployedDay: number; url: string; source: string };
     advisory?: () => Promise<Advisory | null>;
     /**
      * The passport product glyph, so the landing page shows the same mark as the live passport widget.

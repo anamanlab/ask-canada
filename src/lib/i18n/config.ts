@@ -52,7 +52,7 @@ export const LOCALES: readonly LocaleInfo[] = [
   { code: 'ur', endonym: 'اردو', english: 'Urdu', dir: 'rtl', script: 'nastaliq', intl: 'ur', ui: true },
   { code: 'fa', endonym: 'فارسی', english: 'Persian (Farsi)', dir: 'rtl', script: 'arabic', intl: 'fa-u-ca-gregory', ui: true },
   { code: 'hi', endonym: 'हिन्दी', english: 'Hindi', dir: 'ltr', script: 'devanagari', intl: 'hi', ui: false, answerNote: 'उत्तर हिन्दी में · मेनू अभी अंग्रेज़ी में हैं' },
-  { code: 'pt', endonym: 'Português', english: 'Portuguese', dir: 'ltr', script: 'latin', intl: 'pt', ui: false, answerNote: 'Respostas em português · por enquanto, menus em inglês' },
+  { code: 'pt', endonym: 'Português', english: 'Portuguese', dir: 'ltr', script: 'latin', intl: 'pt', ui: true, reviewed: true },
   { code: 'it', endonym: 'Italiano', english: 'Italian', dir: 'ltr', script: 'latin', intl: 'it', ui: false, answerNote: 'Risposte in italiano · per ora, menu in inglese' },
   { code: 'vi', endonym: 'Tiếng Việt', english: 'Vietnamese', dir: 'ltr', script: 'latin', intl: 'vi', ui: false, answerNote: 'Trả lời bằng tiếng Việt · hiện tại menu bằng tiếng Anh' },
   { code: 'ko', endonym: '한국어', english: 'Korean', dir: 'ltr', script: 'hangul', intl: 'ko', ui: false, answerNote: '한국어로 답변 · 메뉴는 당분간 영어로 제공' },

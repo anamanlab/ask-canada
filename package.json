@@ -16,7 +16,17 @@
     "check:scenarios": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-scenarios.mjs",
     "check:guards": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-abuse-guards.mjs",
     "art": "node scripts/build-art.mjs",
-    "shot": "node scripts/shot.mjs"
+    "shot": "node scripts/shot.mjs",
+    "typecheck:br": "tsc --noEmit -p tsconfig.br.json",
+    "check:i18n:br": "node scripts/check-i18n.mjs --country br",
+    "check:scenarios:br": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-scenarios.mjs --country br",
+    "art:br": "node scripts/build-art.br.mjs",
+    "test:br:holidays": "node src/countries/br/data/holidays.test.mjs",
+    "generate:br": "node src/countries/br/knowledge/guidance/render.mjs && node src/countries/br/messages/render.mjs && node src/countries/br/widgets/holidays/messages/render.mjs && node src/countries/br/scenarios/render-starters.mjs",
+    "servicos:br": "node scripts/fetch-servicos.mjs",
+    "servicos:br:check": "node scripts/fetch-servicos.mjs --check",
+    "test:br:servicos": "node src/countries/br/knowledge/servicos.test.mjs",
+    "test:br:contract": "node src/countries/br/tools/contract.test.mjs"
   },
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^5.0.102",

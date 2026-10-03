@@ -1,25 +1,36 @@
 /**
- * The landing's artwork files, built by `scripts/build-art.mjs` into public/art/ca. Each palette is baked into
- * its own file, so none of the drawing rides in the HTML or the RSC payload; CSS picks the light or dark
- * variant from custom properties set here (only the one on screen is fetched).
+ * The landing's artwork. A pack supplies every drawing through `pack.art` and `pack.phoneArt`; each palette
+ * is baked into its own file, so none of the drawing rides in the HTML or the RSC payload, and CSS picks the
+ * light or dark variant from custom properties set here (only the one on screen is fetched).
+ *
+ * `phoneArt` keys are the names the core CSS already knows. A key the pack omits falls back to Canada's file,
+ * which is only ever the right picture for Canada — so a pack should supply all five.
  */
 import type { CSSProperties } from 'react';
+import { pack } from '@/countries/active';
 
-const ART = '/art/ca';
-const url = (name: string) => `url(${ART}/${name}.svg)`;
+const CANADA = '/art/ca';
 
-const themed = (name: string) => ({ '--art': url(`${name}-light`), '--art-d': url(`${name}-dark`) }) as CSSProperties;
+/** The pack's themed pair for `name`, or Canada's when the pack does not draw it. */
+const pair = (name: string): { light: string; dark: string } =>
+  pack.phoneArt?.[name] ?? { light: `${CANADA}/${name}-light.svg`, dark: `${CANADA}/${name}-dark.svg` };
 
-/** The phone hero's lake (Shore) and its mist, the canoe, and the near bank. */
-export const shoreArt = { ...themed('shore'), '--mist': url('shore-mist-light'), '--mist-d': url('shore-mist-dark') } as CSSProperties;
+const themed = (name: string) => ({ '--art': `url(${pair(name).light})`, '--art-d': `url(${pair(name).dark})` }) as CSSProperties;
+
+/** The phone hero's water (Shore) and its mist, the boat, and the near bank. */
+export const shoreArt = {
+  ...themed('shore'),
+  '--mist': `url(${pair('shore-mist').light})`,
+  '--mist-d': `url(${pair('shore-mist').dark})`,
+} as CSSProperties;
 export const canoeArt = themed('shore-canoe');
-/** The near bank (granite and reeds) at the bay's bottom corner. */
+/** The near bank at the water's bottom corner. */
 export const foreArt = themed('shore-fore');
 
-/** The lake drawing itself, per theme: the phone hero's largest paint, so the page preloads it (see Hero). */
-export const shoreFile = { light: `${ART}/shore-light.svg`, dark: `${ART}/shore-dark.svg` };
+/** The water drawing itself, per theme: the phone hero's largest paint, so the page preloads it (see Hero). */
+export const shoreFile = pair('shore');
 
-/** The closing panel's prairie. */
+/** The closing panel's wide plain. */
 export const prairieArt = themed('prairie');
 
 /**

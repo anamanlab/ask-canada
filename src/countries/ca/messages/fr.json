@@ -264,5 +264,6 @@
   "closing.placeholder.short": "Try “How do I apply for EI?”",
   "sources.domains": "Sources officielles utilisées par Ask Canada",
   "flag.demo.caption": "Exemple : une personne demande comment renouveler un passeport qui expire en mars. Ask Canada répond en langage clair et ajoute un plan de renouvellement avec les frais, le délai de traitement et une date prévue.",
-  "doc.languageNote": "Cette page est offerte dans les langues officielles du Canada, l’anglais et le français, pour que ses conditions restent exactes."
+  "doc.languageNote": "Cette page est offerte dans les langues officielles du Canada, l’anglais et le français, pour que ses conditions restent exactes.",
+  "lang.note": "L’anglais et le français sont les langues officielles du Canada et disposent d’interfaces complètes et révisées. Les menus dans d’autres langues sont traduits à l’aide de l’IA et n’ont pas encore été révisés par des locuteurs natifs. Les noms officiels des programmes restent en anglais et en français."
 }

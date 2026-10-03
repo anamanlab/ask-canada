@@ -2,12 +2,23 @@
 
 Ask Canada is a stateless Next.js app. Nothing Vercel-specific is required.
 
+
+---
+
+## Two deployments, one repository
+
+`COUNTRY=ca` and `COUNTRY=br` are two deployments of this same commit. The per-deployment matrix — which
+variables must differ, which live services each pack calls, and how failures are handled — is in
+**[`DEPLOY_TWO_COUNTRIES.md`](./DEPLOY_TWO_COUNTRIES.md)**.
+
+---
+
 ## Configuration (all hosts)
 - Model: `AI_PROVIDER` = `anthropic` | `gateway` | `azure` | `bedrock`, plus `AI_MODEL` and provider
   credentials (see `src/lib/ai/model.ts`). `SCRIPTED_AI=1` runs without a model (kill switch).
 - Abuse and cost controls: see [Abuse and cost controls](#abuse-and-cost-controls). All of them are optional
   and none needs Vercel; every variable is listed in `.env.example`.
-- Country: `COUNTRY=ca` at build time.
+- Country: `COUNTRY=ca` (Canada) or `COUNTRY=br` (Brazil) at build time.
 - Search: `searchOfficialSources` uses the pack's offline index of curated official pages; set
   `SEARCH_FALLBACK=duckduckgo` to add a site-restricted public web search when nothing matches.
 

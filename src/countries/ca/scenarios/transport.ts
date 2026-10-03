@@ -19,8 +19,8 @@ function typeset(s: Scenario): Scenario {
   const vars = s.vars;
   return {
     ...s,
-    reply: { ...s.reply, fr: frType(s.reply.fr) },
-    followUps: s.followUps && { ...s.followUps, fr: s.followUps.fr.map(frType) },
+    reply: { ...s.reply, fr: frType(s.reply.fr!) },
+    followUps: s.followUps && { ...s.followUps, fr: s.followUps.fr!.map(frType) },
     vars:
       vars &&
       (async (ctx) => {

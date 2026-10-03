@@ -1,0 +1,11 @@
+{
+  "title": "Indicador econômico",
+  "subtitle": "Fonte: Banco Central do Brasil",
+  "observedOn": "Referência de",
+  "trend": "Variação entre",
+  "stale": "Esta série não é atualizada há algum tempo. Confirme o valor atual no Banco Central antes de usar esta informação.",
+  "unavailable": "O Banco Central não respondeu agora, então não há valor para mostrar. Isso não significa que o número mudou — significa que não foi possível conferi-lo.",
+  "unsupported": "Este serviço cobre estes indicadores:",
+  "note": "Valores do Sistema Gerenciador de Séries Temporais (SGS) do Banco Central. Juros e preços mudam; sempre confira a data de referência.",
+  "error": "Não foi possível consultar o Banco Central agora."
+}

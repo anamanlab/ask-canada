@@ -153,6 +153,18 @@ export function formatDate(date: Date | string, intl: string, opts: Intl.DateTim
   return dateFormat(intl, opts).format(d);
 }
 
+/**
+ * The time of day of an ISO timestamp, in the given locale.
+ *
+ * Not `formatDate`: that parses a bare `YYYY-MM-DD` as a *local* calendar date, which is
+ * exactly right for a date and exactly wrong for an instant. A fetch timestamp carries a
+ * time and a zone, so it is read as the moment it names.
+ */
+export function formatTime(date: Date | string, intl: string, opts: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: '2-digit' }) {
+  const d = typeof date === 'string' ? new Date(date) : date;
+  return dateFormat(intl, opts).format(d);
+}
+
 export function formatRelativeDays(days: number, intl: string) {
   return cached(relativeCache, intl, () => new Intl.RelativeTimeFormat(intl, { numeric: 'auto' })).format(days, 'day');
 }

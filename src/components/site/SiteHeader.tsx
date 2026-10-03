@@ -9,7 +9,7 @@
  */
 import { useState, type Ref } from 'react';
 import { Globe, History, Menu, SquarePen } from 'lucide-react';
-import { brand, isOfficial } from '@/lib/brand';
+import { brand, endonym, isOfficial, otherOfficial } from '@/lib/brand';
 import { IconButton } from '@/components/ui/plain/Button';
 import { cx } from '@/lib/cx';
 import { useOnDemand, useWindowScrolled } from '@/lib/hooks';
@@ -69,8 +69,10 @@ export function SiteHeader({
   const [MenuSheet, wantMenu] = useOnDemand(loadMenu);
   const [LanguagePicker, wantPicker] = useOnDemand(loadPicker);
   const scrolled = useWindowScrolled(8, variant === 'chat');
-  const other = locale === 'fr' ? 'en' : 'fr';
+  const other = otherOfficial(locale);
   const langLink = useLanguageLink(other);
+  const otherName = endonym(other);
+  const otherShort = otherName === 'English' ? 'EN' : other.toUpperCase();
 
   return (
     <>
@@ -94,9 +96,9 @@ export function SiteHeader({
         {variant === 'chat' && onHistory ? <IconButton label={t('history.title')} icon={History} onClick={onHistory} aria-haspopup="dialog" aria-expanded={Boolean(historyOpen)} /> : null}
         {/* The official-language toggle is a real link to this page in the other language (works before
             the app loads, can be shared); once loaded it switches in place. */}
-        <a className="ac-btn-quiet" aria-label={other === 'fr' ? 'Français' : 'English'} {...langLink}>
-          <span className={variant === 'chat' ? 'max-md:hidden' : undefined}>{other === 'fr' ? 'Français' : 'English'}</span>
-          {variant === 'chat' ? <span className="md:hidden">{other === 'fr' ? 'FR' : 'EN'}</span> : null}
+        <a className="ac-btn-quiet" aria-label={otherName} {...langLink}>
+          <span className={variant === 'chat' ? 'max-md:hidden' : undefined}>{otherName}</span>
+          {variant === 'chat' ? <span className="md:hidden">{otherShort}</span> : null}
         </a>
         <IconButton
           label={t('lang.title')}

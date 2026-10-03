@@ -11,14 +11,20 @@ import './chat.css';
 import { Component, Suspense, createElement, memo, use, type ReactNode } from 'react';
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'motion/react';
 import { Blocks, type LucideIcon } from 'lucide-react';
+import { pack } from '@/countries/active';
 import { widgets } from '@/countries/active.widgets';
 import { WidgetError, WidgetShell, WidgetSkeleton } from '@/components/ui/WidgetShell';
 import { EnglishFallback, useLocale } from '@/lib/i18n/provider';
 import type { Locale } from '@/lib/i18n/config';
 import { findWidget, toolNameOf, type WidgetModule, type WidgetPart, type WidgetProps } from '@/lib/widgets/types';
 
-/** Builders write en + fr catalogs; a widget declares more in the registry (`locales`) once translated. */
-const DEFAULT_WIDGET_LOCALES: readonly Locale[] = ['en', 'fr'];
+/**
+ * Which locales a widget is assumed to have a catalog for, unless its registry entry says otherwise
+ * (`locales`). This is the pack's own reviewed pair — English + French for Canada, Portuguese + English for
+ * Brazil — because a widget's catalog is written in the pack's languages. Getting this wrong is visible: the
+ * widget renders whole in English inside an otherwise translated conversation.
+ */
+const DEFAULT_WIDGET_LOCALES: readonly Locale[] = pack.locales.official;
 
 const modules = new Map<string, Promise<WidgetModule | null>>();
 

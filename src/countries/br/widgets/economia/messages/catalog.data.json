@@ -1,0 +1,39 @@
+{
+  "_note": "Widget catalog for `economia`. Authored directly (not generated): hand-written, and check-i18n compares it to en.json key for key.",
+  "title": {
+    "pt": "Indicador econômico",
+    "en": "Economic indicator"
+  },
+  "subtitle": {
+    "pt": "Fonte: Banco Central do Brasil",
+    "en": "Source: Banco Central do Brasil"
+  },
+  "observedOn": {
+    "pt": "Referência de",
+    "en": "As of"
+  },
+  "trend": {
+    "pt": "Variação entre",
+    "en": "Change between"
+  },
+  "stale": {
+    "pt": "Esta série não é atualizada há algum tempo. Confirme o valor atual no Banco Central antes de usar esta informação.",
+    "en": "This series has not been updated in a while. Check the current value at the Central Bank before relying on it."
+  },
+  "unavailable": {
+    "pt": "O Banco Central não respondeu agora, então não há valor para mostrar. Isso não significa que o número mudou — significa que não foi possível conferi-lo.",
+    "en": "The Central Bank did not answer just now, so there is no value to show. That does not mean the figure changed — it means it could not be checked."
+  },
+  "unsupported": {
+    "pt": "Este serviço cobre estes indicadores:",
+    "en": "This service covers these indicators:"
+  },
+  "note": {
+    "pt": "Valores do Sistema Gerenciador de Séries Temporais (SGS) do Banco Central. Juros e preços mudam; sempre confira a data de referência.",
+    "en": "Figures from the Central Bank's SGS time-series system. Rates and prices move; always check the as-of date."
+  },
+  "error": {
+    "pt": "Não foi possível consultar o Banco Central agora.",
+    "en": "The Central Bank could not be consulted right now."
+  }
+}
