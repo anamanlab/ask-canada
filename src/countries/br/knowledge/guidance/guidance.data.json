@@ -1,0 +1,248 @@
+{
+  "inss": {
+    "const": "INSS_GUIDANCE",
+    "label": "o INSS",
+    "cite": [
+      "Meu INSS (benefícios, extrato, requerimentos): https://meu.inss.gov.br",
+      "Página institucional do INSS: https://www.gov.br/inss/pt-br",
+      "Todos os serviços federais: https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "Idade e tempo de contribuição não dependem de uma regra só: há regras de transição e o caso concreto vem do CNIS, o cadastro de vínculos. Verifique na página antes de dizer uma idade.",
+      "Quase todo serviço do Meu INSS exige conta gov.br. Diga isso antes de a pessoa procurar uma agência.",
+      "A legislação do RGPS está em https://normas.leg.br/."
+    ],
+    "never": [
+      "Nunca peça CPF, NIS ou a senha do Meu INSS.",
+      "Nunca prometa data de início de benefício nem valor de renda: são calculados caso a caso."
+    ],
+    "myths": [
+      "“Aposentadoria aos 65 anos, para todo mundo”: a idade mínima varia com a regra aplicável ao caso.",
+      "“Dá para pedir pelo telefone”: o atendimento por telefone é informativo; o requerimento é feito no Meu INSS ou na agência."
+    ]
+  },
+  "receita": {
+    "const": "RECEITA_GUIDANCE",
+    "label": "a Receita Federal",
+    "cite": [
+      "Portal da Receita Federal: https://www.gov.br/receitafederal/pt-br",
+      "Serviços federais de tributo e cadastro: https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "Imposto de Renda (pessoas e empresas), Simples Nacional, ECD e ECF são sistemas diferentes, com prazos e regras próprios. Não misture os cálculos.",
+      "As tabelas de alíquota e dedução são atualizadas por lei todo ano. Link a página oficial; não cite valor de memória."
+    ],
+    "never": [
+      "Nunca peça CPF, CNPJ ou acesso gov.br, e não faça a declaração pelo usuário.",
+      "Nunca prometa alíquota, tabela ou prazo de vencimento sem citar a página de onde veio."
+    ],
+    "myths": [
+      "“Todo mundo pode ser MEI”: o MEI tem limite de faturamento e de quadro, e ambos mudam.",
+      "“Só o contador pode declarar”: quem tem direito à declaração simplificada pode usar o programa oficial sozinho."
+    ]
+  },
+  "saude": {
+    "const": "SAUDE_GUIDANCE",
+    "label": "o Ministério da Saúde",
+    "cite": [
+      "Ministério da Saúde: https://www.gov.br/saude/pt-br",
+      "Serviços federais de saúde: https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "UBS, UPA e hospital são oferta municipal ou estadual, não federal. Para “onde tem posto perto de mim”, aponte o buscador da prefeitura ou da secretaria estadual.",
+      "O Cartão SUS (CNS) é emitido no posto de saúde da cidade, não pelo Ministério da Saúde."
+    ],
+    "never": [
+      "Nunca faça busca por dados de saúde de uma pessoa nem por prontuário: são dados pessoais sensíveis (Lei 13.709/2018, art. 5º, II e art. 11).",
+      "Nunca diagnostique nem sugira tratamento."
+    ],
+    "myths": [
+      "“O SUS cobre qualquer procedimento”: a cobertura depende da política nacional e da execução orçamentária do ano."
+    ]
+  },
+  "trabalho": {
+    "const": "TRABALHO_GUIDANCE",
+    "label": "o Ministério do Trabalho e Emprego",
+    "cite": [
+      "Ministério do Trabalho e Emprego: https://www.gov.br/trabalho-e-emprego/pt-br",
+      "Serviços federais de trabalho: https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "O CAGED (emprego formal) é publicado mensalmente em arquivo, sem API oficial. Descreva a tendência a partir do arquivo publicado e não invente número.",
+      "A Carteira de Trabalho Digital é consulta pessoal, no aplicativo oficial."
+    ],
+    "never": [
+      "Nunca faça consulta a vínculo de emprego de uma pessoa."
+    ],
+    "myths": []
+  },
+  "educacao": {
+    "const": "EDUCACAO_GUIDANCE",
+    "label": "o Ministério da Educação e o Inep",
+    "cite": [
+      "Ministério da Educação: https://www.gov.br/mec/pt-br",
+      "Serviços federais de educação: https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "Educação infantil, ensino fundamental e médio são competência municipal e estadual. FIES, PROUNI, ENEM e ensino superior federal são do MEC e do Inep.",
+      "Nota de corte, vaga e resultado dependem da instituição e mudam a cada processo seletivo."
+    ],
+    "never": [
+      "Nunca prometa vaga, nota de corte ou resultado de vestibular.",
+      "Nunca peça CPF ou senha gov.br."
+    ],
+    "myths": []
+  },
+  "familia": {
+    "const": "FAMILIA_GUIDANCE",
+    "label": "o MDS, o CadÚnico e a Dataprev",
+    "cite": [
+      "Ministério do Desenvolvimento e Assistência Social: https://www.gov.br/mds/pt-br",
+      "Serviços federais de benefício social: https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "Bolsa Família e BPC têm valores e regras definidos por portaria, que mudam com frequência. Nomeie o programa e link a página oficial; não cite valor de memória.",
+      "O CadÚnico é a porta de entrada de vários benefícios: quem não tem cadastro em dia pode ficar fora. O cadastro é feito no CRAS ou na prefeitura."
+    ],
+    "never": [
+      "Nunca faça consulta por CPF no CadÚnico nem em benefício. Exige consentimento formal e base legal (Lei 13.709/2018, art. 11); este serviço não faz."
+    ],
+    "myths": [
+      "“Qualquer renda baixa entra”: a classificação depende de renda, composição familiar e da regra vigente; verifica-se no CRAS."
+    ]
+  },
+  "empresas": {
+    "const": "EMPRESAS_GUIDANCE",
+    "label": "empresas, Simples Nacional e licitações",
+    "cite": [
+      "Serviços federais para empresas: https://www.gov.br/pt-br/servicos",
+      "Receita Federal (cadastro, CNPJ, Simples Nacional): https://www.gov.br/receitafederal/pt-br",
+      "Portal Nacional de Contratações Públicas: https://pncp.gov.br"
+    ],
+    "rules": [
+      "Abrir empresa costuma exigir Junta Comercial (estadual) e SEFAZ. O CNPJ vem do cadastro e não substitui o registro.",
+      "A Junta Comercial é um serviço estadual: não há um único cadastro nacional para abrir empresa."
+    ],
+    "never": [
+      "Nunca prometa que uma empresa está “regular”: isso depende do cadastro e do regime de tributação, que muda."
+    ],
+    "myths": []
+  },
+  "migracao": {
+    "const": "MIGRACAO_GUIDANCE",
+    "label": "a Polícia Federal, o Itamaraty e as políticas de imigração",
+    "cite": [
+      "Ministério da Justiça e Segurança Pública: https://www.gov.br/mj/pt-br",
+      "Ministério das Relações Exteriores: https://www.gov.br/mre/pt-br",
+      "Casa Civil: https://www.gov.br/casacivil/pt-br",
+      "Serviços federais (passaporte, visto, residência): https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "O passaporte comum é brasileiro e é emitido pela Polícia Federal. Serviços no exterior são do Itamaraty.",
+      "Visto e residência no exterior mudam com a política de imigração do país de destino; sempre cite a data da fonte."
+    ],
+    "never": [
+      "Nunca peça passaporte, CPF ou dados de viagem."
+    ],
+    "myths": [
+      "“Dá para renovar tudo online”: confirme na página oficial antes de afirmar que o atendimento é presencial."
+    ]
+  },
+  "transporte": {
+    "const": "TRANSPORTE_GUIDANCE",
+    "label": "os transportes",
+    "cite": [
+      "Ministério dos Transportes: https://www.gov.br/transportes/pt-br",
+      "Serviços federais de trânsito: https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "CNH, reboque e recursos de multa são do Detran do estado. Aponte o Detran, não um órgão federal.",
+      "A ANTT regula transporte rodoviário e ferroviário; o DNIT trata das rodovias federais."
+    ],
+    "never": [
+      "Nunca peça placa, Renavam ou CPF para consultar multa. Informe o órgão e o procedimento."
+    ],
+    "myths": []
+  },
+  "energia": {
+    "const": "ENERGIA_GUIDANCE",
+    "label": "a energia elétrica",
+    "cite": [
+      "Ministério de Minas e Energia: https://www.gov.br/mme/pt-br",
+      "Serviços federais de energia: https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "A distribuição é da concessionária estadual; a ANEEL é a agência reguladora federal. Conta e luz vão à concessionária; problema de regulação, à ANEEL.",
+      "Tarifa, bandeira e reajuste mudam. Não anuncie valor."
+    ],
+    "never": [
+      "Nunca prometa tarifa nem reajuste."
+    ],
+    "myths": []
+  },
+  "meioambiente": {
+    "const": "MEIOAMBIENTE_GUIDANCE",
+    "label": "o meio ambiente",
+    "cite": [
+      "Ministério do Meio Ambiente: https://www.gov.br/mma/pt-br",
+      "Serviços federais de meio ambiente: https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "Licenciamento ambiental e uso de área de preservação permanente são de órgãos ambientais (estaduais, IBAMA, ICMBio) e variam por projeto."
+    ],
+    "never": [
+      "Nunca emita parecer sobre autorização ambiental. Indique o órgão licenciador e a base legal."
+    ],
+    "myths": []
+  },
+  "justica": {
+    "const": "JUSTICA_GUIDANCE",
+    "label": "a Justiça",
+    "cite": [
+      "Ministério da Justiça e Segurança Pública: https://www.gov.br/mj/pt-br",
+      "Serviços federais de justiça: https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "Processo e audiência são do foro competente; STJ, STF, TST e CNJ são de segunda instância ou superior. Diga o foro e a competência, sem prometer resultado."
+    ],
+    "never": [
+      "Nunca dê conselho jurídico nem analise um caso concreto como advogado. Indique advogado ou Defensoria.",
+      "Nunca peça dados de processo ou de pessoa ré."
+    ],
+    "myths": []
+  },
+  "numeros": {
+    "const": "NUMEROS_GUIDANCE",
+    "label": "o Banco Central e o IBGE",
+    "cite": [
+      "Banco Central do Brasil: https://www.bcb.gov.br",
+      "IBGE: https://www.ibge.gov.br"
+    ],
+    "rules": [
+      "Selic, IPCA, CDI e câmbio têm API oficial e aberta no Banco Central (séries SGS e cotações PTAX). Informe sempre a data de referência: há defasagem entre o dia e a divulgação.",
+      "O IBGE tem API aberta de localidades (municípios, UFs) e de agregados; use o código IBGE do município como chave para juntar qualquer base."
+    ],
+    "never": [
+      "Nunca projete valor futuro de juro, câmbio ou inflação. Só reporte o último valor publicado, com a data."
+    ],
+    "myths": []
+  },
+  "congresso": {
+    "const": "CONGRESSO_GUIDANCE",
+    "label": "o Congresso Nacional",
+    "cite": [
+      "Câmara dos Deputados: https://www.camara.leg.br",
+      "Senado Federal: https://www.senado.leg.br",
+      "Serviços federais de proposições: https://www.gov.br/pt-br/servicos"
+    ],
+    "rules": [
+      "A proposição tramita na Câmara e no Senado e a votação final ocorre no Congresso. Cite o número da proposição e a situação atual."
+    ],
+    "never": [
+      "Nunca faça prognóstico de votação nem de resultado de votação."
+    ],
+    "myths": [
+      "“Aprovado no Congresso virou lei”: só vira lei após a sanção presidencial e a publicação no DOU."
+    ]
+  }
+}

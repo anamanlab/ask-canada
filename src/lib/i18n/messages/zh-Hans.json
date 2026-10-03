@@ -9,6 +9,7 @@
   "source.label": "来源：",
   "source.checked": "核实于 {date}",
   "source.live": "实时",
+  "source.cached": "实时 · 缓存 {time}",
   "source.more": "另有 {count} 个",
   "source.officialPage": "官方页面",
   "widget.loading": "正在加载",

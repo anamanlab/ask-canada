@@ -1,5 +1,5 @@
 /** Locale-bound formatters (isomorphic): `fmt` from `useLocale()` on the client and `getT()` on the server. */
-import { formatCurrency, formatDate, formatMoney, formatNumber, type MoneyOptions } from './format';
+import { formatCurrency, formatDate, formatMoney, formatNumber, formatTime, type MoneyOptions } from './format';
 
 export type Formatters = ReturnType<typeof makeFormatters>;
 
@@ -10,5 +10,7 @@ export function makeFormatters(intl: string, currency: string) {
     money: (n: number, opts?: MoneyOptions) => formatMoney(n, intl, currency, opts),
     number: (n: number, opts?: Intl.NumberFormatOptions) => formatNumber(n, intl, opts),
     date: (d: Date | string, opts?: Intl.DateTimeFormatOptions) => formatDate(d, intl, opts),
+    /** The time of day of an ISO timestamp, e.g. `fmt.time('2026-11-04T12:30Z')` -> "10:30". */
+    time: (d: Date | string, opts?: Intl.DateTimeFormatOptions) => formatTime(d, intl, opts),
   };
 }

@@ -6,6 +6,7 @@ import type { CSSProperties } from 'react';
 import { ArrowRight, Check, ChevronDown, Info, Lock, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import { pack } from '@/countries/active';
+import type { Locale } from '@/lib/i18n/config';
 import { LandingTitle } from '@/components/chat/LandingTitle';
 import { SiteHeader } from '@/components/site/SiteHeader';
 import { isOfficial } from '@/lib/brand';
@@ -18,8 +19,11 @@ import { oneLineExamples, textEm } from '../measure';
 import { Scene } from '../Scene';
 import { Shore, ShoreCanoe, ShoreFore } from '../Shore';
 
-/** Starter tasks. Phones keep four (passport, taxes, benefits, travel) plus a link to every service. */
-const CHIPS = [
+/**
+ * Canada's starter chips, used when a pack does not name its own (`pack.chips`). Phones keep four
+ * (passport, taxes, benefits, travel) plus a link to every service.
+ */
+const CHIPS_DEFAULT = [
   { id: 'passport' },
   { id: 'taxes' },
   { id: 'ccb', official: true },
@@ -54,12 +58,19 @@ async function heroArtPreloads() {
 }
 
 export async function Hero() {
-  const [{ t, lt, own, fr, official, sp }, preloads] = await Promise.all([getLandingCopy(), heroArtPreloads()]);
+  const [{ t, own, locale, fr, official, sp }, preloads] = await Promise.all([getLandingCopy(), heroArtPreloads()]);
+  const greetLang = locale;
   const examples = [1, 2, 3, 4, 5, 6].map((n) => t(`hero.example.${n}`));
   // The short trust line (phones) is a few phrases; each stays whole ("Aucun | compte" never splits).
   const trustParts = t('hero.trust.short').split(' · ');
   // The phone tiles: a name (semibold, about 6% wider than the regular-weight estimate) over a quiet second
   // line (set at 0.82em). The widest of the eight lines sizes the type of all four tiles.
+  // The greeting is the pack's, in the reader's language first and its other official language second.
+  const greet = pack.brand.greeting?.[locale] ?? pack.brand.name;
+  const altLang = (pack.locales.official.find((l) => l !== locale) ?? 'en') as Locale;
+  const altGreet = pack.brand.greeting?.[altLang] ?? pack.brand.name;
+
+  const CHIPS = pack.chips ?? CHIPS_DEFAULT;
   const phoneChips = CHIPS.filter((c) => !('wideOnly' in c));
   const chipEm = Math.max(...phoneChips.map((c) => Math.max(textEm(t(`chip.${c.id}.short`)) * 1.06, textEm(own(`chip.${c.id}.sub`) ?? '') * 0.82))).toFixed(2);
   // Phones: one short line (English and French; other languages keep the full lede).
@@ -85,14 +96,14 @@ export async function Hero() {
           href="/about"
           lang={official ? undefined : 'en'}
           dir={official ? undefined : 'ltr'}
-          aria-label={`${lt('landing.status')} · ${lt('landing.statusShort')}. ${lt('landing.statusMore')}. ${lt('landing.statusLink')}`}
+          aria-label={`${own('landing.status')} · ${own('landing.statusShort')}. ${own('landing.statusMore')}. ${own('landing.statusLink')}`}
         >
           <ShieldCheck className="l-idstrip__ico" aria-hidden strokeWidth={2} />
-          <span className="l-idstrip__k">{lt('landing.status')}</span>
+          <span className="l-idstrip__k">{own('landing.status')}</span>
           <span className="l-idstrip__sep" aria-hidden>
             ·
           </span>
-          <span className="l-idstrip__short">{lt('landing.statusShort')}</span>
+          <span className="l-idstrip__short">{own('landing.statusShort')}</span>
           <Info className="l-idstrip__info" aria-hidden strokeWidth={2} />
         </Link>
       )}
@@ -103,12 +114,12 @@ export async function Hero() {
           {t('hero.kicker')}
         </p>
         <LandingTitle className="l-hello">
-          <span lang={fr ? 'fr' : 'en'}>
-            {fr ? 'Bonjour, Canada' : 'Hello, Canada'}
+          <span lang={greetLang}>
+            {greet}
             <span className="l-stop">.</span>
           </span>
-          <span className="l-hello__alt" lang={fr ? 'en' : 'fr'}>
-            {fr ? 'Hello, Canada' : 'Bonjour, Canada'}
+          <span className="l-hello__alt" lang={altLang}>
+            {altGreet}
             <span className="l-stop">.</span>
           </span>
         </LandingTitle>

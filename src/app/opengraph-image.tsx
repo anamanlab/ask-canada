@@ -1,13 +1,25 @@
 /**
  * Social card (Open Graph + X). 1200×630, rendered once and cached.
- * Bilingual greeting over the northern lake-and-aurora artwork from the country pack.
+ *
+ * Everything on the card comes from the country pack: the greeting in the pack's two official languages, the
+ * tagline from its catalog, the mark in its accent colour, and the artwork from `pack.art`. Nothing about
+ * any one country is written into this file.
  */
 import { ImageResponse } from 'next/og';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { pack } from '@/countries/active';
+import { packServer } from '@/countries/active.server';
 
-export const alt = 'Hello, Canada. Bonjour, Canada. Ask about any federal service in plain language, with the official source.';
+/** The greeting lines, pack order: the source language first, then the pack's other official language. */
+const greetings = () => {
+  const g = pack.brand.greeting;
+  const [first, ...rest] = pack.locales.official;
+  const alt = rest[0] ?? 'en';
+  return [g?.[first] ?? pack.brand.name, g?.[alt] ?? pack.brand.name] as const;
+};
+
+export const alt = `${greetings()[0]}. ${greetings()[1]}. ${pack.brand.name}, plain-language answers to government services with the official source.`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -24,6 +36,7 @@ export default async function OpengraphImage() {
     dataUri(pack.art.hero.aurora),
   ]);
   const mark = `data:image/svg+xml;base64,${Buffer.from(pack.brand.markSvg(pack.brand.flagColor)).toString('base64')}`;
+  const tagline = (await packServer.messages.en()).default['brand.tagline'] ?? pack.brand.name;
   return new ImageResponse(
     (
       <div
@@ -72,10 +85,10 @@ export default async function OpengraphImage() {
           }}
         >
           <div style={{ width: 10, height: 10, borderRadius: 10, background: '#1E6B55' }} />
-          Every federal service, in plain language
+          {tagline}
         </div>
         <div style={{ display: 'flex', fontFamily: 'Newsreader', fontSize: 118, letterSpacing: -5, lineHeight: 1, marginTop: 22 }}>
-          Hello, Canada<span style={{ color: '#D52B1E' }}>.</span>
+          {greetings()[0]}<span style={{ color: pack.brand.flagColor }}>.</span>
         </div>
         <div
           style={{
@@ -87,7 +100,7 @@ export default async function OpengraphImage() {
             color: '#3E4A5A',
           }}
         >
-          Bonjour, Canada<span style={{ color: '#D52B1E' }}>.</span>
+          {greetings()[1]}<span style={{ color: pack.brand.flagColor }}>.</span>
         </div>
         <div
           style={{

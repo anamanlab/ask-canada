@@ -4,6 +4,7 @@
  */
 import { Suspense, type CSSProperties } from 'react';
 import { Calendar, Check, Plane } from 'lucide-react';
+import type { Locale } from '@/lib/i18n/config';
 import { packServer as pack } from '@/countries/active.server';
 import { getLandingCopy } from '../copy';
 import { todayInPack, upcomingHolidays } from '../data';
@@ -58,18 +59,25 @@ function AdvisorySkeleton() {
 }
 
 export async function FlagDemo() {
-  const { t, fmt, sp, d, L, dataLang, checked, fr } = await getLandingCopy();
-  // The reader's own language leads the flag: « Demandez. » first in French, "Ask." first everywhere else.
-  const words = [
-    { tag: 'English', word: 'Ask.', lang: 'en' },
-    { tag: 'Français', word: 'Demandez.', lang: 'fr' },
-  ];
-  const [lead, second] = fr ? [words[1], words[0]] : words;
+  const { t, fmt, sp, d, L, locale, dataLang, checked, fr } = await getLandingCopy();
+  // The reader's own language leads the flag; the pack's other official language follows. Canada reads
+  // "Ask." / "Demandez.", Brazil "Pergunte." / "Ask." — both from `brand.ask`.
+  const endonym = (l: Locale) => new Intl.DisplayNames([l], { type: 'language' }).of(l) ?? l;
+  const words = pack.locales.official.map((l) => ({ tag: endonym(l), word: pack.brand.ask?.[l] ?? pack.brand.name, lang: l }));
+  // Swap only for the pack's *second* official language: a reader in any other locale keeps the first,
+  // which is how Brazil's English readers get "Ask." rather than "Pergunte.".
+  const [lead, second] = words[0] && words[1] ? (locale === words[1].lang ? [words[1], words[0]] : words) : [words[0], words[0]];
   const Mark = pack.brand.Mark;
   const [nextHoliday] = upcomingHolidays(1, todayInPack());
-  // "20 business days" for the demo plan, from the showcase's processing row (never an abbreviation).
+  // The demo plan's figures are the pack's. `demo.unit` keeps the "business days" wording next to the number;
+  // `demo.unitLabel` is the wording on its own, for a pack whose demoed thing takes no wait at all.
+  const demo = pack.showcase.demo;
   const proc = t('showcase.passport.processingValue').split(/\s+\+\s+/)[0].match(/^(\d+)\s*(\S.*)$/);
-  const procDays = proc ? { n: proc[1], unit: proc[2] } : { n: '20', unit: t('flag.demo.days') };
+  const procDays = demo?.unit
+    ? { n: demo.unit, unit: '' }
+    : proc
+      ? { n: proc[1], unit: proc[2] }
+      : { n: t('flag.demo.days'), unit: '' };
 
   return (
     <section className={fr ? 'l-flag l-flag--long-lead' : 'l-flag'} aria-labelledby="t-flag" style={{ '--flag': pack.brand.flagColor } as CSSProperties}>
@@ -85,6 +93,24 @@ export async function FlagDemo() {
         </span>
       </div>
       <div className="l-flag__white">
+        {/* The flag's rhombus, for packs whose flag carries one. It sits behind the
+          cards (first in paint order) and never holds content: green field, yellow
+          losango, white answer — the flag, with a question where the globe would be. */}
+        {pack.brand.flagDiamond ? (
+          <div
+            aria-hidden
+            style={{
+              position: 'absolute',
+              left: '50%',
+              top: '50%',
+              width: 'min(460px, 80%)',
+              aspectRatio: '1 / 1',
+              transform: 'translate(-50%, -50%) rotate(45deg)',
+              background: pack.brand.flagDiamond,
+              borderRadius: 32,
+            }}
+          />
+        ) : null}
         <div className="relative w-full max-w-[560px]">
           {nextHoliday ? (
             <aside className="l-float l-float--a" aria-label={t('flag.holidayLabel')}>
@@ -93,7 +119,7 @@ export async function FlagDemo() {
                 {t('flag.nextHoliday')}
               </p>
               <p className="l-float__t" lang={dataLang}>
-                {nextHoliday.name[L]}
+                {nextHoliday.name[L] ?? nextHoliday.name.en}
               </p>
               <p className="l-float__d">{t('flag.holidayBody', { date: d(nextHoliday.date, { weekday: 'long', month: 'long', day: 'numeric' }) })}</p>
             </aside>
@@ -110,7 +136,7 @@ export async function FlagDemo() {
                 <Mark className="size-4" />
               </span>
               {pack.brand.name}
-              <span className="l-demo__lang">EN · FR</span>
+              <span className="l-demo__lang">{pack.locales.official.map((l) => l.toUpperCase()).join(' · ')}</span>
             </div>
             <div className="l-demo__body">
               <p className="l-demo__q">{t('flag.demo.q')}</p>
@@ -138,7 +164,7 @@ export async function FlagDemo() {
                 <div className="l-demo__stats">
                   <div>
                     <small>{t('flag.demo.fee')}</small>
-                    <b>{fmt.currency(163.5, { minimumFractionDigits: 2 })}</b>
+                    <b>{demo?.amountLabel ?? fmt.currency(demo?.amount ?? 163.5, { minimumFractionDigits: 2 })}</b>
                   </div>
                   <div>
                     <small>{t('flag.demo.processing')}</small>
@@ -149,12 +175,12 @@ export async function FlagDemo() {
                   </div>
                   <div>
                     <small>{t('flag.demo.ready')}</small>
-                    <b>{d('2026-10-29', { month: 'short', day: 'numeric' })}</b>
+                    <b>{demo?.dateLabel ?? d(demo?.date ?? '2026-10-29', { month: 'short', day: 'numeric' })}</b>
                   </div>
                 </div>
                 <div className="l-demo__plan-foot">
                   <span className="truncate">
-                    <span className="l-mono">canada.ca</span>
+                    <span className="l-mono">{pack.officialHomeLabel}</span>
                     <span className="l-demo__checked"> · {t('source.checked', { date: checked })}</span>
                   </span>
                   <DemoTry label={t('flag.demo.try')} question={t('flag.demo.q')} />

@@ -2,7 +2,13 @@
  * Calendar maths on ISO dates (YYYY-MM-DD), timezone-safe (no Date-string parsing drift).
  * Country packs supply their own holiday lists.
  */
-export type Holiday = { date: string; name: { en: string; fr: string } };
+import type { Locale } from '@/lib/i18n/config';
+
+/**
+ * A public holiday. `name` is keyed by locale so a pack can name its holidays in its own official
+ * languages (`{ en, pt }` for Brazil); `en` is required because it is the source language.
+ */
+export type Holiday = { date: string; name: { en: string } & Partial<Record<Locale, string>> };
 
 export const toISO = (d: Date) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;

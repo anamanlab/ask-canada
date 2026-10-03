@@ -17,7 +17,9 @@ import { z } from 'zod';
 import { pack } from '@/countries/active';
 import { searchLocalSources } from '@/countries/active.server';
 
-const UA = 'AskCanadaBot/1.0 (+https://github.com/; official-source retrieval)';
+/** Identifies this service to the official sites it reads; derived from the pack so it is never a stale brand string. */
+const BOT = `${pack.brand.name.replace(/\s+/g, '')}Bot/1.0`;
+const UA = `${BOT} (+https://github.com/; official-source retrieval)`;
 const TTL = 60 * 60 * 1000;
 /** Official pages answer in 1 to 4 seconds; past this the model links the page instead of quoting it. */
 const PAGE_TIMEOUT = 7000;
@@ -122,7 +124,7 @@ export async function searchOfficial(query: string, lang: 'en' | 'fr' = 'en') {
   return cached(`search:${lang}:${q}`, async () => {
     try {
       const res = await fetch(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(q)}&kl=${lang === 'fr' ? 'ca-fr' : 'ca-en'}`, {
-        headers: { 'user-agent': 'Mozilla/5.0 (compatible; AskCanadaBot/1.0)' },
+        headers: { 'user-agent': `Mozilla/5.0 (compatible; ${BOT})` },
         signal: AbortSignal.timeout(6000),
       });
       const html = await res.text();
@@ -146,7 +148,7 @@ export async function searchOfficial(query: string, lang: 'en' | 'fr' = 'en') {
 export const officialSourceTools = {
   fetchOfficialPage: tool({
     description:
-      'Fetch an official government page (only allowlisted official domains) and return its title, "date modified" and main text. Use it to verify fees, dates, eligibility and wording before you state them, and cite the URL you fetched. Prefer the exact task page (e.g. a canada.ca service page) over home pages.',
+      `Fetch an official government page (only allowlisted official domains) and return its title, "date modified" and main text. Use it to verify fees, dates, eligibility and wording before you state them, and cite the URL you fetched. Prefer the exact task page (e.g. a ${pack.officialHomeLabel} service page) over home pages.`,
     inputSchema: z.object({ url: z.string().url().describe('Full https URL of an official page.') }),
     execute: async ({ url }, { abortSignal }) => fetchOfficialPage(url, abortSignal),
   }),

@@ -8,14 +8,19 @@
 import 'server-only';
 import type { ToolSet, UIMessage, UIMessageStreamWriter } from 'ai';
 import type { Locale } from '@/lib/i18n/config';
+import { officialLocales } from '@/lib/i18n/catalog';
 import { localeOfText } from '@/lib/i18n/script';
 import type { Scenario } from './types';
+import { pickCopy } from './types';
 
-type Lang = 'en' | 'fr';
+/** The languages scripted copy is written in: the pack's official ones (`fr` for Canada, `pt` for Brazil). */
+type Lang = Locale;
+
+const isOfficial = (l: Locale) => officialLocales.includes(l);
 
 /**
- * Opening note for answers to questions written in a language other than English or French when the
- * scripted engine (no model) answers: the intent is recognized, the details follow in English.
+ * Opening note for answers to questions written in a language the pack has no scripted copy for, when the
+ * scripted engine (no model) answers: the intent is recognized, the details follow in an official language.
  * Country-agnostic wording, reviewed per language.
  */
 const BRIDGE: Partial<Record<Locale, string>> = {
@@ -40,31 +45,58 @@ const BRIDGE: Partial<Record<Locale, string>> = {
 };
 
 /**
- * The language to answer in. A non-Latin script (Arabic, Gurmukhi, Han…) selects that language; French
- * text gets French. Otherwise (English-looking or other Latin text) a language the person chose that isn't
- * English or French wins: someone who picked العربية or Español and types in English still gets their
- * language (the menus may be in English; the answer shouldn't be).
+ * The language to answer in. A non-Latin script (Arabic, Gurmukhi, Han…) selects that language; text in one
+ * of the pack's other official languages selects that one. Otherwise (English-looking or other Latin text)
+ * a language the person chose that has an official catalog wins: someone who picked العربية or Português and
+ * types in English still gets their language (the menus may be in English; the answer shouldn't be).
  */
 export function detectAnswerLocale(text: string, locale: Locale): Locale {
   const fromText = localeOfText(text, locale, 'en');
-  if (fromText === 'en' || fromText === 'fr' || fromText === locale) {
+  if (isOfficial(fromText) || fromText === locale) {
     const lang = detectLang(text, locale);
-    if (lang === 'fr') return 'fr';
-    return locale !== 'en' && locale !== 'fr' ? locale : 'en';
+    if (isOfficial(lang) && lang !== 'en') return lang;
+    return locale !== 'en' && isOfficial(locale) ? locale : 'en';
   }
   return fromText;
 }
 
-const FRENCH_HINTS =
-  /\b(je|j['’]|mon|ma|mes|est-ce|comment|pourquoi|quand|combien|où|quel(le)?s?|passeport|impôts?|prestations?|assurance-emploi|bonjour|merci|puis-je|dois-je|nous|vous|avec|pour|dans|une?|des|les|le|la)\b/gi;
+/**
+ * Word lists that identify each of the pack's non-English official languages in a plain-latin-script
+ * question. `fr` for Canada, `pt` for Brazil. A pack with a third official language adds a line here.
+ */
+const HINTS: Partial<Record<Locale, { words: RegExp; diacritics: RegExp }>> = {
+  fr: {
+    words: /\b(je|j['’]|mon|ma|mes|est-ce|comment|pourquoi|quand|combien|où|quel(le)?s?|passeport|impôts?|prestations?|assurance-emploi|bonjour|merci|puis-je|dois-je|nous|vous|avec|pour|dans|une?|des|les|le|la)\b/gi,
+    diacritics: /[éèêàçùûôîœ]/gi,
+  },
+  pt: {
+    // Only words that read as Portuguese on their own: `como` and `com` also come from Spanish and from a
+    // bare `.com`, and a hint that fires on either can outvote a real second word.
+    words: /\b(meu|minha|meus|minhas|eu|você|vocês|onde|quando|quanto|qual|quais|preciso|tenho|tenha|não|sim|obrigado|obrigada|por favor|passaporte|meu\s?inss|aposentadoria|benefício|benefícios|serviço|serviços|documento|documentos|para|sem|mais)\b/gi,
+    diacritics: /[ãõçáéíóúâêôà]/gi,
+  },
+};
 
-/** Decide EN vs FR for the reply: explicit French UI wins; otherwise sniff the text. */
+/** Decide which official language to write the scripted body in: the chosen one wins, then sniff the text. */
 export function detectLang(text: string, locale: Locale): Lang {
-  if (locale === 'fr') return 'fr';
-  const hits = text.match(FRENCH_HINTS)?.length ?? 0;
-  const accents = (text.match(/[éèêàçùûôîœ]/gi) ?? []).length;
-  return hits >= 2 || (hits >= 1 && accents >= 1) ? 'fr' : 'en';
+  for (const l of officialLocales) {
+    if (l === 'en') continue;
+    if (l === locale) return l;
+    const hints = HINTS[l];
+    if (!hints) continue;
+    const hits = text.match(hints.words)?.length ?? 0;
+    const accents = (text.match(hints.diacritics) ?? []).length;
+    if (hits >= 2 || (hits >= 1 && accents >= 1)) return l;
+  }
+  return 'en';
 }
+
+/** "We couldn't find an answer" in each official language the pack ships scripted copy for. */
+const NOT_FOUND: Partial<Record<Locale, string>> = {
+  en: 'I couldn’t find an answer for that.',
+  fr: 'Je n’ai pas trouvé de réponse.',
+  pt: 'Não encontrei uma resposta para isso.',
+};
 
 /** Compare questions loosely: case, punctuation and spacing don't matter. */
 export function normalizeQuestion(text: string) {
@@ -220,13 +252,15 @@ export async function runScripted({
   const { text: asked_, hasFiles } = latestUserText(messages);
   // A translated starter question is matched (and its tool inputs derived) from its English original.
   const text = aliases?.get(normalizeQuestion(asked_)) ?? asked_;
-  // The person's language (may be beyond EN/FR), and the language the scripted body is written in.
+  // The person's language (may be beyond the pack's official ones), and the language the scripted body is written in.
   const asked = forceLang ?? detectAnswerLocale(asked_, locale);
-  const lang: Lang = asked === 'fr' ? 'fr' : asked === 'en' ? 'en' : locale === 'fr' ? 'fr' : 'en';
-  const other = asked !== 'en' && asked !== 'fr';
+  const lang: Lang = isOfficial(asked) ? asked : isOfficial(locale) ? locale : 'en';
+  const other = !isOfficial(asked);
+  // Pack code written against the historical EN/FR pair reads `lang`; the real language is `locale`.
+  const ctx = { text, locale: lang, lang: (lang === 'fr' ? 'fr' : 'en') as 'en' | 'fr', timeZone };
   const scenario = pickScenario(scenarios, text, hasFiles);
   // A native reply in the person's language when the scenario has one; otherwise a short note in their
-  // language (shown as a callout above the answer) and the sourced answer in English/French.
+  // language (shown as a callout above the answer) and the sourced answer in an official language.
   const localized = other ? scenario?.replyIntl?.[asked] : undefined;
   const note = other && !localized ? BRIDGE[asked] : undefined;
 
@@ -239,23 +273,24 @@ export async function runScripted({
   await sleep(380, signal);
 
   if (!scenario) {
-    await streamText(writer, lang === 'fr' ? 'Je n’ai pas trouvé de réponse.' : 'I couldn’t find an answer for that.', signal);
+    await streamText(writer, NOT_FOUND[lang] ?? NOT_FOUND.en!, signal);
   } else {
     let vars: Record<string, string> = {};
     try {
-      vars = (await scenario.vars?.({ text, lang })) ?? {};
+      vars = (await scenario.vars?.(ctx)) ?? {};
     } catch (err) {
       console.error(`[scripted] vars for ${scenario.id} failed`, err);
     }
     const fill = (s: string) => s.replace(/\{(\w+)\}/g, (m, k: string) => vars[k] ?? m);
-    await streamText(writer, fill(localized ?? scenario.reply[lang]), signal);
+    await streamText(writer, fill(localized ?? pickCopy(scenario.reply, lang) ?? ''), signal);
     for (const call of scenario.toolCalls ?? []) {
       if (signal?.aborted) break;
-      const input = typeof call.input === 'function' ? call.input({ text, lang, timeZone }) : call.input;
+      const input = typeof call.input === 'function' ? call.input(ctx) : call.input;
       await callTool(writer, tools, call.toolName, input, signal);
     }
-    if (scenario.after && !localized && !signal?.aborted) await streamText(writer, fill(scenario.after[lang]), signal);
-    const followUps = localized ? undefined : scenario.followUps?.[lang];
+    const after = localized ? undefined : pickCopy(scenario.after, lang);
+    if (after && !signal?.aborted) await streamText(writer, fill(after), signal);
+    const followUps = localized ? undefined : pickCopy(scenario.followUps, lang);
     if (followUps?.length && !signal?.aborted) {
       await callTool(writer, tools, 'suggestFollowUps', { questions: followUps }, signal);
     }

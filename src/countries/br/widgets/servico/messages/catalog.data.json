@@ -1,0 +1,83 @@
+{
+  "_note": "Widget catalog for `servico`. Authored directly (not generated): hand-written, and check-i18n compares it to en.json key for key.",
+  "title": {
+    "pt": "Serviço do governo federal",
+    "en": "Federal government service"
+  },
+  "subtitle": {
+    "pt": "Etapas, prazos e canais oficiais",
+    "en": "Steps, timeframes and official channels"
+  },
+  "cost": {
+    "pt": "Custo",
+    "en": "Cost"
+  },
+  "free": {
+    "pt": "Gratuito",
+    "en": "Free"
+  },
+  "paid": {
+    "pt": "Pode ter custo",
+    "en": "May have a cost"
+  },
+  "channel": {
+    "pt": "Onde pedir",
+    "en": "Where to apply"
+  },
+  "digital": {
+    "pt": "Digital",
+    "en": "Online"
+  },
+  "inPerson": {
+    "pt": "Presencial",
+    "en": "In person"
+  },
+  "account": {
+    "pt": "Conta gov.br",
+    "en": "Gov.br account"
+  },
+  "noAccount": {
+    "pt": "Não exige",
+    "en": "Not required"
+  },
+  "time": {
+    "pt": "Prazo",
+    "en": "Timeframe"
+  },
+  "noEstimate": {
+    "pt": "O catálogo não informa",
+    "en": "Not stated in the catalogue"
+  },
+  "audience": {
+    "pt": "Para quem",
+    "en": "Who it is for"
+  },
+  "contact": {
+    "pt": "Onde perguntar:",
+    "en": "Where to ask:"
+  },
+  "startOnline": {
+    "pt": "Começar on-line",
+    "en": "Start online"
+  },
+  "officialPage": {
+    "pt": "Página oficial",
+    "en": "Official page"
+  },
+  "notFound": {
+    "pt": "Não encontrei esse serviço no catálogo oficial:",
+    "en": "I could not find that service in the official catalogue:"
+  },
+  "notFoundHint": {
+    "pt": "Pode ser um serviço estadual, municipal ou novo. Tente o nome como está no gov.br, ou pergunte pelo que precisa.",
+    "en": "It may be a state or municipal service, or a new one. Try the name as it appears on gov.br, or ask for what you need."
+  },
+  "note": {
+    "pt": "Etapas e prazos do Portal de Serviços. A legislação está na página oficial; este cartão não lista leis.",
+    "en": "Steps and timeframes from the Services Portal. Legislation is on the official page; this card does not list laws."
+  },
+  "error": {
+    "pt": "Não foi possível consultar o catálogo agora.",
+    "en": "The catalogue could not be consulted right now."
+  }
+}

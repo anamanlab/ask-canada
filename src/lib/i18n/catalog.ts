@@ -10,11 +10,20 @@ import type { Locale } from './config';
 import type { Messages } from './format';
 import { packServer as pack } from '@/countries/active.server';
 
+/**
+ * Languages the active pack is reviewed in (`pack.locales.official`). Server-only: read by the scripted
+ * engine and the landing copy to decide which language answers and official data names are written in.
+ * A question in any *other* language is still answered (in that language when the model is running, or
+ * behind an honest note when the scripted engine is).
+ */
+export const officialLocales: readonly Locale[] = pack.locales.official;
+
 type Loader = () => Promise<{ default: Messages }>;
 
 const core: Partial<Record<Locale, Loader>> & { en: Loader } = {
   en: () => import('./messages/en.json'),
   fr: () => import('./messages/fr.json'),
+  pt: () => import('./messages/pt.json'),
   ar: () => import('./messages/ar.json'),
   fa: () => import('./messages/fa.json'),
   ur: () => import('./messages/ur.json'),

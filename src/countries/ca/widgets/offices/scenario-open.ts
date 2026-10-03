@@ -4,7 +4,7 @@
  * holiday included), so the heading and the paragraph about the office can never disagree. With no office to
  * name, the heading falls back to the general hours across the time zones. Facts: ./data.ts.
  */
-import { addDays } from '@/lib/dates/business-days';
+import { addDays, type Holiday } from '@/lib/dates/business-days';
 import { SC_CLOSURES } from './data';
 import { holidayOn, localNow } from './hours';
 import { clock, closedNote, describe, dist, end, nearestFor, placeOf, weekdayName, whenText, where, type Ctx, type L, type Nearest } from './scenario-helpers';
@@ -27,9 +27,9 @@ type Verdict = { head: string; lead: string };
 type OpenNow = 'open' | 'before' | 'after' | 'mixed' | 'weekend' | 'holiday';
 
 /** Holiday names with their article: "the National Day for …" / "la Journée nationale …", "Canada Day" / "la fête du Canada". */
-function holidayName(name: { en: string; fr: string }, lang: L): string {
+function holidayName(name: Holiday['name'], lang: L): string {
   if (lang === 'en') return /^(National|Civic|Fête)\b/.test(name.en) ? `the ${name.en}` : name.en;
-  const n = name.fr;
+  const n = name.fr ?? name.en;
   if (/^(Journée|Fête)\b/.test(n)) return `la ${n}`;
   if (/^[AÉEIOU]/.test(n)) return `l’${n}`;
   if (n === 'Noël') return n;

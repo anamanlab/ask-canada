@@ -1,0 +1,11 @@
+{
+  "title": "Economic indicator",
+  "subtitle": "Source: Banco Central do Brasil",
+  "observedOn": "As of",
+  "trend": "Change between",
+  "stale": "This series has not been updated in a while. Check the current value at the Central Bank before relying on it.",
+  "unavailable": "The Central Bank did not answer just now, so there is no value to show. That does not mean the figure changed — it means it could not be checked.",
+  "unsupported": "This service covers these indicators:",
+  "note": "Figures from the Central Bank's SGS time-series system. Rates and prices move; always check the as-of date.",
+  "error": "The Central Bank could not be consulted right now."
+}

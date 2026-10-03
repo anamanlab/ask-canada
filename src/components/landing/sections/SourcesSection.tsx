@@ -7,9 +7,10 @@ import { packServer as pack } from '@/countries/active.server';
 import { getLandingCopy } from '../copy';
 
 const SOURCES = [
-  ['1', 'canada.ca', 'sources.list.1'],
-  ['2', 'canada.ca', 'sources.list.2'],
-  ['3', 'travel.gc.ca', 'sources.list.3'],
+  // The three domains the pack's marquee cites, in the order they appear in `pack.sources.showcase`.
+  ['1', pack.sources.showcase[0] ?? pack.officialHomeLabel, 'sources.list.1'],
+  ['2', pack.sources.showcase[1] ?? pack.officialHomeLabel, 'sources.list.2'],
+  ['3', pack.sources.showcase[2] ?? pack.officialHomeLabel, 'sources.list.3'],
 ] as const;
 
 export async function SourcesSection() {
@@ -45,7 +46,9 @@ export async function SourcesSection() {
                 </span>
                 <div className="min-w-0">
                   <div className="l-quote__t">{t('sources.quote.title')}</div>
-                  <div className="l-crumbs">canada.ca › {t('sources.quote.crumbs')}</div>
+                  <div className="l-crumbs">
+                    {new URL(pack.officialHome.pt ? pack.officialHome.pt : pack.officialHome.en).hostname} › {t('sources.quote.crumbs')}
+                  </div>
                 </div>
               </div>
               <blockquote cite={t('sources.quote.url')} lang={official ? undefined : 'en'} dir={official ? undefined : 'ltr'}>

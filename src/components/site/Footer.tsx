@@ -34,7 +34,7 @@ export async function Footer() {
               <Link href="/accessibility">{t('footer.accessibility')}</Link>
             </li>
             <li>
-              <a href={pack.officialHome[locale === 'fr' ? 'fr' : 'en']}>{t('footer.official', { site: pack.officialHomeLabel })}</a>
+              <a href={pack.officialHome[locale] ?? pack.officialHome.en}>{t('footer.official', { site: pack.officialHomeLabel })}</a>
             </li>
           </ul>
         </nav>

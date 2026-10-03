@@ -1,6 +1,7 @@
 /** How it works: ask, get the answer with its source, hand off to the official page. */
 import { ArrowUpRight, Check, Lock } from 'lucide-react';
 import { Animated } from '../Animated';
+import { pack } from '@/countries/active';
 import { getLandingCopy } from '../copy';
 
 export async function HowItWorks() {
@@ -55,7 +56,7 @@ export async function HowItWorks() {
                 <br />
                 <span className="l-src-pill">
                   <i />
-                  canada.ca › {t('how.2.src')}
+                  {pack.officialHomeLabel} › {t('how.2.src')}
                 </span>
               </div>
             </div>
@@ -78,7 +79,7 @@ export async function HowItWorks() {
               <span className="l-hand__page">
                 <span className="l-hand__bar">
                   <Lock className="size-3" strokeWidth={2.2} />
-                  <span translate="no">canada.ca</span>
+                  <span translate="no">{pack.officialHomeLabel}</span>
                   <span className="l-hand__ok">
                     <Check className="size-2.5" strokeWidth={3} />
                   </span>

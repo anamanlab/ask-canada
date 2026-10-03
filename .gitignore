@@ -53,3 +53,6 @@ reference/
 
 # stray screenshots in the repo root
 /*.png
+/dist/
+.vinext/
+.cloudflare/

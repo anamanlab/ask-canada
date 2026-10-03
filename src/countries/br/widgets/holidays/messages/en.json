@@ -1,0 +1,13 @@
+{
+  "title": "Upcoming non-service days",
+  "subtitle": "Federal national holidays and optional non-service days",
+  "legend": "National holiday",
+  "legendHint": "Fixed in law. Banks and most businesses close.",
+  "legendOptional": "Optional non-service day",
+  "legendOptionalHint": "Carnival and Corpus Christi are optional non-service days, not national holidays. The federal government does not work.",
+  "empty": "No non-service days in the coming years.",
+  "days": "{count, plural, one {# non-service day} other {# non-service days}}",
+  "of": "of {count, plural, one {# day} other {# days}}",
+  "error": "Could not load the holidays.",
+  "note": "Optional non-service days are published each year in a Portaria from the Ministry of Public Management. Years whose list has not been published yet do not appear here."
+}

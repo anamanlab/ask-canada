@@ -297,7 +297,7 @@ export async function POST(req: Request) {
       writer,
       messages,
       locale: answerLocale ?? locale,
-      forceLang: answerLocale === 'en' || answerLocale === 'fr' ? answerLocale : undefined,
+      forceLang: answerLocale && packServer.locales.official.includes(answerLocale) ? answerLocale : undefined,
       tools,
       scenarios,
       signal,

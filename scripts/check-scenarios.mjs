@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 // Scripted-answer coverage check (CI). Fails when a question the product itself suggests would get the
 // generic fallback instead of a real answer:
-//   1. every scenario's follow-up chips, EN and FR;
+//   1. every scenario's follow-up chips, in the pack's two reviewed languages;
 //   2. every question the landing page and Menu promote (hero chips, rotating examples, service rows,
 //      the flag demo), from the pack's EN and FR catalogs;
 //   3. known rephrasings reach their scenario, and guard questions never reach a wrong one;
-//   4. every scenario offers 2+ follow-ups in EN and FR.
+//   4. every scenario offers 2+ follow-ups in both reviewed languages.
 //   node scripts/check-scenarios.mjs [--country ca] [--verbose]
 import { register } from 'node:module';
 import { existsSync, readFileSync } from 'node:fs';
@@ -15,11 +15,16 @@ register('./lib/ts-hooks.mjs', import.meta.url);
 
 const verbose = process.argv.includes('--verbose');
 const country = process.env.COUNTRY;
+// The pack's second reviewed language, from the one declaration of it: `pack.locales.official` in pack.ts.
+const packSrc = readFileSync(new URL(`../src/countries/${country}/pack.ts`, import.meta.url), 'utf8');
+const official = [...(packSrc.match(/official:\s*\[([^\]]*)\]/) ?? ['', ''])[1].matchAll(/'([^']+)'/g)].map((m) => m[1]);
+const SECOND = official.find((l) => l !== 'en') ?? 'fr';
+const langs = ['en', SECOND];
 const { scenarios } = await import('@country/scenarios');
 const { pickScenario } = await import('@/lib/scripted/engine');
 
 const promoted = [];
-for (const lang of ['en', 'fr']) {
+for (const lang of langs) {
   const cat = JSON.parse(readFileSync(new URL(`../src/countries/${country}/messages/${lang}.json`, import.meta.url), 'utf8'));
   for (const [k, v] of Object.entries(cat)) {
     if (/^chip\.[^.]+\.q$|^services\.[^.]+\.starter$|^flag\.demo\.q$/.test(k)) promoted.push({ lang, from: k, q: v });
@@ -43,7 +48,7 @@ const check = (q, where) => {
 };
 
 for (const s of scenarios) {
-  for (const lang of ['en', 'fr']) for (const q of s.followUps?.[lang] ?? []) check(q, `${s.id} followUps.${lang}`);
+  for (const lang of langs) for (const q of s.followUps?.[lang] ?? []) check(q, `${s.id} followUps.${lang}`);
 }
 for (const p of promoted) check(p.q, `${p.lang}.json ${p.from}`);
 
@@ -82,7 +87,7 @@ if (existsSync(paraFile)) {
 
 // 5. Every scripted answer offers at least two “Ask next” chips, in English and French.
 for (const s of scenarios) {
-  for (const lang of ['en', 'fr']) {
+  for (const lang of langs) {
     checked++;
     if ((s.followUps?.[lang]?.length ?? 0) < 2) {
       problems++;

@@ -2,7 +2,7 @@
  * Scripted scenarios for the `passport` widget (EN + FR): the table only. Facts: widgets/passport/data.ts.
  * The computed answers (month, trip) and the question parsing live in widgets/passport/answers/.
  */
-import type { Scenario } from '@/lib/scripted/types';
+import { mapCopy, type Scenario } from '@/lib/scripted/types';
 import { todayInCanada } from '../data/holidays';
 import { cite } from '../widgets/passport/answers/format';
 import { renewReply, travelSoonReply } from '../widgets/passport/answers/general';
@@ -265,7 +265,7 @@ Vous renouvelez? Vous n’avez pas besoin de répondant. Un répondant est néce
 // Every passport answer cites with the planner's titles and carries its check date, like the widget.
 for (const s of passport) {
   s.checked = CHECKED;
-  s.reply = { en: cite(s.reply.en), fr: cite(s.reply.fr) };
+  s.reply = mapCopy(s.reply, cite);
   if (s.replyIntl) for (const k of Object.keys(s.replyIntl)) s.replyIntl[k] = cite(s.replyIntl[k]!);
 }
 

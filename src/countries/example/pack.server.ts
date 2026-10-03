@@ -16,7 +16,7 @@ export const packServer: CountryPack = {
     factsChecked: '2026-09-29',
     holidays: HOLIDAYS,
     holidaysUrl: 'https://example.org/holidays',
-    taxDeadline: { month: 4, day: 30, selfEmployedMonth: 6, selfEmployedDay: 15, url: 'https://example.org/taxes' },
+    taxDeadline: { month: 4, day: 30, selfEmployedMonth: 6, selfEmployedDay: 15, url: 'https://example.org/taxes', source: 'example.org/taxes' },
   },
   systemPrompt: '## Country: Republic of Example\nA fictional country used to demonstrate country packs. Only cite example.org.',
 };

@@ -1,5 +1,6 @@
 /** Scripted scenarios for the `citizenship` widget (EN + FR). Facts: widgets/citizenship/data.ts. */
 import type { Scenario } from '@/lib/scripted/types';
+import { mapCopy } from '@/lib/scripted/types';
 import { todayInCanada } from '../data/holidays';
 import { liveFees, liveProcessing } from '../tools/citizenship';
 import { CHECKED, RULES, URLS } from '../widgets/citizenship/data';
@@ -370,4 +371,4 @@ En attendant, informez IRCC si vous déménagez, changez d’adresse courriel ou
 ];
 
 // French typography: a non-breaking space before ':' so a colon never starts a line.
-export default scenarios.map((s) => ({ ...s, reply: { ...s.reply, fr: s.reply.fr.replace(/ :/g, '\u00a0:') } }));
+export default scenarios.map((s) => ({ ...s, reply: mapCopy(s.reply, (fr) => fr.replace(/ :/g, '\u00a0:')) }));

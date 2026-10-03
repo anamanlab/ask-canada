@@ -9,6 +9,7 @@
   "source.label": "來源：",
   "source.checked": "核實於 {date}",
   "source.live": "即時",
+  "source.cached": "即時 · 快取 {time}",
   "source.more": "另有 {count} 個",
   "source.officialPage": "官方網頁",
   "widget.loading": "載入中",

@@ -1,0 +1,207 @@
+{
+  "$note": "Regression fixtures for the scripted router (see scripts/check-scenarios.mjs). Each list must reach exactly its scenario. `$never` lists questions that must NOT reach a given scenario, so a guard cannot silently disappear.",
+  "holidays-next": [
+    "Proximos feriados",
+    "Qual é o próximo feriado nacional?",
+    "What is the next national holiday?",
+    "Which are this year's national holidays?",
+    "next national holiday in Brazil",
+    "proximo feriado nacional",
+    "proximos pontos facultativos",
+    "qual o proximo feriado",
+    "when is the next holiday"
+  ],
+  "holidays-carnaval": [
+    "Is Carnival a public holiday in Brazil?",
+    "Is Corpus Christi a national holiday?",
+    "O Carnaval é feriado nacional?",
+    "What is the difference between a national holiday and Carnival?",
+    "carnaval é ponto facultativo?",
+    "corpus christi é feriado nacional",
+    "is carnaval a national holiday",
+    "o governo funciona no carnaval?"
+  ],
+  "holidays-ponto-facultativo": [
+    "Qual a diferença entre feriado nacional e ponto facultativo?",
+    "Quando é o próximo ponto facultativo?",
+    "o que é ponto facultativo",
+    "quantos feriados nacionais tem no brasil",
+    "what is a ponto facultativo"
+  ],
+  "benefits-bpc": [
+    "Quem tem direito ao BPC?",
+    "tenho direito ao bpc",
+    "como peço o bpc",
+    "Who qualifies for the BPC?",
+    "how much is the BPC"
+  ],
+  "benefits-cadunico": [
+    "Como faço o CadÚnico?",
+    "cadastro unico como funciona",
+    "preciso do cadunico para bolsa familia",
+    "How does the CadÚnico work?",
+    "how do I register for the cadastro unico"
+  ],
+  "taxes-irpf": [
+    "Como declaro o imposto de renda?",
+    "quando é o prazo do imposto de renda",
+    "preciso de contador para declarar",
+    "How do I file my income tax?",
+    "income tax deadline"
+  ],
+  "retirement-meuinss": [
+    "Como peço um benefício no Meu INSS?",
+    "quero me aposentar pelo inss",
+    "meu inss beneficio",
+    "How do I apply for a benefit on Meu INSS?",
+    "retirement benefit INSS"
+  ],
+  "health-sus": [
+    "Como funciona o SUS?",
+    "tem ubs perto de mim",
+    "how does the SUS work",
+    "where is the nearest health unit"
+  ],
+  "education-fies": [
+    "Quem pode usar o FIES?",
+    "como funciona o fies",
+    "who can use FIES",
+    "how does prouni work"
+  ],
+  "work-unemployment": [
+    "Perdi o emprego. O que o INSS me oferece?",
+    "fui demitido o que eu tenho direito",
+    "como faço o saque do fgts",
+    "I lost my job",
+    "how do I withdraw FGTS"
+  ],
+  "business-mei": [
+    "Vou abrir uma MEI. Por onde começo?",
+    "como abrir uma empresa",
+    "o que e simples nacional",
+    "I want to open an MEI business",
+    "how do I open a company",
+    "Como abrir um MEI?"
+  ],
+  "documents-certidao": [
+    "Como peço uma certidão de nascimento?",
+    "segunda via do cpf",
+    "where do I get a birth certificate",
+    "second copy of my CPF"
+  ],
+  "family-marriage": [
+    "Como funciona o casamento civil?",
+    "onde registro o nascimento do bebe",
+    "how does a civil marriage work",
+    "where do I register a birth"
+  ],
+  "housing-housing": [
+    "Como funciona o Minha Casa Minha Vida?",
+    "tenho direito ao aluguel social",
+    "how does Minha Casa Minha Vida work",
+    "social housing eligibility"
+  ],
+  "passports-passport": [
+    "Como faço a primeira emissão do passaporte?",
+    "onde tiro passaporte",
+    "how do I get a first passport",
+    "where do I renew my passport in Brazil",
+    "Como tirar passaporte?"
+  ],
+  "immigration-visa": [
+    "Preciso de visto para viajar?",
+    "visto para o brasil",
+    "do I need a visa to travel to Brazil",
+    "Brazilian visa for foreigners"
+  ],
+  "civic-bill": [
+    "Como acompanho um projeto de lei?",
+    "quem e o meu deputado",
+    "how do I follow a bill",
+    "where do I see how my deputy voted"
+  ],
+  "transport-fine": [
+    "Como recurro uma multa de trânsito?",
+    "perdi pontos na cnh",
+    "how do I appeal a traffic fine",
+    "driving licence points"
+  ],
+  "energy-bill": [
+    "Como reclamo de uma conta de luz?",
+    "tarifa de energia subiu",
+    "how do I complain about an electricity bill",
+    "energy tariff went up"
+  ],
+  "environment-licence": [
+    "Preciso de licença ambiental?",
+    "quem licencia meu projeto",
+    "do I need an environmental licence",
+    "who licenses my project"
+  ],
+  "justice-legal-aid": [
+    "Como acesso a Defensoria Pública?",
+    "preciso de advogado gratis",
+    "how do I reach legal aid",
+    "free lawyer"
+  ],
+  "security-rights": [
+    "Como faço uma denúncia de direitos humanos?",
+    "disque 100 funciona",
+    "how do I report a human rights violation",
+    "what is Disque 100"
+  ],
+  "money-selic": [
+    "Qual é a taxa Selic agora?",
+    "quanto está o dolar",
+    "qual o valor do ipca",
+    "what is the Selic rate now",
+    "current exchange rate BRL",
+    "Qual é a Selic atual?"
+  ],
+  "world-abroad": [
+    "O que o Itamaraty faz por mim no exterior?",
+    "perdi o passaporte no exterior",
+    "what does the Foreign Ministry do for me abroad",
+    "lost my passport abroad"
+  ],
+  "$never": {
+    "holidays-carnaval": [
+      "Qual é o próximo feriado nacional?",
+      "what is the next national holiday",
+      "como peço um benefício no Meu INSS?"
+    ],
+    "holidays-ponto-facultativo": [
+      "O Carnaval é feriado nacional?",
+      "is carnival a national holiday"
+    ],
+    "taxes-irpf": [
+      "Qual é o próximo feriado nacional?",
+      "Qual é a taxa Selic agora?"
+    ],
+    "money-selic": [
+      "Como declaro o imposto de renda?",
+      "Qual é o próximo feriado nacional?"
+    ]
+  },
+  "place-ibge": [
+    "qual o código IBGE de Manaus",
+    "qual é o codigo do municipio de Niterói",
+    "what is the IBGE code for Belém",
+    "which municipalities are called Santa Rita",
+    "qual a região de Florianópolis",
+    "Quais são os municípios de Pernambuco?"
+  ],
+  "service-catalog": [
+    "Como consultar um serviço no gov.br?"
+  ],
+  "camara-deputy": [
+    "Quem é o deputado Tiririca?",
+    "de qual partido é o Tiririca",
+    "who is deputy Tiririca"
+  ],
+  "camara-bill": [
+    "Em que fase está o PL 1051/2026?",
+    "como foi votado o PL 1051",
+    "what stage is PL 1051/2026 at"
+  ]
+}

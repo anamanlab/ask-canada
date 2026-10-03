@@ -9,6 +9,7 @@
   "source.label": "ماخذ:",
   "source.checked": "{date} کو جانچا گیا",
   "source.live": "براہِ راست",
+  "source.cached": "براہِ راست · کیشے {time}",
   "source.more": "+{count} مزید",
   "source.officialPage": "سرکاری صفحہ",
   "widget.loading": "لوڈ ہو رہا ہے",

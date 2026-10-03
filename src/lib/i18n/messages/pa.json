@@ -9,6 +9,7 @@
   "source.label": "ਸਰੋਤ:",
   "source.checked": "{date} ਨੂੰ ਜਾਂਚਿਆ",
   "source.live": "ਲਾਈਵ",
+  "source.cached": "ਲਾਈਵ · ਕੈਸ਼ {time}",
   "source.more": "+{count} ਹੋਰ",
   "source.officialPage": "ਸਰਕਾਰੀ ਪੰਨਾ",
   "widget.loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ",

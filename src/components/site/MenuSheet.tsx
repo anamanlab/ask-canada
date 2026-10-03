@@ -82,7 +82,7 @@ function MenuEssentials({ onClose, onLanguage }: { onClose: () => void; onLangua
         <ClearDeviceButton variant="link" withIcon />
       </li>
       <li>
-        <a href={pack.officialHome[locale === 'fr' ? 'fr' : 'en']} target="_blank" rel="noopener noreferrer">
+        <a href={pack.officialHome[locale] ?? pack.officialHome.en} target="_blank" rel="noopener noreferrer">
           <Landmark className="size-4" strokeWidth={1.8} aria-hidden />
           {pack.officialHomeLabel}
           <ArrowUpRight className="size-4 flip-rtl" strokeWidth={1.8} aria-hidden />

@@ -65,6 +65,7 @@
  *   isClosedUnexpected, waitingTimeManual, lastUpdated). Postal codes → first 3 characters only, located
  *   with the Government of Canada geolocator (NRCan): https://geolocator.api.geo.ca/?q=<FSA>.
  */
+import type { Holiday } from '@/lib/dates/business-days';
 import type { ToolSource } from '@/lib/widgets/types';
 
 export const CHECKED = '2026-09-30';
@@ -161,7 +162,7 @@ export const LIVE = {
  * After the published list we fall back to the federal list, which Service Canada follows
  * ("All locations are closed on public holidays").
  */
-export type Closure = { date: string; name: { en: string; fr: string }; only?: string[]; except?: string[] };
+export type Closure = { date: string; name: Holiday['name']; only?: string[]; except?: string[] };
 
 export const SC_CLOSURES: Closure[] = [
   { date: '2026-01-01', name: { en: 'New Year’s Day', fr: 'Jour de l’An' } },

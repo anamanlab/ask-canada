@@ -1,0 +1,78 @@
+// Type-checks the Brazil pack: the same contract as `tsconfig.json` with every `@country/*` path
+// repointed at `src/countries/br`. The default tsconfig follows `ca`, so `pnpm typecheck` never
+// sees `br` at all.
+//   pnpm typecheck:br
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": false,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@country/brand": [
+        "./src/countries/br/brand/index.ts"
+      ],
+      "@country/fixtures": [
+        "./src/countries/br/widgets/fixtures.ts"
+      ],
+      "@country/map": [
+        "./src/countries/br/map.ts"
+      ],
+      "@country/mark": [
+        "./src/countries/br/brand/Mark.tsx"
+      ],
+      "@country/pack": [
+        "./src/countries/br/pack.ts"
+      ],
+      "@country/pack-server": [
+        "./src/countries/br/pack.server.ts"
+      ],
+      "@country/scenarios": [
+        "./src/countries/br/scenarios/index.ts"
+      ],
+      "@country/tools": [
+        "./src/countries/br/tools/index.ts"
+      ],
+      "@country/widgets": [
+        "./src/countries/br/widgets/registry.ts"
+      ]
+    },
+    "types": [
+      "node",
+      "react",
+      "react-dom"
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

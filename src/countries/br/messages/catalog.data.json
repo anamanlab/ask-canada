@@ -1,0 +1,1107 @@
+{
+  "_note": "Source of truth for the Brazil pack's UI catalogs. `messages/pt.json` and `messages/en.json` are GENERATED from this file by `node src/countries/br/messages/render.mjs` — edit this, never the JSON. Keys with `{placeholders}` must match across both languages; the renderer and `check-i18n` both enforce it.",
+  "meta.title": {
+    "pt": "Ask Brasil — serviços do Governo Federal, em português",
+    "en": "Ask Brasil — Brazilian federal services, in plain language"
+  },
+  "meta.description": {
+    "pt": "Faça perguntas sobre qualquer serviço do Governo Federal, em português. Receba uma resposta clara com a fonte oficial e as ferramentas que funcionam direto no seu aparelho.",
+    "en": "Ask any question about a Brazilian federal service, in English or Portuguese. Get a clear answer with the official source, plus tools that run on your own device."
+  },
+  "brand.tagline": {
+    "pt": "Serviços do Governo Federal, em linguagem simples",
+    "en": "Federal government services, in plain language"
+  },
+  "hero.kicker": {
+    "pt": "Serviço independente · fontes oficiais",
+    "en": "Independent service · official sources"
+  },
+  "hero.lede": {
+    "pt": "Pergunte sobre qualquer serviço do Governo Federal. Receba uma resposta clara, com a fonte oficial.",
+    "en": "Ask about any Brazilian federal service. Get a clear answer, with the official source."
+  },
+  "hero.hint": {
+    "pt": "Escreva do seu jeito. Em português.",
+    "en": "Ask it your way. In Portuguese or English."
+  },
+  "hero.chipsLabel": {
+    "pt": "Comece por aqui",
+    "en": "Start here"
+  },
+  "hero.scroll": {
+    "pt": "Veja como funciona",
+    "en": "See how it works"
+  },
+  "hero.trust.source": {
+    "pt": "Respostas com fonte oficial e data da verificação",
+    "en": "Answers with the official source and the date it was checked"
+  },
+  "hero.trust.private": {
+    "pt": "Sem conta. Nada é guardado em nossos servidores.",
+    "en": "No account. Nothing is kept on our servers."
+  },
+  "hero.trust.short": {
+    "pt": "Sem conta · Nada fica nos nossos servidores",
+    "en": "No account · Nothing kept on our servers"
+  },
+  "hero.example.1": {
+    "pt": "Quem tem direito ao BPC?",
+    "en": "Who qualifies for the BPC?"
+  },
+  "hero.example.2": {
+    "pt": "Qual é o próximo feriado nacional?",
+    "en": "What is the next national holiday?"
+  },
+  "hero.example.3": {
+    "pt": "Como eu declaro o imposto de renda?",
+    "en": "How do I file my income tax?"
+  },
+  "hero.example.4": {
+    "pt": "Perdi o emprego. O que o INSS me oferece?",
+    "en": "I lost my job. What does the INSS offer me?"
+  },
+  "hero.example.5": {
+    "pt": "Vou abrir uma MEI. Por onde começo?",
+    "en": "I want to open an MEI business. Where do I start?"
+  },
+  "hero.example.6": {
+    "pt": "Qual é a taxa Selic agora?",
+    "en": "What is the Selic rate now?"
+  },
+  "chip.inss": {
+    "pt": "Meu INSS",
+    "en": "Meu INSS"
+  },
+  "chip.inss.q": {
+    "pt": "Como peço um benefício no Meu INSS?",
+    "en": "How do I apply for a benefit on Meu INSS?"
+  },
+  "chip.inss.short": {
+    "pt": "Meu INSS",
+    "en": "Meu INSS"
+  },
+  "chip.inss.sub": {
+    "pt": "Benefícios e requisitos",
+    "en": "Benefits and claims"
+  },
+  "chip.taxas": {
+    "pt": "Imposto de renda",
+    "en": "Income tax"
+  },
+  "chip.taxas.q": {
+    "pt": "Qual é a data limite do imposto de renda?",
+    "en": "What is the income tax filing deadline?"
+  },
+  "chip.taxas.short": {
+    "pt": "Imposto",
+    "en": "Tax"
+  },
+  "chip.beneficios": {
+    "pt": "Bolsa Família",
+    "en": "Bolsa Família"
+  },
+  "chip.beneficios.q": {
+    "pt": "Como funciona o CadÚnico?",
+    "en": "How does the CadÚnico work?"
+  },
+  "chip.beneficios.short": {
+    "pt": "Benefícios",
+    "en": "Benefits"
+  },
+  "chip.beneficios.sub": {
+    "pt": "CadÚnico e benefícios",
+    "en": "CadÚnico and benefits"
+  },
+  "chip.feriados": {
+    "pt": "Feriados",
+    "en": "Holidays"
+  },
+  "chip.feriados.q": {
+    "pt": "Qual é o próximo feriado nacional?",
+    "en": "What is the next national holiday?"
+  },
+  "chip.feriados.short": {
+    "pt": "Feriados",
+    "en": "Holidays"
+  },
+  "chip.passaporte": {
+    "pt": "Passaporte",
+    "en": "Passport"
+  },
+  "chip.passaporte.q": {
+    "pt": "Como faço a primeira emissão do passaporte?",
+    "en": "How do I get a first passport?"
+  },
+  "chip.passaporte.short": {
+    "pt": "Passaporte",
+    "en": "Passport"
+  },
+  "chip.viagem": {
+    "pt": "Viagem",
+    "en": "Travel"
+  },
+  "chip.viagem.q": {
+    "pt": "Preciso de visto para viajar?",
+    "en": "Do I need a visa to travel?"
+  },
+  "chip.viagem.short": {
+    "pt": "Viagem",
+    "en": "Travel"
+  },
+  "tools.eyebrow": {
+    "pt": "Ferramentas na conversa",
+    "en": "Tools in the conversation"
+  },
+  "tools.title": {
+    "pt": "Quando a pergunta pede mais do que palavras, a ferramenta",
+    "en": "When a question takes more than words, the tool"
+  },
+  "tools.titleEm": {
+    "pt": "aparece aqui",
+    "en": "appears here"
+  },
+  "tools.sub": {
+    "pt": "O Ask Brasil coloca a ferramenta dentro da conversa: um calendário, um cálculo, uma lista, dados oficiais ao vivo. Você confere cada fonte.",
+    "en": "Ask Brasil puts the tool inside the conversation: a calendar, a calculation, a checklist, live official data. You check every source."
+  },
+  "showcase.tax.title": {
+    "pt": "Imposto de renda {year}",
+    "en": "Income tax {year}"
+  },
+  "showcase.tax.sub": {
+    "pt": "Declaração da Receita Federal",
+    "en": "Federal Revenue filing"
+  },
+  "showcase.tax.daysLeft": {
+    "pt": " {count, plural, one {dia restante} other {dias restantes}}",
+    "en": " {count, plural, one {day left} other {days left}}"
+  },
+  "showcase.tax.fileBy": {
+    "pt": "Entregar até",
+    "en": "File by"
+  },
+  "showcase.tax.selfEmployed": {
+    "pt": "Contribuintes",
+    "en": "Self-employed"
+  },
+  "showcase.passport.title": {
+    "pt": "Meu INSS",
+    "en": "Meu INSS"
+  },
+  "showcase.passport.sub": {
+    "pt": "Benefícios, extrato e requerimentos · Governo Federal",
+    "en": "Benefits, statements and claims · Federal Government"
+  },
+  "showcase.passport.status": {
+    "pt": "Situação",
+    "en": "Status"
+  },
+  "showcase.passport.online": {
+    "pt": "Pelo Meu INSS",
+    "en": "On Meu INSS"
+  },
+  "showcase.passport.onlineSub": {
+    "pt": "Requerimento pela internet",
+    "en": "Apply online"
+  },
+  "showcase.passport.inPerson": {
+    "pt": "Na agência",
+    "en": "At the office"
+  },
+  "showcase.passport.inPersonSub": {
+    "pt": "Atendimento presencial",
+    "en": "In person"
+  },
+  "showcase.passport.mail": {
+    "pt": "Conta gov.br",
+    "en": "gov.br account"
+  },
+  "showcase.passport.mailShort": {
+    "pt": "Conta",
+    "en": "Account"
+  },
+  "showcase.passport.mailSub": {
+    "pt": "Login Único vale para todos os serviços",
+    "en": "Single sign-on for every federal service"
+  },
+  "showcase.passport.fee": {
+    "pt": "Nível da conta",
+    "en": "Account level"
+  },
+  "showcase.passport.feeShort": {
+    "pt": "Nível",
+    "en": "Level"
+  },
+  "showcase.passport.processing": {
+    "pt": "Onde pedir",
+    "en": "Where to apply"
+  },
+  "showcase.passport.processingValue": {
+    "pt": "Meu INSS",
+    "en": "Meu INSS"
+  },
+  "showcase.passport.processingValueShort": {
+    "pt": "Meu INSS",
+    "en": "Meu INSS"
+  },
+  "showcase.passport.ready": {
+    "pt": "Documentos",
+    "en": "Documents"
+  },
+  "showcase.passport.readyValue": {
+    "pt": "CPF e dados",
+    "en": "CPF and details"
+  },
+  "showcase.holidays.title": {
+    "pt": "Próximo feriado",
+    "en": "Next holiday"
+  },
+  "showcase.holidays.sub": {
+    "pt": "Feriados nacionais e pontos facultativos",
+    "en": "National holidays and optional non-service days"
+  },
+  "flag.sr": {
+    "pt": "O fim da bandeira nacional do Brasil",
+    "en": "The Brazilian national flag"
+  },
+  "flag.holidayLabel": {
+    "pt": "Próximo feriado",
+    "en": "Next holiday"
+  },
+  "flag.nextHoliday": {
+    "pt": "Próximo feriado nacional",
+    "en": "Next national holiday"
+  },
+  "flag.holidayBody": {
+    "pt": "{date}. O governo federal não tem expediente nesse dia.",
+    "en": "{date}. The federal government has no service that day."
+  },
+  "flag.advisoryLabel": {
+    "pt": "Aviso oficial",
+    "en": "Official notice"
+  },
+  "flag.advisory": {
+    "pt": "Aviso oficial",
+    "en": "Official notice"
+  },
+  "flag.live": {
+    "pt": "Ao vivo do MGI · {date}",
+    "en": "Live from the MGI · {date}"
+  },
+  "flag.figures": {
+    "pt": "Os números exibidos vêm do gov.br, verificados em {date}.",
+    "en": "Figures shown come from gov.br, checked {date}."
+  },
+  "flag.demo.q": {
+    "pt": "Qual é o próximo feriado nacional?",
+    "en": "What is the next national holiday?"
+  },
+  "flag.demo.placeholder": {
+    "pt": "Qual é o próximo feriado?",
+    "en": "What is the next holiday?"
+  },
+  "flag.demo.a1": {
+    "pt": "A resposta traz",
+    "en": "The answer gives"
+  },
+  "flag.demo.a2": {
+    "pt": "data, nome e tipo.",
+    "en": "the date, name and kind."
+  },
+  "flag.demo.a3": {
+    "pt": "É um",
+    "en": "It is a"
+  },
+  "flag.demo.a4": {
+    "pt": "feriado nacional, sem expediente.",
+    "en": "national holiday — no federal service."
+  },
+  "flag.demo.eligible": {
+    "pt": "Sem expediente",
+    "en": "No federal service"
+  },
+  "flag.demo.fee": {
+    "pt": "Custo",
+    "en": "Cost"
+  },
+  "flag.demo.processing": {
+    "pt": "Resposta",
+    "en": "Answer"
+  },
+  "flag.demo.days": {
+    "pt": "Próximo dia",
+    "en": "Next day"
+  },
+  "flag.demo.ready": {
+    "pt": "Expediente",
+    "en": "Service"
+  },
+  "flag.demo.try": {
+    "pt": "Pergunte por qualquer serviço",
+    "en": "Ask about any service"
+  },
+  "how.eyebrow": {
+    "pt": "Como funciona",
+    "en": "How it works"
+  },
+  "how.title": {
+    "pt": "Uma pergunta, uma resposta curta,",
+    "en": "One question, one short answer,"
+  },
+  "how.titleEm": {
+    "pt": "uma fonte",
+    "en": "one source"
+  },
+  "how.1.k": {
+    "pt": "01",
+    "en": "01"
+  },
+  "how.1.t": {
+    "pt": "Pergunte como você falaria",
+    "en": "Ask the way you would ask a person"
+  },
+  "how.1.p": {
+    "pt": "Escreva do seu jeito, em português ou em inglês, ou fale em voz alta. Anexe uma carta ou um documento e pergunte o que ele significa para você.",
+    "en": "Write it your way, in Portuguese or English, or speak it aloud. Attach a letter or a document and ask what it means for you."
+  },
+  "how.1.demo": {
+    "pt": "Escreva sua dúvida aqui.",
+    "en": "Type your question here."
+  },
+  "how.1.spoken": {
+    "pt": "Ou pergunte por voz.",
+    "en": "Or ask out loud."
+  },
+  "how.2.k": {
+    "pt": "02",
+    "en": "02"
+  },
+  "how.2.t": {
+    "pt": "Você recebe a resposta e a fonte",
+    "en": "You get the answer and the source"
+  },
+  "how.2.p": {
+    "pt": "Uma resposta de poucas linhas, com um link para a página oficial exata de onde ela veio e a data em que foi conferida.",
+    "en": "A few lines, with a link to the exact official page it came from and the date it was checked."
+  },
+  "how.2.demo1": {
+    "pt": "Resposta com link para a página oficial.",
+    "en": "An answer with a link to the official page."
+  },
+  "how.2.demo2": {
+    "pt": "Cada número mostra onde foi conferido.",
+    "en": "Every figure shows where it was checked."
+  },
+  "how.2.demo3": {
+    "pt": "Nada é inventado para preencher espaço.",
+    "en": "Nothing is invented to fill space."
+  },
+  "how.2.src": {
+    "pt": "Fonte oficial",
+    "en": "Official source"
+  },
+  "how.3.k": {
+    "pt": "03",
+    "en": "03"
+  },
+  "how.3.t": {
+    "pt": "A gente leva você ao site oficial",
+    "en": "We take you to the official site"
+  },
+  "how.3.p": {
+    "pt": "Para entrar na conta, pedir ou pagar, você segue para o portal oficial. A gente nunca pede seu CPF, senha ou dados de pagamento.",
+    "en": "To sign in, apply or pay, you continue on the official portal. We never ask for your CPF, your password or your payment details."
+  },
+  "how.3.handoff": {
+    "pt": "Continuar no gov.br",
+    "en": "Continue on gov.br"
+  },
+  "privacy.eyebrow": {
+    "pt": "Privacidade",
+    "en": "Privacy"
+  },
+  "privacy.title": {
+    "pt": "Sua pergunta vai para o servidor e",
+    "en": "Your question goes to our server and"
+  },
+  "privacy.titleEm": {
+    "pt": "fica só ali",
+    "en": "stays there"
+  },
+  "privacy.sub": {
+    "pt": "A Lei Geral de Proteção de Dados (Lei 13.709/2018) trata tudo que identifica uma pessoa brasileira como dado pessoal. Por isso o serviço funciona assim:",
+    "en": "Brazil's General Data Protection Law (Lei 13.709/2018) treats anything that identifies a person here as personal data. That is why this service works this way:"
+  },
+  "privacy.card.stored": {
+    "pt": "A pergunta é enviada para gerar a resposta e não é gravada.",
+    "en": "Your question is sent to write the answer and is not stored."
+  },
+  "privacy.card.nothing": {
+    "pt": "Sem conta, sem e-mail",
+    "en": "No account, no email"
+  },
+  "privacy.card.nothingSub": {
+    "pt": "Nada é coletado sobre quem você é.",
+    "en": "We collect nothing about who you are."
+  },
+  "privacy.card.device": {
+    "pt": "Fica no seu aparelho",
+    "en": "Stays on your device"
+  },
+  "privacy.card.ex1": {
+    "pt": "CPF e CNPJ",
+    "en": "CPF and CNPJ"
+  },
+  "privacy.card.ex1d": {
+    "pt": "Removidos da sua mensagem. Nunca peça CPF em um chat.",
+    "en": "Removed from your message. Never post a CPF in a chat."
+  },
+  "privacy.card.ex2": {
+    "pt": "Suas listas e planos",
+    "en": "Your lists and plans"
+  },
+  "privacy.card.ex2d": {
+    "pt": "Salvos só no armazenamento local deste navegador, e apagam com um clique.",
+    "en": "Saved only in this browser, and cleared with one click."
+  },
+  "privacy.card.emptyNote": {
+    "pt": "Nada foi salvo ainda.",
+    "en": "Nothing saved yet."
+  },
+  "sources.eyebrow": {
+    "pt": "Fontes",
+    "en": "Sources"
+  },
+  "sources.title": {
+    "pt": "Cada afirmação aponta",
+    "en": "Every claim points back to"
+  },
+  "sources.titleEm": {
+    "pt": "de onde veio",
+    "en": "where it came from"
+  },
+  "sources.sub": {
+    "pt": "As respostas vêm de páginas oficiais do Governo Federal e de dados públicos abertos, nunca de blogs ou de suposições. Quando um valor não pode ser verificado, a gente entrega o link em vez do número.",
+    "en": "Answers come from official federal pages and open public data, never from blogs or guesses. When a figure cannot be verified, we give you the link instead of the number."
+  },
+  "sources.quote.title": {
+    "pt": "Feriados nacionais e pontos facultativos",
+    "en": "National holidays and optional non-service days"
+  },
+  "sources.quote.crumbs": {
+    "pt": "Governo Federal",
+    "en": "Federal Government"
+  },
+  "sources.quote.url": {
+    "pt": "https://www.gov.br/mre/pt-br/eresp/feriados-e-pontos-facultativos",
+    "en": "https://www.gov.br/mre/pt-br/eresp/feriados-e-pontos-facultativos"
+  },
+  "sources.quote.text": {
+    "pt": "Todo ano, o Ministério da Gestão publica uma Portaria no Diário Oficial com as datas dos feriados nacionais e dos pontos facultativos. É essa portaria que a gente usa, não uma lista de internet.",
+    "en": "Every year the Ministry of Public Management publishes a Portaria in the official gazette with the dates of national holidays and of optional non-service days. That is the list we use, not one from the internet."
+  },
+  "sources.updated": {
+    "pt": "Conferido em {date}",
+    "en": "Updated {date}"
+  },
+  "sources.list.title": {
+    "pt": "Domínios oficiais usados pelo Ask Brasil",
+    "en": "Official domains used by Ask Brasil"
+  },
+  "sources.domains": {
+    "pt": "Domínios oficiais",
+    "en": "Official domains"
+  },
+  "dir.eyebrow": {
+    "pt": "Todos os serviços",
+    "en": "Every service"
+  },
+  "dir.title": {
+    "pt": "Novecentos e noventa e oito serviços federais,",
+    "en": "One front door to every federal service,"
+  },
+  "dir.titleEm": {
+    "pt": "um lugar só",
+    "en": "one place"
+  },
+  "closing.sub": {
+    "pt": "Não sabe por onde começar? Pergunte do seu jeito. A gente acha a página oficial certa.",
+    "en": "Not sure where to start? Ask the way you would ask a person. We will find the right official page."
+  },
+  "closing.placeholder": {
+    "pt": "Experimente “Quem tem direito ao BPC?”",
+    "en": "Try “Who qualifies for the BPC?”"
+  },
+  "closing.placeholder.short": {
+    "pt": "Experimente “E o BPC?”",
+    "en": "Try “What about the BPC?”"
+  },
+  "footer.tagline": {
+    "pt": "Serviços do Governo Federal em linguagem simples",
+    "en": "Federal government services in plain language"
+  },
+  "footer.about": {
+    "pt": "Sobre",
+    "en": "About"
+  },
+  "footer.accessibility": {
+    "pt": "Acessibilidade",
+    "en": "Accessibility"
+  },
+  "footer.official": {
+    "pt": "Serviços oficiais em {site}",
+    "en": "Official services at {site}"
+  },
+  "footer.privacyControls": {
+    "pt": "Privacidade e este aparelho",
+    "en": "Privacy and this device"
+  },
+  "footer.privacy": {
+    "pt": "Privacidade",
+    "en": "Privacy"
+  },
+  "footer.terms": {
+    "pt": "Termos",
+    "en": "Terms"
+  },
+  "footer.language": {
+    "pt": "Idioma",
+    "en": "Language"
+  },
+  "footer.emergencyA": {
+    "pt": "Em uma emergência, ligue",
+    "en": "In an emergency, call"
+  },
+  "footer.emergencyB": {
+    "pt": "Em crise, ligue ou envie texto para",
+    "en": "In crisis, call or text"
+  },
+  "footer.emergency": {
+    "pt": "Emergência",
+    "en": "Emergency"
+  },
+  "footer.disclaimer": {
+    "pt": "Serviço independente. As respostas vêm de fontes oficiais do Governo Federal — confirme sempre na página oficial indicada.",
+    "en": "Independent service. Answers come from official Government of Brazil sources — always confirm on the linked official page."
+  },
+  "footer.disclaimerShort": {
+    "pt": "Serviço independente, não é um site do governo.",
+    "en": "Independent service, not a government site."
+  },
+  "footer.official.disclaimer": {
+    "pt": "As respostas são fundamentadas em páginas oficiais do Governo Federal — confirme sempre na página indicada antes de agir.",
+    "en": "Answers are grounded in official Government of Brazil pages — always confirm on the linked page before acting."
+  },
+  "doc.about.title": {
+    "pt": "Sobre o Ask Brasil",
+    "en": "About Ask Brasil"
+  },
+  "doc.about.lede": {
+    "pt": "O que é este serviço e de onde vêm as respostas.",
+    "en": "What this service is, and where the answers come from."
+  },
+  "doc.about.body": {
+    "pt": "## O que é\nO Ask Brasil ajuda você a encontrar e entender serviços do Governo Federal. Faça uma pergunta com as suas palavras, em português ou em inglês, e receba uma resposta curta com o link para a página oficial exata de onde ela veio. Quando a pergunta pede mais do que palavras, o Ask Brasil acrescenta uma ferramenta à conversa.\n\n## O que não é\nO Ask Brasil é um serviço independente. Não é o Governo Federal e não fala em nome de nenhum ministério. Nunca entra na sua conta, não protocola requerimento e não aceita pagamento. Para esses passos, ele aponta o site oficial.\n\n## De onde vêm as respostas\nAs respostas vêm de páginas oficiais em gov.br e outros domínios do Governo Federal, e de dados públicos abertos como os do IBGE e do Banco Central. Cada valor e cada data mostram quando foram conferidos.\n\n## Aberto e adotável\nO Ask Brasil segue padrões web do Governo Federal: acessibilidade (WCAG 2.1 nível AA), a Lei Geral de Proteção de Dados e segurança rigorosa. Foi construído para que uma equipe de governo possa adotá-lo e operá-lo.",
+    "en": "## What it is\nAsk Brasil helps you find and understand Brazilian federal services. Ask a question in your own words, in Portuguese or English, and get a short answer with a link to the exact official page it came from. When a question takes more than words, Ask Brasil adds a tool to the conversation.\n\n## What it is not\nAsk Brasil is an independent service. It is not the Federal Government and does not speak for any ministry. It never signs in on your behalf, files a request or takes a payment. For those steps it points you to the official site.\n\n## Where the answers come from\nAnswers come from official pages on gov.br and other Government of Brazil domains, and from open public data such as IBGE's and the Central Bank's. Every figure and date shows when it was checked.\n\n## Open and adoptable\nAsk Brasil follows federal web standards: accessibility (WCAG 2.1 AA), Brazil's General Data Protection Law and strict security. It is built so that a government team could adopt and run it."
+  },
+  "doc.privacy.title": {
+    "pt": "Privacidade",
+    "en": "Privacy"
+  },
+  "doc.privacy.lede": {
+    "pt": "O que coletamos, o que não coletamos e por quê.",
+    "en": "What we collect, what we do not, and why."
+  },
+  "doc.privacy.body": {
+    "pt": "## O que não coletamos\nNenhuma conta, nenhum nome, nenhum e-mail. Não usamos cookies de rastreamento, perfis de análise nem publicidade.\n\n## Seus dados pessoais\nCPF, CNPJ, NIS, dados de saúde e dados de cartão são dados pessoais no Brasil (Lei 13.709/2018). Nunca os pedimos. Se você colar um deles na conversa, o sistema remove antes de enviar e avisa você.\n\n## Suas perguntas\nA pergunta é enviada ao servidor para escrever a resposta e não é guardada. As conversas não ficam nos nossos servidores e não viram perfil de ninguém.\n\n## O que fica no seu aparelho\nConversas recentes, planos e listas que você salva ficam no armazenamento local deste navegador, só neste aparelho. “Limpar este aparelho” apaga tudo.\n\n## Proteção contra abuso\nContamos as requisições por endereço de rede por alguns minutos, para segurar o abuso automatizado. Guardamos apenas uma forma embaralhada do endereço, em memória, e ela nunca é gravada.",
+    "en": "## What we do not collect\nNo account, no name, no email. We use no tracking cookies, no analytics profiles and no advertising.\n\n## Your personal data\nA CPF, a CNPJ, your NIS, health data and card details are personal data in Brazil (Lei 13.709/2018). We never ask for them. If you paste one into the conversation, the system removes it before sending and tells you so.\n\n## Your questions\nYour question is sent to our server to write the answer and is not stored. Conversations are not kept on our servers and are never used to profile anyone.\n\n## What stays on your device\nRecent conversations, plans and checklists you save live in this browser's local storage, on this device only. “Clear this device” removes them all.\n\n## Abuse protection\nWe count requests per network address for a few minutes to hold off automated abuse. We keep only a scrambled form of the address, in memory, and it is never written to disk."
+  },
+  "doc.accessibility.title": {
+    "pt": "Acessibilidade",
+    "en": "Accessibility"
+  },
+  "doc.accessibility.lede": {
+    "pt": "O padrão que este serviço busca seguir e o que ele já entrega.",
+    "en": "The standard this service aims at, and what it already delivers."
+  },
+  "doc.accessibility.body": {
+    "pt": "## Nosso padrão\nO Ask Brasil busca atender às Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.1, nível AA.\n\n## O que fazemos\n- Tudo funciona pelo teclado, com indicador de foco visível.\n- As respostas são anunciadas por leitores de tela quando prontas, e cada ferramenta tem alternativa em texto.\n- O contraste atende AA no claro e no escuro, e as animações são reduzidas quando o seu aparelho pede.\n- Português e inglês têm interface completa e revisada.\n\n## Limites conhecidos\n- Interfaces em outros idiomas ainda não foram revisadas por falantes nativos.\n- Os mapas vêm acompanhados de uma lista em texto.",
+    "en": "## Our standard\nAsk Brasil aims to meet the Web Content Accessibility Guidelines (WCAG) 2.1, level AA.\n\n## What we do\n- Everything works from the keyboard, with a visible focus indicator.\n- Answers are announced by screen readers when ready, and every tool has a text alternative.\n- Contrast meets AA in light and dark, and motion is reduced when your device asks for it.\n- Portuguese and English have a full, reviewed interface.\n\n## Known limits\n- Interfaces in other languages have not yet been reviewed by native speakers.\n- Maps come with a text list alongside them."
+  },
+  "doc.terms.title": {
+    "pt": "Termos",
+    "en": "Terms"
+  },
+  "doc.terms.lede": {
+    "pt": "O que este serviço é e o que ele não faz.",
+    "en": "What this service is, and what it does not do."
+  },
+  "doc.terms.body": {
+    "pt": "## Informação, não conselho\nO Ask Brasil dá informação geral baseada em fontes oficiais. Não é aconselhamento jurídico, contábil ou médico, e pode haver erro. Confirme sempre na página oficial antes de pedir, pagar ou decidir.\n\n## Serviço independente\nO Ask Brasil não é o Governo Federal. Os nomes dos programas e a informação pertencem aos ministérios.\n\n## Uso justo\nNão use o serviço para causar dano, cometer fraude ou sobrecarregar o sistema com requisições automatizadas. Podemos limitar as requisições para que ele continue acessível a todos.\n\n## Emergências\nO Ask Brasil não é um canal de emergência. Em uma emergência, ligue 192 (SAMU), 190 (Polícia Militar) ou 193 (Bombeiros). Em crise de saúde mental, ligue 188 (CVV).",
+    "en": "## Information, not advice\nAsk Brasil gives general information based on official sources. It is not legal, financial or medical advice, and it can be wrong. Always confirm on the official page before you apply, pay or decide.\n\n## Independent service\nAsk Brasil is not the Federal Government. Programme names and the information belong to the ministries.\n\n## Fair use\nDo not use the service to harm others, to commit fraud, or to overload it with automated requests. We may limit requests so it stays available to everyone.\n\n## Emergencies\nAsk Brasil is not an emergency channel. In an emergency call 192 (SAMU), 190 (Military Police) or 193 (Fire). In a mental health crisis call 188 (CVV)."
+  },
+  "doc.contact": {
+    "pt": "Contato",
+    "en": "Contact"
+  },
+  "doc.back": {
+    "pt": "Voltar",
+    "en": "Back"
+  },
+  "doc.languageNote": {
+    "pt": "Esta página está disponível nos idiomas oficiais do serviço, português e inglês, para que os termos permaneçam exatos.",
+    "en": "This page is available in the service's official languages, Portuguese and English, so the terms stay exact."
+  },
+  "services.benefits": {
+    "n": {
+      "pt": "Benefícios sociais",
+      "en": "Social benefits"
+    },
+    "d": {
+      "pt": "Bolsa Família, BPC, CadÚnico e o que cada programa exige.",
+      "en": "Bolsa Família, BPC, the CadÚnico and what each programme requires."
+    },
+    "s": {
+      "pt": "Quem tem direito ao BPC?",
+      "en": "Who qualifies for the BPC?"
+    },
+    "g": {
+      "pt": "Ver benefícios",
+      "en": "See benefits"
+    }
+  },
+  "services.taxes": {
+    "n": {
+      "pt": "Impostos e declaração",
+      "en": "Taxes and filing"
+    },
+    "d": {
+      "pt": "Imposto de renda, Simples Nacional, DAS e prazos.",
+      "en": "Income tax, Simples Nacional, DAS and due dates."
+    },
+    "s": {
+      "pt": "Qual é a data limite do imposto de renda?",
+      "en": "What is the income tax filing deadline?"
+    },
+    "g": {
+      "pt": "Ver impostos",
+      "en": "See taxes"
+    }
+  },
+  "services.retirement": {
+    "n": {
+      "pt": "Aposentadoria e previdência",
+      "en": "Retirement and pensions"
+    },
+    "d": {
+      "pt": "Meu INSS, benefícios, carência e contribuições.",
+      "en": "Meu INSS, benefits, contribution time and contributions."
+    },
+    "s": {
+      "pt": "Como peço um benefício no Meu INSS?",
+      "en": "How do I apply for a benefit on Meu INSS?"
+    },
+    "g": {
+      "pt": "Ver previdência",
+      "en": "See pensions"
+    }
+  },
+  "services.health": {
+    "n": {
+      "pt": "Saúde e SUS",
+      "en": "Health and SUS"
+    },
+    "d": {
+      "pt": "Unidades, cobertura, vacinação e como agendar.",
+      "en": "Facilities, coverage, vaccination and how to book."
+    },
+    "s": {
+      "pt": "Como funciona o SUS na minha cidade?",
+      "en": "How does the SUS work in my city?"
+    },
+    "g": {
+      "pt": "Ver saúde",
+      "en": "See health"
+    }
+  },
+  "services.education": {
+    "n": {
+      "pt": "Educação",
+      "en": "Education"
+    },
+    "d": {
+      "pt": "FIES, PROUNI, ENEM e a educação que é do seu estado.",
+      "en": "FIES, PROUNI, ENEM and the schooling your state runs."
+    },
+    "s": {
+      "pt": "Quem pode usar o FIES?",
+      "en": "Who can use FIES?"
+    },
+    "g": {
+      "pt": "Ver educação",
+      "en": "See education"
+    }
+  },
+  "services.work": {
+    "n": {
+      "pt": "Trabalho e emprego",
+      "en": "Work and employment"
+    },
+    "d": {
+      "pt": "Carteira de trabalho, FGTS, férias e emprego formal.",
+      "en": "Work record, FGTS, holidays and formal employment."
+    },
+    "s": {
+      "pt": "Perdi o emprego. O que o INSS me oferece?",
+      "en": "I lost my job. What does the INSS offer me?"
+    },
+    "g": {
+      "pt": "Ver trabalho",
+      "en": "See work"
+    }
+  },
+  "services.business": {
+    "n": {
+      "pt": "Empresas e negócios",
+      "en": "Business"
+    },
+    "d": {
+      "pt": "CNPJ, MEI, Simples Nacional e compras públicas.",
+      "en": "CNPJ, MEI, Simples Nacional and public procurement."
+    },
+    "s": {
+      "pt": "Vou abrir uma MEI. Por onde começo?",
+      "en": "I want to open an MEI business. Where do I start?"
+    },
+    "g": {
+      "pt": "Ver empresas",
+      "en": "See business"
+    }
+  },
+  "services.documents": {
+    "n": {
+      "pt": "Documentos e certidões",
+      "en": "Documents and certificates"
+    },
+    "d": {
+      "pt": "Onde tirar certidão, como emitir documentos e o que precisa.",
+      "en": "Where to get a certificate, how to issue documents, what you need."
+    },
+    "s": {
+      "pt": "Como peço uma certidão de nascimento?",
+      "en": "How do I request a birth certificate?"
+    },
+    "g": {
+      "pt": "Ver documentos",
+      "en": "See documents"
+    }
+  },
+  "services.family": {
+    "n": {
+      "pt": "Família e registro civil",
+      "en": "Family and civil registration"
+    },
+    "d": {
+      "pt": "Casamento, nascimento, óbito e o que muda no CPF.",
+      "en": "Marriage, birth, death and what changes on your CPF."
+    },
+    "s": {
+      "pt": "Como funciona o casamento civil?",
+      "en": "How does a civil marriage work?"
+    },
+    "g": {
+      "pt": "Ver família",
+      "en": "See family"
+    }
+  },
+  "services.housing": {
+    "n": {
+      "pt": "Habitação",
+      "en": "Housing"
+    },
+    "d": {
+      "pt": "Minha Casa Minha Vida, aluguel social e crédito habitacional.",
+      "en": "My Home My Life, social housing and housing credit."
+    },
+    "s": {
+      "pt": "Como funciona o Minha Casa Minha Vida?",
+      "en": "How does Minha Casa Minha Vida work?"
+    },
+    "g": {
+      "pt": "Ver habitação",
+      "en": "See housing"
+    }
+  },
+  "services.passports": {
+    "n": {
+      "pt": "Passaportes e viagens",
+      "en": "Passports and travel"
+    },
+    "d": {
+      "pt": "Emissão, renovação, visto e entrada no país.",
+      "en": "Issue, renewal, visas and entry."
+    },
+    "s": {
+      "pt": "Como faço a primeira emissão do passaporte?",
+      "en": "How do I get a first passport?"
+    },
+    "g": {
+      "pt": "Ver passaportes",
+      "en": "See passports"
+    }
+  },
+  "services.immigration": {
+    "n": {
+      "pt": "Imigração e vistos",
+      "en": "Immigration and visas"
+    },
+    "d": {
+      "pt": "Visto para o Brasil e residência para estrangeiros.",
+      "en": "Visas for Brazil and residence for foreigners."
+    },
+    "s": {
+      "pt": "Preciso de visto para viajar ao Brasil?",
+      "en": "Do I need a visa to travel to Brazil?"
+    },
+    "g": {
+      "pt": "Ver imigração",
+      "en": "See immigration"
+    }
+  },
+  "services.civic": {
+    "n": {
+      "pt": "Congresso e eleições",
+      "en": "Congress and elections"
+    },
+    "d": {
+      "pt": "Deputados, senadores, proposições e o calendário eleitoral.",
+      "en": "Deputies, senators, bills and the electoral calendar."
+    },
+    "s": {
+      "pt": "Como acompanho um projeto de lei?",
+      "en": "How do I follow a bill?"
+    },
+    "g": {
+      "pt": "Ver Congresso",
+      "en": "See Congress"
+    }
+  },
+  "services.transport": {
+    "n": {
+      "pt": "Transportes e trânsito",
+      "en": "Transport and traffic"
+    },
+    "d": {
+      "pt": "CNH, multas, rodovias e fretes.",
+      "en": "Driving licence, fines, roads and freight."
+    },
+    "s": {
+      "pt": "Como recurro uma multa de trânsito?",
+      "en": "How do I appeal a traffic fine?"
+    },
+    "g": {
+      "pt": "Ver transportes",
+      "en": "See transport"
+    }
+  },
+  "services.energy": {
+    "n": {
+      "pt": "Energia elétrica",
+      "en": "Electricity"
+    },
+    "d": {
+      "pt": "Conta de luz, tarifa, bandeira e geração solar.",
+      "en": "Your bill, tariffs, the flag and solar."
+    },
+    "s": {
+      "pt": "Como reclamo de uma conta de luz?",
+      "en": "How do I complain about an electricity bill?"
+    },
+    "g": {
+      "pt": "Ver energia",
+      "en": "See energy"
+    }
+  },
+  "services.environment": {
+    "n": {
+      "pt": "Meio ambiente",
+      "en": "Environment"
+    },
+    "d": {
+      "pt": "Licenciamento, áreas protegidas, água e florestas.",
+      "en": "Licensing, protected areas, water and forests."
+    },
+    "s": {
+      "pt": "Preciso de licença ambiental?",
+      "en": "Do I need an environmental licence?"
+    },
+    "g": {
+      "pt": "Ver meio ambiente",
+      "en": "See environment"
+    }
+  },
+  "services.justice": {
+    "n": {
+      "pt": "Justiça",
+      "en": "Justice"
+    },
+    "d": {
+      "pt": "Cartórios, processos, Defensoria e juizados.",
+      "en": "Registries, courts, legal aid and small claims."
+    },
+    "s": {
+      "pt": "Como acesso a Defensoria Pública?",
+      "en": "How do I reach legal aid?"
+    },
+    "g": {
+      "pt": "Ver justiça",
+      "en": "See justice"
+    }
+  },
+  "services.security": {
+    "n": {
+      "pt": "Segurança pública",
+      "en": "Public security"
+    },
+    "d": {
+      "pt": "Polícia, direitos humanos e como denunciar.",
+      "en": "Police, human rights and how to report something."
+    },
+    "s": {
+      "pt": "Como faço uma denúncia de direitos humanos?",
+      "en": "How do I report a human rights violation?"
+    },
+    "g": {
+      "pt": "Ver segurança",
+      "en": "See security"
+    }
+  },
+  "services.money": {
+    "n": {
+      "pt": "Taxas e indicadores",
+      "en": "Rates and indicators"
+    },
+    "d": {
+      "pt": "Selic, IPCA, câmbio e o que significam.",
+      "en": "Selic, IPCA, the exchange rate and what they mean."
+    },
+    "s": {
+      "pt": "Qual é a taxa Selic agora?",
+      "en": "What is the Selic rate now?"
+    },
+    "g": {
+      "pt": "Ver indicadores",
+      "en": "See indicators"
+    }
+  },
+  "services.world": {
+    "n": {
+      "pt": "Brasil e o mundo",
+      "en": "Brazil and the world"
+    },
+    "d": {
+      "pt": "Consulados, serviço no exterior e documentos brasileiros lá fora.",
+      "en": "Consulates, services abroad and Brazilian documents overseas."
+    },
+    "s": {
+      "pt": "O que o Itamaraty faz por mim no exterior?",
+      "en": "What does the Foreign Ministry do for me abroad?"
+    },
+    "g": {
+      "pt": "Ver relações exteriores",
+      "en": "See foreign affairs"
+    }
+  },
+  "flag.demo.caption": {
+    "pt": "Exemplo: alguém pergunta qual é o próximo feriado. O Ask Brasil responde em linguagem clara e mostra a lista com a Portaria que a definiu.",
+    "en": "Example: someone asks what the next holiday is. Ask Brasil answers in plain language and shows the list with the Portaria that set it."
+  },
+  "flag.caption": {
+    "pt": "O verde e o amarelo do Brasil — com a sua pergunta no lugar do campo.",
+    "en": "Brazil's green and yellow — with your question in place of the field."
+  },
+  "lang.note": {
+    "pt": "O português é o idioma oficial do Brasil e tem interface completa e revisada. O inglês também é mantido com interface revisada, para visitantes e falantes de outras línguas. Nos demais idiomas, os menus podem ainda estar traduzidos por máquina.",
+    "en": "Portuguese is Brazil's official language and has a full, reviewed interface. English is kept with a reviewed interface too, for visitors and speakers of other languages. In the other languages, menus may still be machine-translated."
+  },
+  "landing.status": {
+    "pt": "Fontes oficiais",
+    "en": "Official sources"
+  },
+  "landing.statusMore": {
+    "pt": "Um serviço independente: as respostas vêm de fontes oficiais do Governo Federal",
+    "en": "An independent service: answers come from official Government of Brazil sources"
+  },
+  "landing.statusShort": {
+    "pt": "Não é um site do governo",
+    "en": "Not a government site"
+  },
+  "landing.statusLink": {
+    "pt": "Sobre este serviço",
+    "en": "About this service"
+  },
+  "privacy.account.t": {
+    "pt": "Sem conta",
+    "en": "No account needed"
+  },
+  "privacy.account.p": {
+    "pt": "Pergunte direto. Nunca perguntamos quem você é.",
+    "en": "Ask right away. We never ask who you are."
+  },
+  "privacy.stored.t": {
+    "pt": "Apague quando quiser",
+    "en": "Clear it any time"
+  },
+  "privacy.stored.p": {
+    "pt": "Planos e listas ficam neste aparelho. Apague tudo com um toque.",
+    "en": "Plans and checklists stay on this device. Remove them all with one tap."
+  },
+  "privacy.tracking.t": {
+    "pt": "Sem rastreamento",
+    "en": "No tracking"
+  },
+  "privacy.tracking.p": {
+    "pt": "Sem cookies de rastreamento, sem perfil de anúncios. Nunca.",
+    "en": "No tracking cookies and no ad profiles. Ever."
+  },
+  "privacy.numbers.t": {
+    "pt": "Nunca seus números",
+    "en": "Never your numbers"
+  },
+  "privacy.numbers.p": {
+    "pt": "Nunca pedimos seu CPF, dados bancários ou passaporte. A identificação acontece nos sites oficiais.",
+    "en": "We will never ask for your CPF, banking or passport number. Sign-ins happen on official sites."
+  },
+  "sources.claim.1": {
+    "pt": "Links para a página exata, não só para o site",
+    "en": "Links to the exact page, not just the website"
+  },
+  "sources.claim.2": {
+    "pt": "Taxas, datas e prazos mostram quando foram conferidos",
+    "en": "Fees, dates and deadlines show when they were last checked"
+  },
+  "sources.claim.3": {
+    "pt": "Dados ao vivo: Selic, inflação, dólar e Câmara",
+    "en": "Live data: Selic, inflation, the dollar and the Chamber"
+  },
+  "sources.list.1": {
+    "pt": "Serviços do Governo Federal",
+    "en": "Federal Government services"
+  },
+  "sources.list.2": {
+    "pt": "Meu INSS: benefícios e aposentadoria",
+    "en": "Meu INSS: benefits and retirement"
+  },
+  "sources.list.3": {
+    "pt": "CadÚnico: benefícios sociais",
+    "en": "CadÚnico: social benefits"
+  },
+  "closing.title": {
+    "pt": "Do que você precisa?",
+    "en": "What do you need?"
+  },
+  "closing.titleEm": {
+    "pt": "We're listening.",
+    "en": "Estamos ouvindo."
+  }
+}

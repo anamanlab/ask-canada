@@ -9,6 +9,7 @@
   "source.label": "المصدر:",
   "source.checked": "تم التحقق في {date}",
   "source.live": "مباشر",
+  "source.cached": "مباشر · مخزن مؤقت {time}",
   "source.more": "+{count} أخرى",
   "widget.loading": "جارٍ التحميل",
   "widget.working": "جارٍ العمل على ذلك",

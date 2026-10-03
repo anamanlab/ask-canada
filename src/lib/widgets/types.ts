@@ -96,6 +96,12 @@ export type WidgetCatalogModule = { default: Partial<Record<Locale, Record<strin
 /**
  * Every tool output should carry the official pages it relied on.
  * The chat collects these into the numbered SOURCES list under the answer.
+ *
+ * The fields past `live` exist so a source can be *audited*, not just linked: which authority
+ * published it, which dataset within that authority, when the value was actually fetched, and
+ * whether what the person is looking at came straight from the upstream or out of a cache.
+ * A live feed that is four minutes stale and a live feed that is four hours stale must not look
+ * the same, and neither may look the same as a page we verified last month.
  */
 export type ToolSource = {
   title: string;
@@ -108,6 +114,14 @@ export type ToolSource = {
   quote?: string;
   /** True for live data feeds (weather, advisories, recalls). */
   live?: boolean;
+  /** The institution that published this, in its own words ("Banco Central do Brasil"). */
+  authority?: string;
+  /** ISO timestamp (not date) of the upstream fetch behind a live value. */
+  fetchedAt?: string;
+  /** The upstream dataset a value came from, when the authority runs several. */
+  datasetId?: string;
+  /** True when a live value was served from the pack's cache rather than fetched for this call. */
+  fromCache?: boolean;
 };
 
 /** camelCase of a widget id: `life-events` -> `lifeEvents`. */

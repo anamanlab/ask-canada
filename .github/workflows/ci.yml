@@ -4,20 +4,72 @@ on:
     branches: [main]
   pull_request:
 
+# One leg per country pack. `ca` is the reference pack and the default `tsconfig.json` targets it; each extra
+# pack adds a leg that type-checks against its own path mappings (`tsconfig.<id>.json`) and runs the parity
+# and scripted-answer checks against that pack's catalogs. Add a country by adding a leg here.
+env:
+  PNPM_VERSION: 10.28.2
+
 jobs:
-  check:
+  ca:
+    name: ca (Canada)
     runs-on: ubuntu-latest
+    env:
+      COUNTRY: ca
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # PageProps/LayoutProps live in .next/types, which a fresh checkout lacks.
+      - run: pnpm exec next typegen
       - run: pnpm typecheck
       - run: pnpm lint
       - name: Official Languages parity (EN/FR catalogs)
         run: pnpm check:i18n
       - name: Every suggested question resolves (no dead-end follow-ups)
         run: pnpm check:scenarios
+
+  br:
+    name: br (Brazil)
+    runs-on: ubuntu-latest
+    env:
+      COUNTRY: br
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # PageProps/LayoutProps live in .next/types, which a fresh checkout lacks.
+      - run: pnpm exec next typegen
+      # The default tsconfig targets `ca`, so the Brazil pack is type-checked through its own project file.
+      - name: Type-check the pack
+        run: pnpm exec tsc --noEmit -p tsconfig.br.json
+      - run: pnpm lint
+      - name: Verified holiday data matches the published Portarias
+        run: node src/countries/br/data/holidays.test.mjs
+      - name: The generated service index is structurally sound
+        run: node src/countries/br/knowledge/servicos.test.mjs
+      - name: The live adapters satisfy their contracts
+        run: node src/countries/br/tools/contract.test.mjs
+      - name: Official Languages parity (PT/EN catalogs)
+        run: pnpm check:i18n
+      - name: Every suggested question resolves (no dead-end follow-ups)
+        run: pnpm check:scenarios
+      - name: Generated catalogs are up to date
+        run: |
+          node src/countries/br/knowledge/guidance/render.mjs
+          node src/countries/br/messages/render.mjs
+          node src/countries/br/widgets/holidays/messages/render.mjs
+          node src/countries/br/scenarios/render-starters.mjs
+          git diff --exit-code -- src/countries/br
