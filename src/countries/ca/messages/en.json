@@ -59,6 +59,8 @@
   "showcase.passport.mailSub": "Paper form",
   "showcase.passport.fee": "10 years · 5 years",
   "showcase.passport.feeShort": "Fee · 10 years",
+  "showcase.passport.feeValue": "$163.50 · $122.50",
+  "showcase.passport.feeValueShort": "$163.50",
   "showcase.passport.processing": "Online",
   "showcase.passport.processingValue": "20 business days + mail",
   "showcase.passport.processingValueShort": "20 business days + mail",

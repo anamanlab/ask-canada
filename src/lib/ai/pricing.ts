@@ -36,6 +36,29 @@ export const PRICES: Record<string, Price> = {
   'claude-opus-4-5': { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
   'claude-opus-4': { input: 15, output: 75, cacheRead: 1.5, cacheWrite: 18.75 },
   'claude-fable-5': { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
+  // Google Gemini, from the same gateway catalogue, 2026-10-01. Google publishes no prompt-cache
+  // price for these rows, so cache reads are charged at the full input price: overcharging an
+  // estimate trips the breaker early rather than late, which is the safe direction to err in.
+  // Keys are dash-normalised (`priceFor` replaces dots), which is why they are not Gemini's own spelling.
+  'gemini-3-8-flash-lite': { input: 0.5, output: 6, cacheRead: 0.5, cacheWrite: 0.5 },
+  'gemini-3-8-flash': { input: 0.75, output: 3.75, cacheRead: 0.75, cacheWrite: 0.75 },
+  'gemini-3-7-flash': { input: 0.75, output: 3.75, cacheRead: 0.75, cacheWrite: 0.75 },
+  'gemini-3-6-flash': { input: 0.75, output: 3.75, cacheRead: 0.75, cacheWrite: 0.75 },
+  'gemini-3-5-flash-lite': { input: 0.3, output: 2.5, cacheRead: 0.3, cacheWrite: 0.3 },
+  'gemini-3-5-flash': { input: 1.5, output: 9, cacheRead: 1.5, cacheWrite: 1.5 },
+  'gemini-3-1-flash-lite': { input: 0.25, output: 1.5, cacheRead: 0.25, cacheWrite: 0.25 },
+  'gemini-3-1-pro-preview': { input: 2, output: 12, cacheRead: 2, cacheWrite: 2 },
+  'gemini-3-pro-preview': { input: 2, output: 12, cacheRead: 2, cacheWrite: 2 },
+  'gemini-3-flash-preview': { input: 0.5, output: 3, cacheRead: 0.5, cacheWrite: 0.5 },
+  'gemini-2-5-pro': { input: 1.25, output: 10, cacheRead: 1.25, cacheWrite: 1.25 },
+  'gemini-2-5-flash': { input: 0.3, output: 2.5, cacheRead: 0.3, cacheWrite: 0.3 },
+  'gemini-2-5-flash-lite': { input: 0.1, output: 0.4, cacheRead: 0.1, cacheWrite: 0.1 },
+  // Cloudflare Workers AI, from the Workers AI pricing table on 2026-10-03. GLM-4.7-Flash is the
+  // Cloudflare-hosted default for Ask Brasil. Cloudflare bills it in neurons (10,000/day free, then
+  // $0.011/1,000 neurons); the token prices below are the same rate expressed per million tokens, which is
+  // what `estimateCostUsd` needs. Cloudflare publishes no prompt-cache price for it, so cache reads and
+  // writes are charged at the full input price: overcharging an estimate trips the breaker early, not late.
+  'glm-4-7-flash': { input: 0.06, output: 0.4, cacheRead: 0.06, cacheWrite: 0.06 },
 };
 
 /** Anthropic's native web search, per search (10 USD per 1,000). */

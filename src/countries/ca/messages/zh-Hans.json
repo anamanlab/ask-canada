@@ -60,6 +60,8 @@
   "showcase.passport.mailSub": "纸质表格",
   "showcase.passport.fee": "10 年 · 5 年",
   "showcase.passport.feeShort": "费用 · 10 年",
+  "showcase.passport.feeValue": "163.50加元 · 122.50加元",
+  "showcase.passport.feeValueShort": "163.50加元",
   "showcase.passport.processing": "在线",
   "showcase.passport.processingValue": "20 个工作日 + 邮寄",
   "showcase.passport.processingValueShort": "20 个工作日 + 邮寄",

@@ -30,6 +30,8 @@ jobs:
       - run: pnpm exec next typegen
       - run: pnpm typecheck
       - run: pnpm lint
+      # Provider selection and the price table behind the daily spend breaker.
+      - run: pnpm check:providers
       - name: Official Languages parity (EN/FR catalogs)
         run: pnpm check:i18n
       - name: Every suggested question resolves (no dead-end follow-ups)
@@ -56,6 +58,8 @@ jobs:
       - name: Type-check the pack
         run: pnpm exec tsc --noEmit -p tsconfig.br.json
       - run: pnpm lint
+      # Provider selection and the price table behind the daily spend breaker.
+      - run: pnpm check:providers
       - name: Verified holiday data matches the published Portarias
         run: node src/countries/br/data/holidays.test.mjs
       - name: The generated service index is structurally sound

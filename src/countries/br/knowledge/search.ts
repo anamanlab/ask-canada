@@ -123,7 +123,11 @@ export async function searchLocalSources(query: string, lang = 'pt', limit = 6) 
   if (!q.length) return [];
 
   // A term matches an entry when one contains the other, so "aposentadoria" finds "aposentar".
-  const matched = (hay: string[], t: string) => hay.some((h) => h.startsWith(t) || t.startsWith(h));
+  // Short words are not allowed to prefix-match: "mei" must not find "meio" (Meio Ambiente) and
+  // "casamento" must not find "casa" (Minha Casa). Exact matches always count; a prefix needs
+  // enough letters to be evidence — 4 for the query term, 5 for the index term.
+  const matched = (hay: string[], t: string) =>
+    hay.some((h) => h === t || (t.length >= 4 && h.startsWith(t)) || (h.length >= 5 && t.startsWith(h)));
 
   // Weight the query over the words the index actually knows. A word that appears in no entry ("hoje",
   // "receber") carries no evidence that an entry lacks it, so letting it into the denominator would sink
@@ -161,8 +165,14 @@ export async function searchLocalSources(query: string, lang = 'pt', limit = 6) 
       const score = got + inTitle * 0.6 + (e.curated ? total * 0.08 : 0);
       return { e, share, score, hits };
     })
-    // One word out of several is not enough; a single-word query needs only that word.
-    .filter((r) => r.share >= MIN_SHARE && (known.length < 2 || r.hits >= 2))
+    // One word out of several is not enough; a single-word query needs only that word. A curated
+    // page is the exception: it is hand-verified, so one strong term ("passaporte" in "passaporte
+    // perdido") is enough — the modifier ("perdido", "menor", "idoso") does not name a second service,
+    // and a rare modifier must not sink the page that owns the service.
+    // Curated pages must have at least one hit; non-curated follow the standard share/hits rules.
+    .filter((r) =>
+      (r.e.curated && r.hits >= 1) || (r.share >= MIN_SHARE && (known.length < 2 || r.hits >= 2))
+    )
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
     .map(({ e }) => ({

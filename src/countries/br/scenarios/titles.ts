@@ -30,6 +30,7 @@ const U = {
   pncp: 'https://pncp.gov.br',
   acesso: 'https://acesso.gov.br',
   normas: 'https://normas.leg.br/',
+  passaporte: 'https://www.gov.br/pt-br/servicos/obter-passaporte-comum-para-brasileiro',
 } as const;
 
 /** Page titles per language, so a source card reads as a page name instead of a URL slug. */
@@ -57,6 +58,7 @@ const TITLE_PT: Record<string, string> = {
   [U.pncp]: 'Portal Nacional de Contratações Públicas',
   [U.acesso]: 'Login Único (conta gov.br)',
   [U.normas]: 'Legislação federal (normas.leg.br)',
+  [U.passaporte]: 'Obter passaporte — Portal de Serviços',
 };
 
 const CITE = /\[(\d{1,2})\]\((https?:\/\/[^)\s]+)\)/g;
@@ -91,6 +93,7 @@ const TITLE_EN: Record<string, string> = {
   [U.pncp]: 'National Public Procurement Portal',
   [U.acesso]: 'Single sign-on (gov.br account)',
   [U.normas]: 'Federal legislation (normas.leg.br)',
+  [U.passaporte]: 'Get a passport — Services Portal',
 };
 
 /** The title tables, so the starter renderer can check that a cited URL really has a title in both. */

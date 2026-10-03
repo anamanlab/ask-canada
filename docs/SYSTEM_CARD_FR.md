@@ -24,7 +24,7 @@ sites officiels.
 | Composant | Détail |
 | --- | --- |
 | Interface | Next.js 16 / React 19, réponses en continu (flux de messages AI SDK v7), outils affichés à partir d’appels d’outils |
-| Modèle | Indépendant du fournisseur (`AI_PROVIDER` : Anthropic, Vercel AI Gateway, Azure, Bedrock); Claude Sonnet par défaut |
+| Modèle | Indépendant du fournisseur (`AI_PROVIDER` : Anthropic, Google Gemini, Vercel AI Gateway, Azure, Bedrock, Cloudflare Workers AI) ; Claude Sonnet par défaut |
 | Outils | Outils des widgets (p. ex. `passportPlanner`), `officialGuidance` (consignes ministérielles du SNC), `fetchOfficialPage`, `searchOfficialSources`, `suggestFollowUps` |
 | Ancrage | Invite système + consignes ministérielles de Réponses IA acheminées + pages officielles consultées |
 | Repli | Moteur scénarisé déterministe (mêmes outils) sans modèle configuré ou en cas de panne |

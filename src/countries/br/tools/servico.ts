@@ -114,7 +114,7 @@ const fold = (s: string) =>
 export const tools = {
   servicoDetalhe: tool({
     description:
-      'The full official record for one Brazilian federal service: its stages, who it is for, the estimated time, where to ask, and the digital-service link. Call it when someone asks how to get a specific service, what it costs, how long it takes, what the steps are, or who can apply — after the service itself is identified. Never invent stages, deadlines or requirements; if the catalogue does not state one, say so and point at the official page.',
+      'The full official record for one Brazilian federal service: its stages, who it is for, the estimated time, where to ask, and the digital-service link. Call it when someone asks how to get a specific service, what the steps are, how long it takes, who can apply, or what it costs — after the service itself is identified. It returns the catalogue record and the official page URL; the fee itself lives in the Custos section of that official page, so read it with fetchOfficialPage before stating any amount. Never invent stages, fees, deadlines or requirements; if the catalogue does not state one, say so and point at the official page.',
     inputSchema: z.object({
       service: z.string().describe('A catalogue slug ("obter-cartao-de-cpf"), a service name, or the question naming it. The record is Portuguese, the only language the Portal publishes in; the widget draws its own labels in both locales.'),
     }),

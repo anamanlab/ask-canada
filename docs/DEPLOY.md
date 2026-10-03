@@ -14,13 +14,15 @@ variables must differ, which live services each pack calls, and how failures are
 ---
 
 ## Configuration (all hosts)
-- Model: `AI_PROVIDER` = `anthropic` | `gateway` | `azure` | `bedrock`, plus `AI_MODEL` and provider
+- Model: `AI_PROVIDER` = `anthropic` | `google` | `gateway` | `azure` | `bedrock` | `workers-ai`, plus `AI_MODEL` and provider
   credentials (see `src/lib/ai/model.ts`). `SCRIPTED_AI=1` runs without a model (kill switch).
 - Abuse and cost controls: see [Abuse and cost controls](#abuse-and-cost-controls). All of them are optional
   and none needs Vercel; every variable is listed in `.env.example`.
 - Country: `COUNTRY=ca` (Canada) or `COUNTRY=br` (Brazil) at build time.
 - Search: `searchOfficialSources` uses the pack's offline index of curated official pages; set
   `SEARCH_FALLBACK=duckduckgo` to add a site-restricted public web search when nothing matches.
+  Gemini's built-in Google Search grounding is off by default; set `GEMINI_SEARCH_GROUNDING=1` only when
+  the Gemini API project has grounding access and quota.
 
 ## Vercel
 Import the repository, set the variables above (or use AI Gateway with OIDC), deploy. `output: 'standalone'`
@@ -167,6 +169,35 @@ docker run -p 3000:3000 -e AI_PROVIDER=bedrock -e AI_MODEL=<bedrock-model-id> -e
   `CDN-Cache-Control` (30 days, stale-while-revalidate) which CloudFront and Azure Front Door honour.
 - Persist `.next/cache` on a volume if you can: the basemap tile fetch cache lives there (30 days), so a
   restart doesn't send every tile back to the national mapping service.
+
+## Cloudflare Workers
+
+`cloudflare.config.ts` (the `cf` CLI's replacement for `wrangler.jsonc`) declares both Workers from one
+config: `COUNTRY=ca` builds `canada`, `COUNTRY=br` builds `brazil`. Build with `pnpm build:vinext` (vite +
+vinext + `@cloudflare/vite-plugin`), deploy with `pnpm deploy:vinext` (`cf deploy`).
+
+```bash
+COUNTRY=br pnpm build:vinext && COUNTRY=br pnpm deploy:vinext     # ask-brasil, on Workers AI
+COUNTRY=ca pnpm build:vinext && COUNTRY=ca pnpm deploy:vinext     # ask-canada, on Gemini
+```
+
+- **Model: Workers AI on Brazil.** `AI_PROVIDER=workers-ai` reads the `AI` binding
+  (`AI: bindings.ai()` in `cloudflare.config.ts`), so there is no model API key and no third-party data
+  path: prompts and answers stay in the Cloudflare account. Default model `@cf/zai-org/glm-4.7-flash`
+  (131K context, multilingual, multi-turn tool calling). Canada keeps `google`/`gemini-3.8-flash`.
+- **Cost: neurons, not a key.** Workers AI includes 10,000 neurons/day per account at no charge; past that
+  the Workers Paid plan bills $0.011 per 1,000 neurons. For GLM-4.7-Flash that is 5,500 neurons per M input
+  tokens and 36,400 per M output tokens — one answer of ~5K input + ~1K output tokens costs ~64 neurons, so
+  the free allowance is on the order of a hundred answers a day, and a tool-loop turn costs one such step per
+  generation. `src/lib/ai/pricing.ts` prices the model in dollars per million tokens (the same rate) so
+  `AI_DAILY_BUDGET_USD` still works; measure real numbers with
+  `CLOUDFLARE_API_TOKEN=… CLOUDFLARE_ACCOUNT_ID=… pnpm probe:workers-ai`.
+- **The binding is Workers-only.** `src/lib/ai/model.ts` imports `cloudflare:workers` lazily; off Workers
+  (the Next build, a container) the module resolves to a stub with no bindings, so a `workers-ai` deployment
+  elsewhere fails the model call and the chat route answers from the scripted engine.
+- **Secrets** go in with `cf deploy --secrets-file` (`GEMINI_API_KEY`, `SCRIPTED_AI`); everything in `env`
+  is non-secret. Rate limiting off Cloudflare is the in-memory bucket per isolate — put a Cloudflare WAF rate
+  limit rule in front of `/api/chat`, or `UPSTASH_REDIS_REST_*` for a shared counter.
 
 ## Health and operations
 - Health check: `GET /robots.txt`.

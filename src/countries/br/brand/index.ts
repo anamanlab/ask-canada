@@ -19,6 +19,10 @@ export const brand: ClientPack['brand'] = {
   greeting: { en: 'Hello, Brazil', pt: 'Olá, Brasil' },
   ask: { en: 'Ask.', pt: 'Pergunte.' },
   Mark,
+  currencySymbol: 'R$ ',
+  exampleFee: '257,25',
+  currency: 'BRL',
+  officialHomeUrl: 'https://www.gov.br/pt-br',
   // Two-tone for the favicons and social cards: the star in the brand colour, the core in the flag's yellow.
   markSvg: (color) =>
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${MARK_VIEWBOX}"><path fill="#FFDF00" d="M12 9.4 14.6 12 12 14.6 9.4 12Z"/><path fill="${color}" d="${MARK_PATH}"/></svg>`,

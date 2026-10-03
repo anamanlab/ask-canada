@@ -185,32 +185,32 @@
     "en": "Self-employed"
   },
   "showcase.passport.title": {
-    "pt": "Meu INSS",
-    "en": "Meu INSS"
+    "pt": "Passaporte comum",
+    "en": "Common passport"
   },
   "showcase.passport.sub": {
-    "pt": "Benefícios, extrato e requerimentos · Governo Federal",
-    "en": "Benefits, statements and claims · Federal Government"
+    "pt": "Emissão pela Polícia Federal · Governo Federal",
+    "en": "Issued by the Federal Police · Federal Government"
   },
   "showcase.passport.status": {
-    "pt": "Situação",
-    "en": "Status"
+    "pt": "Atendimento presencial obrigatório",
+    "en": "In-person visit required"
   },
   "showcase.passport.online": {
-    "pt": "Pelo Meu INSS",
-    "en": "On Meu INSS"
+    "pt": "No site da PF",
+    "en": "On the PF site"
   },
   "showcase.passport.onlineSub": {
-    "pt": "Requerimento pela internet",
-    "en": "Apply online"
+    "pt": "Formulário e taxa",
+    "en": "Form and fee"
   },
   "showcase.passport.inPerson": {
-    "pt": "Na agência",
-    "en": "At the office"
+    "pt": "Na unidade da PF",
+    "en": "At a PF unit"
   },
   "showcase.passport.inPersonSub": {
-    "pt": "Atendimento presencial",
-    "en": "In person"
+    "pt": "Biometria e retirada",
+    "en": "Biometrics and pickup"
   },
   "showcase.passport.mail": {
     "pt": "Conta gov.br",
@@ -225,32 +225,40 @@
     "en": "Single sign-on for every federal service"
   },
   "showcase.passport.fee": {
-    "pt": "Nível da conta",
-    "en": "Account level"
+    "pt": "Taxa",
+    "en": "Fee"
   },
   "showcase.passport.feeShort": {
-    "pt": "Nível",
-    "en": "Level"
+    "pt": "Taxa",
+    "en": "Fee"
+  },
+  "showcase.passport.feeValue": {
+    "pt": "R$ 257,25",
+    "en": "R$ 257.25"
+  },
+  "showcase.passport.feeValueShort": {
+    "pt": "R$ 257,25",
+    "en": "R$ 257.25"
   },
   "showcase.passport.processing": {
-    "pt": "Onde pedir",
-    "en": "Where to apply"
+    "pt": "Prazo",
+    "en": "Processing"
   },
   "showcase.passport.processingValue": {
-    "pt": "Meu INSS",
-    "en": "Meu INSS"
+    "pt": "6–10 dias úteis",
+    "en": "6–10 business days"
   },
   "showcase.passport.processingValueShort": {
-    "pt": "Meu INSS",
-    "en": "Meu INSS"
+    "pt": "6–10 dias úteis",
+    "en": "6–10 business days"
   },
   "showcase.passport.ready": {
-    "pt": "Documentos",
-    "en": "Documents"
+    "pt": "Retirada",
+    "en": "Pickup"
   },
   "showcase.passport.readyValue": {
-    "pt": "CPF e dados",
-    "en": "CPF and details"
+    "pt": "Na mesma unidade",
+    "en": "At the same unit"
   },
   "showcase.holidays.title": {
     "pt": "Próximo feriado",

@@ -56,7 +56,7 @@ const scenarios: Scenario[] = [
       /\bhow long does\b/i,
       /\bwho can apply\b/i,
     ],
-    exclude: [/\b(inss|sus|saude|saúde|receita|imposto|passaporte|cnh|mei|bolsa|bpc|cadunico|ibge|selic|dolar|feriado)\b/i],
+    exclude: [/\b(inss|sus|saude|saúde|receita|imposto|cnh|mei|bolsa|bpc|cadunico|ibge|selic|dolar|feriado)\b/i],
     reply: {
       pt: `# {name}
 

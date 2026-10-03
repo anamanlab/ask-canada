@@ -30,7 +30,8 @@ three of these are worth setting per deployment rather than copying:
 | `COUNTRY` | Selects the pack. Required. |
 | `RATE_LIMIT_PER_MINUTE` / `RATE_LIMIT_BURST` / `RATE_LIMIT_SALT` | Traffic profiles differ; a public Brazilian audience and a Canada-only audience are not the same load. A distinct salt keeps one deployment's limit buckets from being forgeable via the other's history. |
 | `AI_DAILY_BUDGET_USD` | A circuit breaker per day per budget owner. Set it on the deployment that pays the bill. |
-| `ANTHROPIC_API_KEY` / `AZURE_*` | Keep credentials separate so a compromised Canada deployment does not spend the Brazil budget. |
+| `AI_PROVIDER` / `AI_MODEL` | Defaults differ by deployment: Brazil runs on Cloudflare Workers AI (`workers-ai`, `@cf/zai-org/glm-4.7-flash`, no model key, billed on the account's 10,000 neurons/day), Canada on Gemini (`google`, `gemini-3.8-flash`). |
+| `ANTHROPIC_API_KEY` / `AZURE_*` / `GEMINI_API_KEY` | Keep credentials separate so a compromised Canada deployment does not spend the Brazil budget. |
 | `BASE_URL` | Used for absolute URLs and metadata; must match the deployment's own domain. |
 | `AI_MODEL`, `AI_EFFORT`, `AI_WEB_SEARCH_MAX_USES` | Optional. `AI_WEB_SEARCH_MAX_USES` is worth thinking about separately: Brazil's web search is restricted to the Brazilian allowlist, so a larger allowance buys less than it does for Canada. |
 | `SCRIPTED_AI` | Leave unset in production. It is a demo and kill switch, documented in `.env.example`. |
