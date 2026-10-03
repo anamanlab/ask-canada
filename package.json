@@ -26,7 +26,11 @@
     "servicos:br": "node scripts/fetch-servicos.mjs",
     "servicos:br:check": "node scripts/fetch-servicos.mjs --check",
     "test:br:servicos": "node src/countries/br/knowledge/servicos.test.mjs",
-    "test:br:contract": "node src/countries/br/tools/contract.test.mjs"
+    "test:br:contract": "node src/countries/br/tools/contract.test.mjs",
+    "dev:vinext": "vite dev --port 3001",
+    "build:vinext": "vite build",
+    "start:vinext": "vite preview",
+    "deploy:vinext": "vinext-cloudflare deploy"
   },
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^5.0.102",
@@ -37,6 +41,7 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/firewall": "^1.2.5",
     "@vercel/functions": "^3.9.9",
+    "@vinext/cloudflare": "^1.0.1",
     "ai": "^7.0.123",
     "botid": "^1.5.11",
     "clsx": "^2.1.1",
@@ -45,21 +50,29 @@
     "next": "16.3.7",
     "react": "19.2.8",
     "react-dom": "19.2.8",
+    "react-server-dom-webpack": "^19.3.0",
     "streamdown": "^2.6.0",
     "tailwind-merge": "^3.7.0",
+    "vinext": "^1.0.1",
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "2.0.0-beta.sha-52b0dc0e9",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@vitejs/plugin-rsc": "^0.5.35",
     "babel-plugin-react-compiler": "^1.0.0",
+    "cf": "1.0.0-beta.12",
     "eslint": "^9",
     "eslint-config-next": "16.3.7",
     "playwright": "1.63.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vite": "8.3.0"
   },
-  "packageManager": "pnpm@10.28.2"
+  "packageManager": "pnpm@10.28.2",
+  "type": "module"
 }
