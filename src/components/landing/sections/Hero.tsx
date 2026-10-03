@@ -19,19 +19,6 @@ import { oneLineExamples, textEm } from '../measure';
 import { Scene } from '../Scene';
 import { Shore, ShoreCanoe, ShoreFore } from '../Shore';
 
-/**
- * Canada's starter chips, used when a pack does not name its own (`pack.chips`). Phones keep four
- * (passport, taxes, benefits, travel) plus a link to every service.
- */
-const CHIPS_DEFAULT = [
-  { id: 'passport' },
-  { id: 'taxes' },
-  { id: 'ccb', official: true },
-  { id: 'ei', wideOnly: true },
-  { id: 'travel' },
-  { id: 'oas', official: true, wideOnly: true },
-] as const;
-
 /** The widths where the lake (Shore) replaces the desktop landscape: the phone breakpoint of landing.css. */
 const PHONE = '(max-width: 760px)';
 
@@ -70,7 +57,7 @@ export async function Hero() {
   const altLang = (pack.locales.official.find((l) => l !== locale) ?? 'en') as Locale;
   const altGreet = pack.brand.greeting?.[altLang] ?? pack.brand.name;
 
-  const CHIPS = pack.chips ?? CHIPS_DEFAULT;
+  const CHIPS = pack.chips ?? [];
   const phoneChips = CHIPS.filter((c) => !('wideOnly' in c));
   const chipEm = Math.max(...phoneChips.map((c) => Math.max(textEm(t(`chip.${c.id}.short`)) * 1.06, textEm(own(`chip.${c.id}.sub`) ?? '') * 0.82))).toFixed(2);
   // Phones: one short line (English and French; other languages keep the full lede).
@@ -150,17 +137,17 @@ export async function Hero() {
             <li className="l-trust__short">
               {trustParts.map((part, i) => (
                 <span key={i} className="l-trust__item">
-                  <Check className={`l-trust__check ${pack.id === 'br' ? 'text-[var(--maple)]' : 'text-pine'}`} aria-hidden strokeWidth={2.4} />
+                  <Check className="l-trust__check text-pine" aria-hidden strokeWidth={2.4} />
                   {part}
                 </span>
               ))}
             </li>
             <li>
-              <ShieldCheck className={`size-4 ${pack.id === 'br' ? 'text-[var(--maple)]' : 'text-pine'}`} aria-hidden strokeWidth={1.8} />
+              <ShieldCheck className="size-4 text-pine" aria-hidden strokeWidth={1.8} />
               {t('hero.trust.source')}
             </li>
             <li>
-              <Lock className={`size-4 ${pack.id === 'br' ? 'text-[var(--maple)]' : 'text-pine'}`} aria-hidden strokeWidth={1.8} />
+              <Lock className="size-4 text-pine" aria-hidden strokeWidth={1.8} />
               {t('hero.trust.private')}
             </li>
           </ul>

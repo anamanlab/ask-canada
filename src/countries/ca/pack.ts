@@ -122,6 +122,17 @@ export const pack: ClientPack = {
     { id: 'science', icon: FlaskConical },
     { id: 'parks', icon: Trees },
   ],
+  // The starter chips across the hero. Phones keep the four without `wideOnly`. The glyphs stay in core's
+  // CHIP_ICONS (the landing islands fall back to it), so only the phone tile hues are named here: they were
+  // `landing.css` rules keyed to these ids, which put Canada's ids in shared CSS.
+  chips: [
+    { id: 'passport', tile: { light: '#2c4f8c', dark: '#9dbcf0' } },
+    { id: 'taxes', tile: { light: 'var(--pine)', dark: 'var(--pine)' } },
+    { id: 'ccb', official: true, tile: { light: '#96601a', dark: '#e9bd72' } },
+    { id: 'ei', wideOnly: true },
+    { id: 'travel', tile: { light: '#1b6f86', dark: '#7fd0e2' } },
+    { id: 'oas', official: true, wideOnly: true },
+  ],
   art: {
     hero: {
       land: { light: '/art/ca/land-hero-light.svg', dark: '/art/ca/land-hero-dark.svg' },

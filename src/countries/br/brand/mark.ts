@@ -12,4 +12,4 @@ export const MARK_PATH =
   'M12 0.6c.86 5.4 5.14 9.68 10.54 10.54-5.4.86-9.68 5.14-10.54 10.54-.86-5.4-5.14-9.68-10.54-10.54C6.86 10.28 11.14 6 12 .6Z';
 
 /** A small diamond at the centre, so the star has a "you are here" point even at 15px. */
-export const MARK_CORE_PATH = 'M12 9.4 14.6 12 12 14.6 9.4 12Z';
+export const MARK_CORE_PATH = 'M12 10.1 13.9 12 12 13.9 10.1 12Z';

@@ -2537,7 +2537,9 @@
     display: none;
   }
   .l-chips button {
-    --tile: var(--ink-2);
+    /* The phone tile's hue comes from the pack's own chip entry (`--tile-light` / `--tile-dark`, set inline
+       by AskChip), so shared CSS never has to know a country's chip ids. */
+    --tile: var(--tile-light, var(--ink-2));
     width: 100%;
     min-height: 56px;
     padding: 8px var(--chip-pad);
@@ -2555,7 +2557,15 @@
     border-color: rgb(24 32 56 / 0.1);
     box-shadow: 0 1px 2px rgb(24 32 56 / 0.05), 0 8px 18px -12px rgb(24 32 56 / 0.3);
   }
+  /* Dark by preference as well as by choice: `data-theme` is only set when the reader picked a theme, so a
+     `[data-theme='dark']`-only rule left system-dark phones on the light hues. */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .l-chips button {
+      --tile: var(--tile-dark, var(--tile-light, var(--ink-2)));
+    }
+  }
   [data-theme='dark'] .l-chips button {
+    --tile: var(--tile-dark, var(--tile-light, var(--ink-2)));
     background: color-mix(in srgb, #1b2942 94%, transparent);
     border-color: var(--hair);
     box-shadow: 0 10px 22px -14px rgb(0 0 0 / 0.7);
@@ -2583,27 +2593,6 @@
     border-radius: 10px;
     color: var(--tile);
     background: color-mix(in srgb, var(--tile) 13%, transparent);
-  }
-  .l-chips .l-chip--passport {
-    --tile: #2c4f8c;
-  }
-  .l-chips .l-chip--taxes {
-    --tile: var(--pine);
-  }
-  .l-chips .l-chip--ccb {
-    --tile: #96601a;
-  }
-  .l-chips .l-chip--travel {
-    --tile: #1b6f86;
-  }
-  [data-theme='dark'] .l-chips .l-chip--passport {
-    --tile: #9dbcf0;
-  }
-  [data-theme='dark'] .l-chips .l-chip--ccb {
-    --tile: #e9bd72;
-  }
-  [data-theme='dark'] .l-chips .l-chip--travel {
-    --tile: #7fd0e2;
   }
   .l-aurora {
     top: 6%;

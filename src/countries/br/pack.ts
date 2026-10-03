@@ -10,6 +10,7 @@ import {
   BookUser,
   Briefcase,
   Building2,
+  CalendarCheck,
   CloudSun,
   Earth,
   FolderOpen,
@@ -19,6 +20,7 @@ import {
   House,
   Landmark,
   PiggyBank,
+  Plane,
   Receipt,
   Scale,
   Shield,
@@ -129,13 +131,16 @@ export const pack: ClientPack = {
     },
   },
   // The starter chips across the hero. Phones keep the four without `wideOnly`.
+  // Each chip names its own glyph and phone-tile hue: core's CHIP_ICONS only knows Canada's ids, so without
+  // these every Brazilian chip fell back to the same grey globe. Hues are the flag's own palette, one per
+  // task, dark values lifted for the dark phone tile.
   chips: [
-    { id: 'inss' },
-    { id: 'taxas' },
-    { id: 'beneficios' },
-    { id: 'feriados' },
-    { id: 'passaporte', wideOnly: true },
-    { id: 'viagem', wideOnly: true },
+    { id: 'inss', icon: Shield, tile: { light: '#0b5c8a', dark: '#8cc6ea' } },
+    { id: 'taxas', icon: Receipt, tile: { light: '#8a5a00', dark: '#e9bd72' } },
+    { id: 'beneficios', icon: HandCoins, tile: { light: '#007a2e', dark: '#7fd7a4' } },
+    { id: 'feriados', icon: CalendarCheck, tile: { light: '#a3305f', dark: '#f0a3c2' } },
+    { id: 'passaporte', wideOnly: true, icon: BookUser, tile: { light: '#2c4f8c', dark: '#9dbcf0' } },
+    { id: 'viagem', wideOnly: true, icon: Plane, tile: { light: '#1b6f86', dark: '#7fd0e2' } },
   ],
   // The rest of the landing artwork, by the names the core CSS asks for. Without these, the phone hero would
   // fall back to Canada's lake, canoe and prairie.

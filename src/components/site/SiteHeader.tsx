@@ -23,6 +23,7 @@ export function Brand({ onClick, href = '/' }: { onClick?: () => void; href?: st
   const { t } = useLocale();
   const Mark = brand.Mark;
   const Signature = isOfficial ? brand.OfficialSignature : undefined;
+  const Flag = brand.Flag;
   return (
     <a
       href={href}
@@ -37,6 +38,9 @@ export function Brand({ onClick, href = '/' }: { onClick?: () => void; href?: st
     >
       {Signature ? <Signature className="h-7 w-auto" /> : <Mark className="ac-brand__leaf" />}
       <span className="ac-brand__name">{brand.name}</span>
+      {/* The pack's flag, after the wordmark: which country this is. Decorative — the wordmark and the
+          page's own copy already name it, so it is hidden from assistive tech rather than read twice. */}
+      {Flag ? <Flag className="ac-brand__flag" /> : null}
     </a>
   );
 }

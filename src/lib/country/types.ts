@@ -89,8 +89,12 @@ export type CountryPack = {
      * The accent colour, overriding core's default (`--maple*`). A pack that does not set it keeps the
      * default red, which is Canada's and reads as Canadian everywhere it appears: the mark, the send
      * button, focus rings, the italic in a lead. `wash` is the tinted background.
+     *
+     * `dark` is the accent on a dark background, because core's own dark values are tuned for red: a
+     * Brazilian green that reads well on paper is too dark on `#141e30`. Omitted, the light values are
+     * used in both themes.
      */
-    accent?: { base: string; ink: string; wash: string };
+    accent?: { base: string; ink: string; wash: string; dark?: { base: string; ink: string; wash: string } };
     /** Accent used for the flag-proportion band and the brand mark. */
     flagColor: string;
     /**
@@ -128,10 +132,13 @@ export type CountryPack = {
   /**
    * The starter chips across the top of the landing hero. Each id needs `chip.<id>`, `chip.<id>.q` and
    * `chip.<id>.short` in the pack's catalogs; `chip.<id>.sub` and `chip.<id>.official` are optional.
-   * `wideOnly` keeps a chip off the phone hero, which shows four. Omitted falls back to Canada's list
-   * (CHIPS_DEFAULT in components/landing/sections/Hero.tsx).
+   * `wideOnly` keeps a chip off the phone hero, which shows four. Omitted, the hero shows no chips.
+   *
+   * `icon` is the glyph in the chip (phones draw it in a tinted square, `tile`; wider layouts leave it
+   * inline). Both live here, on the pack, because both are per-country: a chip id core has never heard of
+   * must still arrive with its own glyph and hue rather than falling back to a generic globe.
    */
-  chips?: { id: string; wideOnly?: boolean; official?: boolean }[];
+  chips?: { id: string; wideOnly?: boolean; official?: boolean; icon?: LucideIcon; tile?: { light: string; dark: string } }[];
   art: {
     hero: SceneArt;
     night: SceneArt;

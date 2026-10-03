@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import type { CSSProperties } from 'react';
 import './globals.css';
 // Site chrome (header, brand, menu) is on every page. The landing's, the footer's and the chat's own
 // sheets load with their components.
@@ -37,13 +36,30 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * The pack's accent, as CSS variables. Core's tokens are historically named `maple`; the values are just
+ * The pack's accent, as a stylesheet. Core's tokens are historically named `maple`; the values are just
  * "the accent", so a pack overrides the three variables and every `text-maple` / `bg-maple-wash` / `maple`
  * ring follows without a single component changing.
+ *
+ * It has to be a stylesheet, not an inline `style` on <html>: an inline declaration outranks the
+ * `[data-theme='dark']` block in globals.css, so a pack accent set inline stayed at its light value in dark
+ * mode (Brazil's green send button glowed on the dark hero). These are the same two selectors core itself
+ * uses, so the cascade stays in one place.
  */
-const accentVars = pack.brand.accent
-  ? ({ '--maple': pack.brand.accent.base, '--maple-ink': pack.brand.accent.ink, '--maple-wash': pack.brand.accent.wash } as CSSProperties)
-  : undefined;
+type Accent = NonNullable<typeof pack.brand.accent>;
+
+function accentCss(accent: Accent | undefined): string | null {
+  if (!accent) return null;
+  const set = (v: { base: string; ink: string; wash: string }) => `--maple:${v.base};--maple-ink:${v.ink};--maple-wash:${v.wash}`;
+  const dark = accent.dark;
+  if (!dark) return `:root{${set(accent)}}`;
+  return [
+    `:root{${set(accent)}}`,
+    `@media (prefers-color-scheme:dark){:root:not([data-theme='light']){${set(dark)}}}`,
+    `:root[data-theme='dark']{${set(dark)}}`,
+  ].join('');
+}
+
+const ACCENT_CSS = accentCss(pack.brand.accent);
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -90,10 +106,11 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
       data-theme={theme === 'system' ? undefined : theme}
       data-theme-pref={theme}
       className={fontVariables}
-      style={accentVars ? { ...fontFaceVars, ...accentVars } : fontFaceVars}
+      style={fontFaceVars}
       suppressHydrationWarning
     >
       <head>
+        {ACCENT_CSS ? <style dangerouslySetInnerHTML={{ __html: ACCENT_CSS }} /> : null}
         <script nonce={nonce} dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body>

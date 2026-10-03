@@ -20,6 +20,10 @@
     "pt": "Pergunte sobre qualquer serviço do Governo Federal. Receba uma resposta clara, com a fonte oficial.",
     "en": "Ask about any Brazilian federal service. Get a clear answer, with the official source."
   },
+  "hero.lede.short": {
+    "pt": "Pergunte sobre serviços federais.",
+    "en": "Ask about any federal service."
+  },
   "hero.hint": {
     "pt": "Escreva do seu jeito. Em português.",
     "en": "Ask it your way. In Portuguese or English."
@@ -68,6 +72,30 @@
     "pt": "Qual é a taxa Selic agora?",
     "en": "What is the Selic rate now?"
   },
+  "hero.example.1.short": {
+    "pt": "Quem tem direito ao BPC?",
+    "en": "Try “Who qualifies for the BPC?”"
+  },
+  "hero.example.2.short": {
+    "pt": "Qual é o próximo feriado?",
+    "en": "Try “Next national holiday?”"
+  },
+  "hero.example.3.short": {
+    "pt": "Como declaro o imposto de renda?",
+    "en": "Try “File my income tax”"
+  },
+  "hero.example.4.short": {
+    "pt": "Perdi o emprego. O que o INSS dá?",
+    "en": "Try “Lost my job”"
+  },
+  "hero.example.5.short": {
+    "pt": "Como abro uma MEI?",
+    "en": "Try “Open an MEI business”"
+  },
+  "hero.example.6.short": {
+    "pt": "Qual a taxa Selic agora?",
+    "en": "Try “Selic rate now?”"
+  },
   "chip.inss": {
     "pt": "Meu INSS",
     "en": "Meu INSS"
@@ -81,8 +109,8 @@
     "en": "Meu INSS"
   },
   "chip.inss.sub": {
-    "pt": "Benefícios e requisitos",
-    "en": "Benefits and claims"
+    "pt": "Quem tem direito",
+    "en": "Who qualifies"
   },
   "chip.taxas": {
     "pt": "Imposto de renda",
@@ -95,6 +123,10 @@
   "chip.taxas.short": {
     "pt": "Imposto",
     "en": "Tax"
+  },
+  "chip.taxas.sub": {
+    "pt": "Prazo e entrega",
+    "en": "How to file"
   },
   "chip.beneficios": {
     "pt": "Bolsa Família",
@@ -109,8 +141,8 @@
     "en": "Benefits"
   },
   "chip.beneficios.sub": {
-    "pt": "CadÚnico e benefícios",
-    "en": "CadÚnico and benefits"
+    "pt": "CadÚnico e bolsa",
+    "en": "CadÚnico signup"
   },
   "chip.feriados": {
     "pt": "Feriados",
@@ -123,6 +155,10 @@
   "chip.feriados.short": {
     "pt": "Feriados",
     "en": "Holidays"
+  },
+  "chip.feriados.sub": {
+    "pt": "Próximo feriado",
+    "en": "Next holiday"
   },
   "chip.passaporte": {
     "pt": "Passaporte",

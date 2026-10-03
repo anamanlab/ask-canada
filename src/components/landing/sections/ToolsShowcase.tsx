@@ -5,16 +5,12 @@ import { Aurora } from '../Aurora';
 import { getLandingCopy } from '../copy';
 import { taxCountdown, todayInPack, upcomingHolidays } from '../data';
 import { DateTileServer, PassportGlyph } from '../glyphs';
-import { BrCard, BrCardContent, BrCardFooter } from '@/components/ui/br';
 
 export async function ToolsShowcase() {
   const { t, fmt, sp, d, L, dataLang, checked } = await getLandingCopy();
   const today = todayInPack();
   const tax = taxCountdown(today);
   const holidays = upcomingHolidays(3, today);
-  const isBrazil = pack.id === 'br';
-  const accentColor = isBrazil ? 'text-[var(--maple)]' : 'text-pine';
-  const accentBg = isBrazil ? 'bg-[var(--maple-wash)]' : 'bg-pine-wash';
 
   return (
     <section className="l-section l-center" id="tools" aria-labelledby="t-tools">
@@ -30,10 +26,9 @@ export async function ToolsShowcase() {
         <Aurora src={pack.art.hero.aurora} />
         <div className="l-cards">
           {tax ? (
-          <BrCard variant="outlined" padding="md" hoverable className="l-wcard" aria-labelledby="w-tax">
-            <BrCardContent>
+          <div className="l-wcard" aria-labelledby="w-tax">
               <div className="l-wc-head">
-                <span className={`grid size-9 place-items-center rounded-[11px] ${accentBg} ${accentColor}`}>
+                <span className="grid size-9 place-items-center rounded-[11px] bg-pine-wash text-pine">
                   <FileText className="size-5" strokeWidth={1.7} aria-hidden />
                 </span>
                 <div>
@@ -60,18 +55,16 @@ export async function ToolsShowcase() {
                   <b>{d(tax.selfEmployed, { month: 'long', day: 'numeric', year: 'numeric' })}</b>
                 </div>
               </div>
-              <BrCardFooter className="l-wc-foot">
+              <div className="l-wc-foot">
                 <a href={tax.url} target="_blank" rel="noopener noreferrer">{tax.source}</a>
                 <span className="ok">
-                  <Check className={`size-3 ${accentColor}`} aria-hidden /> {checked}
+                  <Check className={`size-3 text-pine`} aria-hidden /> {checked}
                 </span>
-              </BrCardFooter>
-            </BrCardContent>
-          </BrCard>
+              </div>
+          </div>
           ) : null}
 
-          <BrCard variant="outlined" padding="md" hoverable className="l-wcard l-wcard--center aurora-rule" aria-labelledby="w-pp">
-            <BrCardContent>
+          <div className="l-wcard l-wcard--center aurora-rule" aria-labelledby="w-pp">
               <div className="l-wc-head">
                 <PassportGlyph />
                 <div>
@@ -83,7 +76,7 @@ export async function ToolsShowcase() {
               </div>
               <div className="l-wc-body">
                 <div className="l-status">
-                  <Check className={`size-[18px] ${accentColor}`} strokeWidth={2.4} aria-hidden />
+                  <Check className={`size-[18px] text-pine`} strokeWidth={2.4} aria-hidden />
                   {t('showcase.passport.status')}
                 </div>
                 <div className="l-seg" aria-hidden>
@@ -121,19 +114,17 @@ export async function ToolsShowcase() {
                   <b>{t('showcase.passport.readyValue', { date: d('2026-10-29', { month: 'short', day: 'numeric' }) })}</b>
                 </div>
               </div>
-              <BrCardFooter className="l-wc-foot">
+              <div className="l-wc-foot">
                 <span>{`${pack.officialHomeLabel}/servicos`}</span>
                 <span className="ok">
-                  <Check className={`size-3 ${accentColor}`} aria-hidden /> {checked}
+                  <Check className={`size-3 text-pine`} aria-hidden /> {checked}
                 </span>
-              </BrCardFooter>
-            </BrCardContent>
-          </BrCard>
+              </div>
+          </div>
 
-          <BrCard variant="outlined" padding="md" hoverable className="l-wcard" aria-labelledby="w-hol">
-            <BrCardContent>
+          <div className="l-wcard" aria-labelledby="w-hol">
               <div className="l-wc-head">
-                <span className={`grid size-9 place-items-center rounded-[11px] ${accentBg} ${accentColor}`}>
+                <span className="grid size-9 place-items-center rounded-[11px] bg-pine-wash text-pine">
                   <Calendar className="size-5" strokeWidth={1.7} aria-hidden />
                 </span>
                 <div>
@@ -156,14 +147,13 @@ export async function ToolsShowcase() {
                   </div>
                 ))}
               </div>
-              <BrCardFooter className="l-wc-foot">
+              <div className="l-wc-foot">
                 <span>{pack.officialHomeLabel}</span>
                 <span className="ok">
-                  <Check className={`size-3 ${accentColor}`} aria-hidden /> {checked}
+                  <Check className={`size-3 text-pine`} aria-hidden /> {checked}
                 </span>
-              </BrCardFooter>
-            </BrCardContent>
-          </BrCard>
+              </div>
+          </div>
         </div>
       </div>
     </section>
