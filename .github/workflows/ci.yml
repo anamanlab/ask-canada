@@ -26,6 +26,8 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # PageProps/LayoutProps live in .next/types, which a fresh checkout lacks.
+      - run: pnpm exec next typegen
       - run: pnpm typecheck
       - run: pnpm lint
       - name: Official Languages parity (EN/FR catalogs)
@@ -48,6 +50,8 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # PageProps/LayoutProps live in .next/types, which a fresh checkout lacks.
+      - run: pnpm exec next typegen
       # The default tsconfig targets `ca`, so the Brazil pack is type-checked through its own project file.
       - name: Type-check the pack
         run: pnpm exec tsc --noEmit -p tsconfig.br.json
