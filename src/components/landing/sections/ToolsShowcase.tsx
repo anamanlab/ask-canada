@@ -1,5 +1,5 @@
 /** Answers you can act on: three live widget cards (tax deadline, passport, holidays) on an aurora stage. */
-import { Calendar, Check, FileText } from '@phosphor-icons/react';
+import { Calendar, Check, FileText } from '@phosphor-icons/react/ssr';
 import { pack } from '@/countries/active';
 import { Aurora } from '../Aurora';
 import { getLandingCopy } from '../copy';

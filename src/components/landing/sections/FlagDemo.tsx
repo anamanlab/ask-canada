@@ -3,7 +3,7 @@
  * live cards floating beside it (the next holiday, and a travel advisory streamed in from travel.gc.ca).
  */
 import { Suspense, type CSSProperties } from 'react';
-import { Calendar, Check, Airplane } from '@phosphor-icons/react';
+import { Calendar, Check, Airplane } from '@phosphor-icons/react/ssr';
 import type { Locale } from '@/lib/i18n/config';
 import { packServer as pack } from '@/countries/active.server';
 import { getLandingCopy } from '../copy';

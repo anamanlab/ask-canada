@@ -3,7 +3,7 @@
  * phones, the lake (Shore), with the setting sun and a canoe, fills the band above the tasks.
  */
 import type { CSSProperties } from 'react';
-import { ArrowRight, Check, CaretDown, Info, Lock, ShieldCheck } from '@phosphor-icons/react';
+import { ArrowRight, Check, CaretDown, Info, Lock, ShieldCheck } from '@phosphor-icons/react/ssr';
 import Link from 'next/link';
 import { pack } from '@/countries/active';
 import type { Locale } from '@/lib/i18n/config';

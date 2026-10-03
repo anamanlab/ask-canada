@@ -30,7 +30,9 @@ export default defineConfig({
       // the Canada worker ignores it, and non-Workers hosts have no binding to read.
       AI: bindings.ai(),
       // Deploy these with cf deploy --secrets-file; neither value is bundled.
-      GEMINI_API_KEY: bindings.secret(),
+      // Gemini is Canada-only: Ask Brasil answers on Workers AI and DuckDuckGo, so declaring the
+      // secret here would make the Brazil deploy fail for a credential it never reads.
+      ...(isBrazil ? {} : { GEMINI_API_KEY: bindings.secret() }),
       // Production already stores the kill switch as a secret. Set it to "0"
       // in the deployment secrets file to enable model answers.
       SCRIPTED_AI: bindings.secret(),
