@@ -23,11 +23,13 @@
     "J’ai déménagé de l’Ontario, ai-je droit à l’allocation pour enfants?"
   ],
   "benefit-payments": [
+    "When do I get paid my benefits?",
+    "Quelles sont les dates de versement?"
+  ],
+  "dates-payment-calendar": [
     "When is the next GST/HST credit payment?",
     "When is the next Canada Child Benefit payment?",
-    "When do I get paid my benefits?",
-    "Quand est le prochain versement du crédit de TPS?",
-    "Quelles sont les dates de versement?"
+    "Quand est le prochain versement du crédit de TPS?"
   ],
   "taxes-file": [
     "How can I file my taxes for free?",
@@ -56,17 +58,19 @@
     "Est-ce sécuritaire de voyager au Mexique?",
     "Puis-je voyager au Portugal?"
   ],
-  "recalls": [
+  "health-recalls": [
     "Are there any recent product recalls?",
     "Has this food been recalled?",
     "Y a-t-il des rappels de produits récents?"
   ],
-  "recalls-vehicle": [
+  "health-car-seat": [
     "Was my car seat recalled?",
-    "Is my car part of a safety recall?",
     "Mon siège d’auto a-t-il été rappelé?"
   ],
-  "passport-office": [
+  "transport-recalls": [
+    "Is my car part of a safety recall?"
+  ],
+  "offices-passport-near": [
     "Find a passport office near me",
     "Where is the closest passport office?",
     "Trouver un bureau des passeports près de chez moi",
