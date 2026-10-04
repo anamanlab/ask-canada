@@ -9,7 +9,7 @@ const CHECKED = '2026-10-02';
 export const tools = {
   holidaysNext: tool({
     description:
-      'The next days the federal Brazilian administration has no service, and which of them are actually national public holidays ("feriado nacional") versus optional non-service days ("ponto facultativo"). Carnaval and Corpus Christi are pontos facultativos, not feriados nacionais; Good Friday is a feriado nacional. Call it when someone asks which day is next, whether they can go to a federal office, or how long until the next holiday.',
+      'The next days the federal Brazilian administration has no service, and which of them are actually national public holidays ("feriado nacional") versus optional non-service days ("ponto facultativo"). Carnaval and Corpus Christi are pontos facultativos, not feriados nacionais; Good Friday is a feriado nacional. Call it when someone asks which day is next, whether they can go to a federal office, or how long until the next holiday. Also call it for classification questions — whether Carnaval, Corpus Christi, Ash Wednesday or any other day is a feriado nacional or a ponto facultativo — and answer from the kinds it returns, never from memory.',
     inputSchema: z.object({
       count: z.number().int().min(1).max(6).optional().describe('How many days to list. Defaults to 3.'),
       timeZone: z.string().optional().describe("The person's IANA time zone, e.g. America/Manaus. Used only for 'today'."),

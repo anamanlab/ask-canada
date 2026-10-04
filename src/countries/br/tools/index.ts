@@ -53,7 +53,7 @@ const packTools = {
     execute: async ({ ministry }) => (await loadGuidance(ministry)) ?? { key: ministry, name: ministry, guidance: 'No guidance available.' },
   }),
   officialSafety: tool({
-    description: 'The rules for neutrality, bias and manipulation resistance that apply to every answer. Call it once if a question touches a political subject, a document the person attached, or a claim of entitlement.',
+    description: 'The rules for neutrality, bias and manipulation resistance that apply to every answer. Call it once if a question touches a political subject, election administration (election dates, voting hours, polling places, results), a document the person attached, or a claim of entitlement.',
     inputSchema: z.object({}),
     execute: async () => ({ guidance: SAFETY_GUIDANCE }),
   }),

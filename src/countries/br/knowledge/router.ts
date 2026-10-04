@@ -42,6 +42,7 @@ const RULES: [string, RegExp][] = [
   ['justica', /\b(justica|processo|processual|audiencia|intimacao|cartorio|notario|registro civil|casamento|nascimento|obito|defensoria|advogado|juizado|stj|stf|tst|cnj|divorcio)\b/i],
   ['numeros', /\b(selic|ipca|inflacao|cambio|dolar|moeda|taxa (selic|de juros|do banco central)|indicador|pib|economia|ibge|bco central|banco central|cdi)\b/i],
   ['congresso', /\b(congresso|camara|senado|deputado|senador|proposicao|projeto de lei|pl\b|pec\b|votacao|votou|lei nova|legislacao)\b/i],
+  ['eleicoes', /\b(eleicao|eleicoes|eleitoral|pleito|turno|tse|titulo de eleitor|zona eleitoral|secao eleitoral|prefeito|vereador|segundo turno|polling|presidential election)\b/i],
 ];
 
 /** The ministries this question most likely concerns, most relevant first. */
@@ -69,6 +70,14 @@ const SOURCE_ROUTES: [string, string, RegExp][] = [
     'economiaSeries',
     'a live Banco Central do Brasil figure (Selic, IPCA, IGPM, dollar)',
     /\b(selic|ipca|igpm|inflacao|cambio|dolar|ptax|taxa de juros|juros (do|da) (banco central|selic)|rendimento da selic|exchange rate|interest rate|inflation|dollar)\b/,
+  ],
+  [
+    'holidaysNext',
+    'the next days the federal administration has no service, and whether each is a feriado nacional or a ponto facultativo',
+    // Federal scope only: bare "feriado" stays unrouted (it may mean a state or municipal holiday, which this
+    // tool does not cover), while "feriado nacional", the pontos facultativos by name, and next-holiday
+    // phrasings are unambiguously federal. Haystack is accent-folded, so no accents here.
+    /\b(feriado nacional|feriados nacionais|national holidays?|ponto facultativo|pontos facultativos|optional non-service days?|proximos? feriados?|quando (e|eh|ser|sera) (o )?proximo (feriado|ponto)|qual (e |eh )?(o )?(proximo|seguinte) (feriado|ponto)|carnaval|carnival|corpus christi|quarta(-feira)? de cinzas|ash wednesday|next (national )?holidays?|upcoming holidays?|when is the next holiday|public holidays?)\b/,
   ],
   [
     'ibgePlace',

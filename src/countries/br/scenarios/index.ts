@@ -10,6 +10,7 @@ import camara from './camara';
 import catalogo from './catalogo';
 import servico from './servico';
 import economia from './economia';
+import eleicoes from './eleicoes';
 import general from './general';
 import holidays from './holidays';
 import ibge from './ibge';
@@ -19,6 +20,7 @@ import { withTitles } from './titles';
 export const scenarios: Scenario[] = withTitles([
   ...holidays,
   ...camara,
+  ...eleicoes,
   ...catalogo,
   ...servico,
   ...economia,

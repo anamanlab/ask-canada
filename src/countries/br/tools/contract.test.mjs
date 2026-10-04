@@ -223,11 +223,21 @@ for (const q of noTool) {
   check(hit, `"${q}" does not route to a live tool it does not need`);
   check(guided, `"${q}" still routes to ministry guidance`);
 }
-// Holidays are answered by the holidays widget and its scenario, so they need
-// neither a live figure nor injected guidance — and must claim neither.
+// Holidays steer the model to the holidays tool. The widget scenario owns the answer in scripted mode, but
+// production answers in model mode, where nothing else points at the tool — and unsteered, the model answers
+// classification questions (Carnaval, Corpus Christi) from memory. The route changes nothing scripted-side.
+// Federal scope only: a state holiday must still route nowhere.
 check(
-  routeSources('quando é o próximo feriado').length === 0,
-  '"quando é o próximo feriado" routes to no live tool',
+  routeSources('quando é o próximo feriado').some((r) => r.tool === 'holidaysNext'),
+  '"quando é o próximo feriado" routes to holidaysNext',
+);
+check(
+  routeSources('O Carnaval é feriado nacional?').some((r) => r.tool === 'holidaysNext'),
+  '"O Carnaval é feriado nacional?" routes to holidaysNext',
+);
+check(
+  routeSources('feriado estadual em São Paulo').length === 0,
+  '"feriado estadual em São Paulo" routes to no live tool',
 );
 
 console.log(problems ? `\n${problems} problem(s)` : '\n✓ the adapters satisfy their contracts (live, cached, failed, stale, and routed)');
