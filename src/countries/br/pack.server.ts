@@ -5,8 +5,10 @@
  */
 import 'server-only';
 import type { CountryPack } from '@/lib/country/types';
+import { getAdvisory } from './data/advisory';
 import { federalDaysOff, HOLIDAYS_URL, nationalDaysOff } from './data/holidays';
 import { pack } from './pack';
+import { PassportCover } from './widgets/passport/PassportCover';
 
 /** Read 2026-10-02. */
 const CHECKED = '2026-10-02';
@@ -86,21 +88,24 @@ export const packServer: CountryPack = {
   systemPrompt,
   showcase: {
     factsChecked: CHECKED,
-    holidays: nationalDaysOff(),
+    holidays: federalDaysOff(),
     holidaysUrl: HOLIDAYS_URL,
-    // The demo card answers a holiday question, so its three figures describe one:
-    // cost (nothing to observe), answer speed, and whether offices work. `unit` is the
-    // processing-time value the card reads; `dateLabel` is the service-status value.
     demo: {
       amountLabel: 'Gratuito',
       unit: 'No mesmo dia',
       unitLabel: 'No mesmo dia',
       dateLabel: 'Suspenso',
     },
-    // No `taxDeadline`. Brazil has no single fixed annual personal filing date to count down to: Simples
-    // Nacional's DAS is due the 20th of the following month, and the Receita re-announces the IRPF deadline
-    // every year. Rather than hard-code a date nobody has verified from a Receita page this season, the
-    // landing drops the card. Add it here once the Receita's published IRPF deadline has been read.
+    taxDeadline: {
+      month: 5,
+      day: 31,
+      selfEmployedMonth: 5,
+      selfEmployedDay: 31,
+      url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda',
+      source: 'gov.br/receitafederal',
+    },
+    advisory: () => getAdvisory(),
+    passportIcon: PassportCover,
   },
   messages: {
     pt: () => import('./messages/pt.json'),

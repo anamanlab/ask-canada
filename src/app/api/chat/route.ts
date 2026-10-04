@@ -51,7 +51,7 @@ import { buildInstructions } from '@/lib/ai/system-prompt';
 import { withToolBudget } from '@/lib/ai/tool-budget';
 import { createTurnRecorder, type EngineReason, type TurnRecorder } from '@/lib/ai/turn-log';
 import { isLocale, type Locale } from '@/lib/i18n/config';
-import { detectAnswerLocale, latestUserText, runScripted } from '@/lib/scripted/engine';
+import { detectAnswerLocale, latestUserText, runScripted, streamScriptedBody } from '@/lib/scripted/engine';
 import { starterAliases } from '@/lib/scripted/aliases';
 import { redactPii } from '@/lib/pii';
 
@@ -224,7 +224,7 @@ async function pump(
   result: Pick<StreamTextResult<ToolSet, never, never>, 'stream'>,
   writer: UIMessageStreamWriter,
   { first }: { first: boolean },
-): Promise<{ failed: true; error: string } | { failed: false; finish?: FinishReason }> {
+): Promise<{ failed: true; error: string; live: boolean } | { failed: false; finish?: FinishReason; live: boolean }> {
   const reader = toUIMessageStream({
     stream: result.stream,
     sendReasoning: false,
@@ -242,13 +242,13 @@ async function pump(
   while (true) {
     const { value, done } = await reader.read();
     if (done) break;
+    if (value.type === 'error') {
+      reader.cancel().catch(() => {});
+      return { failed: true, error: value.errorText, live };
+    }
     if (live) {
       send(value);
       continue;
-    }
-    if (value.type === 'error') {
-      reader.cancel().catch(() => {});
-      return { failed: true, error: value.errorText };
     }
     held.push(value);
     if (isContent(value)) {
@@ -257,7 +257,7 @@ async function pump(
     }
   }
   if (!live) held.forEach(send);
-  return { failed: false, finish };
+  return { failed: false, finish, live };
 }
 
 export async function POST(req: Request) {
@@ -383,25 +383,56 @@ export async function POST(req: Request) {
       return fallBack('model_unavailable', (err as Error).message);
     }
 
+    const recoverWithScripted = async (why: EngineReason, detail?: string) => {
+      console.warn(`[chat] ${why === 'model_error' ? 'model error mid-stream' : 'model wrote no answer prose'}, recovering with scripted answer:`, detail ?? '');
+      turn.set({ engine: 'scripted', why });
+      await streamScriptedBody({
+        writer,
+        messages,
+        locale: answerLocale ?? locale,
+        forceLang: answerLocale && packServer.locales.official.includes(answerLocale) ? answerLocale : undefined,
+        tools,
+        scenarios,
+        signal,
+        timeZone,
+        aliases: await starterAliases(),
+      });
+      writer.write({ type: 'finish-step' });
+      writer.write({ type: 'finish', finishReason: signal.aborted ? 'other' : 'stop' });
+    };
+
+    let finish: FinishReason | undefined;
     // Nothing reaches the client until the model produces real content; if it errors first, fall back to scripted.
     const main = await pump(first, writer, { first: true });
-    if (main.failed) return fallBack('model_error', main.error);
-    let finish = main.finish;
+    if (main.failed) {
+      if (hasAnswer(steps)) {
+        finish = 'stop';
+      } else if (!main.live) {
+        return fallBack('model_error', main.error);
+      } else {
+        return recoverWithScripted('model_error', main.error);
+      }
+    } else {
+      finish = main.finish;
+    }
 
     // A turn never ends without prose: if the loop ended before the answer was written, one closing step writes it.
     if (!signal.aborted && finish !== 'error' && !hasAnswer(steps)) {
       turn.set({ finisher: true });
-      const { messages: generated } = await first.response;
-      const closing = streamText({
-        ...shared,
-        messages: moveBreakpointToTail(afterTools([...initial, ...generated], 'final')),
-        stopWhen: isStepCount(1),
-      });
-      const last = await pump(closing, writer, { first: false });
-      finish = last.failed ? 'error' : last.finish;
+      try {
+        const { messages: generated } = await first.response;
+        const closing = streamText({
+          ...shared,
+          messages: moveBreakpointToTail(afterTools([...initial, ...generated], 'final')),
+          stopWhen: isStepCount(1),
+        });
+        const last = await pump(closing, writer, { first: false });
+        finish = last.failed ? 'error' : last.finish;
+      } catch {
+        finish = 'error';
+      }
       if (!signal.aborted && !hasAnswer(steps)) {
-        turn.set({ finish, stop: 'error' });
-        throw new Error('The model wrote no answer.');
+        return recoverWithScripted('model_error', 'The model wrote no answer prose');
       }
     }
 

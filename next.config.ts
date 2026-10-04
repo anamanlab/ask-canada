@@ -28,7 +28,7 @@ const countryAlias = {
  * two files cannot drift on the specifier.
  */
 export const WORKERS_RUNTIME_MODULE = 'cloudflare:workers';
-const workersRuntimeStub = path.resolve('./src/lib/ai/off-workers-env.ts');
+const workersRuntimeStub = './src/lib/ai/off-workers-env.ts';
 
 /**
  * Vercel BotID (invisible bot check on POST /api/chat, see src/lib/ai/bot-check.ts) exists only on Vercel.

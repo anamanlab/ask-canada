@@ -226,18 +226,7 @@ async function callTool(
   }
 }
 
-export async function runScripted({
-  writer,
-  messages,
-  locale,
-  tools,
-  scenarios,
-  signal,
-  forceLang,
-  timeZone,
-  checked,
-  aliases,
-}: {
+export type ScriptedArgs = {
   /** Translated starter questions -> their English original (see aliases.ts). */
   aliases?: Map<string, string>;
   forceLang?: AnswerLang;
@@ -251,7 +240,23 @@ export async function runScripted({
   tools: ToolSet;
   scenarios: Scenario[];
   signal?: AbortSignal;
-}) {
+};
+
+/**
+ * Streams the scenario reply, widget tools, after-text, and follow-up chips to an already-started turn.
+ * Used by `runScripted` and as a mid-stream recovery fallback when the model errors before writing prose.
+ */
+export async function streamScriptedBody({
+  writer,
+  messages,
+  locale,
+  tools,
+  scenarios,
+  signal,
+  forceLang,
+  timeZone,
+  aliases,
+}: ScriptedArgs) {
   const { text: asked_, hasFiles } = latestUserText(messages);
   // A translated starter question is matched (and its tool inputs derived) from its English original.
   const text = aliases?.get(normalizeQuestion(asked_)) ?? asked_;
@@ -265,15 +270,6 @@ export async function runScripted({
   // A native reply in the person's language when the scenario has one; otherwise a short note in their
   // language (shown as a callout above the answer) and the sourced answer in an official language.
   const localized = other ? scenario?.replyIntl?.[asked] : undefined;
-  const note = other && !localized ? BRIDGE[asked] : undefined;
-
-  const verified = scenario?.checked ?? checked;
-  writer.write({
-    type: 'start',
-    messageMetadata: { lang: localized ? asked : answerLang, asked, ...(note ? { note } : {}), ...(verified && scenario?.id !== 'fallback' ? { checked: verified } : {}) },
-  });
-  writer.write({ type: 'start-step' });
-  await sleep(380, signal);
 
   if (!scenario) {
     await streamText(writer, NOT_FOUND[answerLang] ?? NOT_FOUND.en!, signal);
@@ -298,6 +294,38 @@ export async function runScripted({
       await callTool(writer, tools, 'suggestFollowUps', { questions: followUps }, signal);
     }
   }
+}
+
+export async function runScripted(args: ScriptedArgs) {
+  const {
+    writer,
+    messages,
+    locale,
+    forceLang,
+    scenarios,
+    aliases,
+    signal,
+    checked,
+  } = args;
+  const { text: asked_, hasFiles } = latestUserText(messages);
+  const text = aliases?.get(normalizeQuestion(asked_)) ?? asked_;
+  const asked = forceLang ?? detectAnswerLocale(asked_, locale);
+  const answerLang: AnswerLang = isOfficial(asked) ? asked : isOfficial(locale) ? locale : 'en';
+  const other = !isOfficial(asked);
+  const scenario = pickScenario(scenarios, text, hasFiles);
+  const localized = other ? scenario?.replyIntl?.[asked] : undefined;
+  const note = other && !localized ? BRIDGE[asked] : undefined;
+
+  const verified = scenario?.checked ?? checked;
+  writer.write({
+    type: 'start',
+    messageMetadata: { lang: localized ? asked : answerLang, asked, ...(note ? { note } : {}), ...(verified && scenario?.id !== 'fallback' ? { checked: verified } : {}) },
+  });
+  writer.write({ type: 'start-step' });
+  await sleep(380, signal);
+
+  await streamScriptedBody(args);
+
   writer.write({ type: 'finish-step' });
   writer.write({ type: 'finish', finishReason: signal?.aborted ? 'other' : 'stop' });
 }

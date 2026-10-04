@@ -1,105 +1,81 @@
 /**
- * Brazilian flag component: green field, yellow rhombus, blue circle with white stars and
- * "Ordem e Progresso" band. Matches official proportions (7:10) per Lei 5.700/1971.
+ * Official Brazilian flag component (Bandeira Nacional do Brasil).
+ * Conforms to legal proportions (14:20 landscape) per Lei 5.700/1971.
  */
 import type { FlagProps } from '@/lib/country/types';
 
-const FLAG_VIEWBOX = '0 0 700 1000';
+export const FLAG_VIEWBOX = '0 0 1000 700';
 
 /**
- * The 27 stars on the flag represent the states + Federal District, positioned as they
- * appeared over Rio de Janeiro on 15 Nov 1889. Coordinates are scaled to the flag's
- * blue circle (radius 35% of height, centered at 50% width, 45% height).
+ * Brazilian flag stars positioned in landscape coordinates (viewBox 0 0 1000 700).
+ * Sphere center is (500, 350) with radius 175.
  */
 const STARS = [
-  { x: 350, y: 150, size: 24 }, // Sigma Octantis (Polaris Australis) - Federal District
-  { x: 220, y: 280, size: 18 }, // Procyon - Amazonas
-  { x: 280, y: 320, size: 16 }, // Canopus - Mato Grosso
-  { x: 420, y: 290, size: 18 }, // Spica - Pará
-  { x: 480, y: 330, size: 16 }, // Hydra - Tocantins
-  { x: 180, y: 380, size: 14 }, // Crux (Southern Cross) - 5 stars for Southeast states
-  { x: 210, y: 410, size: 14 },
-  { x: 240, y: 440, size: 14 },
-  { x: 270, y: 410, size: 14 },
-  { x: 240, y: 425, size: 12 },
-  { x: 480, y: 430, size: 16 }, // Scorpius - Northeast states
-  { x: 520, y: 380, size: 14 },
-  { x: 560, y: 420, size: 14 },
-  { x: 540, y: 460, size: 14 },
-  { x: 500, y: 480, size: 14 },
-  { x: 460, y: 460, size: 14 },
-  { x: 470, y: 430, size: 12 },
-  { x: 350, y: 500, size: 16 }, // Triangulum Australe - South states
-  { x: 300, y: 540, size: 14 },
-  { x: 400, y: 540, size: 14 },
-  { x: 320, y: 580, size: 12 },
-  { x: 380, y: 580, size: 12 },
-  { x: 350, y: 600, size: 10 }, // Sigma Octantis area - smaller stars
-  { x: 330, y: 620, size: 10 },
-  { x: 370, y: 620, size: 10 },
-  { x: 310, y: 640, size: 8 },
-  { x: 390, y: 640, size: 8 },
+  // Spica (Pará) - above the white band
+  { cx: 485, cy: 265, r: 4.8 },
+  // Procyon (Amazonas)
+  { cx: 415, cy: 375, r: 4.2 },
+  // Canopus (Goiás / Tocantins)
+  { cx: 450, cy: 420, r: 4.2 },
+  // Sirius (Mato Grosso)
+  { cx: 435, cy: 395, r: 4.5 },
+  // Crux (Cruzeiro do Sul) - 5 stars
+  { cx: 500, cy: 325, r: 4.5 }, // Estrela de Magalhães (alpha)
+  { cx: 500, cy: 385, r: 4.5 }, // Rubídea (gamma)
+  { cx: 476, cy: 350, r: 4.0 }, // Pálida (delta)
+  { cx: 524, cy: 355, r: 4.5 }, // Mimosa (beta)
+  { cx: 510, cy: 370, r: 3.2 }, // Intrometida (epsilon)
+  // Scorpius (Northeast states)
+  { cx: 545, cy: 405, r: 4.2 }, // Antares
+  { cx: 565, cy: 390, r: 3.8 }, // Graffias
+  { cx: 580, cy: 415, r: 3.8 },
+  { cx: 570, cy: 435, r: 3.8 },
+  { cx: 555, cy: 455, r: 3.8 },
+  { cx: 540, cy: 470, r: 3.5 },
+  { cx: 525, cy: 450, r: 3.2 },
+  { cx: 535, cy: 430, r: 3.2 },
+  // Triangulum Australe (South states)
+  { cx: 500, cy: 475, r: 4.2 }, // Atria
+  { cx: 475, cy: 500, r: 3.8 },
+  { cx: 525, cy: 500, r: 3.8 },
+  // Hydra
+  { cx: 545, cy: 340, r: 3.8 }, // Alphard
+  { cx: 560, cy: 325, r: 3.5 },
+  // Sigma Octantis (Polo Sul Celeste - Distrito Federal)
+  { cx: 500, cy: 512, r: 3.5 },
 ] as const;
 
-function Star({ cx, cy, r }: { cx: number; cy: number; r: number }) {
-  const spikes = 5;
-  const step = (Math.PI * 2) / spikes;
-  const outerR = r;
-  const innerR = r * 0.45;
-  let d = `M${cx} ${cy - outerR}`;
-  for (let i = 0; i < spikes; i++) {
-    const angle = -Math.PI / 2 + i * step;
-    const nextAngle = angle + step / 2;
-    const outerX = cx + Math.cos(angle) * outerR;
-    const outerY = cy + Math.sin(angle) * outerR;
-    const innerX = cx + Math.cos(nextAngle) * innerR;
-    const innerY = cy + Math.sin(nextAngle) * innerR;
-    d += ` L${outerX} ${outerY} L${innerX} ${innerY}`;
-  }
-  d += 'Z';
-  return <path d={d} fill="white" />;
-}
-
-export function Flag({ className, title }: FlagProps) {
+export function Flag({ className, title, style }: FlagProps) {
   return (
     <svg
       viewBox={FLAG_VIEWBOX}
       className={className}
+      style={style}
       role={title ? 'img' : undefined}
       aria-hidden={title ? undefined : true}
       focusable="false"
       preserveAspectRatio="xMidYMid meet"
     >
       {title ? <title>{title}</title> : null}
-      {/* Green field */}
-      <rect width="700" height="1000" fill="#009C3B" />
-      {/* Yellow rhombus (losango) - vertices at midpoints of each side */}
-      <polygon
-        points="350,0 700,500 350,1000 0,500"
-        fill="#FFDF00"
+      {/* Green field (20 x 14 modules -> 1000 x 700) */}
+      <rect width="1000" height="700" fill="#009C3B" rx="4" />
+      {/* Yellow rhombus (losango) - vertices at 1.7 modules (85px) from each edge */}
+      <polygon points="500,85 915,350 500,615 85,350" fill="#FFDF00" />
+      {/* Blue celestial circle (radius 3.5 modules -> 175px) */}
+      <circle cx="500" cy="350" r="175" fill="#002776" />
+      {/* White upward-curving band representing the celestial equator */}
+      <path
+        d="M 330,378 A 245,245 0 0,1 668,300 A 253,253 0 0,0 330,378 Z"
+        fill="#FFFFFF"
       />
-      {/* Blue circle */}
-      <circle cx="350" cy="450" r="350" fill="#002776" />
-      {/* White band with "Ordem e Progresso" */}
-      <g transform="translate(350, 450) rotate(-13)">
-        <rect x="-280" y="-18" width="560" height="36" fill="white" rx="4" />
-        <text
-          x="0"
-          y="8"
-          textAnchor="middle"
-          fill="#002776"
-          fontFamily="system-ui, sans-serif"
-          fontWeight="600"
-          fontSize="22"
-          letterSpacing="0.5"
-        >
-          Ordem e Progresso
-        </text>
+      {/* Constellation stars in official white */}
+      <g fill="#FFFFFF">
+        {STARS.map((s, i) => (
+          <circle key={i} cx={s.cx} cy={s.cy} r={s.r} />
+        ))}
       </g>
-      {/* 27 stars */}
-      {STARS.map((s, i) => (
-        <Star key={i} cx={s.x} cy={s.y} r={s.size} />
-      ))}
     </svg>
   );
 }
+
+export default Flag;

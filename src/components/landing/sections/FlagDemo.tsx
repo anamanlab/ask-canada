@@ -60,13 +60,17 @@ function AdvisorySkeleton() {
 
 export async function FlagDemo() {
   const { t, fmt, sp, d, L, locale, dataLang, checked, fr } = await getLandingCopy();
-  // The reader's own language leads the flag; the pack's other official language follows. Canada reads
-  // "Ask." / "Demandez.", Brazil "Pergunte." / "Ask." — both from `brand.ask`.
   const endonym = (l: Locale) => new Intl.DisplayNames([l], { type: 'language' }).of(l) ?? l;
+  const customPair = pack.brand.askPair?.[locale] ?? (pack.brand.askPair ? pack.brand.askPair.pt : undefined);
+
   const words = pack.locales.official.map((l) => ({ tag: endonym(l), word: pack.brand.ask?.[l] ?? pack.brand.name, lang: l }));
-  // Swap only for the pack's *second* official language: a reader in any other locale keeps the first,
-  // which is how Brazil's English readers get "Ask." rather than "Pergunte.".
-  const [lead, second] = words[0] && words[1] ? (locale === words[1].lang ? [words[1], words[0]] : words) : [words[0], words[0]];
+  const [lead, second] = customPair
+    ? [customPair.lead, customPair.second]
+    : words[0] && words[1]
+      ? (locale === words[1].lang ? [words[1], words[0]] : words)
+      : [words[0], words[0]];
+
+  const isLongLead = fr || lead.word.length >= 6 || pack.id === 'br';
   const Mark = pack.brand.Mark;
   const [nextHoliday] = upcomingHolidays(1, todayInPack());
   // The demo plan's figures are the pack's. `demo.unit` keeps the "business days" wording next to the number;
@@ -80,7 +84,7 @@ export async function FlagDemo() {
       : { n: t('flag.demo.days'), unit: '' };
 
   return (
-    <section className={fr ? 'l-flag l-flag--long-lead' : 'l-flag'} aria-labelledby="t-flag" style={{ '--flag': pack.brand.flagColor } as CSSProperties}>
+    <section className={isLongLead ? 'l-flag l-flag--long-lead' : 'l-flag'} aria-labelledby="t-flag" style={{ '--flag': pack.brand.flagColor } as CSSProperties}>
       <h2 id="t-flag" className="sr-only">
         {t('flag.sr')}
       </h2>
@@ -93,14 +97,8 @@ export async function FlagDemo() {
         </span>
       </div>
       <div className="l-flag__white">
-        {/* The Brazilian flag: green field, yellow rhombus, blue circle with stars and "Ordem e Progresso" band. */}
-        {pack.brand.Flag ? (
-          <pack.brand.Flag
-            aria-hidden
-            className="absolute inset-0 w-full h-full"
-            style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
-          />
-        ) : pack.brand.flagDiamond ? (
+        {/* The flag diamond (e.g. Brazil's yellow rhombus behind the conversation card) */}
+        {pack.brand.flagDiamond ? (
           <div
             aria-hidden
             style={{
@@ -112,6 +110,7 @@ export async function FlagDemo() {
               transform: 'translate(-50%, -50%) rotate(45deg)',
               background: pack.brand.flagDiamond,
               borderRadius: 32,
+              opacity: 0.9,
             }}
           />
         ) : null}
@@ -136,11 +135,11 @@ export async function FlagDemo() {
               {t('flag.demo.caption')}
             </figcaption>
             <div className="l-demo__head">
-              <span className="grid size-7 place-items-center rounded-[9px] bg-maple text-white">
-                <Mark className="size-4" />
+              <span className="grid size-7 place-items-center rounded-[9px] bg-card p-0.5 shadow-xs border border-hair">
+                <Mark className="h-4 w-auto rounded-[2px]" />
               </span>
               {pack.brand.name}
-              <span className="l-demo__lang">{pack.locales.official.map((l) => l.toUpperCase()).join(' · ')}</span>
+              <span className="l-demo__lang">{pack.id === 'br' ? 'PT-BR' : pack.locales.official.map((l) => l.toUpperCase()).join(' · ')}</span>
             </div>
             <div className="l-demo__body">
               <p className="l-demo__q">{t('flag.demo.q')}</p>

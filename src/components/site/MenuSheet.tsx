@@ -5,9 +5,9 @@
  * clear this device, the official site) so the sheet is complete on its own. Its contents render only once
  * the sheet is first opened (see `Sheet`).
  */
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, ChevronRight, Globe, Landmark, Lock, Phone } from 'lucide-react';
+import { ArrowUpRight, ChevronRight, Globe, Landmark, Lock, Phone, Search, X } from 'lucide-react';
 import { pack } from '@/countries/active';
 import { Segmented } from '@/components/ui/Segmented';
 import { Sheet } from '@/components/ui/Sheet';
@@ -94,37 +94,78 @@ function MenuEssentials({ onClose, onLanguage }: { onClose: () => void; onLangua
 }
 
 function MenuBody({ onClose }: { onClose: () => void }) {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const { send } = useChatActions();
   const items = useDeviceItems();
   const theme = useThemePref();
+  const [filter, setFilter] = useState('');
+
+  const services = useMemo(() => {
+    const q = filter.trim().toLowerCase();
+    if (!q) return pack.services;
+    return pack.services.filter(({ id }) => {
+      const name = (t(`services.${id}.name`) ?? '').toLowerCase();
+      const desc = (t(`services.${id}.desc`) ?? '').toLowerCase();
+      return name.includes(q) || desc.includes(q);
+    });
+  }, [filter, t]);
+
+  const searchPlaceholder = locale === 'pt' ? 'Buscar serviço ou tema…' : locale === 'fr' ? 'Rechercher un service…' : 'Search services or topics…';
+  const noResults = locale === 'pt' ? 'Nenhum serviço encontrado.' : locale === 'fr' ? 'Aucun service trouvé.' : 'No services found.';
+
   return (
     <>
+      <div className="relative mt-2 mb-3">
+        <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-ink-3" aria-hidden />
+        <input
+          type="search"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          placeholder={searchPlaceholder}
+          aria-label={searchPlaceholder}
+          className="h-10 w-full rounded-full border border-hair bg-paper-2 pl-9 pr-8 text-[14px] text-ink placeholder:text-ink-3 focus:border-maple focus:bg-card focus:outline-none transition-colors"
+        />
+        {filter ? (
+          <button
+            type="button"
+            onClick={() => setFilter('')}
+            aria-label={t('action.cancel')}
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-ink-3 hover:text-ink"
+          >
+            <X className="size-3.5" aria-hidden />
+          </button>
+        ) : null}
+      </div>
+
       <nav aria-label={t('menu.services')}>
         <h3 className="sr-only">{t('menu.services')}</h3>
-        <ul className="m-0 -mx-2.5 mt-3 grid list-none grid-cols-[minmax(0,1fr)] gap-0.5 p-0">
-          {pack.services.map(({ id, icon: Icon }) => (
-            <li key={id}>
-              <button
-                type="button"
-                onClick={() => {
-                  onClose();
-                  send(t(`services.${id}.starter`));
-                }}
-                className="group flex min-h-14 w-full items-center gap-3.5 rounded-[16px] px-2.5 py-2 text-start transition-colors hover:bg-paper-2"
-              >
-                <span className="grid size-10 shrink-0 place-items-center rounded-[12px] bg-paper-2 text-ink-2 group-hover:bg-card">
-                  <Icon className="size-5" strokeWidth={1.7} aria-hidden />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-[15.5px] font-medium leading-snug text-ink">{t(`services.${id}.name`)}</span>
-                  <span className="block text-[13px] leading-snug text-ink-3 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] overflow-hidden">{t(`services.${id}.desc`)}</span>
-                </span>
-                <ChevronRight className="size-4 shrink-0 text-ink-3 flip-rtl" aria-hidden />
-              </button>
-            </li>
-          ))}
-        </ul>
+        {services.length === 0 ? (
+          <p className="py-6 text-center text-[14px] text-ink-3">{noResults}</p>
+        ) : (
+          <ul className="m-0 -mx-2.5 grid list-none grid-cols-[minmax(0,1fr)] gap-0.5 p-0">
+            {services.map(({ id, icon: Icon }) => (
+              <li key={id}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onClose();
+                    send(t(`services.${id}.starter`));
+                  }}
+                  className="group flex min-h-14 w-full items-center gap-3.5 rounded-[16px] px-2.5 py-2 text-start transition-colors hover:bg-paper-2 active:bg-paper-3"
+                >
+                  <span className="grid size-10 shrink-0 place-items-center rounded-[12px] bg-paper-2 text-ink-2 shadow-2xs group-hover:bg-card group-hover:text-ink transition-colors">
+                    <Icon className="size-5" strokeWidth={1.7} aria-hidden />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-[15px] font-medium leading-snug text-ink">{t(`services.${id}.name`)}</span>
+                    <span className="block text-[12.5px] leading-snug text-ink-3 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] overflow-hidden">{t(`services.${id}.desc`)}</span>
+                  </span>
+                  <ChevronRight className="size-4 shrink-0 text-ink-3 flip-rtl group-hover:text-ink transition-colors" aria-hidden />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
       </nav>
 
       <h3 className="eyebrow mb-2 mt-8">{t('menu.appearance')}</h3>
@@ -139,11 +180,35 @@ function MenuBody({ onClose }: { onClose: () => void }) {
         ]}
       />
 
-      <p className="m-0 mt-3 text-[13.5px] text-ink-3">{items.length ? t('menu.deviceCount', { count: items.length }) : t('menu.deviceEmpty')}</p>
+      <p className="m-0 mt-3 text-[13px] text-ink-3">{items.length ? t('menu.deviceCount', { count: items.length }) : t('menu.deviceEmpty')}</p>
 
-      <div className="mt-8 flex items-center gap-3 rounded-[18px] bg-maple-wash px-4 py-3 text-[14px] text-ink">
-        <Phone className="size-4 shrink-0 text-maple" aria-hidden />
-        <span>{t('footer.emergency', { emergency: pack.emergency.number, crisis: pack.emergency.crisis })}</span>
+      {/* Actionable Emergency assistance card */}
+      <div className="mt-8 rounded-[18px] border border-hair bg-paper-2/80 p-3.5 transition-colors">
+        <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-wider text-ink-2">
+          <Phone className="size-3.5 text-maple" aria-hidden />
+          <span>{locale === 'pt' ? 'Atendimento de emergência' : locale === 'fr' ? 'Urgences et crise' : 'Emergency & assistance'}</span>
+        </div>
+        <p className="m-0 mt-1.5 text-[13px] leading-relaxed text-ink-2">
+          {t('footer.emergency', { emergency: pack.emergency.number, crisis: pack.emergency.crisis })}
+        </p>
+        <div className="mt-2.5 flex flex-wrap gap-2">
+          <a
+            href={`tel:${pack.emergency.number}`}
+            className="inline-flex items-center gap-1.5 rounded-full border border-hair bg-card px-3 py-1.5 text-[12.5px] font-medium text-ink shadow-2xs hover:bg-paper-2 transition-colors no-underline"
+          >
+            <Phone className="size-3 text-pine" aria-hidden />
+            <span>{locale === 'pt' ? `Ligue ${pack.emergency.number}` : `Call ${pack.emergency.number}`}</span>
+          </a>
+          {pack.emergency.crisisTel ? (
+            <a
+              href={`tel:${pack.emergency.crisisTel}`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-hair bg-card px-3 py-1.5 text-[12.5px] font-medium text-ink shadow-2xs hover:bg-paper-2 transition-colors no-underline"
+            >
+              <Phone className="size-3 text-maple" aria-hidden />
+              <span>{locale === 'pt' ? `CVV ${pack.emergency.crisisTel}` : `Helpline ${pack.emergency.crisisTel}`}</span>
+            </a>
+          ) : null}
+        </div>
       </div>
 
       <ul className="m-0 mt-6 flex list-none flex-wrap gap-x-5 gap-y-1 p-0 text-[14px]">

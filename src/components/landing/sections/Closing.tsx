@@ -12,14 +12,15 @@ export async function Closing() {
   // The headline in the reader's language, the second line in the pack's other official
   // language — never a hardcoded pair. (It used to be en/fr literals, which is how the
   // Portuguese landing ended up asking "What do you need?".)
-  const secondLang = pack.locales.official.find((l) => l !== locale) ?? 'en';
+  const isBr = pack.id === 'br';
+  const secondLang = isBr ? locale : (pack.locales.official.find((l) => l !== locale) ?? 'en');
   return (
     <section className="l-closing" aria-labelledby="t-close">
       <Scene art={pack.art.dusk} sun={false} land={false} />
       <Prairie className="l-prairie" />
       <Mark className="l-closing__leaf" />
       <p className="eyebrow l-center" style={{ justifyContent: 'center' }}>
-        {pack.locales.official.map((l) => localeInfo(l).endonym).join(' · ')}
+        {isBr ? (locale === 'en' ? 'English · Brazil' : 'Português · Brasil') : pack.locales.official.map((l) => localeInfo(l).endonym).join(' · ')}
       </p>
       <h2 className="l-closing__h" id="t-close">
         <span lang={locale}>{t('closing.title')}</span>

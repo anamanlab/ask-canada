@@ -78,6 +78,8 @@ export type CountryPack = {
     greeting?: Partial<Record<Locale, string>> & { en: string };
     /** The single word set in the flag's vertical bands — the product's verb, as a person would say it. */
     ask?: Partial<Record<Locale, string>> & { en: string };
+    /** Optional custom word pairs for the flag bands per locale. */
+    askPair?: Partial<Record<Locale, { lead: { tag: string; word: string; lang: Locale }; second: { tag: string; word: string; lang: Locale } }>>;
     Mark: ComponentType<MarkProps>;
     Flag?: ComponentType<FlagProps>;
     /** Standalone SVG markup of the mark in a given colour (icons, social cards). */

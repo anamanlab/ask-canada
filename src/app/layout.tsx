@@ -102,6 +102,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
     <html
       lang={uiLocale}
       dir={forcedDir ?? dirOf(uiLocale)}
+      data-country={pack.id}
       data-locale={locale}
       data-theme={theme === 'system' ? undefined : theme}
       data-theme-pref={theme}

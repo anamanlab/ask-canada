@@ -1,15 +1,19 @@
 /**
- * Ask Brasil mark geometry: a four-point compass star, on its own.
- *
- * Deliberately NOT any state symbol: no coat of arms, no Ordem do Progresso band, no "Brasil — Governo
- * Federal" lockup. A navigation star is what this product actually does — it points at the right office,
- * page or deadline — and it reads clearly at 15px in the header and as a monochrome app icon.
+ * Ask Brasil mark geometry: Brazilian national flag emblem.
  */
-export const MARK_VIEWBOX = '0 0 24 24';
+export const MARK_VIEWBOX = '0 0 28 20';
 
-/** The star, drawn as four concave-sided points so it stays crisp at small sizes. */
-export const MARK_PATH =
-  'M12 0.6c.86 5.4 5.14 9.68 10.54 10.54-5.4.86-9.68 5.14-10.54 10.54-.86-5.4-5.14-9.68-10.54-10.54C6.86 10.28 11.14 6 12 .6Z';
-
-/** A small diamond at the centre, so the star has a "you are here" point even at 15px. */
-export const MARK_CORE_PATH = 'M12 10.1 13.9 12 12 13.9 10.1 12Z';
+export const BRAZIL_FLAG_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 20">
+  <rect width="28" height="20" rx="3" fill="#009C3B"/>
+  <polygon points="14,2.5 25.6,10 14,17.5 2.4,10" fill="#FFDF00"/>
+  <circle cx="14" cy="10" r="5" fill="#002776"/>
+  <path d="M 9.2,10.7 A 6.8,6.8 0 0,1 18.7,8.6 A 7.1,7.1 0 0,0 9.2,10.7 Z" fill="#FFFFFF"/>
+  <g fill="#FFFFFF">
+    <circle cx="14" cy="9.2" r="0.45"/>
+    <circle cx="14" cy="10.9" r="0.45"/>
+    <circle cx="13.3" cy="10" r="0.4"/>
+    <circle cx="14.7" cy="10.1" r="0.45"/>
+    <circle cx="14.3" cy="10.5" r="0.3"/>
+    <circle cx="13.6" cy="7.9" r="0.45"/>
+  </g>
+</svg>`;

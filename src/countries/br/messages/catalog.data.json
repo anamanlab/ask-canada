@@ -217,8 +217,8 @@
     "en": "File by"
   },
   "showcase.tax.selfEmployed": {
-    "pt": "Contribuintes",
-    "en": "Self-employed"
+    "pt": "Contribuintes e MEI",
+    "en": "MEI and self-employed"
   },
   "showcase.passport.title": {
     "pt": "Passaporte comum",
@@ -237,7 +237,7 @@
     "en": "On the PF site"
   },
   "showcase.passport.onlineSub": {
-    "pt": "Formulário e taxa",
+    "pt": "Formulário",
     "en": "Form and fee"
   },
   "showcase.passport.inPerson": {
@@ -245,8 +245,8 @@
     "en": "At a PF unit"
   },
   "showcase.passport.inPersonSub": {
-    "pt": "Biometria e retirada",
-    "en": "Biometrics and pickup"
+    "pt": "Presencial",
+    "en": "In person"
   },
   "showcase.passport.mail": {
     "pt": "Conta gov.br",
@@ -257,8 +257,8 @@
     "en": "Account"
   },
   "showcase.passport.mailSub": {
-    "pt": "Login Único vale para todos os serviços",
-    "en": "Single sign-on for every federal service"
+    "pt": "Login Único",
+    "en": "Unified login"
   },
   "showcase.passport.fee": {
     "pt": "Taxa",
@@ -281,7 +281,7 @@
     "en": "Processing"
   },
   "showcase.passport.processingValue": {
-    "pt": "6–10 dias úteis",
+    "pt": "6 a 10 dias úteis",
     "en": "6–10 business days"
   },
   "showcase.passport.processingValueShort": {
@@ -293,8 +293,8 @@
     "en": "Pickup"
   },
   "showcase.passport.readyValue": {
-    "pt": "Na mesma unidade",
-    "en": "At the same unit"
+    "pt": "Pronto até {date}",
+    "en": "Ready by {date}"
   },
   "showcase.holidays.title": {
     "pt": "Próximo feriado",
@@ -305,7 +305,7 @@
     "en": "National holidays and optional non-service days"
   },
   "flag.sr": {
-    "pt": "O fim da bandeira nacional do Brasil",
+    "pt": "Bandeira nacional do Brasil",
     "en": "The Brazilian national flag"
   },
   "flag.holidayLabel": {
@@ -1145,7 +1145,7 @@
     "en": "What do you need?"
   },
   "closing.titleEm": {
-    "pt": "We're listening.",
-    "en": "Estamos ouvindo."
+    "pt": "Estamos ouvindo.",
+    "en": "We're listening."
   }
 }
