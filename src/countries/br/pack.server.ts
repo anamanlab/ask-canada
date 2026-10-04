@@ -6,7 +6,7 @@
 import 'server-only';
 import type { CountryPack } from '@/lib/country/types';
 import { getAdvisory } from './data/advisory';
-import { federalDaysOff, HOLIDAYS_URL, nationalDaysOff } from './data/holidays';
+import { federalDaysOff, HOLIDAYS_URL } from './data/holidays';
 import { pack } from './pack';
 import { PassportCover } from './widgets/passport/PassportCover';
 
@@ -88,7 +88,15 @@ export const packServer: CountryPack = {
   systemPrompt,
   showcase: {
     factsChecked: CHECKED,
-    holidays: federalDaysOff(),
+    // Computed on every access, never once at module load: Workers evaluate
+    // modules with the clock at the Unix epoch, so `holidays: federalDaysOff()`
+    // would freeze the landing on the 1969-1970 calendar — empty after the
+    // upcoming-only filter — until the isolate restarts. A getter keeps the
+    // `Holiday[]` type while recomputing from the real date on each request.
+    // The chat tool was never affected: it calls `federalDaysOff()` per turn.
+    get holidays() {
+      return federalDaysOff();
+    },
     holidaysUrl: HOLIDAYS_URL,
     demo: {
       amountLabel: 'Gratuito',

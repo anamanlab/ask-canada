@@ -102,6 +102,11 @@ export const MINISTRIES: Record<string, Ministry> = {
     acronyms: 'Camara, Senado, projeto de lei, proposicao, votacao',
     load: async () => (await import('./guidance/congresso')).CONGRESSO_GUIDANCE,
   },
+  eleicoes: {
+    name: 'Tribunal Superior Eleitoral (TSE)',
+    acronyms: 'TSE, eleicao, eleicoes, votacao, turno, titulo de eleitor, zona eleitoral',
+    load: async () => (await import('./guidance/eleicoes')).ELEICOES_GUIDANCE,
+  },
 };
 
 export const MINISTRY_KEYS = Object.keys(MINISTRIES) as [string, ...string[]];

@@ -2,10 +2,11 @@
  * Lab fixtures for the `holidays` widget: every state and the edge cases that matter.
  *
  * The outputs are built with the pack's own data (`data/holidays.ts`), so a fixture can never drift from
- * what the tool would return. Note `today` is pinned: `federalDaysOff()` is relative to the real date, and a
- * fixture that moved would show a different list every run.
+ * what the tool would return. Every fixture is pinned to an explicit date: the outputs must never depend on
+ * the clock at module load, because Workers evaluate modules with the clock at the Unix epoch and a
+ * `todayInBrazil()` call there would freeze every list on 1969-1970.
  */
-import { federalDaysOff, HOLIDAYS_URL, nationalHolidays, todayInBrazil } from '../../data/holidays';
+import { HOLIDAYS_URL, nationalHolidays, PONTOS_FACULTATIVOS } from '../../data/holidays';
 import type { Holiday } from '@/lib/dates/business-days';
 import type { Fixture, ToolSource, WidgetPart } from '@/lib/widgets/types';
 
@@ -19,12 +20,16 @@ const SOURCE: ToolSource = {
 type Day = { date: string; name: Holiday['name']; kind: 'feriado' | 'ponto' };
 type Output = { today: string; holidays: Day[]; sources: ToolSource[] };
 
-/** The same shape the tool returns, for a given day and count. */
+/** The same shape the tool returns, for a given day and count. Years are derived from `today`, never read
+ * from the clock, so the fixture is identical in tests, local dev and Workers (see the header note). */
 function outputFor(today: string, count: number): Output {
   // Two years, like the tool: the list spans the year boundary, so the kind must be classified across it.
   const year = Number(today.slice(0, 4));
+  const days: Holiday[] = [...nationalHolidays(year), ...nationalHolidays(year + 1), ...(PONTOS_FACULTATIVOS[year] ?? []), ...(PONTOS_FACULTATIVOS[year + 1] ?? [])].sort((a, b) =>
+    a.date.localeCompare(b.date),
+  );
   const national = new Set([...nationalHolidays(year), ...nationalHolidays(year + 1)].map((h) => h.date));
-  const holidays = federalDaysOff()
+  const holidays = days
     .filter((d) => d.date >= today)
     .slice(0, count)
     .map((d) => ({ date: d.date, name: d.name, kind: (national.has(d.date) ? 'feriado' : 'ponto') as Day['kind'] }));
@@ -39,7 +44,7 @@ const part = (input: { count?: number }, opts: { today?: string; state?: WidgetP
     toolCallId: `fx-holidays-${++n}`,
     state,
     input,
-    output: state === 'output-available' ? (opts.output ?? outputFor(opts.today ?? todayInBrazil(), input.count ?? 3)) : undefined,
+    output: state === 'output-available' ? (opts.output ?? outputFor(opts.today ?? CHECKED, input.count ?? 3)) : undefined,
     errorText: state === 'output-error' ? 'Upstream timeout' : undefined,
   };
 };
@@ -48,10 +53,10 @@ const fixtures: Fixture[] = [
   { name: 'Streaming input', toolName: 'holidaysNext', part: part({}, { state: 'input-streaming' }) },
   { name: 'Input available, no output yet', toolName: 'holidaysNext', part: part({ count: 3 }, { state: 'input-available' }) },
   {
-    name: 'Today (both kinds present)',
+    name: 'Early October 2026 (both kinds present)',
     toolName: 'holidaysNext',
-    part: part({ count: 4 }),
-    note: 'Live: whatever follows today in America/Sao_Paulo.',
+    part: part({ count: 4 }, { today: '2026-10-02' }),
+    note: 'Pinned to the verification date: Nossa Senhora Aparecida (feriado) followed by Dia do Servidor Público (ponto).',
   },
   {
     name: 'Carnaval: ponto facultativo, not a feriado',

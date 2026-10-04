@@ -248,5 +248,29 @@
     "myths": [
       "“Aprovado no Congresso virou lei”: só vira lei após a sanção presidencial e a publicação no DOU."
     ]
+  },
+  "eleicoes": {
+    "const": "ELEICOES_GUIDANCE",
+    "label": "o Tribunal Superior Eleitoral (eleições)",
+    "cite": [
+      "Tribunal Superior Eleitoral: https://www.tse.jus.br"
+    ],
+    "rules": [
+      "Eleições gerais de 2026: 1º turno em 4 de outubro de 2026 (domingo), 2º turno onde houver em 25 de outubro de 2026.",
+      "A votação vai das 8h às 17h no horário de Brasília, em todo o país (no Acre, das 6h às 15h no horário local).",
+      "Em disputa em 2026: presidente e vice, governadores e vice, dois senadores por estado, deputados federais, deputados estaduais e deputados distritais (Distrito Federal).",
+      "Eleições municipais não acontecem em 2026: as últimas foram em 2024 e as próximas serão em 2028. O segundo turno municipal só existe em municípios com mais de 200 mil eleitores.",
+      "Local de votação (zona e seção): só se confirma no site do TSE com o título de eleitor; nunca informe o local de votação de ninguém aqui."
+    ],
+    "never": [
+      "Nunca preveja resultado, vencedor ou segundo turno, nem apresente pesquisa eleitoral como resultado.",
+      "Nunca invente endereços do TSE ou do gov.br: cite apenas páginas que você leu ou a página inicial do TSE.",
+      "Nunca afirme o dia da semana de uma data sem conferir no calendário: 4 de outubro de 2026 é domingo e 6 de outubro de 2026 é terça-feira."
+    ],
+    "myths": [
+      "“6 de outubro”: foi o 1º turno das eleições municipais de 2024, não uma data das eleições de 2026.",
+      "“Deputados distritais em vários estados”: deputados distritais só existem no Distrito Federal.",
+      "“Eleição municipal em 2026”: não há; o ciclo municipal é 2024 e depois 2028."
+    ]
   }
 }
