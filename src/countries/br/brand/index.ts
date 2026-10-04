@@ -41,9 +41,6 @@ export const brand: ClientPack['brand'] = {
     dark: { base: '#2fbf6b', ink: '#7fd7a4', wash: 'rgba(47, 191, 107, 0.14)' },
   },
   flagColor: '#009C3B',
-  // The flag's yellow rhombus, drawn behind the flag band's answer card. Green field on left & right,
-  // yellow losango in the center, white answer — the flag with your question where the globe would be.
-  flagDiamond: '#FFDF00',
 };
 
 export { Flag, Mark };

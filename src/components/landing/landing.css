@@ -222,6 +222,39 @@
   flex-direction: column;
   background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 34%, var(--sky-low) 56%, var(--sky-glow) 74%, var(--lake-top) 100%);
 }
+/* Brazil Hero: tropical sky transitioning into warm solar yellow and Atlantic forest green */
+[data-country='br'] .l-hero {
+  background: linear-gradient(180deg, #CEE5F8 0%, #E3F2FD 28%, #F4FAF5 50%, #FFF5CC 72%, #E6F5EB 100%);
+}
+[data-country='br'] .l-sun {
+  --sun: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 223, 0, 0.5) 30%, rgba(0, 156, 59, 0.15) 65%, transparent 80%);
+}
+[data-country='br'] .l-lake {
+  --sr-lc: #BCE3D9;
+  --sr-lm: #76C4B5;
+  --sr-va: #FFF0A8;
+  --sr-glint: #FFFDF0;
+  --sr-glint-o: 0.9;
+}
+[data-country='br'][data-theme='dark'] .l-hero,
+[data-country='br'] [data-theme='dark'] .l-hero,
+:root[data-country='br'][data-theme='dark'] .l-hero {
+  background: linear-gradient(180deg, #020713 0%, #061329 25%, #0A1F3D 52%, #002776 78%, #041224 100%);
+}
+[data-country='br'][data-theme='dark'] .l-sun,
+[data-country='br'] [data-theme='dark'] .l-sun,
+:root[data-country='br'][data-theme='dark'] .l-sun {
+  --sun: rgba(19, 81, 180, 0.25);
+}
+[data-country='br'][data-theme='dark'] .l-lake,
+[data-country='br'] [data-theme='dark'] .l-lake,
+:root[data-country='br'][data-theme='dark'] .l-lake {
+  --sr-lc: #051426;
+  --sr-lm: #08213E;
+  --sr-va: #002776;
+  --sr-glint: #EBF2FF;
+  --sr-glint-o: 0.7;
+}
 .l-hero::after {
   content: '';
   position: absolute;
@@ -2102,6 +2135,14 @@
   }
   [data-theme='dark'] .l-hero {
     background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 22%, var(--sky-low) 44%, var(--sky-glow) 66%, var(--sky-glow) 100%);
+  }
+  [data-country='br'] .l-hero {
+    background: linear-gradient(180deg, #CEE5F8 0%, #E3F2FD 22%, #F4FAF5 45%, #FFF5CC 70%, #E6F5EB 100%);
+  }
+  [data-country='br'][data-theme='dark'] .l-hero,
+  [data-country='br'] [data-theme='dark'] .l-hero,
+  :root[data-country='br'][data-theme='dark'] .l-hero {
+    background: linear-gradient(180deg, #020713 0%, #061329 22%, #0A1F3D 48%, #002776 75%, #041224 100%);
   }
   .l-hero::after,
   .l-kicker,

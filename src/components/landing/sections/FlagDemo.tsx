@@ -97,23 +97,6 @@ export async function FlagDemo() {
         </span>
       </div>
       <div className="l-flag__white">
-        {/* The flag diamond (e.g. Brazil's yellow rhombus behind the conversation card) */}
-        {pack.brand.flagDiamond ? (
-          <div
-            aria-hidden
-            style={{
-              position: 'absolute',
-              left: '50%',
-              top: '50%',
-              width: 'min(460px, 80%)',
-              aspectRatio: '1 / 1',
-              transform: 'translate(-50%, -50%) rotate(45deg)',
-              background: pack.brand.flagDiamond,
-              borderRadius: 32,
-              opacity: 0.9,
-            }}
-          />
-        ) : null}
         <div className="relative w-full max-w-[560px]">
           {nextHoliday ? (
             <aside className="l-float l-float--a" aria-label={t('flag.holidayLabel')}>

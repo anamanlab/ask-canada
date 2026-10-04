@@ -15,6 +15,9 @@ export default async function Icon({ id }: { id: Promise<string> }) {
   const px = which === 'favicon' ? 32 : Number(which);
   const mark = `data:image/svg+xml;base64,${Buffer.from(pack.brand.markSvg(pack.brand.flagColor)).toString('base64')}`;
   const tile = which !== 'favicon';
+  const isBr = pack.id === 'br';
+  const imgW = which === 'favicon' ? (isBr ? 28 : 32) : Math.round(px * (isBr ? 0.72 : 0.56));
+  const imgH = isBr ? Math.round(imgW * (20 / 28)) : (tile ? imgW : px);
   return new ImageResponse(
     (
       <div
@@ -27,7 +30,7 @@ export default async function Icon({ id }: { id: Promise<string> }) {
           background: tile ? 'linear-gradient(180deg, #F7F5F0, #EDEAE2)' : 'transparent',
         }}
       >
-        <img src={mark} alt="" width={Math.round(px * (tile ? 0.56 : 1))} height={Math.round(px * (tile ? 0.56 : 1))} />
+        <img src={mark} alt="" width={imgW} height={imgH} />
       </div>
     ),
     { width: px, height: px },

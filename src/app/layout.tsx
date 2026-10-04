@@ -32,6 +32,14 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: { card: 'summary_large_image', title, description },
     appleWebApp: { capable: true, title: pack.brand.name, statusBarStyle: 'default' },
     formatDetection: { telephone: false },
+    icons: {
+      icon: [
+        { url: '/favicon.svg', type: 'image/svg+xml' },
+        { url: '/favicon.ico', sizes: '32x32' },
+        { url: '/icon/favicon', sizes: '32x32', type: 'image/png' },
+      ],
+      apple: [{ url: '/apple-icon', sizes: '180x180', type: 'image/png' }],
+    },
   };
 }
 
@@ -111,6 +119,9 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
       suppressHydrationWarning
     >
       <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon" />
         {ACCENT_CSS ? <style dangerouslySetInnerHTML={{ __html: ACCENT_CSS }} /> : null}
         <script nonce={nonce} dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
