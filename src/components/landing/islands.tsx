@@ -10,6 +10,7 @@ import { Chip } from '@/components/ui/plain/Chip';
 import { ClearDeviceButton } from '@/components/site/ClearDevice';
 import { useDeviceItems } from '@/lib/device-store';
 import { useLanguageLink, useLocale } from '@/lib/i18n/provider';
+import { otherOfficial } from '@/lib/brand';
 import { pack } from '@/countries/active';
 
 /** `compactPlaceholders`: the phone rotation (examples that fit one line), index-aligned with `placeholders`. */
@@ -132,11 +133,17 @@ export function DemoForm({ placeholder }: { placeholder: string }) {
 
 export function LanguageCTA() {
   const { locale } = useLocale();
-  const other = locale === 'fr' ? 'en' : 'fr';
+  const other = otherOfficial(locale);
   const link = useLanguageLink(other);
+  const label =
+    other === 'pt'
+      ? 'Acessar em português'
+      : other === 'fr'
+        ? 'Commencer en français'
+        : 'Continue in English';
   return (
     <LinkButton variant="glass" size="lg" icon={Globe} {...link}>
-      {other === 'fr' ? 'Commencer en français' : 'Continue in English'}
+      {label}
     </LinkButton>
   );
 }

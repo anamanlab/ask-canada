@@ -36,7 +36,9 @@ export default async function OpengraphImage() {
     dataUri(pack.art.hero.aurora),
   ]);
   const mark = `data:image/svg+xml;base64,${Buffer.from(pack.brand.markSvg(pack.brand.flagColor)).toString('base64')}`;
-  const tagline = (await packServer.messages.en()).default['brand.tagline'] ?? pack.brand.name;
+  const defaultLocale = pack.locales.default;
+  const messages = (await (packServer.messages[defaultLocale]?.() ?? packServer.messages.en())).default;
+  const tagline = messages['brand.tagline'] ?? pack.brand.name;
   return new ImageResponse(
     (
       <div
@@ -117,14 +119,14 @@ export default async function OpengraphImage() {
             color: '#5A6472',
           }}
         >
-          Ask about any federal service…
+          {pack.id === 'br' ? 'Pergunte sobre qualquer serviço federal…' : 'Ask about any federal service…'}
           <div
             style={{
               display: 'flex',
               width: 52,
               height: 52,
               borderRadius: 52,
-              background: '#D52B1E',
+              background: pack.brand.accent?.base ?? pack.brand.flagColor ?? '#009C3B',
               color: 'white',
               alignItems: 'center',
               justifyContent: 'center',

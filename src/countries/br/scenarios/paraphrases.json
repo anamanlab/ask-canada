@@ -38,7 +38,7 @@
   "benefits-cadunico": [
     "Como faço o CadÚnico?",
     "cadastro unico como funciona",
-    "preciso do cadunico para bolsa familia",
+    "preciso me cadastrar no cadunico",
     "How does the CadÚnico work?",
     "how do I register for the cadastro unico"
   ],
@@ -85,9 +85,21 @@
   ],
   "documents-certidao": [
     "Como peço uma certidão de nascimento?",
-    "segunda via do cpf",
+    "onde tiro certidão de nascimento",
     "where do I get a birth certificate",
+    "how to get a civil certificate"
+  ],
+  "documentos-cpf": [
+    "Como tirar a 2ª via ou regularizar o CPF?",
+    "segunda via do cpf",
+    "como regularizar meu cpf",
     "second copy of my CPF"
+  ],
+  "documentos-cin": [
+    "Como emitir a nova Carteira de Identidade Nacional (CIN)?",
+    "como tiro o novo rg",
+    "nova carteira de identidade nacional",
+    "how to get the new identity card in Brazil"
   ],
   "family-marriage": [
     "Como funciona o casamento civil?",

@@ -1654,7 +1654,7 @@
   background: var(--maple);
   color: #fff;
   flex: none;
-  box-shadow: 0 6px 14px -6px rgba(213, 43, 30, 0.6);
+  box-shadow: 0 6px 14px -6px color-mix(in srgb, var(--maple) 50%, transparent);
 }
 .l-quote__t {
   font-size: 15.5px;
@@ -2012,6 +2012,8 @@
 [data-country='br'] .l-closing__leaf {
   color: #002776;
   opacity: 0.08;
+  -webkit-mask-image: radial-gradient(closest-side, #000 62%, transparent 96%);
+  mask-image: radial-gradient(closest-side, #000 62%, transparent 96%);
 }
 [data-country='br'][data-theme='dark'] .l-closing__leaf,
 [data-country='br'] [data-theme='dark'] .l-closing__leaf,
@@ -2463,7 +2465,7 @@
   .l-hero__composer .ac-composer--hero .ac-send {
     width: 44px;
     height: 44px;
-    box-shadow: 0 1px 0 rgb(255 255 255 / 0.25) inset, 0 3px 7px -3px rgb(213 43 30 / 0.6);
+    box-shadow: 0 1px 0 rgb(255 255 255 / 0.25) inset, 0 3px 7px -3px color-mix(in srgb, var(--maple) 45%, transparent);
   }
   /* The greeting is sized from its own measured width (--hello-em, see Hero) to sit inside the column under
      it, with the same air at both sides as the words in the question box. The second language is a quiet

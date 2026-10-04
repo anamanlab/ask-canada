@@ -105,10 +105,12 @@ export async function Hero() {
             {greet}
             <span className="l-stop">.</span>
           </span>
-          <span className="l-hello__alt" lang={altLang}>
-            {altGreet}
-            <span className="l-stop">.</span>
-          </span>
+          {pack.id === 'br' ? null : (
+            <span className="l-hello__alt" lang={altLang}>
+              {altGreet}
+              <span className="l-stop">.</span>
+            </span>
+          )}
         </LandingTitle>
         {/* One sentence per line on wider screens, so the lede sits as a balanced pair under the greeting in every language. */}
         <p className={ledeShort ? 'l-lede l-lede--wide' : 'l-lede'}>
@@ -153,7 +155,7 @@ export async function Hero() {
           </ul>
           <div className="l-lake__open" aria-hidden>
             <Shore className="l-shore" aurora={pack.art.hero.auroraDark ?? pack.art.hero.aurora} />
-            <ShoreCanoe className="l-canoe" />
+            {pack.id === 'br' ? null : <ShoreCanoe className="l-canoe" />}
             <ShoreFore className="l-fore" />
           </div>
           <div className="l-hero__tasks">

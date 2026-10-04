@@ -33,13 +33,17 @@ const core: Partial<Record<Locale, Loader>> & { en: Loader } = {
 };
 
 export async function loadMessages(locale: Locale): Promise<{ messages: Messages; translated: boolean }> {
-  const [coreEn, packEn] = await Promise.all([core.en(), pack.messages.en()]);
+  const primaryLocale = pack.locales.default;
+  const [coreEn, packFallback] = await Promise.all([
+    core.en(),
+    pack.messages[primaryLocale]?.() ?? pack.messages.en(),
+  ]);
   const coreLoc = locale !== 'en' ? core[locale] : undefined;
-  const packLoc = locale !== 'en' ? pack.messages[locale] : undefined;
+  const packLoc = locale !== primaryLocale ? pack.messages[locale] : undefined;
   const [cl, pl] = await Promise.all([coreLoc?.(), packLoc?.()]);
   return {
-    messages: { ...coreEn.default, ...packEn.default, ...(cl?.default ?? {}), ...(pl?.default ?? {}) },
-    translated: locale === 'en' || Boolean(cl && pl),
+    messages: { ...coreEn.default, ...packFallback.default, ...(cl?.default ?? {}), ...(pl?.default ?? {}) },
+    translated: locale === primaryLocale || Boolean(cl && pl),
   };
 }
 
@@ -52,5 +56,5 @@ export async function loadCoreMessages(locale: Locale): Promise<Messages> {
 
 /** Which locales have a full UI catalog (core + pack). */
 export function hasCatalog(locale: Locale) {
-  return locale === 'en' || Boolean(core[locale] && pack.messages[locale]);
+  return locale === pack.locales.default || locale === 'en' || Boolean(core[locale] && pack.messages[locale]);
 }

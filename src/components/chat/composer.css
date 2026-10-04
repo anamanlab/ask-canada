@@ -141,7 +141,7 @@
   color: #fff;
   cursor: pointer;
   flex: none;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 6px 16px -4px rgba(213, 43, 30, 0.55);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 6px 16px -4px color-mix(in srgb, var(--maple) 55%, transparent);
   transition: transform 0.25s var(--ease), background 0.2s;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -152,7 +152,7 @@
 }
 @media (hover: hover) and (pointer: fine) {
   [data-theme='dark'] .ac-send:hover {
-    background: #c9301f;
+    background: var(--maple-ink);
   }
 }
 /* The ring sits off the maple fill, in ink, so it contrasts with both the button and the surface. */

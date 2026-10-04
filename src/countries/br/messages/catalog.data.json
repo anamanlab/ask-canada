@@ -49,68 +49,132 @@
     "en": "No account · Nothing kept on our servers"
   },
   "hero.example.1": {
-    "pt": "Quem tem direito ao BPC?",
-    "en": "Who qualifies for the BPC?"
+    "pt": "Como tirar a 2ª via ou regularizar o CPF?",
+    "en": "How do I get a duplicate or regularize my CPF?"
   },
   "hero.example.2": {
-    "pt": "Qual é o próximo feriado nacional?",
-    "en": "What is the next national holiday?"
+    "pt": "Como emitir a nova Carteira de Identidade Nacional (CIN)?",
+    "en": "How do I get the new National Identity Card (CIN)?"
   },
   "hero.example.3": {
-    "pt": "Como eu declaro o imposto de renda?",
-    "en": "How do I file my income tax?"
+    "pt": "Quem tem direito ao Bolsa Família e como se cadastrar?",
+    "en": "Who qualifies for Bolsa Família and how to apply?"
   },
   "hero.example.4": {
-    "pt": "Perdi o emprego. O que o INSS me oferece?",
-    "en": "I lost my job. What does the INSS offer me?"
+    "pt": "Como tirar ou renovar o passaporte na Polícia Federal?",
+    "en": "How do I get or renew a passport with the Federal Police?"
   },
   "hero.example.5": {
-    "pt": "Vou abrir uma MEI. Por onde começo?",
-    "en": "I want to open an MEI business. Where do I start?"
+    "pt": "Como consultar meu benefício ou aposentadoria no Meu INSS?",
+    "en": "How do I check my benefit or retirement on Meu INSS?"
   },
   "hero.example.6": {
-    "pt": "Qual é a taxa Selic agora?",
-    "en": "What is the Selic rate now?"
+    "pt": "Como consultar a restituição do Imposto de Renda?",
+    "en": "How do I check my income tax refund?"
   },
   "hero.example.1.short": {
-    "pt": "Quem tem direito ao BPC?",
-    "en": "Try “Who qualifies for the BPC?”"
+    "pt": "Segunda via do CPF",
+    "en": "Try “Duplicate CPF”"
   },
   "hero.example.2.short": {
-    "pt": "Qual é o próximo feriado?",
-    "en": "Try “Next national holiday?”"
+    "pt": "Nova Carteira de Identidade (CIN)",
+    "en": "Try “New ID card (CIN)”"
   },
   "hero.example.3.short": {
-    "pt": "Como declaro o imposto de renda?",
-    "en": "Try “File my income tax”"
+    "pt": "Bolsa Família e CadÚnico",
+    "en": "Try “Bolsa Família”"
   },
   "hero.example.4.short": {
-    "pt": "Perdi o emprego. O que o INSS dá?",
-    "en": "Try “Lost my job”"
+    "pt": "Passaporte na Polícia Federal",
+    "en": "Try “Federal Police passport”"
   },
   "hero.example.5.short": {
-    "pt": "Como abro uma MEI?",
-    "en": "Try “Open an MEI business”"
+    "pt": "Aposentadoria no Meu INSS",
+    "en": "Try “Meu INSS pension”"
   },
   "hero.example.6.short": {
-    "pt": "Qual a taxa Selic agora?",
-    "en": "Try “Selic rate now?”"
+    "pt": "Restituição do Imposto de Renda",
+    "en": "Try “Tax refund”"
+  },
+  "chip.cpf": {
+    "pt": "CPF",
+    "en": "CPF"
+  },
+  "chip.cpf.q": {
+    "pt": "Como tirar a 2ª via ou regularizar o CPF?",
+    "en": "How do I get a duplicate or regularize my CPF?"
+  },
+  "chip.cpf.short": {
+    "pt": "CPF",
+    "en": "CPF"
+  },
+  "chip.cpf.sub": {
+    "pt": "2ª via e consulta",
+    "en": "Status and copy"
+  },
+  "chip.rg": {
+    "pt": "Novo RG (CIN)",
+    "en": "New ID (CIN)"
+  },
+  "chip.rg.q": {
+    "pt": "Como emitir a nova Carteira de Identidade Nacional (CIN)?",
+    "en": "How do I get the new National Identity Card (CIN)?"
+  },
+  "chip.rg.short": {
+    "pt": "Novo RG",
+    "en": "New ID"
+  },
+  "chip.rg.sub": {
+    "pt": "Identidade Nacional",
+    "en": "National ID"
+  },
+  "chip.bolsafamilia": {
+    "pt": "Bolsa Família",
+    "en": "Bolsa Família"
+  },
+  "chip.bolsafamilia.q": {
+    "pt": "Quem tem direito ao Bolsa Família e como se cadastrar?",
+    "en": "Who qualifies for Bolsa Família and how to apply?"
+  },
+  "chip.bolsafamilia.short": {
+    "pt": "Bolsa Família",
+    "en": "Bolsa Família"
+  },
+  "chip.bolsafamilia.sub": {
+    "pt": "CadÚnico e regras",
+    "en": "Rules and signup"
+  },
+  "chip.imposto": {
+    "pt": "Imposto de Renda",
+    "en": "Income Tax"
+  },
+  "chip.imposto.q": {
+    "pt": "Como consultar a restituição do Imposto de Renda?",
+    "en": "How do I check my income tax refund?"
+  },
+  "chip.imposto.short": {
+    "pt": "Imposto",
+    "en": "Tax"
+  },
+  "chip.imposto.sub": {
+    "pt": "Restituição e entrega",
+    "en": "Refund and deadline"
   },
   "chip.inss": {
     "pt": "Meu INSS",
     "en": "Meu INSS"
   },
   "chip.inss.q": {
-    "pt": "Como peço um benefício no Meu INSS?",
-    "en": "How do I apply for a benefit on Meu INSS?"
+    "pt": "Como consultar meu benefício ou aposentadoria no Meu INSS?",
+    "en": "How do I check my benefit or retirement on Meu INSS?"
   },
   "chip.inss.short": {
     "pt": "Meu INSS",
     "en": "Meu INSS"
   },
   "chip.inss.sub": {
-    "pt": "Quem tem direito",
-    "en": "Who qualifies"
+    "pt": "Aposentadoria",
+    "en": "Retirement"
   },
   "chip.taxas": {
     "pt": "Imposto de renda",
@@ -337,52 +401,52 @@
     "en": "Figures shown come from gov.br, checked {date}."
   },
   "flag.demo.q": {
-    "pt": "Qual é o próximo feriado nacional?",
-    "en": "What is the next national holiday?"
+    "pt": "Como tirar o passaporte comum?",
+    "en": "How to get a standard passport?"
   },
   "flag.demo.placeholder": {
-    "pt": "Qual é o próximo feriado?",
-    "en": "What is the next holiday?"
+    "pt": "Como tirar o passaporte?",
+    "en": "How to get a passport?"
   },
   "flag.demo.a1": {
-    "pt": "A resposta traz",
-    "en": "The answer gives"
+    "pt": "A taxa regular da GRU é de",
+    "en": "The regular GRU fee is"
   },
   "flag.demo.a2": {
-    "pt": "data, nome e tipo.",
-    "en": "the date, name and kind."
+    "pt": "R$ 257,25.",
+    "en": "R$ 257.25."
   },
   "flag.demo.a3": {
-    "pt": "É um",
-    "en": "It is a"
+    "pt": "O prazo médio de entrega é de",
+    "en": "The average delivery time is"
   },
   "flag.demo.a4": {
-    "pt": "feriado nacional, sem expediente.",
-    "en": "national holiday — no federal service."
+    "pt": "6 a 10 dias úteis após o atendimento presencial.",
+    "en": "6 to 10 business days after in-person visit."
   },
   "flag.demo.eligible": {
-    "pt": "Sem expediente",
-    "en": "No federal service"
+    "pt": "Polícia Federal",
+    "en": "Federal Police"
   },
   "flag.demo.fee": {
-    "pt": "Custo",
-    "en": "Cost"
+    "pt": "Taxa GRU",
+    "en": "GRU Fee"
   },
   "flag.demo.processing": {
-    "pt": "Resposta",
-    "en": "Answer"
+    "pt": "Prazo médio",
+    "en": "Processing"
   },
   "flag.demo.days": {
-    "pt": "Próximo dia",
-    "en": "Next day"
+    "pt": "6 a 10 dias úteis",
+    "en": "6 to 10 business days"
   },
   "flag.demo.ready": {
-    "pt": "Expediente",
-    "en": "Service"
+    "pt": "Entrega prevista",
+    "en": "Expected"
   },
   "flag.demo.try": {
-    "pt": "Pergunte por qualquer serviço",
-    "en": "Ask about any service"
+    "pt": "Pergunte sobre passaporte",
+    "en": "Ask about passport"
   },
   "how.eyebrow": {
     "pt": "Como funciona",
@@ -613,16 +677,16 @@
     "en": "Language"
   },
   "footer.emergencyA": {
-    "pt": "Em uma emergência, ligue",
+    "pt": "Em emergência, ligue",
     "en": "In an emergency, call"
   },
   "footer.emergencyB": {
-    "pt": "Em crise, ligue ou envie texto para",
-    "en": "In crisis, call or text"
+    "pt": "Apoio emocional e prevenção (CVV):",
+    "en": "Emotional support (CVV):"
   },
   "footer.emergency": {
-    "pt": "Emergência",
-    "en": "Emergency"
+    "pt": "Em emergência, ligue {emergency} (Polícia) ou 192 (SAMU). Apoio emocional: {crisis}.",
+    "en": "In an emergency, call {emergency} (Police) or 192 (SAMU). In crisis: {crisis}."
   },
   "footer.disclaimer": {
     "pt": "Serviço independente. As respostas vêm de fontes oficiais do Governo Federal — confirme sempre na página oficial indicada.",
@@ -706,8 +770,8 @@
       "en": "Bolsa Família, BPC, the CadÚnico and what each programme requires."
     },
     "s": {
-      "pt": "Quem tem direito ao BPC?",
-      "en": "Who qualifies for the BPC?"
+      "pt": "Quem tem direito ao Bolsa Família?",
+      "en": "Who qualifies for Bolsa Família?"
     },
     "g": {
       "pt": "Ver benefícios",
@@ -832,8 +896,8 @@
       "en": "Where to get a certificate, how to issue documents, what you need."
     },
     "s": {
-      "pt": "Como peço uma certidão de nascimento?",
-      "en": "How do I request a birth certificate?"
+      "pt": "Como emitir a 2ª via ou regularizar o CPF?",
+      "en": "How do I get a copy or regularize my CPF?"
     },
     "g": {
       "pt": "Ver documentos",
@@ -1057,8 +1121,8 @@
     }
   },
   "flag.demo.caption": {
-    "pt": "Exemplo: alguém pergunta qual é o próximo feriado. O Ask Brasil responde em linguagem clara e mostra a lista com a Portaria que a definiu.",
-    "en": "Example: someone asks what the next holiday is. Ask Brasil answers in plain language and shows the list with the Portaria that set it."
+    "pt": "Exemplo: alguém pergunta como tirar o passaporte. O Ask Brasil informa a taxa da GRU, o agendamento na Polícia Federal e os links oficiais.",
+    "en": "Example: someone asks how to get a passport. Ask Brasil gives the GRU fee, Federal Police appointment steps and official links."
   },
   "flag.caption": {
     "pt": "O verde e o amarelo do Brasil — com a sua pergunta no lugar do campo.",

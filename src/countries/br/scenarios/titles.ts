@@ -31,6 +31,9 @@ const U = {
   acesso: 'https://acesso.gov.br',
   normas: 'https://normas.leg.br/',
   passaporte: 'https://www.gov.br/pt-br/servicos/obter-passaporte-comum-para-brasileiro',
+  cpf: 'https://www.gov.br/pt-br/servicos/obter-cartao-de-cpf',
+  cin: 'https://www.gov.br/governodigital/pt-br/identidade/carteira-de-identidade-nacional',
+  bolsa: 'https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia',
 } as const;
 
 /** Page titles per language, so a source card reads as a page name instead of a URL slug. */
@@ -59,6 +62,9 @@ const TITLE_PT: Record<string, string> = {
   [U.acesso]: 'Login Único (conta gov.br)',
   [U.normas]: 'Legislação federal (normas.leg.br)',
   [U.passaporte]: 'Obter passaporte — Portal de Serviços',
+  [U.cpf]: 'Obter cartão e 2ª via do CPF — Receita Federal',
+  [U.cin]: 'Carteira de Identidade Nacional (CIN) — Governo Digital',
+  [U.bolsa]: 'Programa Bolsa Família — Ministério do Desenvolvimento Social',
 };
 
 const CITE = /\[(\d{1,2})\]\((https?:\/\/[^)\s]+)\)/g;
@@ -94,6 +100,9 @@ const TITLE_EN: Record<string, string> = {
   [U.acesso]: 'Single sign-on (gov.br account)',
   [U.normas]: 'Federal legislation (normas.leg.br)',
   [U.passaporte]: 'Get a passport — Services Portal',
+  [U.cpf]: 'CPF registration and copy — Federal Revenue',
+  [U.cin]: 'National Identity Card (CIN) — Digital Government',
+  [U.bolsa]: 'Bolsa Família Programme — Ministry of Social Development',
 };
 
 /** The title tables, so the starter renderer can check that a cited URL really has a title in both. */

@@ -17,7 +17,7 @@ const base =
 const variants: Record<ButtonVariant, string> = {
   primary: 'bg-ink text-paper shadow-md hover:-translate-y-px',
   accent:
-    'bg-maple text-white shadow-[inset_0_1px_0_rgba(255,255,255,.25),0_6px_16px_-4px_rgba(213,43,30,.55)] hover:bg-maple-ink hover:-translate-y-px',
+    'bg-maple text-white shadow-[inset_0_1px_0_rgba(255,255,255,.25),0_6px_16px_-4px_color-mix(in_srgb,var(--maple)_55%,transparent)] hover:bg-maple-ink hover:-translate-y-px',
   secondary: 'border border-hair-2 bg-transparent text-ink hover:bg-paper-2',
   quiet: 'bg-transparent text-ink hover:bg-hair',
   glass: 'glass border border-hair text-ink shadow-sm hover:-translate-y-px hover:shadow-md',

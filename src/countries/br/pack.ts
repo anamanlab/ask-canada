@@ -10,17 +10,17 @@ import {
   BookUser,
   Briefcase,
   Building2,
-  CalendarCheck,
   CloudSun,
+  CreditCard,
   Earth,
   FolderOpen,
   GraduationCap,
   HandCoins,
   HeartPulse,
   House,
+  IdCard,
   Landmark,
   PiggyBank,
-  Plane,
   Receipt,
   Scale,
   Shield,
@@ -52,7 +52,7 @@ export const pack: ClientPack = {
   // into the model's prompt by src/lib/ai/system-prompt.ts, so a wrong one is a safety bug.
   // `number` is the line the footer and the prompt lead with, and it has to be the general one: 190 Polícia
   // Militar (police) · 192 SAMU (medical only) · 193 Bombeiros · 191 PRF · CVV 188 (mental health, 24/7).
-  emergency: { number: '190', crisis: 'CVV, ligue 188', crisisTel: '188' },
+  emergency: { number: '190', crisis: 'ligue 188', crisisTel: '188' },
   sources: {
     allowlist: [
       'gov.br',
@@ -131,19 +131,16 @@ export const pack: ClientPack = {
     },
   },
   // The starter chips across the hero. Phones keep the four without `wideOnly`.
-  // Each chip names its own glyph and phone-tile hue: core's CHIP_ICONS only knows Canada's ids, so without
-  // these every Brazilian chip fell back to the same grey globe. Hues are the flag's own palette, one per
-  // task, dark values lifted for the dark phone tile.
+  // Each chip names its own glyph and phone-tile hue from the Brazilian identity.
   chips: [
-    { id: 'inss', icon: Shield, tile: { light: '#0b5c8a', dark: '#8cc6ea' } },
-    { id: 'taxas', icon: Receipt, tile: { light: '#8a5a00', dark: '#e9bd72' } },
-    { id: 'beneficios', icon: HandCoins, tile: { light: '#007a2e', dark: '#7fd7a4' } },
-    { id: 'feriados', icon: CalendarCheck, tile: { light: '#a3305f', dark: '#f0a3c2' } },
-    { id: 'passaporte', wideOnly: true, icon: BookUser, tile: { light: '#2c4f8c', dark: '#9dbcf0' } },
-    { id: 'viagem', wideOnly: true, icon: Plane, tile: { light: '#1b6f86', dark: '#7fd0e2' } },
+    { id: 'cpf', icon: CreditCard, tile: { light: '#0c326f', dark: '#8cc6ea' } },
+    { id: 'rg', icon: IdCard, tile: { light: '#007a2e', dark: '#7fd7a4' } },
+    { id: 'bolsafamilia', icon: HandCoins, tile: { light: '#8a5a00', dark: '#e9bd72' } },
+    { id: 'passaporte', icon: BookUser, tile: { light: '#2c4f8c', dark: '#9dbcf0' } },
+    { id: 'inss', wideOnly: true, icon: Shield, tile: { light: '#0b5c8a', dark: '#8cc6ea' } },
+    { id: 'imposto', wideOnly: true, icon: Receipt, tile: { light: '#a3305f', dark: '#f0a3c2' } },
   ],
-  // The rest of the landing artwork, by the names the core CSS asks for. Without these, the phone hero would
-  // fall back to Canada's lake, canoe and prairie.
+  // Landing artwork paths for the Brazil pack.
   phoneArt: {
     shore: { light: '/art/br/shore-light.svg', dark: '/art/br/shore-dark.svg' },
     'shore-mist': { light: '/art/br/shore-mist-light.svg', dark: '/art/br/shore-mist-dark.svg' },

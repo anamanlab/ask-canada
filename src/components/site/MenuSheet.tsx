@@ -197,8 +197,17 @@ function MenuBody({ onClose }: { onClose: () => void }) {
             className="inline-flex items-center gap-1.5 rounded-full border border-hair bg-card px-3 py-1.5 text-[12.5px] font-medium text-ink shadow-2xs hover:bg-paper-2 transition-colors no-underline"
           >
             <Phone className="size-3 text-pine" aria-hidden />
-            <span>{locale === 'pt' ? `Ligue ${pack.emergency.number}` : `Call ${pack.emergency.number}`}</span>
+            <span>{locale === 'pt' ? `Polícia ${pack.emergency.number}` : `Call ${pack.emergency.number}`}</span>
           </a>
+          {pack.id === 'br' ? (
+            <a
+              href="tel:192"
+              className="inline-flex items-center gap-1.5 rounded-full border border-hair bg-card px-3 py-1.5 text-[12.5px] font-medium text-ink shadow-2xs hover:bg-paper-2 transition-colors no-underline"
+            >
+              <Phone className="size-3 text-pine" aria-hidden />
+              <span>SAMU 192</span>
+            </a>
+          ) : null}
           {pack.emergency.crisisTel ? (
             <a
               href={`tel:${pack.emergency.crisisTel}`}

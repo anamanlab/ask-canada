@@ -6,8 +6,10 @@
  * below them, so a real answer always beats the fallback.
  */
 import type { Scenario } from '@/lib/scripted/types';
+import benefits from './benefits';
 import camara from './camara';
 import catalogo from './catalogo';
+import documentos from './documentos';
 import servico from './servico';
 import economia from './economia';
 import eleicoes from './eleicoes';
@@ -25,6 +27,8 @@ export const scenarios: Scenario[] = withTitles([
   ...servico,
   ...economia,
   ...ibge,
+  ...documentos,
+  ...benefits,
   ...starters,
   ...general,
 ]);

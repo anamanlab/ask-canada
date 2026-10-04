@@ -26,8 +26,8 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: pack.brand.name,
       title,
       description,
-      locale: locale === 'fr' ? 'fr_CA' : 'en_CA',
-      alternateLocale: locale === 'fr' ? ['en_CA'] : ['fr_CA'],
+      locale: pack.id === 'br' ? (locale === 'en' ? 'en_US' : 'pt_BR') : locale === 'fr' ? 'fr_CA' : 'en_CA',
+      alternateLocale: pack.id === 'br' ? [locale === 'en' ? 'pt_BR' : 'en_US'] : locale === 'fr' ? ['en_CA'] : ['fr_CA'],
     },
     twitter: { card: 'summary_large_image', title, description },
     appleWebApp: { capable: true, title: pack.brand.name, statusBarStyle: 'default' },
@@ -93,10 +93,10 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
   const [locale, theme, nonce] = await Promise.all([getRequestLocale(), getRequestTheme(), getNonce()]);
   const { messages, translated } = await loadMessages(locale);
   // Other interface languages also get the English core strings, for widgets not yet translated into them.
-  const fallback = locale === 'en' || locale === 'fr' ? undefined : translated ? await loadCoreMessages('en') : messages;
-  // Until a language has a reviewed UI catalog, the interface stays in English (LTR) while answers
+  const fallback = locale === 'en' || locale === 'fr' || locale === 'pt' ? undefined : translated ? await loadCoreMessages('en') : messages;
+  // Until a language has a reviewed UI catalog, the interface stays in the default language while answers
   // use the chosen language (see data-locale). `?dir=rtl` forces mirroring for layout testing.
-  const uiLocale = translated ? locale : 'en';
+  const uiLocale = translated ? locale : pack.locales.default;
   const forcedDir = (await getForcedDir()) ?? undefined;
   return (
     <html

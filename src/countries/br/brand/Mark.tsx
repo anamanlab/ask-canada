@@ -1,7 +1,6 @@
 /**
- * Ask Brasil brand mark: the Brazilian flag emblem.
- * Renders the authentic national flag symbol of Brazil, matching Ask Canada's use of its national maple leaf.
- * Props: className (size/colour via CSS), title (accessible name; omit when decorative).
+ * Ask Brasil brand mark: the Brazilian national flag emblem.
+ * Renders the authentic national flag symbol of Brazil per Lei 5.700/1971.
  */
 import type { MarkProps } from '@/lib/country/types';
 
@@ -15,22 +14,43 @@ export function Mark({ className, title }: MarkProps) {
       focusable="false"
     >
       {title ? <title>{title}</title> : null}
-      <rect width="28" height="20" rx="3" fill="#009C3B" />
-      <polygon points="14,2.5 25.6,10 14,17.5 2.4,10" fill="#FFDF00" />
-      <circle cx="14" cy="10" r="5" fill="#002776" />
-      {/* White celestial curved arc */}
+      {/* Green field */}
+      <rect width="28" height="20" rx="2.5" fill="#009C3B" />
+      {/* Yellow rhombus (losango) */}
+      <polygon points="14,1.8 25.8,10 14,18.2 2.2,10" fill="#FFDF00" />
+      {/* Blue celestial globe */}
+      <circle cx="14" cy="10" r="5.2" fill="#002776" />
+      {/* White celestial band with Ordem e Progresso green arc */}
       <path
-        d="M 9.2,10.7 A 6.8,6.8 0 0,1 18.7,8.6 A 7.1,7.1 0 0,0 9.2,10.7 Z"
+        d="M 8.8,10.8 A 7,7 0 0,1 19.1,8.3 A 7.3,7.3 0 0,0 8.8,10.8 Z"
         fill="#FFFFFF"
       />
-      {/* Southern Cross and constellation stars */}
+      <path
+        d="M 11.2,10.1 A 6.8,6.8 0 0,1 17.2,8.8"
+        fill="none"
+        stroke="#009C3B"
+        strokeWidth="0.4"
+        strokeLinecap="round"
+      />
+      {/* Stars in white */}
       <g fill="#FFFFFF">
-        <circle cx="14" cy="9.2" r="0.45" />
-        <circle cx="14" cy="10.9" r="0.45" />
-        <circle cx="13.3" cy="10" r="0.4" />
-        <circle cx="14.7" cy="10.1" r="0.45" />
-        <circle cx="14.3" cy="10.5" r="0.3" />
-        <circle cx="13.6" cy="7.9" r="0.45" />
+        {/* Spica above the band */}
+        <circle cx="14.8" cy="7.8" r="0.32" />
+        {/* Cruzeiro do Sul */}
+        <circle cx="14" cy="9.6" r="0.35" />
+        <circle cx="14" cy="11.4" r="0.35" />
+        <circle cx="13.2" cy="10.4" r="0.3" />
+        <circle cx="14.7" cy="10.5" r="0.32" />
+        <circle cx="14.3" cy="10.9" r="0.25" />
+        {/* Canopus & Sirius */}
+        <circle cx="12" cy="11.2" r="0.3" />
+        <circle cx="11.3" cy="9.8" r="0.3" />
+        {/* Triângulo Austral */}
+        <circle cx="14.2" cy="12.8" r="0.3" />
+        <circle cx="13.4" cy="13.5" r="0.28" />
+        <circle cx="14.9" cy="13.5" r="0.28" />
+        {/* Sigma Octantis (DF) */}
+        <circle cx="14" cy="14.2" r="0.25" />
       </g>
     </svg>
   );

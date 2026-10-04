@@ -6,7 +6,10 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: `${pack.brand.name}: every federal service, in plain language`,
     short_name: pack.brand.name,
-    description: 'Ask about any Government of Canada service in plain language, in English or French, with the official source.',
+    description:
+      pack.id === 'br'
+        ? 'Faça perguntas sobre qualquer serviço do Governo Federal em linguagem simples, com a fonte oficial.'
+        : 'Ask about any Government of Canada service in plain language, in English or French, with the official source.',
     start_url: '/',
     scope: '/',
     display: 'standalone',

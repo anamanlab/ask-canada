@@ -38,9 +38,9 @@ export async function SourcesSection() {
             </ul>
           </div>
           <div className="l-proof">
-            {/* A verbatim quote from the official page: it stays in the page's own language (English or French). */}
+            {/* A verbatim quote from the official page: it stays in the page's own language. */}
             <figure className="l-quote m-0">
-              <div className="l-quote__head" lang={official ? undefined : 'en'} dir={official ? undefined : 'ltr'}>
+              <div className="l-quote__head" lang={official ? undefined : pack.locales.default}>
                 <span className="l-leafbadge">
                   <Mark className="size-4" />
                 </span>
@@ -51,7 +51,7 @@ export async function SourcesSection() {
                   </div>
                 </div>
               </div>
-              <blockquote cite={t('sources.quote.url')} lang={official ? undefined : 'en'} dir={official ? undefined : 'ltr'}>
+              <blockquote cite={t('sources.quote.url')} lang={official ? undefined : pack.locales.default}>
                 {t('sources.quote.text')}
               </blockquote>
               <figcaption className="l-stamps">

@@ -99,10 +99,11 @@ export const packServer: CountryPack = {
     },
     holidaysUrl: HOLIDAYS_URL,
     demo: {
-      amountLabel: 'Gratuito',
-      unit: 'No mesmo dia',
-      unitLabel: 'No mesmo dia',
-      dateLabel: 'Suspenso',
+      amount: 257.25,
+      amountLabel: 'R$ 257,25',
+      unit: '6 a 10 dias úteis',
+      unitLabel: '6 a 10 dias úteis',
+      dateLabel: '29 de out.',
     },
     taxDeadline: {
       month: 5,

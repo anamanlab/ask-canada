@@ -24,7 +24,7 @@ export const brand: ClientPack['brand'] = {
     en: { lead: { tag: 'english', word: 'Ask.', lang: 'en' }, second: { tag: 'brazil', word: 'Explore.', lang: 'en' } },
   },
   Mark,
-  // Canada sets no trailing flag next to its name; Mark (the Brazilian flag emblem) leads the wordmark.
+  // Mark (the authentic Brazilian flag emblem) leads the wordmark in the header.
   Flag: undefined,
   currencySymbol: 'R$ ',
   exampleFee: '257,25',

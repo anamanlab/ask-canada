@@ -81,8 +81,8 @@ const nextConfig: NextConfig = {
    */
   async redirects() {
     return [
-      { source: '/:lang(en|fr)', destination: '/?lang=:lang', permanent: false },
-      { source: '/:lang(en|fr)/:path+', destination: '/:path+?lang=:lang', permanent: false },
+      { source: '/:lang(pt|en|fr|es)', destination: '/?lang=:lang', permanent: false },
+      { source: '/:lang(pt|en|fr|es)/:path+', destination: '/:path+?lang=:lang', permanent: false },
     ];
   },
   async rewrites() {

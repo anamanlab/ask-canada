@@ -16,6 +16,12 @@ export async function getRequestLocale(): Promise<Locale> {
   if (isLocale(fromProxy) && supported.includes(fromProxy)) return fromProxy;
   const c = (await cookies()).get(LOCALE_COOKIE)?.value;
   if (isLocale(c) && supported.includes(c)) return c;
+  // In Brazil, Portuguese is the sole official language and the service must always default to Portuguese
+  // unless the visitor has explicitly chosen another language.
+  if (pack.id === 'br' || pack.locales.default === 'pt') {
+    const fromAccept = matchAcceptLanguage(h.get('accept-language'), supported);
+    return fromAccept === 'pt' ? 'pt' : pack.locales.default;
+  }
   return matchAcceptLanguage(h.get('accept-language'), supported) ?? pack.locales.default;
 }
 
