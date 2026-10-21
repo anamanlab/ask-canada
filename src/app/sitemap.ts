@@ -9,6 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${p || '/'}`,
     changeFrequency: p ? 'monthly' : 'weekly',
     priority: p ? 0.5 : 1,
-    alternates: { languages: { 'en-CA': `${base}${p || '/'}?lang=en`, 'fr-CA': `${base}${p || '/'}?lang=fr` } },
+    alternates: {
+      languages:
+        pack.id === 'br'
+          ? { 'pt-BR': `${base}${p || '/'}?lang=pt`, en: `${base}${p || '/'}?lang=en` }
+          : { 'en-CA': `${base}${p || '/'}?lang=en`, 'fr-CA': `${base}${p || '/'}?lang=fr` },
+    },
   }));
 }
