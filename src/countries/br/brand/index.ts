@@ -22,7 +22,8 @@ export const brand: ClientPack['brand'] = {
   name: 'Ask Brasil',
   domain: new URL(publicSiteUrl).hostname,
   url: publicSiteUrl,
-  contact: 'https://github.com/anamanlab/ask-canada/issues',
+  // Issues are currently disabled; link to the public project, not a dead feedback form.
+  contact: 'https://github.com/anamanlab/ask-canada',
   repository: 'https://github.com/anamanlab/ask-canada',
   greeting: { en: 'Hello, Brazil', pt: 'Olá, Brasil' },
   ask: { en: 'Ask.', pt: 'Pergunte.' },
