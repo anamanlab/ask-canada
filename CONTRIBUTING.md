@@ -39,4 +39,4 @@ pnpm test:br:servicos
 pnpm test:br:contract
 ```
 
-Attach relevant PT/EN desktop/mobile screenshots for UI changes. A [Brazil source-correction Issue](.github/ISSUE_TEMPLATE/br-source-report.yml) is appropriate for reporting factual errors; never publish personal case details. Existing Canada contributions continue to follow the Canada checks above.
+Attach relevant PT/EN desktop/mobile screenshots for UI changes. The [Brazil source-correction form](.github/ISSUE_TEMPLATE/br-source-report.yml) has been prepared, but GitHub Issues is disabled in this repository as checked on 2026-10-21. Until the owner enables it in repository settings, propose corrections through pull requests with synthetic examples only; never publish personal case details. Existing Canada contributions continue to follow the Canada checks above.
