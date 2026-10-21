@@ -2,7 +2,7 @@
 
 **Ask Brasil** é uma implementação comunitária, gratuita e de código aberto de uma interface para encontrar informações sobre serviços públicos brasileiros. **Não é um serviço oficial do Governo Federal, não representa órgãos públicos e não realiza protocolos, pagamentos ou autenticações no gov.br.** Para concluir um serviço, entre diretamente no órgão responsável pelo link oficial.
 
-Este pacote é desenvolvido no fork `anamanlab/ask-canada` a partir do projeto original **Ask Canada**, criado por [Ryan Campbell](https://github.com/ryancampbell). O núcleo do projeto e os avisos de direitos autorais continuam sujeitos à [licença MIT](../LICENSE) e ao [NOTICE](../NOTICE). A contribuição brasileira não implica manutenção ou endosso pelo autor do projeto original.
+Este pacote é desenvolvido no fork `anamanlab/ask-canada` a partir do projeto original **Ask Canada**, creditado a Ryan Campbell em [NOTICE](../NOTICE). O núcleo do projeto e os avisos de direitos autorais continuam sujeitos à [licença MIT](../LICENSE) e ao [NOTICE](../NOTICE). A contribuição brasileira não implica manutenção ou endosso pelo autor do projeto original.
 
 ## O que está implementado
 
