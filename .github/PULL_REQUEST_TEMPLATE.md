@@ -40,4 +40,4 @@ Before/after screenshots or concise manual testing notes, with synthetic example
 
 Does the change affect source freshness, privacy, security, cost, localization, external services, canonical URLs or shared core behavior?
 
-See [Brazil contributor guide](../../CONTRIBUTING.md) and [Brazil maintainer checklist](../../docs/MAINTAINING_BR.md).
+See [Brazil contributor guide](../CONTRIBUTING.md) and [Brazil maintainer checklist](../docs/MAINTAINING_BR.md).
