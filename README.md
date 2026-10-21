@@ -15,6 +15,21 @@ country-agnostic: Canada is the first **country pack**.
 - Stack: Next.js 16 (App Router, Turbopack), React 19, TypeScript (strict), Tailwind CSS v4,
   AI SDK v7 (`ai`, `@ai-sdk/react`, `@ai-sdk/anthropic`, `@ai-sdk/gateway`), `streamdown`, `motion`, `zod`.
 
+## Brazil country pack (Ask Brasil)
+
+This **fork** also contains an independent, Portuguese-first Brazilian federal-services country pack (`COUNTRY=br`). It includes a dated, **partial** index of 1,600 government services and source-linked tools for Brazilian public data. It is **not affiliated with the Brazilian government**. Its currently configured `.example.gov.br` branding URL is a **placeholder, not a live service**.
+
+- [Guia de instalação e uso em português](docs/BRASIL.md) · [Brazil source-quality and LGPD guidance](docs/SOURCE_POLICY_BR.md)
+- [Contribution and maintenance evidence](docs/MAINTAINERSHIP.md) · [Country-specific deployment instructions](docs/DEPLOY_TWO_COUNTRIES.md)
+
+```bash
+corepack enable
+pnpm install --frozen-lockfile
+COUNTRY=br SCRIPTED_AI=1 pnpm dev  # local deterministic demo; no model key needed
+```
+
+The original Ask Canada project is by [Ryan Campbell](https://github.com/ryancampbell/ask-canada). The Brazil work in this fork is documented through [PRs #1–#3](docs/MAINTAINERSHIP.md); existing copyright and MIT attribution remain intact.
+
 ## Run it
 
 ```bash
