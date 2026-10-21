@@ -39,7 +39,7 @@ three of these are worth setting per deployment rather than copying:
 Set `SCRIPTED_AI=1` on a preview deployment to get deterministic answers with no model call at all — that is
 how the scenarios, the Lab pages and the screenshots are produced.
 
-## One live dependency, declared
+## Brazil data dependencies
 
 Brazil's pack relies on public upstreams with different refresh patterns. The service catalogue is generated at build time; other public data is requested at runtime. Availability, caching, and rate limits are source-specific:
 
@@ -47,6 +47,11 @@ Brazil's pack relies on public upstreams with different refresh patterns. The se
 | --- | --- | --- |
 | `servicos.gov.br` / SERPRO | `node scripts/fetch-servicos.mjs` — a **build-time** step, not runtime | The generated index is committed, so the running app never calls it. |
 | `api.bcb.gov.br` (SGS) | `economiaSeries`, runtime | Cached 5 minutes. A timeout or a throttled response reports "unavailable" and the answer says so; no figure is estimated. |
-| `servicodados.ibge.gov.br` | `ibgePlace`, runtime | Localities are cached in the running process; verify codes and dates against the official response. |\n| `dadosabertos.camara.leg.br` | Legislative lookup tools, runtime | Official Câmara data; show dates and unavailable/unknown fields instead of inferring positions or vote totals. |
+| `servicodados.ibge.gov.br` | `ibgePlace`, runtime | Localities are cached in the running process; verify codes and dates against the official response. |
+| `dadosabertos.camara.leg.br` | Legislative lookup tools, runtime | Official Câmara data; show dates and unavailable/unknown fields instead of inferring positions or vote totals. |
 
-The catalogue uses a public SERPRO export instead of querying a credential-restricted full-catalogue endpoint on every request. Current generated detail records can carry service steps, audience and estimated time **when the export provides them**. Do not presume any field is complete for all services; unknown legal references or steps must not be invented. Refresh using `pnpm servicos:br`, inspect the diff and run `pnpm test:br:servicos` before publishing new snapshots. See `docs/PLAN_BR.md` for implementation history and remaining limitations.\n\n## Independent Brazil deployment identity\n\nFor a public Brazil deployment, set `NEXT_PUBLIC_BR_SITE_URL` to the HTTPS origin that **you control** before building (e.g. `https://brasil.example.org`). The Brazil pack otherwise falls back to the project's GitHub URL for its metadata, which is suitable for previews but **not** for launch SEO. Never use a government-owned hostname or affiliation claims without authorization. Verify the generated sitemap, robots and canonical URLs after deploy. The sitemap now derives language alternates from the active country pack (CA: en/fr, BR: pt/en).
+The catalogue uses a public SERPRO export instead of querying a credential-restricted full-catalogue endpoint on every request. Current generated detail records can carry service steps, audience and estimated time **when the export provides them**. Do not presume any field is complete for all services; unknown legal references or steps must not be invented. Refresh using `pnpm servicos:br`, inspect the diff and run `pnpm test:br:servicos` before publishing new snapshots. See `docs/PLAN_BR.md` for implementation history and remaining limitations.
+
+## Independent Brazil deployment identity
+
+For a public Brazil deployment, set `NEXT_PUBLIC_BR_SITE_URL` to the HTTPS origin that **you control** before building (e.g. `https://brasil.example.org`). Without configuration the pack uses `http://localhost:3000` and disables public indexing in `robots.txt` and `sitemap.xml`. That is only a safe development fallback, **not** a production site URL. Never use a government-owned hostname or affiliation claims without authorization. Verify the generated sitemap, robots and canonical URLs after deploy. The sitemap now derives language alternates from the active country pack (CA: en/fr, BR: pt/en).
