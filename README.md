@@ -11,6 +11,18 @@ Ask Canada is an independent, open-source service built on official Government o
 it is built to Government of Canada web standards so the Government could adopt it as-is. The core is
 country-agnostic: Canada is the first **country pack**.
 
+## Brasil / Brazil country pack
+
+Este fork inclui **Ask Brasil** (`src/countries/br/`), uma adaptação independente em português para ajudar a encontrar informações sobre serviços públicos do Brasil a partir de fontes oficiais. **Não é um serviço do Governo Federal nem tem vínculo governamental.** Confirme requisitos, taxas e prazos diretamente no órgão responsável; não compartilhe senhas, códigos GOV.BR, CPF completo nem dados bancários no chat.
+
+- [Guia público em português: funcionalidades, limites e como executar](docs/BRASIL.md)
+- [Manutenção e critérios de fontes oficiais / Brazil maintenance runbook](docs/BR_MAINTENANCE.md)
+- [Contribuições verificáveis e lacunas de adoção / public evidence](docs/OSS_EVIDENCE.md)
+- Desenvolvimento local: `pnpm install --frozen-lockfile` e `COUNTRY=br pnpm dev`. O projeto mantém validações separadas para `ca` e `br` no CI.
+
+O projeto Ask Canada original é de **Ryan Campbell e colaboradores**, conforme a [licença MIT](LICENSE). O pacote brasileiro é mantido neste fork pelo usuário `anamanlab` e suas contribuições estão registradas nas [PRs #1–#3](https://github.com/anamanlab/ask-canada/pulls?q=is%3Apr+Brazil). Isso não implica participação na equipe mantenedora do projeto-base.
+
+
 - Live: https://canada.ryancampbell.com
 - Stack: Next.js 16 (App Router, Turbopack), React 19, TypeScript (strict), Tailwind CSS v4,
   AI SDK v7 (`ai`, `@ai-sdk/react`, `@ai-sdk/anthropic`, `@ai-sdk/gateway`), `streamdown`, `motion`, `zod`.
