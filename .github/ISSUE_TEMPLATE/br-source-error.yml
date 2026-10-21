@@ -1,0 +1,49 @@
+name: "Brasil: erro em fonte ou serviço"
+description: "Relatar uma informação incorreta/desatualizada sobre serviço público brasileiro (sem dados pessoais)"
+title: "[br/source] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Não inclua CPF, RG, NIS, telefone, dados de saúde, senha, código de acesso ou documentos pessoais.**
+        Este projeto é independente e não trata pedidos administrativos individuais.
+  - type: textarea
+    id: fact
+    attributes:
+      label: "Qual informação parece incorreta?"
+      description: "Descreva o texto de modo genérico. Não compartilhe dados pessoais."
+      placeholder: "O texto diz X, mas a página oficial informa Y."
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: "URL da fonte oficial"
+      description: "Cole o endereço exato em gov.br, bcb.gov.br, ibge.gov.br etc."
+    validations:
+      required: false
+  - type: input
+    id: checked
+    attributes:
+      label: "Data da consulta (AAAA-MM-DD)"
+    validations:
+      required: false
+  - type: dropdown
+    id: layer
+    attributes:
+      label: "Âmbito"
+      options:
+        - "Federal"
+        - "Estadual / Distrito Federal"
+        - "Municipal"
+        - "Não sei"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Comportamento esperado"
+      description: "Inclua reprodução genérica, sem nomes, documentos ou dados pessoais."
+    validations:
+      required: false
