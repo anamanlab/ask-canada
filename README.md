@@ -20,7 +20,7 @@ country-agnostic: Canada is the first **country pack**.
 This **fork** also contains an independent, Portuguese-first Brazilian federal-services country pack (`COUNTRY=br`). It includes a dated, **partial** index of 1,600 government services and source-linked tools for Brazilian public data. It is **not affiliated with the Brazilian government**. Its currently configured `.example.gov.br` branding URL is a **placeholder, not a live service**.
 
 - [Guia de instalação e uso em português](docs/BRASIL.md) · [Brazil source-quality and LGPD guidance](docs/SOURCE_POLICY_BR.md)
-- [Contribution and maintenance evidence](docs/MAINTAINERSHIP.md) · [Country-specific deployment instructions](docs/DEPLOY_TWO_COUNTRIES.md)
+- [Contribution and maintenance evidence](docs/MAINTAINERSHIP.md) · [Country-specific deployment instructions](docs/DEPLOY_TWO_COUNTRIES.md) (GitHub Issues currently disabled; contribution form pending activation)
 
 ```bash
 corepack enable
