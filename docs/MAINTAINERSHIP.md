@@ -19,7 +19,7 @@ Follow [docs/BRASIL.md](BRASIL.md). The two independent CI legs are in [`.github
 
 ## Ongoing maintenance responsibilities
 
-1. Triage factual-error reports with official source links and date of verification; do not request personal documents.
+1. Once GitHub Issues is enabled by a repository admin, triage factual-error reports with official source links and date of verification; do not request personal documents.
 2. Review dependencies and security reports privately under [SECURITY.md](../SECURITY.md).
 3. Validate both countries, i18n parity and Brazil contract tests in pull requests.
 4. Document source refreshes, breaking changes and supported deployments without inventing release cadence or support guarantees.
