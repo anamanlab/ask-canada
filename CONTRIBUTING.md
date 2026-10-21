@@ -29,4 +29,4 @@ pnpm test:br:contract
 
 For Canada, run `pnpm typecheck && pnpm lint && pnpm check:i18n && pnpm check:scenarios`. For shared code, verify **both** country legs in CI. For UI changes, attach desktop/mobile and light/dark screenshots, plus a keyboard testing note. Mark any unrun checks honestly.
 
-Before opening a PR, use the [pull request checklist](.github/PULL_REQUEST_TEMPLATE.md). You can report Brazilian source inaccuracies with the dedicated GitHub issue template; do not post personal cases in public.
+Before opening a PR, use the [pull request checklist](.github/PULL_REQUEST_TEMPLATE.md). **GitHub Issues is currently disabled in this repository.** After a maintainer enables it under repository Settings → Features → Issues, the dedicated Brazilian source-error template will be available. Until then, use pull requests for verified corrections and never post personal cases in public.
