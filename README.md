@@ -1,5 +1,7 @@
 # Ask Canada
 
+> **🇧🇷 Brazil country pack in this fork:** [Ask Brasil — overview, official data sources, safeguards, tests and contributing](docs/BRASIL.md). Run with `COUNTRY=br pnpm dev`. This is an **independent community project, not a Brazilian government service**. The Canada core and original project credits are preserved below. Brazilian development and corrections are documented in [PRs #1–#3](https://github.com/anamanlab/ask-canada/pulls?q=is%3Apr+is%3Amerged).
+
 *[Français](#ask-canada-en-français)*
 
 **Every federal service, in plain language.** Ask a question in English or French (or 20 other
