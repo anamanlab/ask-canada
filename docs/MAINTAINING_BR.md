@@ -52,7 +52,8 @@ The project should **not** be presented as publicly launched until all applicabl
 - [ ] `COUNTRY=br` is configured at build time. The chosen hosting platform supports the model provider and runtime adapters.
 - [ ] `/robots.txt`, `/sitemap.xml`, canonical metadata and `pt-BR` / `en-BR` language alternates point to the actual deployed domain. Unconfigured Brazil builds intentionally disable indexing.
 - [ ] The independent-project disclosure and official portal handoff are easy to find on mobile and desktop.
-- [ ] Public feedback link, security-reporting route and privacy/AI-provider disclosure are accurate for this deployment. Do not advertise a live demo without testing it.
+- [ ] Enable GitHub Issues for public feedback (currently disabled, checked 2026-10-21), and confirm the Brazil issue template can actually be submitted; until then, accept factual improvements via PRs.
+- [ ] Confirm a **private**, working security-reporting route (GitHub private vulnerability reporting or a monitored security email); a public repository link is not a private disclosure channel. Review privacy/AI-provider disclosure. Do not advertise a live demo without testing it.
 - [ ] Primary sources for showcased services are accessible and current or explicitly marked as snapshots; model fallback does not fabricate official data.
 - [ ] Rate limits, budgets, credential handling, access logs and provider retention are reviewed for the chosen host. Avoid placing credentials in a public repo.
 - [ ] CI passes; smoke-test a real production build for both the Brazil and Canada variants if shared components changed.
