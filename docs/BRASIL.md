@@ -54,7 +54,7 @@ A meta de desenvolvimento é acessibilidade digital segundo as WCAG, considerand
 - [ ] Verificar manualmente teclado e leitores de tela em PT-BR, uso em celular e avisos de indisponibilidade.
 - [ ] Executar as duas matrizes de CI (`ca` e `br`), testes de implantação e revisão de segurança/privacidade.
 
-Questões sobre conteúdo brasileiro podem ser relatadas [no GitHub](https://github.com/anamanlab/ask-canada/issues), **sem inserir informações pessoais**.
+**Participação da comunidade:** GitHub Issues está desativado neste repositório (verificado em 21/10/2026). O responsável deve ativar *Settings → Features → Issues* antes de anunciar o formulário de erros; até lá, as propostas de correção podem ser enviadas por pull requests públicos **sem dados pessoais**. O formulário `.github/ISSUE_TEMPLATE/br-source-error.yml` ficará disponível depois da ativação.
 
 ## Créditos
 
