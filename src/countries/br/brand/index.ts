@@ -12,10 +12,10 @@ import { Mark } from './Mark';
 import { Flag } from './Flag';
 
 // This community project is not a government service. Use a verified, controlled
-// HTTPS origin for any public deployment; a repository URL is the safe fallback for
-// demos/CI until the operator configures a real site URL.
+// HTTPS origin for any public deployment. Unconfigured local builds use localhost:
+// production indexing is disabled until the operator configures a real site URL.
 const publicSiteUrl = process.env.NEXT_PUBLIC_BR_SITE_URL?.trim().replace(/\/+$/, '')
-  || 'https://github.com/anamanlab/ask-canada';
+  || 'http://localhost:3000';
 
 export const brand: ClientPack['brand'] = {
   mode: 'independent',
