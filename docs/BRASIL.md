@@ -55,7 +55,7 @@ Configure `NEXT_PUBLIC_BR_SITE_URL=https://seu-dominio-real.example` com um dom�
 
 ## Contribuições abertas
 
-Para relatar informação incorreta, use o [formulário de correção de fonte brasileira](../.github/ISSUE_TEMPLATE/br-source-report.yml) nas Issues. Para defeitos de segurança, **não abra uma issue pública**: leia [SECURITY.md](../SECURITY.md). Correções devem ser reproduzíveis, incluir provas oficiais, preservar neutralidade e distinguir informações institucionais de opiniões políticas. Siga [CONTRIBUTING.md](../CONTRIBUTING.md) e [o guia de manutenção do pacote Brasil](MAINTAINING_BR.md).
+**Estado da comunidade (verificado em 21/10/2026):** a opção GitHub Issues está desativada neste repositório. O [modelo de relato de correção](../.github/ISSUE_TEMPLATE/br-source-report.yml) está preparado, mas só poderá ser usado depois que o mantenedor ativar Issues em *Settings → General → Features*. Até lá, contribua por pull request, sem compartilhar dados pessoais. Para defeitos de segurança, **não abra uma issue pública**: leia [SECURITY.md](../SECURITY.md). Correções devem ser reproduzíveis, incluir provas oficiais, preservar neutralidade e distinguir informações institucionais de opiniões políticas. Siga [CONTRIBUTING.md](../CONTRIBUTING.md) e [o guia de manutenção do pacote Brasil](MAINTAINING_BR.md).
 
 ### Histórico verificável do pacote Brasil
 
