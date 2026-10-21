@@ -51,7 +51,7 @@ Os dados variam de cadência: algumas informações são consultadas em tempo de
 
 ### Identidade pública antes de implantar
 
-Configure `NEXT_PUBLIC_BR_SITE_URL=https://seu-dominio-real.example` com um domínio **que você controle**, antes do build de produção. Sem essa variável, os metadados públicos apontam para o repositório como referência provisória. Não use `.gov.br` nem marcas oficiais para um projeto independente. O valor precisa ser HTTPS, sem barra final. Revise `/robots.txt`, `/sitemap.xml`, URLs canônicas e idioma/alternates na URL publicada. Use `COUNTRY=br` durante o build e no ambiente de execução.
+Configure `NEXT_PUBLIC_BR_SITE_URL=https://seu-dominio-real.example` com um domínio **que você controle**, antes do build de produção. Sem essa variável, a origem padrão é `http://localhost:3000`, e a geração de sitemap/indexação deve permanecer desativada em uma implantação pública não configurada. Não use `.gov.br` nem marcas oficiais para um projeto independente. O valor precisa ser HTTPS, sem barra final. Revise `/robots.txt`, `/sitemap.xml`, URLs canônicas e idioma/alternates na URL publicada. Não anuncie um link de demonstração que ainda não foi testado. Use `COUNTRY=br` durante o build e no ambiente de execução.
 
 ## Contribuições abertas
 
