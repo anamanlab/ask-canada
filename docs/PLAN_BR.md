@@ -1,6 +1,6 @@
 # Ask Brazil — `src/countries/br`
 
-Fork of **Ask Canada** (`anamanlab/ask-canada`, MIT). A Portuguese-first "Ask Brasil" front door to the
+Brazil country pack maintained within the **Ask Canada** fork (`anamanlab/ask-canada`, MIT; original project credits in `NOTICE`). A Portuguese-first "Ask Brasil" front door to the
 Brazilian federal government, built as a country pack on the existing seam. **Core is untouched apart from the
 Brazil-compat patch in §2**, which grew during the build from 6 files to 18 — see §2.10.
 

@@ -11,12 +11,20 @@ import { BRAZIL_FLAG_SVG } from './mark';
 import { Mark } from './Mark';
 import { Flag } from './Flag';
 
+// This community project is not a government service. Use a verified, controlled
+// HTTPS origin for any public deployment. Unconfigured local builds use localhost:
+// production indexing is disabled until the operator configures a real site URL.
+const publicSiteUrl = process.env.NEXT_PUBLIC_BR_SITE_URL?.trim().replace(/\/+$/, '')
+  || 'http://localhost:3000';
+
 export const brand: ClientPack['brand'] = {
   mode: 'independent',
   name: 'Ask Brasil',
-  domain: 'gov.br',
-  url: 'https://ask-brasil.example.gov.br',
-  contact: 'mailto:contato@ask-brasil.example.gov.br',
+  domain: new URL(publicSiteUrl).hostname,
+  url: publicSiteUrl,
+  // Issues are currently disabled; link to the public project, not a dead feedback form.
+  contact: 'https://github.com/anamanlab/ask-canada',
+  repository: 'https://github.com/anamanlab/ask-canada',
   greeting: { en: 'Hello, Brazil', pt: 'Olá, Brasil' },
   ask: { en: 'Ask.', pt: 'Pergunte.' },
   askPair: {

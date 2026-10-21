@@ -13,3 +13,10 @@ Third-party material:
 - Map tiles: © OpenStreetMap contributors (ODbL), © CARTO.
 - Government of Canada content: paraphrased and linked under the Terms and conditions of canada.ca
   (non-commercial reproduction). Ask Canada is not affiliated with the Government of Canada.
+
+Brazil country pack in this fork:
+- The Brazil-specific country pack and contributions by anamanlab are documented in
+  https://github.com/anamanlab/ask-canada/pulls?q=is%3Apr+is%3Amerged and docs/BRASIL.md.
+- The original Ask Canada copyright, license, third-party notices and upstream attribution remain intact.
+- Public-sector information is sourced or linked to official Brazilian portals, but this independent
+  project is not affiliated with, operated by or endorsed by the Brazilian government.

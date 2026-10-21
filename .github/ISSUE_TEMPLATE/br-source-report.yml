@@ -1,0 +1,46 @@
+name: "Brasil: corrigir informação ou fonte oficial"
+description: "Informe informação potencialmente incorreta no pacote Brasil sem incluir dados pessoais."
+title: "[BR][Fonte] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por ajudar a melhorar o acesso a informações públicas. **Não inclua CPF, NIS, senhas, tokens, documentos, dados médicos ou de terceiros.** Não use este formulário para relatar vulnerabilidades: consulte SECURITY.md.
+  - type: input
+    id: feature
+    attributes:
+      label: "Página, ferramenta ou pergunta afetada"
+      description: "Ex.: serviço do gov.br, taxa econômica, feriado ou resultado de consulta."
+      placeholder: "Qual parte precisa de correção?"
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: "Informação observada (sem dados pessoais)"
+      description: "O que apareceu? Inclua o procedimento mínimo para reproduzir."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Informação que consta da fonte oficial"
+      description: "Explique a correção proposta; não informe apenas uma conclusão sem referência."
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: "URL da fonte oficial"
+      placeholder: "https://www.gov.br/..."
+      description: "Se a fonte não estiver disponível, explique isso na descrição."
+    validations:
+      required: false
+  - type: input
+    id: checked
+    attributes:
+      label: "Data de verificação da fonte"
+      placeholder: "AAAA-MM-DD"
+      description: "Preferencialmente a data em que você conferiu a página oficial."
+    validations:
+      required: false
