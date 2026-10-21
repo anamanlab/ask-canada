@@ -39,18 +39,20 @@ three of these are worth setting per deployment rather than copying:
 Set `SCRIPTED_AI=1` on a preview deployment to get deterministic answers with no model call at all — that is
 how the scenarios, the Lab pages and the screenshots are produced.
 
-## One live dependency, declared
+## Public-data dependencies and snapshot boundaries
 
-Brazil's pack reads three upstream services at runtime, all public and unauthenticated:
+The Brazil pack includes both **build-time snapshots** and runtime public-data adapters. Do not describe committed snapshots as live API calls, and do not assume a passing test proves an upstream dataset is current:
 
 | Source | Used by | Failure behaviour |
 | --- | --- | --- |
 | `servicos.gov.br` / SERPRO | `node scripts/fetch-servicos.mjs` — a **build-time** step, not runtime | The generated index is committed, so the running app never calls it. |
 | `api.bcb.gov.br` (SGS) | `economiaSeries`, runtime | Cached 5 minutes. A timeout or a throttled response reports "unavailable" and the answer says so; no figure is estimated. |
-| `servicodados.ibge.gov.br` | `ibgePlace`, runtime | Fetched once per server process (~3 MB), then served from memory. The state is derived from the municipality code, so the one required field cannot change shape. |
+| `servicodados.ibge.gov.br` | `ibgePlace`, runtime | Public geographic data read and cached in process; report upstream failure, rather than treating stale or unavailable responses as verified live data. |
+| Câmara dos Deputados Dados Abertos | `camaraDeputado` and `camaraProposicao`, runtime | Factual public legislative records only. Missing votes or records must remain explicitly unavailable, not fabricated. |
 
-The one deliberate deviation from the brief is worth recording for whoever maintains this: the brief asked
-for a per-service adapter (`getGovBrService(id)`). The full-catalogue endpoint is credential-walled, so the
-pack ingests the Portal's public export at build time instead. That costs the `stages`, `audience`,
-`legislation` and `estimatedTime` fields, which the generator does not carry — see the gap list in
-`docs/PLAN_BR.md`.
+The full-catalogue endpoint requires credentials, so `scripts/fetch-servicos.mjs` generates the committed
+service index and per-service details from an available public export. The current implementation
+records stages, audience and time estimates when present in the source; it does **not** invent
+legislation references if the export supplies only unresolvable internal identifiers. Check
+`docs/PLAN_BR.md` for build history, and re-verify the deployed dataset against current official pages
+before giving users definitive deadlines, eligibility requirements or fees.
