@@ -3,6 +3,8 @@ import { pack } from '@/countries/active';
 import { DOCS } from './_doc/DocPage';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // An unconfigured Brazil deployment must not publish localhost or made-up URLs.
+  if (pack.id === 'br' && pack.brand.url.startsWith('http://localhost')) return [];
   const base = pack.brand.url.replace(/\/+$/, '');
   const pages = ['', ...DOCS.map((doc) => `/${doc}`)];
   return pages.map((p) => {
